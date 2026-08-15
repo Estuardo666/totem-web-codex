@@ -137,22 +137,23 @@ export function ProjectsSection() {
 
   return (
     <section
-      className="overflow-hidden px-5 py-[120px] max-sm:px-[19px] max-sm:py-20"
+      className="overflow-hidden px-5 py-[78px] md:py-[129px] lg:py-[120px] max-sm:px-[19px]"
       id="projects"
       ref={sectionRef}
     >
       <div className="mx-auto max-w-[860px]">
         <header
           className={cn(
-            "mb-9 flex flex-col items-center text-center transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:translate-y-0 motion-reduce:transition-none max-sm:mb-6",
+            "mb-9 flex flex-col items-center text-center transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:translate-y-0 motion-reduce:transition-none max-sm:mb-6 lg:mb-[19px]",
             revealed ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0",
           )}
         >
           <SectionEyebrow className="mb-3 rounded-full bg-shinta-pink px-3 py-1 text-shinta-ink">
             featured projects
           </SectionEyebrow>
-          <h2 className="max-w-[620px] text-[64px] leading-[70.4px] font-bold tracking-[-2.56px] text-shinta-ink max-md:text-[28px] max-md:leading-8 max-md:tracking-[-1.12px]">
-            Work We’re Proud Of
+          <h2 className="max-w-[620px] text-[64px] leading-[70.4px] font-bold tracking-[-2.56px] text-shinta-ink max-lg:text-[28px] max-lg:leading-8 max-lg:tracking-[-1.12px]">
+            <span className="lg:block">Work We’re </span>
+            <span className="lg:block">Proud Of</span>
           </h2>
         </header>
 

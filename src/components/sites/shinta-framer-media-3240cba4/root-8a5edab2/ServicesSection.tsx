@@ -118,7 +118,7 @@ function ServicePanel({ service }: ServicePanelProps) {
 
 export function ServicesSection() {
   return (
-    <section className="flex flex-col gap-1 overflow-clip px-[19px] py-20 md:gap-[14px] md:px-5 md:py-[82px] lg:gap-0 lg:py-0">
+    <section className="flex flex-col gap-1 overflow-clip px-[19px] py-[77px] md:gap-[14px] md:px-5 md:py-[82px] lg:gap-0 lg:py-0">
       {services.map((service) => (
         <ServicePanel key={service.number} service={service} />
       ))}

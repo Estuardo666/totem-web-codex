@@ -39,12 +39,10 @@ function AccordionControl({ open }: AccordionControlProps) {
   return (
     <span
       aria-hidden="true"
-      className="relative grid size-8 shrink-0 place-items-center rounded-[9px] bg-shinta-lavender text-white"
+      className={`relative grid size-8 shrink-0 place-items-center rounded-[9px] bg-shinta-lavender text-white transition-transform duration-700 ease-out ${open ? "rotate-45" : "rotate-0"}`}
     >
       <span className="absolute h-0.5 w-4 rounded-full bg-current" />
-      <span
-        className={`absolute h-4 w-0.5 rounded-full bg-current transition-transform duration-700 ease-out ${open ? "scale-y-0" : "scale-y-100"}`}
-      />
+      <span className="absolute h-4 w-0.5 rounded-full bg-current" />
     </span>
   );
 }

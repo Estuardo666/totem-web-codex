@@ -109,6 +109,7 @@ export function HeroSection() {
             loop
             muted
             playsInline
+            poster={shintaAsset("images/a46468b6396ae69e.jpeg")}
             preload="auto"
             src={shintaAsset("videos/hero-layer-back.mp4")}
           />
@@ -118,6 +119,7 @@ export function HeroSection() {
             loop
             muted
             playsInline
+            poster={shintaAsset("images/6ea501bbff9ed14a.jpeg")}
             preload="auto"
             src={shintaAsset("videos/hero-layer-middle.mp4")}
           />
@@ -129,6 +131,7 @@ export function HeroSection() {
               onPause={() => setIsPlaying(false)}
               onPlay={() => setIsPlaying(true)}
               playsInline
+              poster={shintaAsset("images/418ef3c59bda7b87.jpeg")}
               preload="auto"
               ref={frontVideoRef}
               src={shintaAsset("videos/hero-layer-front.mp4")}

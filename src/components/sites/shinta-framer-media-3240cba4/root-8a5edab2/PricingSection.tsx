@@ -221,7 +221,7 @@ export function PricingSection() {
   const [billingCycle, setBillingCycle] = useState<BillingCycle>("monthly");
 
   return (
-    <section className="px-5 py-[120px] max-sm:px-[19px] max-sm:py-20" id="pricing">
+    <section className="px-5 py-[60px] max-sm:px-[19px] max-sm:py-[70.5px] lg:py-[120px]" id="pricing">
       <div className="mx-auto grid max-w-[1280px] gap-6 lg:grid-cols-[1.2fr_1fr_1fr]">
         <div className="flex min-w-0 flex-col">
           <div>

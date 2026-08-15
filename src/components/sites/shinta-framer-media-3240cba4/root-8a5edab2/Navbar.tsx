@@ -75,7 +75,7 @@ export function Navbar() {
       aria-label="Primary navigation"
       className={cn(
         "fixed inset-x-0 top-0 z-50 flex h-[76px] justify-center px-[15px] py-[10px] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] max-md:h-[72px] max-md:px-[10px] max-md:py-2",
-        isVisible ? "translate-y-0" : "-translate-y-[76px]",
+        isVisible ? "translate-y-0" : "-translate-y-full",
       )}
     >
       <div className="relative flex h-14 w-full max-w-[1280px] items-center justify-between rounded-full bg-shinta-ink px-[14px] shadow-[0_1px_0_rgba(255,255,255,0.08)]">
