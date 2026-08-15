@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 
-import { SectionEyebrow } from "../shared/ShintaPrimitives";
+import { SectionEyebrow } from "./ShintaPrimitives";
 
 export type BlogPostCardProps = {
   authorAvatarSrc: string;

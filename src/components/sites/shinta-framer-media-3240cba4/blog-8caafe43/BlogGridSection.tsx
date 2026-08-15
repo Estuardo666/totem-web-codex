@@ -1,6 +1,6 @@
 "use client";
 
-import { BlogPostCard, type BlogPostCardProps } from "./BlogPostCard";
+import { BlogPostCard, type BlogPostCardProps } from "../shared/BlogPostCard";
 import { shintaAsset } from "../shared/site";
 
 const AVATAR_KRISTANTO = shintaAsset("images/e202cc3fcb7f8b83.png");
