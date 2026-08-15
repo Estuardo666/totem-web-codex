@@ -54,7 +54,7 @@ export function TeamMemberCard({
   return (
     <motion.div
       className={cn(
-        "flex flex-col justify-center gap-2.5 rounded-3xl bg-white p-2",
+        "flex flex-col justify-center gap-2.5 rounded-[24px] bg-white p-2",
         className,
       )}
       initial={reduceMotion ? undefined : "hidden"}
@@ -63,7 +63,7 @@ export function TeamMemberCard({
       viewport={{ amount: 0.3, once: true }}
       whileInView="visible"
     >
-      <div className="relative aspect-[382/453] w-full overflow-hidden rounded-2xl">
+      <div className="relative aspect-[382/453] w-full overflow-hidden rounded-[16px]">
         <Image
           alt={`Portrait of ${name}, ${role} at Shinta`}
           className="object-cover"

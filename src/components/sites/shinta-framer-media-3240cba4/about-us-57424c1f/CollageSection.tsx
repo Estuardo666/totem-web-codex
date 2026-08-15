@@ -51,7 +51,7 @@ type Tile = {
   width: number;
   height: number;
   radius: number;
-  translateXClass: string;
+  translateX: number;
   parallaxEnd: number;
   mobileAspect: string;
 };
@@ -66,7 +66,7 @@ const tiles: Tile[] = [
     width: 410,
     height: 729,
     radius: 32,
-    translateXClass: "",
+    translateX: 0,
     parallaxEnd: 100,
     mobileAspect: "aspect-[3/4]",
   },
@@ -79,7 +79,7 @@ const tiles: Tile[] = [
     width: 194,
     height: 320,
     radius: 24,
-    translateXClass: "-translate-x-[97px]",
+    translateX: -97,
     parallaxEnd: -300,
     mobileAspect: "aspect-[3/4]",
   },
@@ -92,7 +92,7 @@ const tiles: Tile[] = [
     width: 302,
     height: 226.988,
     radius: 24,
-    translateXClass: "-translate-x-[151px]",
+    translateX: -151,
     parallaxEnd: -50,
     mobileAspect: "aspect-[4/3]",
   },
@@ -105,7 +105,7 @@ const tiles: Tile[] = [
     width: 252,
     height: 189,
     radius: 24,
-    translateXClass: "",
+    translateX: 0,
     parallaxEnd: -800,
     mobileAspect: "aspect-[4/3]",
   },
@@ -118,7 +118,7 @@ const tiles: Tile[] = [
     width: 194,
     height: 345,
     radius: 24,
-    translateXClass: "",
+    translateX: 0,
     parallaxEnd: -400,
     mobileAspect: "aspect-[3/4]",
   },
@@ -195,13 +195,14 @@ export function CollageSection() {
             {tiles.map((tile) => (
               <motion.div
                 key={tile.key}
-                className={`absolute overflow-hidden ${tile.translateXClass}`}
+                className="absolute overflow-hidden"
                 style={{
                   top: tile.top,
                   left: tile.left,
                   width: tile.width,
                   height: tile.height,
                   borderRadius: tile.radius,
+                  x: tile.translateX,
                   y: reduceMotion ? 0 : motionYByKey[tile.key],
                 }}
               >
