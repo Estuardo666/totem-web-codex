@@ -5,10 +5,12 @@
 - Framer appear animations are viewport-triggered, run once, and are only fired by real wheel scroll — never by `window.scrollTo`. Initial (pre-reveal) states captured directly:
   - h1 words: `opacity: 0.001; transform: scale(0.9)` → `opacity: 1; scale(1)`, per-word `display:inline-block` spans
   - Paragraph, logo block, form card: `opacity: 0.001; transform: scale(0.8)` → `opacity: 1; scale(1)`
-- **Measurement trap:** sampling before a reveal settles returns the *scaled* box, not the layout box (e.g. the FAQ list reads 504px = 630 × 0.8). Every number in these specs is a settled value.
+- **Measurement trap:** sampling before a reveal settles returns the *scaled* box, not the layout box (e.g. the FAQ list reads 504px = 630 × 0.8, and the hero paragraph reads 490px = 612 × 0.8). Every number in these specs is a settled value — two of them were corrected during QA after this trap caught them.
 
-## Scroll-drawn decorative squiggle (Contact section)
-A single pale-grey stroke sweeps behind the left column. Same mechanism as the `/about-us` strokes: `stroke-dasharray` equals the path length and `stroke-dashoffset` runs `pathLength → 0` with scroll progress.
+## Draw-on-load decorative squiggle (Contact section)
+A single pale-grey stroke sweeps behind the left column. `stroke-dasharray` equals the path length and `stroke-dashoffset` runs `pathLength → 0`.
+
+**Correction to a first reading:** this is NOT scroll-linked like the `/about-us` strokes. The source reports `stroke-dashoffset: 0` with the page at the top — the stroke is already fully drawn at rest, and since the section is pinned to the top of the page it never gets a scroll range to travel through. Driving it from scroll progress leaves it visibly half-drawn. Animate it once on load instead.
 
 - Wrapper: `position:absolute; inset:0; z-index:0` over the whole 664px section; the section is `overflow:clip`.
 - SVG: `width:100%; aspect-ratio:1` (1282×1282 at a 1282px-wide section) and **vertically centred** in the wrapper — measured offset `y = -309px = (664 - 1282) / 2`. A centred square, not a top-aligned one.

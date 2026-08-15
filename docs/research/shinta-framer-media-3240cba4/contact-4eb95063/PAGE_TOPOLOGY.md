@@ -12,7 +12,7 @@ This is the shortest page of the three Shinta clones — only ONE genuinely new 
 | # | Section | y-range | Component | Interaction model |
 |---|---------|---------|-----------|-------------------|
 | 0 | Navbar | fixed | `shared/Navbar` (reused) | scroll hide/show |
-| 1 | Contact | 120–784 | `ContactHeroSection` + `ContactFormCard` (new) | static + reveal + scroll-drawn stroke |
+| 1 | Contact | 120–784 | `ContactHeroSection` + `ContactFormCard` (new) | static + reveal + draw-on-load stroke |
 | 2 | FAQ | 784–1614 | `root-8a5edab2/FaqSection` (reused, identical) | click-driven accordion |
 | 3 | Footer | 1614–2584 | `shared/FooterSection` (reused, identical) | hover |
 

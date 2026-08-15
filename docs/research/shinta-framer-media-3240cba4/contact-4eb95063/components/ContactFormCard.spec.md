@@ -14,6 +14,7 @@ Card(pink, col) > [ Title bar > h4, Form(white card, col) > [ Field(FULL NAME), 
 - display: flex; flex-direction: column; align-items: flex-end; gap: 8px
 - padding: 16px; border-radius: 40px; background: #ffa8f2 (`bg-shinta-pink`)
 - width: 644px; max-width: 680px; height: 544px
+- In the section's flex row the card must not shrink: `xl:w-[644px] xl:shrink-0 xl:h-[544px]`
 
 ### Title bar
 - display: flex; justify-content: center; align-items: center; gap: 10px
@@ -39,6 +40,7 @@ Card(pink, col) > [ Title bar > h4, Form(white card, col) > [ Field(FULL NAME), 
 ### Textarea wrapper (MESSAGE)
 - border-radius: 16px; background: #f4f4f3; the wrapper has **no padding** — the textarea itself carries `padding: 16px`
 - textarea: height 100px; `resize: vertical`; font-size 18px; line-height 21.6px; color #1c1917
+- Give the textarea `display:block` (or `align-top`) — as an inline element its line-box adds ~6px and the label block measures 133px instead of 126.8px, which pushes the whole card past 544px
 
 ### Footer row
 - Legal paragraph on the left, submit button on the right, vertically centred.

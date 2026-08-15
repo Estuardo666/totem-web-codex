@@ -2,7 +2,7 @@
 
 ## Overview
 - **Target file:** `src/components/sites/shinta-framer-media-3240cba4/contact-4eb95063/ContactHeroSection.tsx`
-- **Interaction model:** static + one-shot word-stagger reveal + a scroll-drawn decorative stroke.
+- **Interaction model:** static + one-shot word-stagger reveal + a decorative stroke that draws itself once on load.
 - This is the section wrapper. It owns the decorative stroke and the left column, and renders `ContactFormCard` on the right.
 
 ## DOM Structure
@@ -20,10 +20,7 @@ section > [ decorative stroke layer (absolute inset-0), Container(row) > [ Left(
 - Inside it, an SVG that is `width:100%` with `aspect-ratio:1` and **vertically centred** (measured offset `y = -309px = (664 - 1282) / 2`). Centre it — e.g. the layer is a `grid place-items-center` and the SVG is `w-full aspect-square`.
 - `viewBox="0 0 1170 1170"`, `fill="none"`, `stroke="#e7e5e4"`, `stroke-width="10"`, `stroke-linecap="butt"`.
 - Do NOT set `preserveAspectRatio` — the source has no such attribute, so the default `xMidYMid meet` must apply.
-- Scroll-draw: `stroke-dasharray = 1533.5` (the path length) and `stroke-dashoffset` animates `1533.5 → 0` across scroll progress.
-  Use `useScroll({ target: sectionRef, offset: ["start end", "end start"] })` + `useTransform(p, [0, 0.75], [1533.5, 0])`,
-  the same approach as `about-us-57424c1f/ScribbleStroke.tsx` — read that file for the pattern, but do NOT import it
-  (its variants and sizing are specific to that page). Pin `strokeDashoffset` at 0 when `useReducedMotion()` is true.
+- Draw-on-appear: `stroke-dasharray = 1533.5` (the path length) and `stroke-dashoffset` animates `1533.5 → 0` **once, on load**, not tied to scroll progress. The source measures `stroke-dashoffset: 0` while the page sits at the top, i.e. the stroke is already complete at rest; because this section is pinned to the top of the page it never has a scroll range to travel. Use a plain framer-motion `initial`/`animate` on the path (~1.6s, `cubic-bezier(0.22, 1, 0.36, 1)`, ~0.2s delay). Pin `strokeDashoffset` at 0 when `useReducedMotion()` is true.
 
 Path `d`:
 ```
@@ -42,13 +39,13 @@ M 0 92.158 C 124.286 -3.096 331.666 20.54 280.209 56.516 C 205.354 108.848 329.7
 ### Title block
 - display: flex; flex-direction: column; gap: 24px
 - h1: font-size 72px; font-weight 700; line-height 72px; letter-spacing -2.88px; color #1c1917
-- p: font-size 18px; line-height 27px; color #44403c (`text-shinta-stone`); `max-width: 490px`
+- p: font-size 18px; line-height 27px; color #44403c (`text-shinta-stone`); spans the full 612px column (it wraps to two lines there). **No max-width** — a 490px reading is the pre-reveal `scale(0.8)` box, not the layout box.
 
 ### Logo block
 - display: flex; flex-direction: column; justify-content: center; gap: 15px
 - Caption: font-size 12px; font-weight 600; line-height 16.8px; letter-spacing 0.96px; text-transform uppercase; **color #78716c** (`text-shinta-muted` — note this eyebrow is muted grey, not ink, and has no pink pill).
   Use `SectionEyebrow` from `../shared/ShintaPrimitives` with a colour override.
-- Logo row wrapper: `height:30px; overflow:hidden`, with a horizontal fade mask:
+- Logo row wrapper: `height:30px; overflow:hidden`. The row's intrinsic width is 731px (5x127 + 4x24); give the left column and the wrapper `min-w-0` so that width is clipped rather than forcing the flex column wider than 612px, with a horizontal fade mask:
   `[mask-image:linear-gradient(270deg,transparent_0%,black_15.537%,black_85.816%,transparent_100%)]` plus the
   `[-webkit-mask-image:...]` twin, matching how `root-8a5edab2/LogoStrip.tsx` writes its mask.
 - `ul`: `display:flex; gap:24px`; five `li` each 127×30, logo image rendered 102×24, vertically centred.

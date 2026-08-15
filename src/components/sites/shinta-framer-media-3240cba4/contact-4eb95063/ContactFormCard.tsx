@@ -18,7 +18,7 @@ export function ContactFormCard() {
 
   return (
     <motion.div
-      className="flex w-full max-w-[680px] flex-col items-end gap-2 rounded-[28px] bg-shinta-pink p-3 md:rounded-[36px] md:p-4 xl:w-[644px] xl:rounded-[40px]"
+      className="flex w-full max-w-[680px] flex-col items-end gap-2 rounded-[28px] bg-shinta-pink p-3 md:rounded-[36px] md:p-4 xl:h-[544px] xl:w-[644px] xl:shrink-0 xl:rounded-[40px]"
       initial={
         shouldReduceMotion
           ? { opacity: 1, scale: 1 }
@@ -70,7 +70,7 @@ export function ContactFormCard() {
           <SectionEyebrow className="text-shinta-ink">MESSAGE</SectionEyebrow>
           <div className="w-full rounded-[16px] bg-shinta-canvas">
             <textarea
-              className={`${inputClassName} h-[100px] resize-y rounded-[16px] p-4 focus-visible:ring-2 focus-visible:ring-shinta-ink/40`}
+              className={`${inputClassName} block h-[100px] resize-y rounded-[16px] p-4 align-top focus-visible:ring-2 focus-visible:ring-shinta-ink/40`}
               name="message"
               placeholder="Let us know about your ideas or challenges"
             />

@@ -1,14 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { Fragment, useRef } from "react";
-import {
-  motion,
-  useReducedMotion,
-  useScroll,
-  useTransform,
-  type Variants,
-} from "framer-motion";
+import { Fragment } from "react";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
 
 import { SectionEyebrow } from "../shared/ShintaPrimitives";
 import { shintaAsset } from "../shared/site";
@@ -72,20 +66,12 @@ const riseVariants: Variants = {
 };
 
 export function ContactHeroSection() {
-  const sectionRef = useRef<HTMLElement>(null);
   const reduceMotion = useReducedMotion();
-
-  const { scrollYProgress } = useScroll({
-    offset: ["start end", "end start"],
-    target: sectionRef,
-  });
-  const dashoffset = useTransform(scrollYProgress, [0, 0.75], [STROKE_LENGTH, 0]);
 
   return (
     <section
       aria-labelledby="shinta-contact-heading"
       className="relative flex items-center justify-center overflow-clip bg-shinta-canvas px-5 pb-18 md:pb-24 xl:pb-[120px]"
-      ref={sectionRef}
     >
       <div
         aria-hidden="true"
@@ -97,19 +83,25 @@ export function ContactHeroSection() {
           viewBox="0 0 1170 1170"
         >
           <motion.path
+            animate={{ strokeDashoffset: 0 }}
             d={STROKE_PATH}
             fill="none"
+            initial={reduceMotion ? false : { strokeDashoffset: STROKE_LENGTH }}
             stroke="currentColor"
             strokeDasharray={STROKE_LENGTH}
-            strokeDashoffset={reduceMotion ? 0 : dashoffset}
             strokeLinecap="butt"
             strokeWidth={10}
+            transition={
+              reduceMotion
+                ? { duration: 0 }
+                : { delay: 0.2, duration: 1.6, ease: [0.22, 1, 0.36, 1] }
+            }
           />
         </svg>
       </div>
 
       <div className="relative z-10 flex w-full max-w-[1280px] flex-col items-stretch gap-8 xl:h-[544px] xl:flex-row xl:items-center xl:gap-6">
-        <div className="flex flex-1 flex-col items-start justify-between gap-10 xl:h-full xl:gap-0">
+        <div className="flex min-w-0 flex-1 flex-col items-start justify-between gap-10 xl:h-full xl:gap-0">
           <div className="flex flex-col gap-6">
             <motion.h1
               className="text-[40px] leading-[42px] font-bold tracking-[-1.6px] text-shinta-ink md:text-[52px] md:leading-[54px] md:tracking-[-2.08px] xl:text-[72px] xl:leading-[72px] xl:tracking-[-2.88px]"
@@ -133,7 +125,7 @@ export function ContactHeroSection() {
             </motion.h1>
 
             <motion.p
-              className="max-w-full text-[16px] leading-6 text-shinta-stone xl:max-w-[490px] xl:text-[18px] xl:leading-[27px]"
+              className="max-w-full text-[16px] leading-6 text-shinta-stone xl:text-[18px] xl:leading-[27px]"
               initial={reduceMotion ? false : "hidden"}
               variants={riseVariants}
               viewport={{ amount: 0.4, once: true }}
@@ -145,7 +137,7 @@ export function ContactHeroSection() {
           </div>
 
           <motion.div
-            className="flex w-full max-w-[490px] flex-col justify-center gap-[15px] xl:order-none"
+            className="flex w-full min-w-0 flex-col justify-center gap-[15px] xl:order-none"
             initial={reduceMotion ? false : "hidden"}
             variants={riseVariants}
             viewport={{ amount: 0.4, once: true }}
