@@ -1,0 +1,873 @@
+{
+  "assets": [
+    {
+      "contentType": "image/avif",
+      "id": "a46468b6396ae69e",
+      "kind": "image",
+      "name": "E4n82ePYz4GJL2naWy5tew9mE.jpeg",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/a46468b6396ae69e.jpeg",
+      "url": "https://framerusercontent.com/images/E4n82ePYz4GJL2naWy5tew9mE.jpeg?width=906&height=1200"
+    },
+    {
+      "contentType": "image/avif",
+      "id": "418ef3c59bda7b87",
+      "kind": "image",
+      "name": "BTdwgsLgaju5ECPSXgxQTc1YHo0.jpeg",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/418ef3c59bda7b87.jpeg",
+      "url": "https://framerusercontent.com/images/BTdwgsLgaju5ECPSXgxQTc1YHo0.jpeg?width=1536&height=2752"
+    },
+    {
+      "contentType": "image/avif",
+      "id": "6ea501bbff9ed14a",
+      "kind": "image",
+      "name": "xU93mJqJ0TqKc1yS8RDOHXbdBcY.jpeg",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/6ea501bbff9ed14a.jpeg",
+      "url": "https://framerusercontent.com/images/xU93mJqJ0TqKc1yS8RDOHXbdBcY.jpeg?width=1536&height=2752"
+    },
+    {
+      "contentType": "image/avif",
+      "id": "b13b3ba827797b0f",
+      "kind": "image",
+      "name": "Z7GDJBWdmNR1WwCk7f5T9FKm8mI.png",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/b13b3ba827797b0f.png",
+      "url": "https://framerusercontent.com/images/Z7GDJBWdmNR1WwCk7f5T9FKm8mI.png?width=393&height=128"
+    },
+    {
+      "contentType": "image/png",
+      "id": "e0e1fd5214a17d82",
+      "kind": "image",
+      "name": "S6wPTNIZYXCqDeL26kzsHrnBxxQ.png",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/e0e1fd5214a17d82.png",
+      "url": "https://framerusercontent.com/images/S6wPTNIZYXCqDeL26kzsHrnBxxQ.png?scale-down-to=512&width=548&height=128"
+    },
+    {
+      "contentType": "image/png",
+      "id": "ebd7dec76b75c1e2",
+      "kind": "image",
+      "name": "AnOBAzaJBNTsO6eVhbHxVrnUaUM.png",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/ebd7dec76b75c1e2.png",
+      "url": "https://framerusercontent.com/images/AnOBAzaJBNTsO6eVhbHxVrnUaUM.png?scale-down-to=512&width=568&height=128"
+    },
+    {
+      "contentType": "image/png",
+      "id": "26f35051812b2aae",
+      "kind": "image",
+      "name": "zi98qpLRPEfMh2jGGwmXbSyd6zg.png",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/26f35051812b2aae.png",
+      "url": "https://framerusercontent.com/images/zi98qpLRPEfMh2jGGwmXbSyd6zg.png?scale-down-to=512&width=568&height=128"
+    },
+    {
+      "contentType": "image/png",
+      "id": "7253d2f6ec5e14e6",
+      "kind": "image",
+      "name": "74Sjr6NvsDyK2XEWz9ShuBvPI.png",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/7253d2f6ec5e14e6.png",
+      "url": "https://framerusercontent.com/images/74Sjr6NvsDyK2XEWz9ShuBvPI.png?scale-down-to=512&width=584&height=128"
+    },
+    {
+      "contentType": "",
+      "id": "4a96517cc7e29ed7",
+      "kind": "stylesheet",
+      "name": "lenis.css",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/4a96517cc7e29ed7.css",
+      "url": "https://unpkg.com/lenis@1.3.17-framer/dist/lenis.css"
+    },
+    {
+      "contentType": "image/avif",
+      "id": "8827d7ccd84c1b21",
+      "kind": "image",
+      "name": "rShi7FRK1A3MC8sVAnUdEZj0TiA.jpeg",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/8827d7ccd84c1b21.jpeg",
+      "url": "https://framerusercontent.com/images/rShi7FRK1A3MC8sVAnUdEZj0TiA.jpeg?width=1696&height=2528"
+    },
+    {
+      "contentType": "image/avif",
+      "id": "75eebb2b07b43c9a",
+      "kind": "image",
+      "name": "3J2iAobW3FSPLnwwcW1KCqr2pwM.png",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/75eebb2b07b43c9a.png",
+      "url": "https://framerusercontent.com/images/3J2iAobW3FSPLnwwcW1KCqr2pwM.png?width=1000&height=268"
+    },
+    {
+      "contentType": "image/avif",
+      "id": "d929f58f46477773",
+      "kind": "image",
+      "name": "RipSn2SQ7Ar9lyNjRRBHwFuQnQM.jpg",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/d929f58f46477773.jpg",
+      "url": "https://framerusercontent.com/images/RipSn2SQ7Ar9lyNjRRBHwFuQnQM.jpg?scale-down-to=1024&width=1224&height=1296"
+    },
+    {
+      "contentType": "image/avif",
+      "id": "f8f2222b4c112435",
+      "kind": "image",
+      "name": "DSkqddojWvdnF4RlswuktLEti8.jpg",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/f8f2222b4c112435.jpg",
+      "url": "https://framerusercontent.com/images/DSkqddojWvdnF4RlswuktLEti8.jpg?scale-down-to=1024&width=1224&height=1296"
+    },
+    {
+      "contentType": "image/avif",
+      "id": "25d6efcc673140d3",
+      "kind": "image",
+      "name": "eHFOiTmQL9qIAHpKb3CuCogqU.jpg",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/25d6efcc673140d3.jpg",
+      "url": "https://framerusercontent.com/images/eHFOiTmQL9qIAHpKb3CuCogqU.jpg?scale-down-to=1024&width=1224&height=1296"
+    },
+    {
+      "contentType": "image/avif",
+      "id": "f9924a626b8f6cfa",
+      "kind": "image",
+      "name": "tG8lmAK8JTIs1D1NUIQ8K7sXVkI.jpg",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/f9924a626b8f6cfa.jpg",
+      "url": "https://framerusercontent.com/images/tG8lmAK8JTIs1D1NUIQ8K7sXVkI.jpg?scale-down-to=1024&width=1224&height=1296"
+    },
+    {
+      "contentType": "image/avif",
+      "id": "f6ccd8159b64601e",
+      "kind": "image",
+      "name": "HqsNJ2bapyQeDfuIV3HrcBByCg.jpg",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/f6ccd8159b64601e.jpg",
+      "url": "https://framerusercontent.com/images/HqsNJ2bapyQeDfuIV3HrcBByCg.jpg?scale-down-to=1024&width=1224&height=1296"
+    },
+    {
+      "contentType": "image/avif",
+      "id": "adb16f0f9eb591c3",
+      "kind": "image",
+      "name": "0PyfpdelnqpVBXmeBrq2XN1HQo.png",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/adb16f0f9eb591c3.png",
+      "url": "https://framerusercontent.com/images/0PyfpdelnqpVBXmeBrq2XN1HQo.png?scale-down-to=1024&width=904&height=1200"
+    },
+    {
+      "contentType": "image/avif",
+      "id": "ebc892660383771d",
+      "kind": "image",
+      "name": "ZF5Teurodl2AtzZNYWczrGF0.png",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/ebc892660383771d.png",
+      "url": "https://framerusercontent.com/images/ZF5Teurodl2AtzZNYWczrGF0.png?scale-down-to=1024&width=2512&height=2720"
+    },
+    {
+      "contentType": "image/avif",
+      "id": "b9c3405cd7a817a4",
+      "kind": "image",
+      "name": "lG0zMMTzickdGkPWdnnh3PRIwk.jpg",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/b9c3405cd7a817a4.jpg",
+      "url": "https://framerusercontent.com/images/lG0zMMTzickdGkPWdnnh3PRIwk.jpg?scale-down-to=1024&width=1256&height=1360"
+    },
+    {
+      "contentType": "image/avif",
+      "id": "73abef02a86176b5",
+      "kind": "image",
+      "name": "ontH0F9R9iz2KLrJyIh78PgAgg.png",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/73abef02a86176b5.png",
+      "url": "https://framerusercontent.com/images/ontH0F9R9iz2KLrJyIh78PgAgg.png?scale-down-to=1024&width=1594&height=1750"
+    },
+    {
+      "contentType": "image/avif",
+      "id": "47896f1809e8e2f2",
+      "kind": "image",
+      "name": "f97I4x785jif26FyDNYeQ8cn65o.png",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/47896f1809e8e2f2.png",
+      "url": "https://framerusercontent.com/images/f97I4x785jif26FyDNYeQ8cn65o.png?scale-down-to=1024&width=1680&height=2400"
+    },
+    {
+      "contentType": "image/avif",
+      "id": "b16db9e580397fdd",
+      "kind": "image",
+      "name": "IQt3n4yCfVlf2LjLAgR6UTG97I.jpg",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/b16db9e580397fdd.jpg",
+      "url": "https://framerusercontent.com/images/IQt3n4yCfVlf2LjLAgR6UTG97I.jpg?scale-down-to=1024&width=954&height=1084"
+    },
+    {
+      "contentType": "image/avif",
+      "id": "eaea59734a53e7ca",
+      "kind": "image",
+      "name": "Uudgqm4mIOJ5tmvqSyQYtVA0I.png",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/eaea59734a53e7ca.png",
+      "url": "https://framerusercontent.com/images/Uudgqm4mIOJ5tmvqSyQYtVA0I.png?scale-down-to=512&width=1200&height=1200"
+    },
+    {
+      "contentType": "image/avif",
+      "id": "a1faa59a449d1277",
+      "kind": "image",
+      "name": "QEvXFU7LLQGido9vvsIBugEh0.jpg",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/a1faa59a449d1277.jpg",
+      "url": "https://framerusercontent.com/images/QEvXFU7LLQGido9vvsIBugEh0.jpg?scale-down-to=1024&width=958&height=1084"
+    },
+    {
+      "contentType": "image/avif",
+      "id": "8937ba903b130468",
+      "kind": "image",
+      "name": "awOeL0yKNFgvqogsdV27KvNegc.jpg",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/8937ba903b130468.jpg",
+      "url": "https://framerusercontent.com/images/awOeL0yKNFgvqogsdV27KvNegc.jpg?scale-down-to=1024&width=958&height=1084"
+    },
+    {
+      "contentType": "image/avif",
+      "id": "32b02d1e1ff6490e",
+      "kind": "image",
+      "name": "egBQUlNKV8uJcmRSjCVVWJPTG9I.jpg",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/32b02d1e1ff6490e.jpg",
+      "url": "https://framerusercontent.com/images/egBQUlNKV8uJcmRSjCVVWJPTG9I.jpg?scale-down-to=1024&width=958&height=1084"
+    },
+    {
+      "contentType": "image/avif",
+      "id": "fd4b5099d911c76f",
+      "kind": "image",
+      "name": "V0ZV4pxwSSUCSBO2VWF8vTHgAGY.jpg",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/fd4b5099d911c76f.jpg",
+      "url": "https://framerusercontent.com/images/V0ZV4pxwSSUCSBO2VWF8vTHgAGY.jpg?width=672&height=900"
+    },
+    {
+      "contentType": "image/avif",
+      "id": "d90a19ecbfeae44f",
+      "kind": "image",
+      "name": "e8YHKjEmqhxqPxUY8ddkvCPbk.jpg",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/d90a19ecbfeae44f.jpg",
+      "url": "https://framerusercontent.com/images/e8YHKjEmqhxqPxUY8ddkvCPbk.jpg?width=672&height=900"
+    },
+    {
+      "contentType": "image/avif",
+      "id": "b82418baae466bc6",
+      "kind": "image",
+      "name": "A3uHBButjxd7WzDnkG9DYBvSODs.jpg",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/b82418baae466bc6.jpg",
+      "url": "https://framerusercontent.com/images/A3uHBButjxd7WzDnkG9DYBvSODs.jpg?width=672&height=900"
+    },
+    {
+      "contentType": "image/avif",
+      "id": "35b70b916d6ee028",
+      "kind": "image",
+      "name": "JxwU3O7pozLmbOoniwdpe5LGAk.jpg",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/35b70b916d6ee028.jpg",
+      "url": "https://framerusercontent.com/images/JxwU3O7pozLmbOoniwdpe5LGAk.jpg?width=672&height=900"
+    },
+    {
+      "contentType": "image/avif",
+      "id": "36db82b98440ca02",
+      "kind": "image",
+      "name": "5gXitsm3iI0zoj6mry7iO1T3Xo.jpg",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/36db82b98440ca02.jpg",
+      "url": "https://framerusercontent.com/images/5gXitsm3iI0zoj6mry7iO1T3Xo.jpg?width=790&height=936"
+    },
+    {
+      "contentType": "image/avif",
+      "id": "34844c23286ab253",
+      "kind": "image",
+      "name": "Q4PeZp2Qx7rmA1hYjx2r2TeGlQ.jpg",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/34844c23286ab253.jpg",
+      "url": "https://framerusercontent.com/images/Q4PeZp2Qx7rmA1hYjx2r2TeGlQ.jpg?width=790&height=936"
+    },
+    {
+      "contentType": "image/avif",
+      "id": "79687116559292ab",
+      "kind": "image",
+      "name": "zcV8VMLW2UaiLm9AJM8MPiwdlw.jpg",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/79687116559292ab.jpg",
+      "url": "https://framerusercontent.com/images/zcV8VMLW2UaiLm9AJM8MPiwdlw.jpg?width=790&height=936"
+    },
+    {
+      "contentType": "image/avif",
+      "id": "c1c60606144d1f73",
+      "kind": "image",
+      "name": "ZsEIaooNaf9TIZjuTEevCpMqEe8.jpg",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/c1c60606144d1f73.jpg",
+      "url": "https://framerusercontent.com/images/ZsEIaooNaf9TIZjuTEevCpMqEe8.jpg?width=790&height=936"
+    },
+    {
+      "contentType": "image/avif",
+      "id": "47f89ced261416df",
+      "kind": "image",
+      "name": "o6duUa9OkHlf9DhOgeIlWNcRGY.jpg",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/47f89ced261416df.jpg",
+      "url": "https://framerusercontent.com/images/o6duUa9OkHlf9DhOgeIlWNcRGY.jpg?width=790&height=936"
+    },
+    {
+      "contentType": "image/avif",
+      "id": "3180f8ad3e321358",
+      "kind": "image",
+      "name": "DDCUixRHvKkrC3Ij9VowKTydSFE.jpg",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/3180f8ad3e321358.jpg",
+      "url": "https://framerusercontent.com/images/DDCUixRHvKkrC3Ij9VowKTydSFE.jpg?width=790&height=936"
+    },
+    {
+      "contentType": "image/avif",
+      "id": "9bf3ccb668f9c139",
+      "kind": "image",
+      "name": "eyiXeMBMEUOtTZVM5UbR6v4Ct7I.png",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/9bf3ccb668f9c139.png",
+      "url": "https://framerusercontent.com/images/eyiXeMBMEUOtTZVM5UbR6v4Ct7I.png?scale-down-to=1024&width=1194&height=1599"
+    },
+    {
+      "contentType": "image/avif",
+      "id": "d8288cb19a756a51",
+      "kind": "image",
+      "name": "r2x5juiviagvZesFV13a9pVaR4.jpg",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/d8288cb19a756a51.jpg",
+      "url": "https://framerusercontent.com/images/r2x5juiviagvZesFV13a9pVaR4.jpg?scale-down-to=512&width=822&height=616"
+    },
+    {
+      "contentType": "image/avif",
+      "id": "90da175d3b991e31",
+      "kind": "image",
+      "name": "cNhxMCAtBg1pCkLonOn6wBwPzA.jpg",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/90da175d3b991e31.jpg",
+      "url": "https://framerusercontent.com/images/cNhxMCAtBg1pCkLonOn6wBwPzA.jpg?scale-down-to=512&width=822&height=616"
+    },
+    {
+      "contentType": "image/avif",
+      "id": "01c3e56a4e3063a0",
+      "kind": "image",
+      "name": "LjqUtvyQXNfWUeK0iqaOyoetDg.jpg",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/01c3e56a4e3063a0.jpg",
+      "url": "https://framerusercontent.com/images/LjqUtvyQXNfWUeK0iqaOyoetDg.jpg?scale-down-to=512&width=822&height=616"
+    },
+    {
+      "contentType": "image/avif",
+      "id": "e202cc3fcb7f8b83",
+      "kind": "image",
+      "name": "j2SDQqAkQ3arXM8IQ1jnCBB6S0.png",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/e202cc3fcb7f8b83.png",
+      "url": "https://framerusercontent.com/images/j2SDQqAkQ3arXM8IQ1jnCBB6S0.png?scale-down-to=512&width=1200&height=1200"
+    },
+    {
+      "contentType": "image/avif",
+      "id": "187a0bff84102aca",
+      "kind": "image",
+      "name": "3TCXEPjCw7AbpdVqOwb0J3keQNA.png",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/187a0bff84102aca.png",
+      "url": "https://framerusercontent.com/images/3TCXEPjCw7AbpdVqOwb0J3keQNA.png?scale-down-to=512&width=1032&height=1032"
+    },
+    {
+      "contentType": "image/avif",
+      "id": "062febe8ad7682a7",
+      "kind": "image",
+      "name": "QJRZerULrXfNrY08IEi5N1xnB0.png",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/062febe8ad7682a7.png",
+      "url": "https://framerusercontent.com/images/QJRZerULrXfNrY08IEi5N1xnB0.png?scale-down-to=512&width=800&height=800"
+    },
+    {
+      "contentType": "image/avif",
+      "id": "d72f6236d901e924",
+      "kind": "image",
+      "name": "Ng72SfQHklNByTeJTtQUtBwT8.png",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/d72f6236d901e924.png",
+      "url": "https://framerusercontent.com/images/Ng72SfQHklNByTeJTtQUtBwT8.png?scale-down-to=1024&width=1152&height=896"
+    },
+    {
+      "contentType": "image/avif",
+      "id": "e7fb2951cde42e9a",
+      "kind": "image",
+      "name": "osXTQmLx6RntsX7CfW3A94lUHo.png",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/e7fb2951cde42e9a.png",
+      "url": "https://framerusercontent.com/images/osXTQmLx6RntsX7CfW3A94lUHo.png?width=1000&height=267"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "caf910c165ddc952",
+      "kind": "image",
+      "name": "svg-1",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/caf910c165ddc952.svg",
+      "url": "inline-svg:caf910c165ddc952"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "fdef684e108268c6",
+      "kind": "image",
+      "name": "svg-2",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/fdef684e108268c6.svg",
+      "url": "inline-svg:fdef684e108268c6"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "39df0765a4449187",
+      "kind": "image",
+      "name": "svg-3",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/39df0765a4449187.svg",
+      "url": "inline-svg:39df0765a4449187"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "2b25894d17145eec",
+      "kind": "image",
+      "name": "svg-4",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/2b25894d17145eec.svg",
+      "url": "inline-svg:2b25894d17145eec"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "212e42619c43f97a",
+      "kind": "image",
+      "name": "svg-5",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/212e42619c43f97a.svg",
+      "url": "inline-svg:212e42619c43f97a"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "1c20663a6f8125b7",
+      "kind": "image",
+      "name": "svg-6",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/1c20663a6f8125b7.svg",
+      "url": "inline-svg:1c20663a6f8125b7"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "5ecdb1fa5b6de02c",
+      "kind": "image",
+      "name": "svg-7",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/5ecdb1fa5b6de02c.svg",
+      "url": "inline-svg:5ecdb1fa5b6de02c"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "cac94d84dc3f9b6d",
+      "kind": "image",
+      "name": "svg-8",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/cac94d84dc3f9b6d.svg",
+      "url": "inline-svg:cac94d84dc3f9b6d"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "ef7d64d3dfeeb3cb",
+      "kind": "image",
+      "name": "svg-9",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/ef7d64d3dfeeb3cb.svg",
+      "url": "inline-svg:ef7d64d3dfeeb3cb"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "249e8c8cfc98acbb",
+      "kind": "image",
+      "name": "svg-10",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/249e8c8cfc98acbb.svg",
+      "url": "inline-svg:249e8c8cfc98acbb"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "264e7bacacf7ecdf",
+      "kind": "image",
+      "name": "svg-11",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/264e7bacacf7ecdf.svg",
+      "url": "inline-svg:264e7bacacf7ecdf"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "473a6c33cc7c633c",
+      "kind": "image",
+      "name": "svg-12",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/473a6c33cc7c633c.svg",
+      "url": "inline-svg:473a6c33cc7c633c"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "5d1519d0922781c4",
+      "kind": "image",
+      "name": "svg-13",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/5d1519d0922781c4.svg",
+      "url": "inline-svg:5d1519d0922781c4"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "e849ae42e643c041",
+      "kind": "image",
+      "name": "svg-14",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/e849ae42e643c041.svg",
+      "url": "inline-svg:e849ae42e643c041"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "fc38f43890749955",
+      "kind": "image",
+      "name": "svg-15",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/fc38f43890749955.svg",
+      "url": "inline-svg:fc38f43890749955"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "f6680ef76f590fb5",
+      "kind": "image",
+      "name": "svg-16",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/f6680ef76f590fb5.svg",
+      "url": "inline-svg:f6680ef76f590fb5"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "0155fcf530222fa1",
+      "kind": "image",
+      "name": "svg-17",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/0155fcf530222fa1.svg",
+      "url": "inline-svg:0155fcf530222fa1"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "7a43fdaf94860aea",
+      "kind": "image",
+      "name": "svg-18",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/7a43fdaf94860aea.svg",
+      "url": "inline-svg:7a43fdaf94860aea"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "ae1a5c2a1f077c7a",
+      "kind": "image",
+      "name": "svg-19",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/ae1a5c2a1f077c7a.svg",
+      "url": "inline-svg:ae1a5c2a1f077c7a"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "c05bb08ea5370bcc",
+      "kind": "image",
+      "name": "svg-20",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/c05bb08ea5370bcc.svg",
+      "url": "inline-svg:c05bb08ea5370bcc"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "43ba28653ba3aff6",
+      "kind": "image",
+      "name": "svg-21",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/43ba28653ba3aff6.svg",
+      "url": "inline-svg:43ba28653ba3aff6"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "6d63c0c3b0f56151",
+      "kind": "image",
+      "name": "svg-22",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/6d63c0c3b0f56151.svg",
+      "url": "inline-svg:6d63c0c3b0f56151"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "3a78ff8c1f6405af",
+      "kind": "image",
+      "name": "svg-23",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/3a78ff8c1f6405af.svg",
+      "url": "inline-svg:3a78ff8c1f6405af"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "33ee4c3dc28166a6",
+      "kind": "image",
+      "name": "svg-24",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/33ee4c3dc28166a6.svg",
+      "url": "inline-svg:33ee4c3dc28166a6"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "415864b53d03d941",
+      "kind": "image",
+      "name": "svg-25",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/415864b53d03d941.svg",
+      "url": "inline-svg:415864b53d03d941"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "115fc022076550fc",
+      "kind": "image",
+      "name": "svg-26",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/115fc022076550fc.svg",
+      "url": "inline-svg:115fc022076550fc"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "2e43791184b1230e",
+      "kind": "image",
+      "name": "svg-27",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/2e43791184b1230e.svg",
+      "url": "inline-svg:2e43791184b1230e"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "b982e9d68cd63019",
+      "kind": "image",
+      "name": "svg-28",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/b982e9d68cd63019.svg",
+      "url": "inline-svg:b982e9d68cd63019"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "871e27f63e88b947",
+      "kind": "image",
+      "name": "svg-29",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/871e27f63e88b947.svg",
+      "url": "inline-svg:871e27f63e88b947"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "5176647c888a29d2",
+      "kind": "image",
+      "name": "svg-30",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/5176647c888a29d2.svg",
+      "url": "inline-svg:5176647c888a29d2"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "958733d93ea591fa",
+      "kind": "image",
+      "name": "svg-31",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/958733d93ea591fa.svg",
+      "url": "inline-svg:958733d93ea591fa"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "33b62b95934a7f5c",
+      "kind": "image",
+      "name": "svg-32",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/33b62b95934a7f5c.svg",
+      "url": "inline-svg:33b62b95934a7f5c"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "36ba8203fa460feb",
+      "kind": "image",
+      "name": "svg-33",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/36ba8203fa460feb.svg",
+      "url": "inline-svg:36ba8203fa460feb"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "391875cb77d047c9",
+      "kind": "image",
+      "name": "svg-34",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/391875cb77d047c9.svg",
+      "url": "inline-svg:391875cb77d047c9"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "d831d6332611c169",
+      "kind": "image",
+      "name": "svg-35",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/d831d6332611c169.svg",
+      "url": "inline-svg:d831d6332611c169"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "6ce57646ff18f38d",
+      "kind": "image",
+      "name": "svg-36",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/6ce57646ff18f38d.svg",
+      "url": "inline-svg:6ce57646ff18f38d"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "0ae4c0196435b9e7",
+      "kind": "image",
+      "name": "svg-37",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/0ae4c0196435b9e7.svg",
+      "url": "inline-svg:0ae4c0196435b9e7"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "1e3da2e34c194958",
+      "kind": "image",
+      "name": "svg-38",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/1e3da2e34c194958.svg",
+      "url": "inline-svg:1e3da2e34c194958"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "92d223a5268c7e76",
+      "kind": "image",
+      "name": "svg-39",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/92d223a5268c7e76.svg",
+      "url": "inline-svg:92d223a5268c7e76"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "c12087f6684bd2b5",
+      "kind": "image",
+      "name": "svg-40",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/c12087f6684bd2b5.svg",
+      "url": "inline-svg:c12087f6684bd2b5"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "6581bc2627b1f6b7",
+      "kind": "image",
+      "name": "svg-41",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/6581bc2627b1f6b7.svg",
+      "url": "inline-svg:6581bc2627b1f6b7"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "15993727deba23da",
+      "kind": "image",
+      "name": "svg-42",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/15993727deba23da.svg",
+      "url": "inline-svg:15993727deba23da"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "5fecd0e2a73842f9",
+      "kind": "image",
+      "name": "svg-43",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/5fecd0e2a73842f9.svg",
+      "url": "inline-svg:5fecd0e2a73842f9"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "a578b34d5f2e0661",
+      "kind": "image",
+      "name": "svg-1452082808_3331",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/a578b34d5f2e0661.svg",
+      "url": "inline-svg:a578b34d5f2e0661"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "16df3c093e9e8655",
+      "kind": "image",
+      "name": "svg9946421025",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/16df3c093e9e8655.svg",
+      "url": "inline-svg:16df3c093e9e8655"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "eac610e2a0e5bd77",
+      "kind": "image",
+      "name": "svg10257114632",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/eac610e2a0e5bd77.svg",
+      "url": "inline-svg:eac610e2a0e5bd77"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "ac927b8e84bb0a2d",
+      "kind": "image",
+      "name": "3492944464",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/ac927b8e84bb0a2d.svg",
+      "url": "inline-svg:ac927b8e84bb0a2d"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "0621e93515bd907b",
+      "kind": "image",
+      "name": "2502757080",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/0621e93515bd907b.svg",
+      "url": "inline-svg:0621e93515bd907b"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "a5431957a4068a64",
+      "kind": "image",
+      "name": "3761207643",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/a5431957a4068a64.svg",
+      "url": "inline-svg:a5431957a4068a64"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "7a61d12ab125a8cc",
+      "kind": "image",
+      "name": "1850400172",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/7a61d12ab125a8cc.svg",
+      "url": "inline-svg:7a61d12ab125a8cc"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "e7147f8851e6dcea",
+      "kind": "image",
+      "name": "1074007029",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/e7147f8851e6dcea.svg",
+      "url": "inline-svg:e7147f8851e6dcea"
+    },
+    {
+      "contentType": "image/svg+xml",
+      "id": "50a4dfdf4b1a00a3",
+      "kind": "image",
+      "name": "2930526878",
+      "path": "C:\\Users\\Stuart\\AppData\\Local\\Temp/browser-use/assets/b72b81b4-ef64-4cca-b6ac-52b95c021589/50a4dfdf4b1a00a3.svg",
+      "url": "inline-svg:50a4dfdf4b1a00a3"
+    }
+  ],
+  "failures": [
+    {
+      "contentType": null,
+      "id": "f753d846eedbaccf",
+      "name": "RipSn2SQ7Ar9lyNjRRBHwFuQnQM.jpg",
+      "reason": "Loaded resource fetch failed: Asset bundling failed; page fetch failed: Browser Use encountered an error interacting with this webpage: TypeError: Failed to fetch\n    at A$ (<anonymous>:1:41)\n    at <anonymous>:1:354",
+      "url": "https://framerusercontent.com/images/RipSn2SQ7Ar9lyNjRRBHwFuQnQM.jpg?width=1224&height=1296"
+    },
+    {
+      "contentType": null,
+      "id": "dcd801c7db08643d",
+      "name": "3WfnZksKV9qFKlmPOweqZdumjg.woff2",
+      "reason": "Loaded resource fetch failed: Asset bundling failed; page fetch failed: Browser Use encountered an error interacting with this webpage: TypeError: Failed to fetch\n    at A$ (<anonymous>:1:41)\n    at <anonymous>:1:354",
+      "url": "https://framerusercontent.com/assets/3WfnZksKV9qFKlmPOweqZdumjg.woff2"
+    },
+    {
+      "contentType": null,
+      "id": "4c48443fe473973b",
+      "name": "6O7MeaZaWwN4BSaWtVn9SbCmK0U.woff2",
+      "reason": "Loaded resource fetch failed: Asset bundling failed; page fetch failed: Browser Use encountered an error interacting with this webpage: TypeError: Failed to fetch\n    at A$ (<anonymous>:1:41)\n    at <anonymous>:1:354",
+      "url": "https://framerusercontent.com/assets/6O7MeaZaWwN4BSaWtVn9SbCmK0U.woff2"
+    },
+    {
+      "contentType": null,
+      "id": "2b782abc4e416c2a",
+      "name": "7u6OD4xiuxPxD0fns9h4rxbmgo.woff2",
+      "reason": "Loaded resource fetch failed: Asset bundling failed; page fetch failed: Browser Use encountered an error interacting with this webpage: TypeError: Failed to fetch\n    at A$ (<anonymous>:1:41)\n    at <anonymous>:1:354",
+      "url": "https://framerusercontent.com/assets/7u6OD4xiuxPxD0fns9h4rxbmgo.woff2"
+    },
+    {
+      "contentType": null,
+      "id": "aad4c438a301b35d",
+      "name": "gyBhhwUxId8gMGYQMKR3pzfaWI_RQuQImpna.woff2",
+      "reason": "Loaded resource fetch failed: Asset bundling failed; page fetch failed: Browser Use encountered an error interacting with this webpage: TypeError: Failed to fetch\n    at A$ (<anonymous>:1:41)\n    at <anonymous>:1:354",
+      "url": "https://fonts.gstatic.com/s/geist/v5/gyBhhwUxId8gMGYQMKR3pzfaWI_RQuQImpna.woff2"
+    },
+    {
+      "contentType": null,
+      "id": "afdbc15cd59af7b2",
+      "name": "ifg3JJylN40L3Ktt7fc7uhNA.mp4",
+      "reason": "Loaded resource fetch failed: Asset bundling failed; page fetch failed: Browser Use encountered an error interacting with this webpage: TypeError: Failed to fetch\n    at A$ (<anonymous>:1:41)\n    at <anonymous>:1:354",
+      "url": "https://framerusercontent.com/assets/ifg3JJylN40L3Ktt7fc7uhNA.mp4"
+    },
+    {
+      "contentType": null,
+      "id": "d5671aa7306f1f41",
+      "name": "W2Rujgt14CX4MJRHRhuoYaS4YQc.mp4",
+      "reason": "Loaded resource fetch failed: Asset bundling failed; page fetch failed: Browser Use encountered an error interacting with this webpage: TypeError: Failed to fetch\n    at A$ (<anonymous>:1:41)\n    at <anonymous>:1:354",
+      "url": "https://framerusercontent.com/assets/W2Rujgt14CX4MJRHRhuoYaS4YQc.mp4"
+    },
+    {
+      "contentType": null,
+      "id": "ca09406dbd500d3b",
+      "name": "0xZ363kYUXAzmMvtmoGEUWzbm40.mp4",
+      "reason": "Loaded resource fetch failed: Asset bundling failed; page fetch failed: Browser Use encountered an error interacting with this webpage: TypeError: Failed to fetch\n    at A$ (<anonymous>:1:41)\n    at <anonymous>:1:354",
+      "url": "https://framerusercontent.com/assets/0xZ363kYUXAzmMvtmoGEUWzbm40.mp4"
+    },
+    {
+      "contentType": null,
+      "id": "a2637128181301de",
+      "name": "3J2iAobW3FSPLnwwcW1KCqr2pwM.png",
+      "reason": "Loaded resource fetch failed: Asset bundling failed; page fetch failed: Browser Use encountered an error interacting with this webpage: TypeError: Failed to fetch\n    at A$ (<anonymous>:1:41)\n    at <anonymous>:1:354",
+      "url": "https://framerusercontent.com/images/3J2iAobW3FSPLnwwcW1KCqr2pwM.png?scale-down-to=512&width=1000&height=268"
+    },
+    {
+      "contentType": null,
+      "id": "27a94e7f79135249",
+      "name": "Lz2KK6tJvaSwPqt8CILUTfpWU.mp4",
+      "reason": "Loaded resource fetch failed: Asset bundling failed; page fetch failed: Browser Use encountered an error interacting with this webpage: TypeError: Failed to fetch\n    at A$ (<anonymous>:1:41)\n    at <anonymous>:1:354",
+      "url": "https://framerusercontent.com/assets/Lz2KK6tJvaSwPqt8CILUTfpWU.mp4"
+    },
+    {
+      "contentType": null,
+      "id": "8ba7a97a4c0fc541",
+      "name": "aPqDWQqPVRqGBPXrnqHff4IYY.mp4",
+      "reason": "Loaded resource fetch failed: Asset bundling failed; page fetch failed: Browser Use encountered an error interacting with this webpage: TypeError: Failed to fetch\n    at A$ (<anonymous>:1:41)\n    at <anonymous>:1:354",
+      "url": "https://framerusercontent.com/assets/aPqDWQqPVRqGBPXrnqHff4IYY.mp4"
+    },
+    {
+      "contentType": null,
+      "id": "eadc11a161920912",
+      "name": "osXTQmLx6RntsX7CfW3A94lUHo.png",
+      "reason": "Loaded resource fetch failed: Asset bundling failed; page fetch failed: Browser Use encountered an error interacting with this webpage: TypeError: Failed to fetch\n    at A$ (<anonymous>:1:41)\n    at <anonymous>:1:354",
+      "url": "https://framerusercontent.com/images/osXTQmLx6RntsX7CfW3A94lUHo.png?scale-down-to=512&width=1000&height=267"
+    },
+    {
+      "contentType": null,
+      "id": "1bc5193770e88314",
+      "name": "XTCdwiXD6G6XZHNxQZiGuoIg.mp4",
+      "reason": "Loaded resource fetch failed: Asset bundling failed; page fetch failed: Browser Use encountered an error interacting with this webpage: TypeError: Failed to fetch\n    at A$ (<anonymous>:1:41)\n    at <anonymous>:1:354",
+      "url": "https://framerusercontent.com/assets/XTCdwiXD6G6XZHNxQZiGuoIg.mp4"
+    }
+  ]
+}

@@ -1,20 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "Website Clone",
-  description: "Pixel-perfect website clone",
+  title: "Shinta - Social Media Marketing Agency",
+  description:
+    "Shinta is a social media marketing agency template built to showcase your work, attract clients and support long term brand growth.",
+  icons: {
+    apple:
+      "/sites/shinta-framer-media-3240cba4/root-8a5edab2/seo/apple-touch-icon.png",
+  },
+  openGraph: {
+    images: [
+      "/sites/shinta-framer-media-3240cba4/root-8a5edab2/seo/opengraph.jpg",
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -23,11 +22,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en" className="h-full antialiased">
+      <body className="flex min-h-full flex-col">{children}</body>
     </html>
   );
 }
