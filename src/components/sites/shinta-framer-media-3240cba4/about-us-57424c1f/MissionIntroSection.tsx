@@ -52,7 +52,7 @@ export function MissionIntroSection() {
       aria-labelledby="shinta-mission-intro-heading"
       className="relative flex items-center justify-center bg-shinta-canvas px-5 py-20 md:py-[110px] xl:py-[150px]"
     >
-      <div className="relative flex w-full max-w-[1000px] flex-col-reverse items-center gap-10 md:flex-row md:gap-12 xl:gap-[130px]">
+      <div className="relative flex w-full max-w-[1000px] flex-col items-center gap-10 md:flex-row md:gap-12 xl:gap-[130px]">
         <ScribbleStroke
           className="hidden -top-[365px] left-[281px] -z-10 h-[1202px] w-[1560px] xl:block"
           variant="lavender"
