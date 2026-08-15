@@ -1,0 +1,33 @@
+import type { Metadata } from "next";
+
+import { ArticleBody } from "@/components/sites/shinta-framer-media-3240cba4/blog-turning-social-media-ideas-into-clear-content-plans-dfd8f565/ArticleBody";
+import { ArticleHeroSection } from "@/components/sites/shinta-framer-media-3240cba4/blog-turning-social-media-ideas-into-clear-content-plans-dfd8f565/ArticleHeroSection";
+import { RelatedPostsSection } from "@/components/sites/shinta-framer-media-3240cba4/blog-turning-social-media-ideas-into-clear-content-plans-dfd8f565/RelatedPostsSection";
+import { ContactCtaSection } from "@/components/sites/shinta-framer-media-3240cba4/shared/ContactCtaSection";
+import { FooterSection } from "@/components/sites/shinta-framer-media-3240cba4/shared/FooterSection";
+import { Navbar } from "@/components/sites/shinta-framer-media-3240cba4/shared/Navbar";
+
+export const metadata: Metadata = {
+  description:
+    "Social media agencies turn ideas into systems. They help brands move from random posts to meaningful content.",
+  title: "Turning Social Media Ideas Into Content Plans",
+};
+
+export default function TurningSocialMediaIdeasIntoClearContentPlansPage() {
+  return (
+    <div className="min-h-screen overflow-x-clip bg-shinta-canvas text-shinta-ink">
+      <Navbar />
+      <main className="flex flex-col pt-[120px]">
+        <article className="flex justify-center px-5 pb-18 md:pb-24 xl:pb-[120px]">
+          <div className="flex w-full max-w-[840px] flex-col items-center gap-8 md:gap-10">
+            <ArticleHeroSection />
+            <ArticleBody />
+          </div>
+        </article>
+        <RelatedPostsSection />
+        <ContactCtaSection />
+      </main>
+      <FooterSection />
+    </div>
+  );
+}
