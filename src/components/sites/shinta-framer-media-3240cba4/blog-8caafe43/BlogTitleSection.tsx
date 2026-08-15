@@ -61,6 +61,7 @@ export function BlogTitleSection() {
       <div className="flex w-full max-w-[1280px] flex-col items-start gap-4 md:flex-row md:items-end md:gap-5 xl:gap-6">
         <div className="flex flex-col gap-2">
           <motion.div
+            className="flex"
             initial={reduceMotion ? false : "hidden"}
             variants={riseVariants}
             viewport={{ amount: 0.4, once: true }}
