@@ -3,7 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 
 import { cn } from "@/lib/utils";
 
@@ -37,6 +38,28 @@ export function Navbar() {
   const [isVisible, setIsVisible] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const lastScrollY = useRef(0);
+  const shouldReduceMotion = useReducedMotion();
+
+  useEffect(() => {
+    if (!isMenuOpen) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsMenuOpen(false);
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isMenuOpen]);
+
+  useEffect(() => {
+    const desktopQuery = window.matchMedia("(min-width: 768px)");
+    const closeMenuOnDesktop = (event: MediaQueryListEvent) => {
+      if (event.matches) setIsMenuOpen(false);
+    };
+
+    desktopQuery.addEventListener("change", closeMenuOnDesktop);
+    return () => desktopQuery.removeEventListener("change", closeMenuOnDesktop);
+  }, []);
 
   useEffect(() => {
     lastScrollY.current = window.scrollY;
@@ -79,92 +102,143 @@ export function Navbar() {
         isVisible ? "translate-y-0" : "-translate-y-full",
       )}
     >
-      <div className="relative flex h-14 w-full max-w-[1280px] items-center justify-between rounded-full bg-shinta-ink px-[14px] shadow-[0_1px_0_rgba(255,255,255,0.08)]">
-        <Link
-          aria-label="Inicio de Shinta"
-          className="rounded-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-shinta-pink"
-          href="/"
-          onClick={() => setIsMenuOpen(false)}
-        >
-          <Image
-            alt="Shinta"
-            className="h-10 w-auto max-w-[52px] object-contain"
-            height={417}
-            priority
-            src="/brand/logo-dark.png"
-            unoptimized
-            width={621}
-          />
-        </Link>
-
-        <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-[43px] md:flex">
-          {navigationLinks.map((link) => (
-            <Link
-              className="group rounded-sm text-[16px] font-semibold tracking-[-0.64px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-shinta-pink"
-              href={link.href}
-              key={link.href}
-            >
-              <StackedNavLabel label={link.label} />
-            </Link>
-          ))}
-        </div>
-
-        <div className="absolute right-[14px] flex w-[84px] shrink-0 items-center justify-end gap-2 sm:static sm:w-auto">
-          <ThemeSwitch />
-
+      <motion.div
+        animate={isMenuOpen ? "open" : "closed"}
+        className="relative flex w-full max-w-[1280px] flex-col gap-2 overflow-hidden rounded-[32px] bg-shinta-ink px-2 shadow-[0_1px_0_rgba(255,255,255,0.08)] md:h-14 md:flex-row md:items-center md:justify-between md:overflow-visible md:px-[14px] md:py-0"
+        initial={false}
+        transition={
+          shouldReduceMotion
+            ? { duration: 0 }
+            : { type: "spring", duration: 0.48, bounce: 0.08 }
+        }
+        variants={{
+          closed: { height: 56, paddingTop: 8, paddingBottom: 8 },
+          open: { height: 388, paddingTop: 16, paddingBottom: 8 },
+        }}
+      >
+        <div className="relative z-10 flex h-10 shrink-0 items-center justify-between px-2 md:contents">
           <Link
-            className="group hidden h-10 items-center rounded-full bg-totem-action px-5 text-[16px] font-semibold leading-4 tracking-[-0.64px] text-totem-action-text transition-colors duration-300 hover:bg-totem-tech focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-totem-focus md:flex"
-            href="https://cal.com/"
+            aria-label="Inicio de Shinta"
+            className="rounded-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-shinta-pink"
+            href="/"
+            onClick={() => setIsMenuOpen(false)}
           >
-            Agenda una llamada
+            <Image
+              alt="Shinta"
+              className="h-10 w-auto max-w-[116px] object-contain md:max-w-[52px]"
+              height={417}
+              priority
+              src="/brand/logo-dark.png"
+              unoptimized
+              width={621}
+            />
           </Link>
 
-          <button
-            aria-controls="shinta-mobile-navigation"
-            aria-expanded={isMenuOpen}
-            aria-label={isMenuOpen ? "Cerrar menú de navegación" : "Abrir menú de navegación"}
-            className="grid size-10 place-items-center rounded-full bg-shinta-canvas text-shinta-ink transition-colors hover:bg-shinta-pink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-shinta-pink md:hidden"
-            onClick={() => setIsMenuOpen((current) => !current)}
-            type="button"
-          >
-            {isMenuOpen ? (
-              <X aria-hidden="true" className="size-5" strokeWidth={2.2} />
-            ) : (
-              <Menu aria-hidden="true" className="size-5" strokeWidth={2.2} />
-            )}
-          </button>
-        </div>
-
-        <div
-          className={cn(
-            "absolute inset-x-0 top-[64px] overflow-hidden rounded-[24px] bg-shinta-ink px-5 text-shinta-canvas shadow-xl transition-[opacity,transform,visibility] duration-300 md:hidden",
-            isMenuOpen
-              ? "visible translate-y-0 py-4 opacity-100"
-              : "invisible -translate-y-2 py-0 opacity-0",
-          )}
-          id="shinta-mobile-navigation"
-        >
-          <div className="flex flex-col">
+          <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-[43px] md:flex">
             {navigationLinks.map((link) => (
               <Link
-                className="border-b border-white/15 py-3 text-[16px] font-semibold tracking-[-0.64px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-shinta-pink"
+                className="group rounded-sm text-[16px] font-semibold tracking-[-0.64px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-shinta-pink"
                 href={link.href}
                 key={link.href}
-                onClick={() => setIsMenuOpen(false)}
               >
-                {link.label}
+                <StackedNavLabel label={link.label} />
               </Link>
             ))}
+          </div>
+
+          <div className="flex shrink-0 items-center justify-end gap-2 md:static md:w-auto">
+            <span className="hidden md:block">
+              <ThemeSwitch />
+            </span>
+
             <Link
-              className="mt-4 flex h-11 items-center justify-center rounded-full bg-totem-action text-[16px] font-semibold tracking-[-0.64px] text-totem-action-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-totem-focus"
+              className="group hidden h-10 items-center rounded-full bg-totem-action px-5 text-[16px] font-semibold leading-4 tracking-[-0.64px] text-totem-action-text transition-colors duration-300 hover:bg-totem-tech focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-totem-focus md:flex"
               href="https://cal.com/"
-              onClick={() => setIsMenuOpen(false)}
             >
               Agenda una llamada
             </Link>
+
+            <button
+              aria-controls="shinta-mobile-navigation"
+              aria-expanded={isMenuOpen}
+              aria-label={isMenuOpen ? "Cerrar menú de navegación" : "Abrir menú de navegación"}
+              className="relative grid size-10 place-items-center rounded-full bg-shinta-pink text-shinta-ink transition-transform duration-150 active:scale-[0.96] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-shinta-pink md:hidden"
+              onClick={() => setIsMenuOpen((current) => !current)}
+              type="button"
+            >
+              <span className="sr-only">{isMenuOpen ? "Cerrar" : "Abrir"}</span>
+              <span
+                aria-hidden="true"
+                className={cn(
+                  "absolute h-0.5 w-4 rounded-full bg-current transition-[transform,top] duration-300 ease-[cubic-bezier(0.23,1,0.32,1)]",
+                  isMenuOpen ? "top-[19px] rotate-45" : "top-[13px] rotate-0",
+                )}
+              />
+              <span
+                aria-hidden="true"
+                className={cn(
+                  "absolute top-[19px] h-0.5 w-4 rounded-full bg-current transition-opacity duration-200",
+                  isMenuOpen ? "opacity-0" : "opacity-100",
+                )}
+              />
+              <span
+                aria-hidden="true"
+                className={cn(
+                  "absolute h-0.5 w-4 rounded-full bg-current transition-[transform,top] duration-300 ease-[cubic-bezier(0.23,1,0.32,1)]",
+                  isMenuOpen ? "top-[19px] -rotate-45" : "top-[25px] rotate-0",
+                )}
+              />
+            </button>
           </div>
         </div>
-      </div>
+
+        <AnimatePresence initial={false}>
+          {isMenuOpen && (
+            <motion.div
+              animate={{ opacity: 1, transform: "translateY(0px)" }}
+              className="flex min-h-0 flex-1 flex-col gap-2 md:hidden"
+              exit={{ opacity: 0, transform: "translateY(-6px)" }}
+              id="shinta-mobile-navigation"
+              initial={{ opacity: 0, transform: "translateY(-8px)" }}
+              transition={
+                shouldReduceMotion
+                  ? { duration: 0 }
+                  : { duration: 0.2, ease: [0.23, 1, 0.32, 1] }
+              }
+            >
+              <div className="flex flex-1 flex-col justify-between rounded-[24px] bg-shinta-canvas px-6 py-8 text-shinta-ink">
+                {navigationLinks.map((link) => (
+                  <Link
+                    className="overflow-hidden rounded-sm text-[24px] font-semibold leading-[1.2] tracking-[-0.72px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-shinta-pink"
+                    href={link.href}
+                    key={link.href}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+
+              <Link
+                className="group flex h-[57px] shrink-0 items-center gap-0 rounded-full text-[18px] font-semibold tracking-[-0.54px] text-shinta-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-shinta-pink"
+                href="https://cal.com/"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <span className="flex h-full min-w-0 flex-1 items-center rounded-full bg-shinta-canvas px-6">
+                  Agenda una llamada
+                </span>
+                <span className="grid size-[57px] shrink-0 place-items-center rounded-full bg-shinta-pink transition-transform duration-200 group-active:scale-[0.96]">
+                  <ArrowUpRight
+                    aria-hidden="true"
+                    className="size-6"
+                    strokeWidth={1.8}
+                  />
+                </span>
+              </Link>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.div>
     </nav>
   );
 }
