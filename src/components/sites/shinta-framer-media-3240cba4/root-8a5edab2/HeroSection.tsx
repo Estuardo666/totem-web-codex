@@ -2,9 +2,14 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Pause, Play } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, Pause, Play } from "lucide-react";
 import { Fragment, useRef, useState } from "react";
-import { motion, useReducedMotion, type Variants } from "framer-motion";
+import {
+  motion,
+  useReducedMotion,
+  type PanInfo,
+  type Variants,
+} from "framer-motion";
 
 import { ShiftButtonContent } from "../shared/ShintaPrimitives";
 import { shintaAsset } from "../shared/site";
@@ -17,6 +22,27 @@ const services = [
   "GESTIÓN DE REDES SOCIALES",
   "MARKETING DE INFLUENCERS",
 ];
+
+const heroVideos = [
+  {
+    poster: "images/418ef3c59bda7b87.jpeg",
+    src: "videos/hero-layer-front.mp4",
+  },
+  {
+    poster: "images/6ea501bbff9ed14a.jpeg",
+    src: "videos/hero-layer-middle.mp4",
+  },
+  {
+    poster: "images/a46468b6396ae69e.jpeg",
+    src: "videos/hero-layer-back.mp4",
+  },
+] as const;
+
+const cardSlots = [
+  "translate-x-0 translate-y-0 rotate-0",
+  "-translate-x-[16px] translate-y-[13px] -rotate-[2deg] xl:-translate-x-[15px] xl:translate-y-[24px]",
+  "-translate-x-[32px] translate-y-[26px] -rotate-[4deg] xl:-translate-x-[30px] xl:translate-y-[48px]",
+] as const;
 
 const heading = "UGC que hace crecer tu marca.";
 const headingWords = heading.split(" ");
@@ -89,12 +115,33 @@ const projectVariants: Variants = {
 const MotionLink = motion.create(Link);
 
 export function HeroSection() {
-  const frontVideoRef = useRef<HTMLVideoElement>(null);
+  const videoRefs = useRef<Array<HTMLVideoElement | null>>([]);
+  const [cardOrder, setCardOrder] = useState([0, 1, 2]);
   const [isPlaying, setIsPlaying] = useState(false);
   const reduceMotion = useReducedMotion();
 
+  const activeVideoIndex = cardOrder[0];
+
+  function moveCard(direction: "left" | "right") {
+    videoRefs.current.forEach((video) => video?.pause());
+    setIsPlaying(false);
+    setCardOrder((currentOrder) =>
+      direction === "left"
+        ? [currentOrder[1], currentOrder[2], currentOrder[0]]
+        : [currentOrder[2], currentOrder[0], currentOrder[1]],
+    );
+  }
+
+  function handleDragEnd(_: PointerEvent, info: PanInfo) {
+    const isSwipe = Math.abs(info.offset.x) > 72 || Math.abs(info.velocity.x) > 500;
+
+    if (isSwipe) {
+      moveCard(info.offset.x < 0 ? "left" : "right");
+    }
+  }
+
   function togglePlayback() {
-    const frontVideo = frontVideoRef.current;
+    const frontVideo = videoRefs.current[activeVideoIndex];
 
     if (!frontVideo) {
       return;
@@ -201,55 +248,92 @@ export function HeroSection() {
             initial={reduceMotion ? false : "hidden"}
             variants={mediaVariants}
           >
-          <video
-            aria-hidden="true"
-            className="absolute top-[26px] -left-[32px] h-full w-full rounded-[19px] object-cover md:-left-[35px] xl:top-[48px] xl:-left-[30px] xl:rounded-[23px]"
-            loop
-            muted
-            playsInline
-            poster={shintaAsset("images/a46468b6396ae69e.jpeg")}
-            preload="auto"
-            src={shintaAsset("videos/hero-layer-back.mp4")}
-          />
-          <video
-            aria-hidden="true"
-            className="absolute top-[13px] -left-[16px] h-full w-full rounded-[19px] object-cover xl:top-[24px] xl:-left-[15px] xl:rounded-[23px]"
-            loop
-            muted
-            playsInline
-            poster={shintaAsset("images/6ea501bbff9ed14a.jpeg")}
-            preload="auto"
-            src={shintaAsset("videos/hero-layer-middle.mp4")}
-          />
-          <div className="absolute inset-0 overflow-hidden rounded-[19px] xl:rounded-[23px]">
-            <video
-              className="h-full w-full object-cover"
-              loop
-              muted
-              onPause={() => setIsPlaying(false)}
-              onPlay={() => setIsPlaying(true)}
-              playsInline
-              poster={shintaAsset("images/418ef3c59bda7b87.jpeg")}
-              preload="auto"
-              ref={frontVideoRef}
-              src={shintaAsset("videos/hero-layer-front.mp4")}
-            />
-            <button
-              aria-label={isPlaying ? "Pausar video principal" : "Reproducir video principal"}
-              className="absolute top-1/2 left-1/2 grid size-[60px] -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-shinta-ink/70 text-white backdrop-blur-[2px] transition-transform duration-300 hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-shinta-pink xl:size-[70px]"
-              onClick={togglePlayback}
-              type="button"
-            >
-              {isPlaying ? (
-                <Pause aria-hidden="true" className="size-6 fill-current" />
-              ) : (
-                <Play
-                  aria-hidden="true"
-                  className="ml-1 size-6 fill-current xl:size-7"
-                />
-              )}
-            </button>
-          </div>
+            {heroVideos.map((video, videoIndex) => {
+              const slot = cardOrder.indexOf(videoIndex);
+              const isActive = slot === 0;
+
+              return (
+                <motion.div
+                  animate={{ opacity: 1 }}
+                  className={`absolute inset-0 transform-gpu transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] ${cardSlots[slot]}`}
+                  initial={false}
+                  key={video.src}
+                  style={{ zIndex: heroVideos.length - slot }}
+                >
+                  <motion.div
+                    className={`relative h-full w-full overflow-hidden rounded-[19px] bg-shinta-stone xl:rounded-[23px] ${
+                      isActive ? "cursor-grab active:cursor-grabbing" : "pointer-events-none"
+                    }`}
+                    drag={isActive && !reduceMotion ? "x" : false}
+                    dragConstraints={{ left: 0, right: 0 }}
+                    dragElastic={0.72}
+                    dragMomentum={false}
+                    dragSnapToOrigin
+                    onDragEnd={handleDragEnd}
+                    style={{ touchAction: "pan-y" }}
+                    whileDrag={{ scale: 0.985 }}
+                  >
+                    <video
+                      aria-hidden={!isActive}
+                      className="h-full w-full object-cover"
+                      loop
+                      muted
+                      onPause={isActive ? () => setIsPlaying(false) : undefined}
+                      onPlay={isActive ? () => setIsPlaying(true) : undefined}
+                      playsInline
+                      poster={shintaAsset(video.poster)}
+                      preload="auto"
+                      ref={(element) => {
+                        videoRefs.current[videoIndex] = element;
+                      }}
+                      src={shintaAsset(video.src)}
+                    />
+
+                    {isActive ? (
+                      <>
+                        <div className="absolute top-[27%] left-1/2 flex -translate-x-1/2 items-center rounded-full bg-shinta-ink/95 px-2 py-1.5 text-white shadow-sm backdrop-blur-[2px] xl:top-[29%] xl:px-2.5 xl:py-2">
+                          <button
+                            aria-label="Mostrar el video anterior"
+                            className="grid size-7 place-items-center rounded-full transition-transform duration-150 active:scale-95 focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-white"
+                            onClick={() => moveCard("right")}
+                            type="button"
+                          >
+                            <ArrowLeft aria-hidden="true" className="size-4" />
+                          </button>
+                          <span className="px-1 text-[14px] leading-none font-semibold xl:px-2 xl:text-[16px]">
+                            Swipe
+                          </span>
+                          <button
+                            aria-label="Mostrar el siguiente video"
+                            className="grid size-7 place-items-center rounded-full transition-transform duration-150 active:scale-95 focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-white"
+                            onClick={() => moveCard("left")}
+                            type="button"
+                          >
+                            <ArrowRight aria-hidden="true" className="size-4" />
+                          </button>
+                        </div>
+
+                        <button
+                          aria-label={isPlaying ? "Pausar video principal" : "Reproducir video principal"}
+                          className="absolute top-1/2 left-1/2 grid size-[60px] -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-shinta-ink/70 text-white backdrop-blur-[2px] transition-transform duration-150 active:scale-95 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-shinta-pink xl:size-[70px]"
+                          onClick={togglePlayback}
+                          type="button"
+                        >
+                          {isPlaying ? (
+                            <Pause aria-hidden="true" className="size-6 fill-current" />
+                          ) : (
+                            <Play
+                              aria-hidden="true"
+                              className="ml-1 size-6 fill-current xl:size-7"
+                            />
+                          )}
+                        </button>
+                      </>
+                    ) : null}
+                  </motion.div>
+                </motion.div>
+              );
+            })}
           </motion.div>
         </div>
 
