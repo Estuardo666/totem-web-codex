@@ -8,33 +8,33 @@ import { TeamMemberCard } from "./TeamMemberCard";
 const TEAM_MEMBERS = [
   {
     imageSrc: "79687116559292ab.jpg",
-    name: "Dahlia Saraswati",
-    role: "Fundadora y directora",
+    name: "TransCity",
+    role: "Plataformas e integraciones",
   },
   {
     imageSrc: "47f89ced261416df.jpg",
-    name: "Arjuna Gombes",
-    role: "Estratega de redes sociales",
+    name: "Terra Viva",
+    role: "Branding y desarrollo web",
   },
   {
     imageSrc: "34844c23286ab253.jpg",
-    name: "Pipit Olivia",
-    role: "Líder de contenido",
+    name: "PlayHouse",
+    role: "Producción audiovisual",
   },
   {
     imageSrc: "3180f8ad3e321358.jpg",
-    name: "Bhagas Diki",
-    role: "Responsable de creadores",
+    name: "FocusGuard",
+    role: "Software de escritorio",
   },
   {
     imageSrc: "36db82b98440ca02.jpg",
-    name: "Melati Ungu",
-    role: "Analista de datos",
+    name: "Totem OS",
+    role: "Plataforma empresarial y analítica",
   },
   {
     imageSrc: "c1c60606144d1f73.jpg",
-    name: "Khrisna Bejo",
-    role: "Diseñador gráfico",
+    name: "Totem Auto Edit",
+    role: "Automatización audiovisual",
   },
 ] as const;
 
@@ -74,7 +74,7 @@ export function TeamGridSection() {
               whileInView="visible"
             >
               <SectionEyebrow className="inline-flex rounded-full bg-shinta-pink px-2 py-1 text-shinta-ink">
-                Equipo
+                Proyectos
               </SectionEyebrow>
             </motion.div>
 
@@ -86,7 +86,7 @@ export function TeamGridSection() {
               viewport={{ amount: 0.4, once: true }}
               whileInView="visible"
             >
-              Un equipo pequeño, un gran impacto
+              Proyectos que demuestran capacidades
             </motion.h2>
           </div>
 
@@ -97,9 +97,7 @@ export function TeamGridSection() {
             viewport={{ amount: 0.4, once: true }}
             whileInView="visible"
           >
-            Nuestro equipo reúne experiencia en creación de contenido, diseño,
-            estrategia social y crecimiento. Algunos hemos creado marcas; otros
-            hemos llevado cuentas sociales al siguiente nivel.
+            Los proyectos aportan la evidencia: estrategia, branding, producción audiovisual, web, software, automatización e inteligencia artificial aplicada.
           </motion.p>
         </div>
 

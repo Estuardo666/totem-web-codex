@@ -15,7 +15,7 @@ export function ShintaLogo({ className }: ClassNameProps) {
         "inline-flex items-center gap-2 font-bold tracking-[-0.06em]",
         className,
       )}
-      aria-label="Shinta"
+        aria-label="Tótem Mass Media"
     >
       <svg
         aria-hidden="true"
@@ -31,7 +31,7 @@ export function ShintaLogo({ className }: ClassNameProps) {
           strokeWidth="4"
         />
       </svg>
-      <span>Shinta</span>
+        <span>Tótem</span>
     </span>
   );
 }

@@ -8,11 +8,11 @@ import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { shintaAsset } from "../shared/site";
 
 const comparisons = [
-  ["Con aspecto de anuncio y saturado de marca", "Nativo de la plataforma y orgánico ante todo"],
-  ["Volumen de publicaciones", "Interacción y relevancia"],
-  ["Basado en la cantidad de seguidores", "Selección basada en el rendimiento"],
-  ["Perseguir tendencias", "Estratégico y alineado con la marca"],
-  ["Métricas básicas", "Conclusiones y aprendizajes claros"],
+  ["Soluciones aisladas", "Creatividad y tecnología integradas"],
+  ["Solo comunicación", "Comunicación, diseño y operación"],
+  ["Herramientas genéricas", "Sistemas específicos para cada proceso"],
+  ["Una sola capacidad", "Marca, contenido y tecnología"],
+  ["Promesas sin evidencia", "Proyectos que demuestran capacidades"],
 ] as const;
 
 const tableVariants: Variants = {
@@ -68,11 +68,11 @@ export function ComparisonSection() {
           viewport={{ amount: 0.7, once: true }}
           whileInView={{ opacity: 1, y: 0 }}
         >
-          No te conformes con menos
+          Una solución completa para tu negocio
         </motion.h2>
 
         <motion.div
-          aria-label="Comparación entre otras agencias y Shinta"
+          aria-label="Comparación entre soluciones aisladas y Tótem Mass Media"
           className="relative w-full max-w-[700px] py-4"
           initial={reduceMotion ? false : "hidden"}
           role="table"
@@ -99,7 +99,7 @@ export function ComparisonSection() {
               id="other-agencies-heading"
               role="columnheader"
             >
-              Otras agencias
+              Soluciones aisladas
             </div>
             <div
               className="-translate-y-4 px-3 pt-6 pb-4 sm:px-6"
@@ -107,12 +107,12 @@ export function ComparisonSection() {
               role="columnheader"
             >
               <Link
-                aria-label="Inicio de Shinta"
+                aria-label="Inicio de Tótem Mass Media"
                 className="inline-flex focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-shinta-ink"
                 href="/"
               >
                 <Image
-                  alt="Shinta"
+                  alt="Tótem Mass Media"
                   className="h-auto w-[80px] object-contain lg:w-[94px]"
                   height={267}
                   priority

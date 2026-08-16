@@ -8,8 +8,8 @@ import { Navbar } from "@/components/sites/shinta-framer-media-3240cba4/shared/N
 
 export const metadata: Metadata = {
   description:
-    "Ideas sobre contenido social, creadores y estrategia, escritas desde la experiencia, no desde la teoría.",
-  title: "Blog",
+    "Proyectos, capacidades e ideas de Tótem sobre estrategia, creatividad y tecnología.",
+  title: "Proyectos y capacidades — Tótem Mass Media",
 };
 
 export default function BlogPage() {

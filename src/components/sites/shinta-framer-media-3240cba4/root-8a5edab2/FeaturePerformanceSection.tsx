@@ -84,10 +84,10 @@ export function FeaturePerformanceSection() {
 
           <div className="absolute -bottom-[38px] left-1/2 z-10 w-[276px] -translate-x-1/2 rounded-[16px] bg-shinta-pink px-[22px] py-[18px] md:-bottom-[45px] md:w-[286px] xl:right-auto xl:bottom-[24px] xl:left-[-60px] xl:w-[285px] xl:translate-x-0 xl:px-[24px] xl:py-[20px]">
             <p className="text-[40px] leading-[44px] font-bold tracking-[-1.6px] xl:text-[48px] xl:leading-[52px] xl:tracking-[-1.92px]">
-              200%
+              Marca
             </p>
             <p className="mt-[3px] text-[16px] leading-[22.4px] font-normal tracking-[-0.32px] text-shinta-stone xl:text-[18px] xl:leading-[25.2px] xl:tracking-[-0.36px]">
-              Crecimiento orgánico de seguidores
+              Identidad y comunicación
             </p>
           </div>
         </div>
@@ -103,12 +103,10 @@ export function FeaturePerformanceSection() {
             id="performance-heading"
             className="text-[28px] leading-[31px] font-bold tracking-[-1.12px] md:text-[28px] md:leading-[31px] xl:text-[64px] xl:leading-[70.4px] xl:tracking-[-2.56px]"
           >
-            UGC orientado al rendimiento que genera resultados
+            Creatividad y tecnología trabajando sobre el mismo negocio.
           </h2>
           <p className="mt-[30px] max-w-[530px] text-[18px] leading-[27px] font-normal tracking-[-0.36px] text-shinta-stone md:mt-[28px] xl:mt-[30px]">
-            Nuestra estrategia de UGC se basa en datos reales de rendimiento.
-            Diseñamos, probamos y perfeccionamos cada pieza creativa para que
-            contribuya a un crecimiento que realmente puedas medir.
+            No trabajamos con soluciones aisladas. Podemos construir la identidad de una marca, producir su contenido, desarrollar su experiencia digital y automatizar los procesos que sostienen su operación.
           </p>
         </div>
       </div>

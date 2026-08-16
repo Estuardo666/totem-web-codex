@@ -24,36 +24,36 @@ type ProcessStep = {
 
 const processSteps: ProcessStep[] = [
   {
-    body: "Investigamos para aumentar las probabilidades de viralidad.",
+    body: "Entender el negocio, la marca, el público y el objetivo.",
     color: "border-shinta-pink bg-shinta-pink",
     delay: "delay-[0ms]",
     icon: MessageSquareText,
     number: "01",
-    title: "Planificación",
+    title: "Estrategia",
   },
   {
-    body: "Creamos contenido nativo que encaja con la plataforma.",
+    body: "Convertir la estrategia en identidad, diseño, fotografía, video y contenido.",
     color: "border-shinta-lavender bg-shinta-lavender",
     delay: "delay-[110ms]",
     icon: PlaySquare,
     number: "02",
-    title: "Contenido",
+    title: "Creatividad",
   },
   {
-    body: "Medimos el rendimiento y perfeccionamos lo que funciona.",
+    body: "Construir sitios, plataformas, sistemas y automatizaciones.",
     color: "border-totem-surface bg-totem-surface",
     delay: "delay-[220ms]",
     icon: BadgeCheck,
     number: "03",
-    title: "Optimización",
+    title: "Tecnología",
   },
   {
-    body: "Impulsamos lo que rinde y descartamos lo que no.",
+    body: "Construimos el ecosistema que una marca necesita para crecer.",
     color: "border-shinta-green bg-shinta-green",
     delay: "delay-[330ms]",
     icon: ChartNoAxesColumnIncreasing,
     number: "04",
-    title: "Escalamiento",
+    title: "Crecimiento",
   },
 ];
 
@@ -95,14 +95,14 @@ export function ProcessSection() {
     >
       <div className="mx-auto max-w-[1280px]">
         <SectionEyebrow className="inline-flex rounded-full bg-shinta-pink px-[10px] py-[3px] text-[10px] leading-[13px] tracking-[0.65px]">
-          nuestro proceso
+          cómo trabajamos
         </SectionEyebrow>
 
         <h2
           id="process-heading"
           className="mt-[12px] max-w-[335px] text-[28px] leading-[31px] font-bold tracking-[-1.12px] md:max-w-[630px] xl:mt-[10px] xl:max-w-[850px] xl:text-[64px] xl:leading-[70.4px] xl:tracking-[-2.56px]"
         >
-          De la estrategia al contenido que detiene el scroll.
+          Estrategia, creatividad y tecnología para transformar negocios.
         </h2>
 
         <ol

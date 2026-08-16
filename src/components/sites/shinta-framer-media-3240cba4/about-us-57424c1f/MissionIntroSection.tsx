@@ -66,7 +66,7 @@ export function MissionIntroSection() {
             whileInView="visible"
           >
             <SectionEyebrow className="inline-flex rounded-full bg-shinta-pink px-2 py-1 text-shinta-ink">
-              Nuestra misión
+              Estrategia
             </SectionEyebrow>
           </motion.div>
 
@@ -78,7 +78,7 @@ export function MissionIntroSection() {
             viewport={{ amount: 0.4, once: true }}
             whileInView="visible"
           >
-            Lo que venimos a hacer
+            Entender el negocio antes de construir.
           </motion.h2>
 
           <motion.p
@@ -88,10 +88,7 @@ export function MissionIntroSection() {
             viewport={{ amount: 0.4, once: true }}
             whileInView="visible"
           >
-            Creamos contenido breve, pensado para captar la atención al navegar y
-            diseñado para cada plataforma, guiándonos por el comportamiento real de
-            la audiencia y los datos de rendimiento. Probamos, perfeccionamos y
-            escalamos cada idea para crear contenido que la gente realmente quiera ver.
+            Entender el negocio, la marca, el público y el objetivo es la base para construir una identidad coherente, contenido útil y soluciones digitales alrededor de objetivos reales.
           </motion.p>
         </div>
 
@@ -110,7 +107,7 @@ export function MissionIntroSection() {
             whileInView="visible"
           >
             <Image
-              alt="El equipo de Shinta grabando a una creadora con una cámara sobre trípode"
+            alt="Producción audiovisual de Tótem"
               className="object-contain"
               fill
               sizes="(min-width: 1200px) 362px, (min-width: 768px) 320px, 320px"

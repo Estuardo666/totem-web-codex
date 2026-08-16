@@ -25,32 +25,32 @@ const headerVariants: Variants = {
 
 const posts = [
   {
-    authorAvatarSrc: shintaAsset("images/e202cc3fcb7f8b83.png"),
-    authorName: "Kristanto Mahera",
-    coverAlt: "Por qué un buen copywriting importa tanto",
+    authorAvatarSrc: "/brand/logo-light.png",
+    authorName: "Tótem Mass Media",
+    coverAlt: "Proyecto Terra Viva",
     coverSrc: shintaAsset("images/90da175d3b991e31.jpg"),
-    date: "27 de enero de 2026",
-    href: "/blog/why-good-copywriting-matters",
-    title: "Por qué un buen copywriting importa tanto",
+    date: "Capacidades demostradas",
+    href: "/about-us",
+    title: "Terra Viva: branding y desarrollo web",
   },
   {
-    authorAvatarSrc: shintaAsset("images/187a0bff84102aca.png"),
-    authorName: "Karina Kumala",
-    coverAlt: "Por qué las redes sociales nunca son trabajo de una sola persona",
+    authorAvatarSrc: "/brand/logo-light.png",
+    authorName: "Tótem Mass Media",
+    coverAlt: "Proyecto PlayHouse",
     coverSrc: shintaAsset("images/01c3e56a4e3063a0.jpg"),
-    date: "27 de enero de 2026",
-    href: "/blog/why-great-social-media-is-never-a-one-person-job",
-    title: "Por qué las redes sociales nunca son trabajo de una sola persona",
+    date: "Capacidades demostradas",
+    href: "/contact",
+    title: "PlayHouse: producción audiovisual",
   },
   {
-    authorAvatarSrc: shintaAsset("images/e202cc3fcb7f8b83.png"),
-    authorName: "Kristanto Mahera",
-    coverAlt: "Cómo una agencia de redes sociales ayuda a las marcas",
+    authorAvatarSrc: "/brand/logo-light.png",
+    authorName: "Tótem Mass Media",
+    coverAlt: "Totem Auto Edit",
     coverSrc:
       "/sites/shinta-framer-media-3240cba4/blog-8caafe43/images/post-agency-helps-brands.jpg",
-    date: "27 de enero de 2026",
-    href: "/blog/how-a-social-media-agency-helps-brands-grow-faster",
-    title: "Cómo una agencia de redes sociales ayuda a las marcas",
+    date: "Capacidades demostradas",
+    href: "/#projects-auto-edit",
+    title: "Totem Auto Edit: automatización audiovisual",
   },
 ];
 
@@ -103,11 +103,11 @@ export function RelatedPostsSection() {
           <div className="flex flex-col gap-2">
             <div className="flex">
               <SectionEyebrow className="inline-flex rounded-[40px] bg-shinta-pink px-2 py-1 text-shinta-ink">
-                BLOG
+                PROYECTOS
               </SectionEyebrow>
             </div>
             <h2 className="text-[34px] leading-[38px] font-bold tracking-[-1.36px] text-shinta-ink md:text-[44px] md:leading-[48px] md:tracking-[-1.76px] xl:text-[64px] xl:leading-[70.4px] xl:tracking-[-2.56px]">
-              Perspectivas e ideas
+              Proyectos que demuestran capacidades
             </h2>
           </div>
 
@@ -120,7 +120,7 @@ export function RelatedPostsSection() {
               iconClassName="bg-totem-action text-totem-action-text"
               labelClassName="flex h-[57px] items-center justify-center rounded-[44px] bg-totem-action px-6 py-4 text-[16px] font-bold text-totem-action-text"
             >
-              Más artículos
+              Ver proyectos
             </ShiftButtonContent>
           </Link>
         </motion.div>

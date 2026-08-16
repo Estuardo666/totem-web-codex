@@ -73,7 +73,7 @@ export function VisionSection() {
             whileInView="visible"
           >
             <Image
-              alt="Dos creadoras de Shinta revisando guiones gráficos en un escritorio de estudio iluminado"
+          alt="Equipo creativo revisando una solución digital"
               className="object-cover"
               fill
               sizes="(min-width: 1200px) 460px, (min-width: 768px) 45vw, 100vw"
@@ -91,7 +91,7 @@ export function VisionSection() {
             whileInView="visible"
           >
             <SectionEyebrow className="inline-flex rounded-full bg-shinta-pink px-2 py-1 text-shinta-ink">
-              Nuestra visión
+              Tecnología
             </SectionEyebrow>
           </motion.div>
 
@@ -103,7 +103,7 @@ export function VisionSection() {
             viewport={{ amount: 0.4, once: true }}
             whileInView="visible"
           >
-            Lo que defendemos
+            Construir para ejecutar y escalar.
           </motion.h2>
 
           <motion.p
@@ -113,10 +113,7 @@ export function VisionSection() {
             viewport={{ amount: 0.4, once: true }}
             whileInView="visible"
           >
-            Las redes sociales avanzan rápido y las audiencias son exigentes. Si tu
-            contenido se siente forzado, siguen de largo. Por eso formamos un equipo
-            que entiende las plataformas desde dentro y ayuda a las marcas a seguir
-            el ritmo sin perder su voz.
+            Construir los sitios, plataformas, sistemas y automatizaciones que permiten ejecutar y escalar. La web es una herramienta de negocio, no únicamente una vitrina digital.
           </motion.p>
         </div>
       </div>

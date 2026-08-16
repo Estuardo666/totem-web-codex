@@ -12,8 +12,8 @@ import { ThemeSwitch } from "./ThemeSwitch";
 
 const navigationLinks = [
   { href: "/#projects", label: "Proyectos" },
-  { href: "/about-us", label: "Sobre nosotros" },
-  { href: "/blog", label: "Blog" },
+  { href: "/about-us", label: "Tótem" },
+  { href: "/blog", label: "Capacidades" },
   { href: "/contact", label: "Contacto" },
 ] as const;
 
@@ -118,13 +118,13 @@ export function Navbar() {
       >
         <div className="relative z-10 flex h-10 shrink-0 items-center justify-between px-2 md:contents">
           <Link
-            aria-label="Inicio de Shinta"
+      aria-label="Inicio de Tótem Mass Media"
             className="rounded-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-shinta-pink"
             href="/"
             onClick={() => setIsMenuOpen(false)}
           >
             <Image
-              alt="Shinta"
+              alt="Tótem Mass Media"
               className="h-10 w-auto max-w-[116px] object-contain md:max-w-[52px]"
               height={417}
               priority
@@ -153,9 +153,9 @@ export function Navbar() {
 
             <Link
               className="group hidden h-10 items-center rounded-full bg-totem-action px-5 text-[16px] font-semibold leading-4 tracking-[-0.64px] text-totem-action-text transition-colors duration-300 hover:bg-totem-tech focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-totem-focus md:flex"
-              href="https://cal.com/"
+              href="/contact"
             >
-              Agenda una llamada
+              Cuéntanos tu proyecto
             </Link>
 
             <button
@@ -221,11 +221,11 @@ export function Navbar() {
 
               <Link
                 className="group flex h-[57px] shrink-0 items-center gap-0 rounded-full text-[18px] font-semibold tracking-[-0.54px] text-shinta-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-shinta-pink"
-                href="https://cal.com/"
+                href="/contact"
                 onClick={() => setIsMenuOpen(false)}
               >
                 <span className="flex h-full min-w-0 flex-1 items-center rounded-full bg-shinta-canvas px-6">
-                  Agenda una llamada
+                  Cuéntanos tu proyecto
                 </span>
                 <span className="grid size-[57px] shrink-0 place-items-center rounded-full bg-shinta-pink transition-transform duration-200 group-active:scale-[0.96]">
                   <ArrowUpRight

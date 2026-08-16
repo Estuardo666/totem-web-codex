@@ -7,8 +7,8 @@ import { Navbar } from "@/components/sites/shinta-framer-media-3240cba4/shared/N
 
 export const metadata: Metadata = {
   description:
-    "Cuéntanos tus objetivos y te ayudaremos a crear contenido adaptado a cómo las personas navegan hoy.",
-  title: "Contacto",
+    "Cuéntanos tu proyecto y construyamos la solución que tu negocio necesita para crecer.",
+  title: "Cuéntanos tu proyecto — Tótem Mass Media",
 };
 
 export default function ContactPage() {

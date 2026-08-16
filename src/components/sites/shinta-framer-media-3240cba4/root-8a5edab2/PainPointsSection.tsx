@@ -11,11 +11,11 @@ import {
 } from "framer-motion";
 
 const painPoints = [
-  "Colaboraciones con influencers que generan vistas, pero no resultados",
-  "Publicar con constancia, pero lograr poca interacción",
-  "Contenido que se ve «bonito», pero no funciona",
-  "Campañas que se sienten forzadas y demasiado comerciales",
-  "Sin una dirección ni estrategia de contenido claras",
+  "No trabajamos con soluciones aisladas",
+  "La web no es únicamente una vitrina digital",
+  "Las herramientas genéricas no resuelven cada proceso",
+  "La tecnología debe generar una mejora real",
+  "Una marca necesita un ecosistema para crecer",
 ] as const;
 
 const cardPositions = [
@@ -97,7 +97,7 @@ export function PainPointsSection() {
     return (
       <section className="bg-shinta-canvas px-5 py-24 text-shinta-ink" ref={sectionRef}>
         <h2 className="mx-auto max-w-[690px] text-center text-[28px] leading-8 font-bold tracking-[-1.12px] md:text-[64px] md:leading-[70.4px] md:tracking-[-2.56px]">
-          Las redes sociales parecen más difíciles de lo que deberían
+        Cada negocio necesita una solución diferente
         </h2>
         <ul className="mx-auto mt-16 grid max-w-[1100px] gap-5 md:grid-cols-2">
           {painPoints.map((painPoint) => (
@@ -134,10 +134,10 @@ export function PainPointsSection() {
           className="absolute top-1/2 left-1/2 z-10 w-[690px] -translate-x-1/2 -translate-y-1/2 text-center text-[64px] leading-[70.4px] font-bold tracking-[-2.56px] max-md:w-[340px] max-md:text-[28px] max-md:leading-8 max-md:tracking-[-1.12px]"
           style={{ color: headingColor }}
         >
-          Las redes sociales parecen más difíciles de lo que deberían
+        ¿Qué problema podemos resolver?
         </motion.h2>
 
-        <ul className="absolute inset-0 z-20 list-none" aria-label="Problemas frecuentes en redes sociales">
+      <ul className="absolute inset-0 z-20 list-none" aria-label="Problemas que Tótem puede resolver">
           {painPoints.map((painPoint, index) => (
             <PainPointCard
               index={index}

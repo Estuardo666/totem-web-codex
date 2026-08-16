@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 
 import {
@@ -20,7 +19,7 @@ export function ContactFormCard() {
 
   return (
     <motion.div
-      className="flex w-full max-w-[680px] flex-col items-end gap-2 rounded-[28px] bg-shinta-pink p-3 md:rounded-[36px] md:p-4 xl:h-[544px] xl:w-[644px] xl:shrink-0 xl:rounded-[40px]"
+      className="flex min-w-0 w-full max-w-[680px] flex-col items-end gap-2 rounded-[28px] bg-shinta-pink p-3 md:rounded-[36px] md:p-4 xl:h-[544px] xl:w-[644px] xl:shrink-0 xl:rounded-[40px]"
       initial={
         shouldReduceMotion
           ? { opacity: 1, scale: 1 }
@@ -32,7 +31,7 @@ export function ContactFormCard() {
     >
       <div className="flex w-full items-center justify-center gap-[10px] px-4 py-2">
         <h4 className="w-full text-left text-[24px] leading-[29px] font-bold tracking-[-0.96px] text-shinta-ink md:text-[32px] md:leading-[38.4px] md:tracking-[-1.28px]">
-          Cuéntanos sobre ti.
+        Cuéntanos tu proyecto
         </h4>
       </div>
 
@@ -48,7 +47,7 @@ export function ContactFormCard() {
             <input
               className={`${inputClassName} focus-visible:ring-2 focus-visible:ring-shinta-ink/40`}
               name="name"
-              placeholder="Ingresa tu nombre completo"
+              placeholder="Tu nombre completo"
               required
               type="text"
             />
@@ -61,7 +60,7 @@ export function ContactFormCard() {
             <input
               className={`${inputClassName} focus-visible:ring-2 focus-visible:ring-shinta-ink/40`}
               name="email"
-              placeholder="Ingresa tu correo electrónico"
+              placeholder="Tu correo electrónico"
               required
               type="email"
             />
@@ -74,25 +73,14 @@ export function ContactFormCard() {
             <textarea
               className={`${inputClassName} block h-[100px] resize-y rounded-[16px] p-4 align-top focus-visible:ring-2 focus-visible:ring-shinta-ink/40`}
               name="message"
-              placeholder="Cuéntanos tus ideas o desafíos"
+              placeholder="Cuéntanos qué necesitas construir"
             />
           </div>
         </label>
 
         <div className="flex flex-col items-stretch gap-4 md:flex-row md:items-center md:justify-between md:gap-0">
           <p className="text-[14px] leading-[20px] text-shinta-muted md:text-[16px] md:leading-[22.4px]">
-            Al enviar, aceptas nuestros{" "}
-            <Link className="font-semibold text-shinta-ink no-underline" href="/legal/terms-of-service">
-              Términos
-            </Link>{" "}
-            y la{" "}
-            <Link
-              className="font-semibold text-shinta-ink no-underline"
-              href="/legal/privacy-policy"
-            >
-              Política de privacidad
-            </Link>
-            .
+            Cuéntanos qué quieres construir y te ayudamos a definir una solución.
           </p>
 
           <button

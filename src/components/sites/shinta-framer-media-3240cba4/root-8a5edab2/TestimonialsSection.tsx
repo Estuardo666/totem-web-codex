@@ -10,32 +10,32 @@ import { shintaAsset } from "../shared/site";
 
 const testimonials = [
   {
-    body: "Shinta nos ayudó a entender qué contenido funciona realmente. Nuestra interacción creció y, por fin, cada publicación tiene una intención.",
+    body: "Desarrollo web, UX/UI, plataformas, integraciones y automatización.",
     image: "images/fd4b5099d911c76f.jpg",
-    name: "Sarah",
-    role: "Vicepresidenta de Nakula",
-    title: "Nuestra interacción creció rápidamente",
+    name: "TransCity",
+    role: "Capacidades demostradas",
+    title: "Plataformas operativas complejas",
   },
   {
-    body: "Antes de Shinta publicábamos al azar. Ahora tenemos ideas claras, mensajes definidos y un plan que tiene sentido.",
+    body: "Estrategia, branding, diseño y desarrollo web.",
     image: "images/d90a19ecbfeae44f.jpg",
-    name: "Jonathan",
-    role: "Director de tecnología de Sadewa",
-    title: "Por fin tenemos una dirección clara de contenido",
+    name: "Terra Viva",
+    role: "Capacidades demostradas",
+    title: "Marca y presencia digital",
   },
   {
-    body: "Shinta explica todo de manera sencilla. Sabemos qué publicar, por qué lo hacemos y cómo ayuda a crecer a nuestra marca.",
+    body: "Fotografía, video, producción y contenido para redes.",
     image: "images/b82418baae466bc6.jpg",
-    name: "Ratih",
-    role: "Directora de marketing de Bima",
-    title: "Ahora las redes sociales resultan menos estresantes",
+    name: "PlayHouse",
+    role: "Capacidades demostradas",
+    title: "Producción audiovisual y contenido",
   },
   {
-    body: "Nuestra audiencia creció, al igual que la calidad de las conversaciones. Shinta nos ayudó a centrarnos en la conexión, no solo en los números.",
+    body: "IA aplicada a producción, automatización audiovisual y herramientas especializadas.",
     image: "images/35b70b916d6ee028.jpg",
-    name: "Bhagas",
-    role: "Marketing de Rama",
-    title: "Vimos crecimiento real, no solo «me gusta»",
+    name: "Totem Auto Edit",
+    role: "Capacidades demostradas",
+    title: "Automatización audiovisual",
   },
 ] as const;
 
@@ -60,7 +60,7 @@ const cardVariants: Variants = {
 
 function FiveStars() {
   return (
-    <div aria-label="5 de 5 estrellas" className="flex gap-1">
+    <div aria-label="Capacidad demostrada" className="flex gap-1">
       {Array.from({ length: 5 }, (_, index) => (
         <span
           aria-hidden="true"
@@ -125,7 +125,7 @@ export function TestimonialsSection() {
 
   return (
     <section
-      aria-labelledby="shinta-testimonials-heading"
+      aria-labelledby="proof-heading"
       className="h-[3020px] w-full overflow-hidden bg-shinta-canvas px-5 py-[100px] md:h-[2875px] md:py-[120px] lg:h-[1390px]"
     >
       <div className="mx-auto flex h-full w-full max-w-[960px] flex-col items-center gap-10">
@@ -137,15 +137,13 @@ export function TestimonialsSection() {
           whileInView={{ opacity: 1, y: 0 }}
         >
           <SectionEyebrow className="inline-flex rounded-full bg-shinta-pink px-2.5 py-1 text-shinta-ink">
-            Testimonios
+            proyectos que lo demuestran
           </SectionEyebrow>
           <h2
             className="text-[28px] leading-[1.08] font-bold tracking-[-1.12px] text-shinta-ink lg:text-[64px] lg:leading-[70.4px] lg:tracking-[-2.56px]"
-            id="shinta-testimonials-heading"
+            id="proof-heading"
           >
-            Más de 40 empresas
-            <br />
-            confían en nosotros
+            La tecnología demuestra profundidad
           </h2>
         </motion.header>
 
@@ -162,7 +160,7 @@ export function TestimonialsSection() {
           >
             <div className="group relative h-[210px] w-full shrink-0 overflow-hidden rounded-[14px] bg-shinta-stone md:h-full md:w-[42%]">
               <video
-                aria-label="Gatot comentando los resultados de Shinta"
+                aria-label="Proyecto de automatización audiovisual"
                 className="size-full object-cover"
                 muted
                 onEnded={() => setIsPlaying(false)}
@@ -174,7 +172,7 @@ export function TestimonialsSection() {
                 src={shintaAsset("videos/cta-phone.mp4")}
               />
               <button
-                aria-label={isPlaying ? "Pausar testimonio de Gatot" : "Reproducir testimonio de Gatot"}
+                aria-label={isPlaying ? "Pausar video del proyecto" : "Reproducir video del proyecto"}
                 className="absolute inset-0 m-auto grid size-14 place-items-center rounded-full bg-shinta-ink/80 text-white transition-transform duration-300 hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
                 onClick={toggleVideo}
                 type="button"
@@ -194,19 +192,17 @@ export function TestimonialsSection() {
             <div className="flex min-h-0 flex-1 flex-col">
               <FiveStars />
               <h3 className="mt-5 text-[24px] leading-[33.6px] font-bold tracking-[-0.96px] text-shinta-ink">
-                ¡Aumentamos nuestra audiencia un 25 %!
+                Automatización audiovisual especializada
               </h3>
               <p className="mt-3 text-[16px] leading-6 text-shinta-stone lg:text-[18px] lg:leading-[27px]">
-                Podemos plantear problemas reales y recibir ejemplos y soluciones
-                concretas de los asesores para orientarnos y eliminar cualquier
-                obstáculo.
+                Transcripción, análisis de guiones, matching entre grabaciones y texto, subtítulos y automatización de montaje.
               </p>
               <footer className="mt-auto pt-5">
                 <cite className="block text-[16px] leading-[22px] font-bold not-italic text-shinta-ink lg:text-[18px] lg:leading-[25px]">
-                  Gatot
+                  Totem Auto Edit
                 </cite>
                 <p className="text-[14px] leading-5 text-shinta-muted lg:text-[16px] lg:leading-[22px]">
-                  Director ejecutivo de Kresna
+                  Capacidades demostradas
                 </p>
               </footer>
             </div>

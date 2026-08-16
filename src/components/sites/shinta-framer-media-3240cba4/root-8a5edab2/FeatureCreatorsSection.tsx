@@ -36,12 +36,10 @@ export function FeatureCreatorsSection() {
             className="text-[28px] leading-[1.08] font-bold tracking-[-1.12px] text-shinta-ink lg:text-[64px] lg:leading-[70.4px] lg:tracking-[-2.56px]"
             id="shinta-creators-heading"
           >
-            Contenido liderado por creadores, crecimiento a largo plazo.
+            De la idea al sistema que la hace crecer.
           </h2>
           <p className="mt-5 max-w-[470px] text-[16px] leading-[24px] text-shinta-stone lg:mt-6 lg:text-[18px] lg:leading-[27px]">
-            Buscamos y evaluamos creadores de distintos nichos y comunidades,
-            centrándonos en quienes encajan de forma natural con tu marca. El
-            resultado es UGC auténtico, que se siente nativo y rinde de manera constante.
+            Tótem conecta marca, contenido y tecnología para construir soluciones completas.
           </p>
         </motion.div>
 
@@ -54,7 +52,7 @@ export function FeatureCreatorsSection() {
         >
           <div className="aspect-[480/294] w-full overflow-hidden rounded-[24px] bg-shinta-stone">
             <video
-              aria-label="Una creadora produciendo contenido en una tableta"
+              aria-label="Producción audiovisual para una marca"
               autoPlay
               className="size-full object-cover"
               loop
@@ -66,10 +64,10 @@ export function FeatureCreatorsSection() {
 
           <div className="absolute right-3 bottom-0 rounded-[12px] bg-shinta-lavender px-4 py-3 text-shinta-ink md:right-5 lg:px-[18px] lg:py-[14px]">
             <p className="text-[32px] leading-none font-bold tracking-[-1.28px] lg:text-[40px] lg:leading-[48px] lg:tracking-[-1.6px]">
-              4.2M
+              Contenido
             </p>
             <p className="mt-1 text-[14px] leading-5 lg:text-[16px] lg:leading-[22px]">
-              Impresiones
+              Producción audiovisual
             </p>
           </div>
         </motion.div>

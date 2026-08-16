@@ -12,15 +12,15 @@ import {
 const navigationLinks = [
   { href: "/", label: "Inicio" },
   { href: "/#projects", label: "Proyectos" },
-  { href: "/#blog", label: "Blog" },
-  { href: "/#about-us", label: "Nosotros" },
+  { href: "/#blog", label: "Capacidades" },
+  { href: "/about-us", label: "Tótem" },
   { href: "/#contact", label: "Contacto" },
-  { href: "/404", label: "404" },
+  { href: "/contact", label: "Cuéntanos tu proyecto" },
 ] as const;
 
-const legalLinks = [
-  { href: "/legal/privacy-policy", label: "Política de privacidad" },
-  { href: "/legal/terms-of-service", label: "Términos y condiciones" },
+const approachLinks = [
+  { href: "/about-us", label: "Estrategia" },
+  { href: "/#projects", label: "Proyectos" },
 ] as const;
 
 type FooterPillLinkProps = {
@@ -69,11 +69,10 @@ function NewsletterCard() {
   return (
     <section className="w-full self-end rounded-[24px] bg-shinta-canvas p-6 text-shinta-ink lg:max-w-[300px]">
       <h2 className="text-[40px] leading-12 font-bold tracking-[-1.6px] max-lg:text-[28px] max-lg:leading-8 max-lg:tracking-[-1.12px]">
-        Boletín
+        Crecimiento
       </h2>
       <p className="mt-2 text-[14px] leading-[19.6px] text-shinta-muted">
-        Suscríbete a nuestro boletín para conocer las últimas novedades sobre diseño
-        en movimiento y el estudio
+        Construimos el ecosistema que una marca necesita para crecer.
       </p>
       <form className="mt-4" onSubmit={handleSubmit}>
         <label className="sr-only" htmlFor="shinta-newsletter-email">
@@ -83,7 +82,7 @@ function NewsletterCard() {
           className="h-14 w-full rounded-[14px] bg-white px-4 text-[16px] text-shinta-ink placeholder:text-shinta-muted focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-shinta-ink"
           id="shinta-newsletter-email"
           name="email"
-          placeholder="Correo electrónico"
+          placeholder="Tu correo electrónico"
           type="email"
         />
         <button
@@ -95,7 +94,7 @@ function NewsletterCard() {
             iconClassName="bg-shinta-ink text-shinta-canvas"
             labelClassName="flex h-14 items-center rounded-full bg-shinta-ink px-5 transition-colors group-hover:bg-shinta-stone"
           >
-            Suscribirme
+            Cuéntanos tu proyecto
           </ShiftButtonContent>
         </button>
       </form>
@@ -122,7 +121,7 @@ export function FooterSection() {
 
       <div className="relative z-10 mx-auto flex min-h-[1400px] max-w-[1280px] flex-col gap-8 md:min-h-[1414px] lg:grid lg:h-[890px] lg:min-h-0 lg:grid-cols-[1.2fr_1fr_.65fr] lg:grid-rows-[300px_220px_310px_60px] lg:gap-0">
         <h2 className="order-1 max-w-[470px] text-[28px] leading-8 font-bold tracking-[-1.12px] lg:col-start-1 lg:row-start-1 lg:text-[64px] lg:leading-[70.4px] lg:tracking-[-2.56px]">
-          UGC que hace crecer tu marca.
+          De la idea al sistema que la hace crecer.
         </h2>
 
         <FooterGroup
@@ -131,16 +130,10 @@ export function FooterSection() {
         >
           <div className="flex flex-col items-start">
             <Link
-              className="text-[24px] leading-[30px] font-bold tracking-[-0.96px] underline-offset-4 hover:underline focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-shinta-ink lg:text-[32px] lg:leading-[38.4px] lg:tracking-[-1.28px]"
-              href="mailto:contact@shinta.com"
-            >
-              contact@shinta.com
-            </Link>
-            <Link
               className="text-[24px] leading-[30px] font-bold tracking-[-0.96px] underline-offset-4 hover:underline focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-shinta-ink"
-              href="tel:+12345678"
+              href="/contact"
             >
-              +12 345 678
+              Cuéntanos tu proyecto
             </Link>
           </div>
         </FooterGroup>
@@ -156,9 +149,9 @@ export function FooterSection() {
           </nav>
         </FooterGroup>
 
-        <FooterGroup className="order-4 lg:col-start-2 lg:row-start-2" label="Legal">
+        <FooterGroup className="order-4 lg:col-start-2 lg:row-start-2" label="Nuestro enfoque">
           <div className="flex flex-col items-start gap-2">
-            {legalLinks.map((link) => (
+            {approachLinks.map((link) => (
               <FooterPillLink href={link.href} key={link.href} label={link.label} />
             ))}
           </div>
@@ -170,7 +163,7 @@ export function FooterSection() {
         >
           <div className="flex items-center gap-1.5">
             <Link
-              aria-label="Shinta en Facebook"
+              aria-label="Tótem Mass Media en Facebook"
               className="grid size-12 place-items-center rounded-full bg-shinta-ink text-shinta-canvas transition-transform hover:-translate-y-1 focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-shinta-ink"
               href="https://facebook.com/"
             >
@@ -179,14 +172,14 @@ export function FooterSection() {
               </svg>
             </Link>
             <Link
-              aria-label="Shinta en X"
+              aria-label="Tótem Mass Media en X"
               className="grid size-12 place-items-center rounded-full bg-shinta-ink text-[24px] font-normal text-shinta-canvas transition-transform hover:-translate-y-1 focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-shinta-ink"
               href="https://x.com/"
             >
               X
             </Link>
             <Link
-              aria-label="Shinta en Instagram"
+              aria-label="Tótem Mass Media en Instagram"
               className="grid size-12 place-items-center rounded-full bg-shinta-ink text-shinta-canvas transition-transform hover:-translate-y-1 focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-shinta-ink"
               href="https://instagram.com/"
             >
@@ -205,7 +198,7 @@ export function FooterSection() {
 
         <div className="order-7 mt-auto lg:col-start-1 lg:col-end-3 lg:row-start-3 lg:mt-0 lg:self-end">
           <Image
-            alt="Shinta"
+            alt="Tótem Mass Media"
             className="h-auto w-full max-w-[620px] object-contain"
             height={419}
             sizes="(min-width: 1024px) 900px, calc(100vw - 38px)"
@@ -216,16 +209,8 @@ export function FooterSection() {
         </div>
 
         <div className="order-8 flex flex-col gap-2 pb-5 text-[12px] leading-[16.8px] font-semibold tracking-[0.96px] uppercase sm:flex-row sm:items-center sm:justify-between lg:col-start-1 lg:col-end-4 lg:row-start-4 lg:self-end">
-          <p>© 2026 Shinta. Todos los derechos reservados.</p>
-          <p>
-            Creado por{" "}
-            <Link
-              className="underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-shinta-ink"
-              href="https://veloxthemes.com/"
-            >
-              Velox Themes
-            </Link>
-          </p>
+          <p>© 2026 Tótem Mass Media. Todos los derechos reservados.</p>
+          <p>Loja, Ecuador</p>
         </div>
       </div>
     </footer>

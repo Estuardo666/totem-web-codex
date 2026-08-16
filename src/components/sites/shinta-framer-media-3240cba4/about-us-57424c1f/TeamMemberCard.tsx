@@ -65,7 +65,7 @@ export function TeamMemberCard({
     >
       <div className="relative aspect-[382/453] w-full overflow-hidden rounded-[16px]">
         <Image
-          alt={`Portrait of ${name}, ${role} at Shinta`}
+        alt={`${name}: ${role}`}
           className="object-cover"
           fill
           sizes="(min-width: 1200px) 33vw, (min-width: 768px) 50vw, 100vw"

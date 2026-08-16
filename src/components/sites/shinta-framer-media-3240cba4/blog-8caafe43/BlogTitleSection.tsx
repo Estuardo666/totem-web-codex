@@ -1,12 +1,10 @@
 "use client";
 
-import { Fragment } from "react";
-import { motion, useReducedMotion, type Variants } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
 import { SectionEyebrow } from "../shared/ShintaPrimitives";
 
-const heading = "Perspectivas e ideas";
-const headingWords = heading.split(" ");
+const heading = "Proyectos y capacidades";
 
 const groupVariants: Variants = {
   hidden: {},
@@ -51,58 +49,54 @@ const riseVariants: Variants = {
 };
 
 export function BlogTitleSection() {
-  const reduceMotion = useReducedMotion();
-
   return (
     <section
-      aria-labelledby="shinta-blog-heading"
+      aria-labelledby="blog-heading"
       className="flex items-center justify-center bg-shinta-canvas px-5"
     >
-      <div className="flex w-full max-w-[1280px] flex-col items-start gap-4 md:flex-row md:items-end md:gap-5 xl:gap-6">
-        <div className="flex flex-col gap-2">
+      <div className="flex min-w-0 w-full max-w-[1280px] flex-col items-start gap-4 md:flex-row md:items-end md:gap-5 xl:gap-6">
+        <div className="flex min-w-0 w-full flex-col gap-2">
           <motion.div
             className="flex"
-            initial={reduceMotion ? false : "hidden"}
+            initial={false}
             variants={riseVariants}
             viewport={{ amount: 0.4, once: true }}
             whileInView="visible"
           >
             <SectionEyebrow className="inline-flex rounded-full bg-shinta-pink px-2 py-1 text-shinta-ink">
-              Blog
+              Tótem Mass Media
             </SectionEyebrow>
           </motion.div>
 
           <motion.h1
-            className="text-[40px] leading-[42px] font-bold tracking-[-1.6px] text-shinta-ink md:text-[52px] md:leading-[54px] md:tracking-[-2.08px] xl:text-[72px] xl:leading-[72px] xl:tracking-[-2.88px]"
-            id="shinta-blog-heading"
-            initial={reduceMotion ? false : "hidden"}
+            className="w-full max-w-full break-words text-[40px] leading-[42px] font-bold tracking-[-1.6px] text-shinta-ink md:text-[52px] md:leading-[54px] md:tracking-[-2.08px] xl:text-[72px] xl:leading-[72px] xl:tracking-[-2.88px]"
+            id="blog-heading"
+            initial={false}
             variants={groupVariants}
             viewport={{ amount: 0.4, once: true }}
             whileInView="visible"
-          >
-            <span className="sr-only">{heading}</span>
-            <span aria-hidden="true" className="block">
-              {headingWords.map((word, index) => (
-                <Fragment key={`${word}-${index}`}>
-                  <motion.span className="inline-block" variants={wordVariants}>
-                    {word}
-                  </motion.span>
-                  {index < headingWords.length - 1 ? " " : null}
-                </Fragment>
-              ))}
-            </span>
+            >
+              <span className="sr-only">{heading}</span>
+              <span aria-hidden="true" className="block">
+                <motion.span className="block md:inline-block" variants={wordVariants}>
+                  Proyectos y
+                </motion.span>{" "}
+                <motion.span className="block md:inline-block" variants={wordVariants}>
+                  capacidades
+                </motion.span>
+              </span>
           </motion.h1>
         </div>
 
         <motion.p
-          className="max-w-full text-[16px] leading-6 text-shinta-stone md:max-w-[45%] xl:max-w-[40%] xl:text-[18px] xl:leading-[27px]"
-          initial={reduceMotion ? false : "hidden"}
+          className="min-w-0 w-full max-w-[350px] break-words text-[16px] leading-6 text-shinta-stone md:max-w-[45%] xl:max-w-[40%] xl:text-[18px] xl:leading-[27px]"
+          initial={false}
           variants={riseVariants}
           viewport={{ amount: 0.4, once: true }}
           whileInView="visible"
         >
-          Ideas sobre contenido social, creadores y estrategia, escritas desde la
-          experiencia, no desde la teoría.
+          Proyectos y capacidades que conectan estrategia, creatividad y tecnología
+          para transformar negocios.
         </motion.p>
       </div>
     </section>

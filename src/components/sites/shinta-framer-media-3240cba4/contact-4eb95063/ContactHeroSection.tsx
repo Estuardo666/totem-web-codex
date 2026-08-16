@@ -1,26 +1,22 @@
 "use client";
 
-import Image from "next/image";
-import { Fragment } from "react";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 
 import { SectionEyebrow } from "../shared/ShintaPrimitives";
-import { shintaAsset } from "../shared/site";
 import { ContactFormCard } from "./ContactFormCard";
 
-const heading = "Hablemos de contenido que realmente funciona.";
-const headingWords = heading.split(" ");
+const heading = "Cuéntanos tu proyecto";
 
 const STROKE_LENGTH = 1533.5;
 const STROKE_PATH =
   "M 0 92.158 C 124.286 -3.096 331.666 20.54 280.209 56.516 C 205.354 108.848 329.739 94.962 405.624 75.751 C 481.608 56.516 524.244 43.192 543.751 22.57 C 579.343 -15.052 493.19 -1.191 472.852 31.616 C 446.193 74.621 591.28 77.333 718.317 40.674 C 1032.987 -50.129 946.116 66.255 1087.503 88.481 C 1125.422 94.441 1181 75.751 1181 75.751";
 
 const brands = [
-  { alt: "Mandala", src: shintaAsset("images/26f35051812b2aae.png") },
-  { alt: "Batavia", src: shintaAsset("images/7253d2f6ec5e14e6.png") },
-  { alt: "Bhima", src: shintaAsset("images/b13b3ba827797b0f.png") },
-  { alt: "Pandawa", src: shintaAsset("images/ebd7dec76b75c1e2.png") },
-  { alt: "Sadewa", src: shintaAsset("images/e0e1fd5214a17d82.png") },
+  "Estrategia y branding",
+  "Producción audiovisual",
+  "Experiencia digital",
+  "Software y plataformas",
+  "Automatización e IA",
 ] as const;
 
 const groupVariants: Variants = {
@@ -100,39 +96,36 @@ export function ContactHeroSection() {
         </svg>
       </div>
 
-      <div className="relative z-10 flex w-full max-w-[1280px] flex-col items-stretch gap-8 xl:h-[544px] xl:flex-row xl:items-center xl:gap-6">
+      <div className="relative z-10 flex min-w-0 w-full max-w-[1280px] flex-col items-stretch gap-8 xl:h-[544px] xl:flex-row xl:items-center xl:gap-6">
         <div className="flex min-w-0 flex-1 flex-col items-start justify-between gap-10 xl:h-full xl:gap-0">
-          <div className="flex flex-col gap-6">
+          <div className="flex min-w-0 w-full flex-col gap-6">
             <motion.h1
-              className="text-[40px] leading-[42px] font-bold tracking-[-1.6px] text-shinta-ink md:text-[52px] md:leading-[54px] md:tracking-[-2.08px] xl:text-[72px] xl:leading-[72px] xl:tracking-[-2.88px]"
+              className="w-full max-w-full break-words text-[40px] leading-[42px] font-bold tracking-[-1.6px] text-shinta-ink md:text-[52px] md:leading-[54px] md:tracking-[-2.08px] xl:text-[72px] xl:leading-[72px] xl:tracking-[-2.88px]"
               id="shinta-contact-heading"
-              initial={reduceMotion ? false : "hidden"}
+              initial={false}
               variants={groupVariants}
               viewport={{ amount: 0.4, once: true }}
               whileInView="visible"
             >
               <span className="sr-only">{heading}</span>
               <span aria-hidden="true" className="block">
-                {headingWords.map((word, index) => (
-                  <Fragment key={`${word}-${index}`}>
-                    <motion.span className="inline-block" variants={wordVariants}>
-                      {word}
-                    </motion.span>
-                    {index < headingWords.length - 1 ? " " : null}
-                  </Fragment>
-                ))}
+                <motion.span className="block md:inline-block" variants={wordVariants}>
+                  Cuéntanos tu
+                </motion.span>{" "}
+                <motion.span className="block md:inline-block" variants={wordVariants}>
+                  proyecto
+                </motion.span>
               </span>
             </motion.h1>
 
             <motion.p
-              className="max-w-full text-[16px] leading-6 text-shinta-stone xl:text-[18px] xl:leading-[27px]"
-              initial={reduceMotion ? false : "hidden"}
+              className="w-full max-w-[350px] break-words text-[16px] leading-6 text-shinta-stone xl:text-[18px] xl:leading-[27px]"
+              initial={false}
               variants={riseVariants}
               viewport={{ amount: 0.4, once: true }}
               whileInView="visible"
             >
-              Cuéntanos tus objetivos y te ayudaremos a crear contenido adaptado
-              a cómo las personas navegan hoy.
+              Desde estrategia y producción audiovisual hasta sitios web, plataformas, software y automatización. Diseñamos soluciones alrededor de problemas y objetivos reales.
             </motion.p>
           </div>
 
@@ -144,25 +137,18 @@ export function ContactHeroSection() {
             whileInView="visible"
           >
             <SectionEyebrow className="text-shinta-muted">
-              Más de 30 marcas elevaron el nivel de su contenido
+              Estrategia, creatividad y tecnología
             </SectionEyebrow>
 
             <div className="h-[30px] w-full overflow-hidden [mask-image:linear-gradient(270deg,transparent_0%,black_15.537%,black_85.816%,transparent_100%)] [-webkit-mask-image:linear-gradient(270deg,transparent_0%,black_15.537%,black_85.816%,transparent_100%)]">
               <ul className="flex list-none items-center gap-6">
                 {brands.map((brand) => (
                   <li
-                    className="flex h-[30px] w-[127px] shrink-0 items-center"
-                    key={brand.alt}
+                    className="flex h-[30px] w-auto shrink-0 items-center"
+                    key={brand}
                   >
-                    <span className="relative block h-6 w-[102px]">
-                      <Image
-                        alt={brand.alt}
-                        className="object-contain object-left"
-                        fill
-                        sizes="102px"
-                        src={brand.src}
-                        unoptimized
-                      />
+                    <span className="text-[14px] leading-5 font-semibold tracking-[-0.02em] text-shinta-muted">
+                      {brand}
                     </span>
                   </li>
                 ))}

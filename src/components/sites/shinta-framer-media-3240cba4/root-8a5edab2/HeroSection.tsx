@@ -15,12 +15,12 @@ import { ShiftButtonContent } from "../shared/ShintaPrimitives";
 import { shintaAsset } from "../shared/site";
 
 const ribbonCopy =
-  "GESTIÓN DE REDES SOCIALES · CONTENIDO BREVE · MARKETING DE INFLUENCERS · ";
+  "ESTRATEGIA · CREATIVIDAD · TECNOLOGÍA · MARCA · CONTENIDO · ";
 
 const services = [
-  "CONTENIDO BREVE",
-  "GESTIÓN DE REDES SOCIALES",
-  "MARKETING DE INFLUENCERS",
+  "ESTRATEGIA Y BRANDING",
+  "PRODUCCIÓN AUDIOVISUAL",
+  "SOFTWARE Y AUTOMATIZACIÓN",
 ];
 
 const heroVideos = [
@@ -44,7 +44,7 @@ const cardSlots = [
   "-translate-x-[32px] translate-y-[26px] -rotate-[4deg] xl:-translate-x-[30px] xl:translate-y-[48px]",
 ] as const;
 
-const heading = "UGC que hace crecer tu marca.";
+const heading = "Creamos marcas, contenido y tecnología que hacen avanzar negocios.";
 const headingWords = heading.split(" ");
 
 const headingVariants: Variants = {
@@ -343,9 +343,8 @@ export function HeroSection() {
           initial={reduceMotion ? false : "hidden"}
           variants={supportingVariants}
         >
-          <p className="text-[18px] leading-[25.2px] font-normal tracking-[-0.36px] text-shinta-stone">
-            Shinta ayuda a las marcas a crear contenido que conecta de verdad con su
-            audiencia, de manera constante y estratégica en las redes sociales.
+          <p className="min-w-0 max-w-[350px] break-words text-[18px] leading-[25.2px] font-normal tracking-[-0.36px] text-shinta-stone">
+            Desde estrategia y producción audiovisual hasta sitios web, plataformas, software y automatización. Diseñamos soluciones alrededor de problemas y objetivos reales.
           </p>
 
           <Link
@@ -358,23 +357,23 @@ export function HeroSection() {
               iconStrokeWidth={2.25}
               labelClassName="flex h-[56px] items-center rounded-full bg-totem-action px-[23px] text-totem-action-text md:h-[52px]"
             >
-              Agenda una llamada
+              Cuéntanos tu proyecto
             </ShiftButtonContent>
           </Link>
         </motion.div>
 
         <MotionLink
           animate="visible"
-          aria-label="Ver el proyecto de redes sociales de Rama"
+          aria-label="Ver el proyecto TransCity"
           className="group absolute top-[954px] right-5 left-5 z-20 flex h-[136px] items-center gap-[11px] rounded-[22px] bg-white p-[8px] pr-[45px] transition-transform duration-300 hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-shinta-ink md:top-[858px] xl:top-[175px] xl:right-0 xl:left-auto xl:h-[140px] xl:w-[295px] xl:gap-[12px] xl:rounded-[24px] xl:pr-[38px]"
-          href="/projects/rama"
+          href="/#projects"
           initial={reduceMotion ? false : "hidden"}
           variants={projectVariants}
           whileHover={reduceMotion ? undefined : { y: -4 }}
         >
           <span className="relative h-full w-[93px] shrink-0 overflow-hidden rounded-[16px] xl:w-[96px]">
             <Image
-              alt="Modelo de la campaña Rama con sudadera negra"
+              alt="Proyecto TransCity"
               className="object-cover"
               fill
               sizes="96px"
@@ -384,10 +383,10 @@ export function HeroSection() {
           </span>
           <span className="min-w-0">
             <span className="block text-[12px] leading-[16.8px] font-semibold tracking-[0.5px] text-shinta-lavender uppercase">
-              ¡NUEVO PROYECTO!
+              PROYECTO DESTACADO
             </span>
             <span className="mt-[4px] block text-[18px] leading-[25.2px] font-semibold tracking-[-0.36px]">
-              Haciendo que Rama sea inconfundible en redes
+              TransCity: plataformas, integraciones y automatización
             </span>
           </span>
           <span className="absolute top-[9px] right-[9px] grid size-[32px] place-items-center rounded-full bg-shinta-canvas">

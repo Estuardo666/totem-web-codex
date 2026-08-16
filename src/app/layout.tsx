@@ -5,10 +5,9 @@ const themeInitializationScript = `
   (() => {
     try {
       const savedTheme = localStorage.getItem("totem-theme");
-      const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
       const theme = savedTheme === "dark" || savedTheme === "light"
         ? savedTheme
-        : systemPrefersDark ? "dark" : "light";
+        : "light";
       document.documentElement.classList.toggle("dark", theme === "dark");
       document.documentElement.style.colorScheme = theme;
     } catch {
@@ -18,10 +17,9 @@ const themeInitializationScript = `
 `;
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://shinta.framer.media"),
-  title: "Shinta - Agencia de marketing en redes sociales",
+  title: "Tótem Mass Media — Estrategia, creatividad y tecnología",
   description:
-    "Shinta es una plantilla para agencias de marketing en redes sociales, creada para mostrar tu trabajo, atraer clientes e impulsar el crecimiento de marca a largo plazo.",
+    "Tótem Mass Media es una agencia creativa y tecnológica de Loja, Ecuador. Desarrollamos marcas, contenido, experiencias digitales, plataformas, software y automatizaciones.",
   icons: {
     icon: "/brand/favicon.png",
     apple: "/brand/favicon.png",

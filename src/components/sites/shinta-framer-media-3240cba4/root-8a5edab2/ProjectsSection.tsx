@@ -12,42 +12,42 @@ import { shintaAsset } from "@/components/sites/shinta-framer-media-3240cba4/sha
 const projects = [
   {
     image: "images/d929f58f46477773.jpg",
-    label: "Crecimiento de seguidores",
-    metric: "100%",
-    name: "Rama",
-    href: "/projects/rama",
+    label: "Plataformas e integraciones",
+    metric: "01",
+    name: "TransCity",
+    href: "/#projects",
     layout: "order-1 lg:col-span-2",
   },
   {
     image: "images/f8f2222b4c112435.jpg",
-    label: "Crecimiento de seguidores",
-    metric: "150%",
-    name: "Pandawa",
-    href: "/projects/pandawa",
+    label: "Branding y desarrollo web",
+    metric: "02",
+    name: "Terra Viva",
+    href: "/#projects",
     layout: "order-2",
   },
   {
     image: "images/f6ccd8159b64601e.jpg",
-    label: "Aumento de clientes potenciales",
-    metric: "2×",
-    name: "Sadewa",
-    href: "/projects/sadewa",
+    label: "Producción audiovisual",
+    metric: "03",
+    name: "PlayHouse",
+    href: "/#projects",
     layout: "order-4",
   },
   {
     image: "images/25d6efcc673140d3.jpg",
-    label: "Tasa de conversión",
-    metric: "+75%",
-    name: "Kresna",
-    href: "/projects/kresna",
+    label: "Software de productividad",
+    metric: "04",
+    name: "FocusGuard",
+    href: "/#projects",
     layout: "order-3",
   },
   {
     image: "images/f9924a626b8f6cfa.jpg",
-    label: "Crecimiento de seguidores",
-    metric: "100%",
-    name: "Bima",
-    href: "/projects/bima",
+    label: "Bots y automatización",
+    metric: "05",
+    name: "Bot Tótem",
+    href: "/#projects",
     layout: "order-5",
   },
 ] as const;
@@ -71,7 +71,7 @@ function ProjectCard({ index, project, revealed }: ProjectCardProps) {
 
   return (
     <Link
-      aria-label={`View ${project.name} project: ${project.metric} ${project.label}`}
+      aria-label={`Ver el proyecto ${project.name}: ${project.label}`}
       className={cn(
         "group relative block aspect-[0.93/1] overflow-hidden rounded-[30px] bg-totem-surface-secondary transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-totem-focus motion-reduce:translate-y-0 motion-reduce:transition-none md:aspect-[0.96/1] lg:aspect-[0.94/1] lg:rounded-[28px]",
         project.layout,
@@ -81,7 +81,7 @@ function ProjectCard({ index, project, revealed }: ProjectCardProps) {
       href={project.href}
     >
       <Image
-        alt={`${project.name} campaign project`}
+        alt={`Proyecto ${project.name}: ${project.label}`}
         className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.025] motion-reduce:transition-none"
         fill
         sizes={
@@ -149,11 +149,11 @@ export function ProjectsSection() {
           )}
         >
           <SectionEyebrow className="mb-3 rounded-full bg-shinta-pink px-3 py-1 text-shinta-ink">
-            proyectos destacados
+            proyectos que lo demuestran
           </SectionEyebrow>
           <h2 className="max-w-[620px] text-[64px] leading-[70.4px] font-bold tracking-[-2.56px] text-shinta-ink max-lg:text-[28px] max-lg:leading-8 max-lg:tracking-[-1.12px]">
-            <span className="lg:block">Trabajos que nos </span>
-            <span className="lg:block">enorgullecen</span>
+            <span className="lg:block">Los proyectos aportan </span>
+            <span className="lg:block">la evidencia</span>
           </h2>
         </header>
 

@@ -3,67 +3,65 @@
 import { BlogPostCard, type BlogPostCardProps } from "../shared/BlogPostCard";
 import { shintaAsset } from "../shared/site";
 
-const AVATAR_KRISTANTO = shintaAsset("images/e202cc3fcb7f8b83.png");
-const AVATAR_BUDI = shintaAsset("images/062febe8ad7682a7.png");
-const AVATAR_KARINA = shintaAsset("images/187a0bff84102aca.png");
+const TOTEM_AVATAR = "/brand/logo-light.png";
 
 const BLOG_POSTS: Omit<BlogPostCardProps, "delay">[] = [
   {
-    authorAvatarSrc: AVATAR_KRISTANTO,
-    authorName: "Kristanto Mahera",
-    coverAlt: "Por qué un buen copywriting importa tanto",
+    authorAvatarSrc: TOTEM_AVATAR,
+    authorName: "Tótem Mass Media",
+    coverAlt: "Proyecto TransCity",
     coverSrc: shintaAsset("images/90da175d3b991e31.jpg"),
-    date: "27 de enero de 2026",
-    href: "/blog/why-good-copywriting-matters",
-    title: "Por qué un buen copywriting importa tanto",
+    date: "Capacidades demostradas",
+    href: "/#projects",
+    title: "TransCity: plataformas e integraciones",
   },
   {
-    authorAvatarSrc: AVATAR_BUDI,
-    authorName: "Budi Pandu",
-    coverAlt: "Cómo convertir ideas para redes sociales en planes de contenido",
+    authorAvatarSrc: TOTEM_AVATAR,
+    authorName: "Tótem Mass Media",
+    coverAlt: "Proyecto Terra Viva",
     coverSrc: shintaAsset("images/d8288cb19a756a51.jpg"),
-    date: "27 de enero de 2026",
-    href: "/blog/turning-social-media-ideas-into-clear-content-plans",
-    title: "Cómo convertir ideas para redes sociales en planes de contenido",
+    date: "Capacidades demostradas",
+    href: "/about-us",
+    title: "Terra Viva: branding y desarrollo web",
   },
   {
-    authorAvatarSrc: AVATAR_KARINA,
-    authorName: "Karina Kumala",
-    coverAlt: "Por qué las redes sociales nunca son trabajo de una sola persona",
+    authorAvatarSrc: TOTEM_AVATAR,
+    authorName: "Tótem Mass Media",
+    coverAlt: "Proyecto PlayHouse",
     coverSrc: shintaAsset("images/01c3e56a4e3063a0.jpg"),
-    date: "27 de enero de 2026",
-    href: "/blog/why-great-social-media-is-never-a-one-person-job",
-    title: "Por qué las redes sociales nunca son trabajo de una sola persona",
+    date: "Capacidades demostradas",
+    href: "/contact",
+    title: "PlayHouse: producción audiovisual",
   },
   {
-    authorAvatarSrc: AVATAR_KRISTANTO,
-    authorName: "Kristanto Mahera",
-    coverAlt: "Cómo una agencia de redes sociales ayuda a las marcas",
+    authorAvatarSrc: TOTEM_AVATAR,
+    authorName: "Tótem Mass Media",
+    coverAlt: "Producto FocusGuard",
     coverSrc:
       "/sites/shinta-framer-media-3240cba4/blog-8caafe43/images/post-agency-helps-brands.jpg",
-    date: "27 de enero de 2026",
-    href: "/blog/how-a-social-media-agency-helps-brands-grow-faster",
-    title: "Cómo una agencia de redes sociales ayuda a las marcas",
+    date: "Capacidades demostradas",
+    href: "/#projects-focusguard",
+    title: "FocusGuard: software de productividad",
   },
   {
-    authorAvatarSrc: AVATAR_BUDI,
-    authorName: "Budi Pandu",
-    coverAlt: "Cómo mejorar la calidad del contenido para redes sociales",
+    authorAvatarSrc: TOTEM_AVATAR,
+    authorName: "Tótem Mass Media",
+    coverAlt: "Totem OS y TotemHub",
     coverSrc:
       "/sites/shinta-framer-media-3240cba4/blog-8caafe43/images/post-improve-content-quality.jpg",
-    date: "27 de enero de 2026",
-    href: "/blog/why-video-calls-improve-social-media-content-quality",
-    title: "Cómo mejorar la calidad del contenido para redes sociales",
+    date: "Capacidades demostradas",
+    href: "/#projects-totem-os",
+    title: "Totem OS y TotemHub: sistemas internos",
   },
   {
-    authorAvatarSrc: AVATAR_KARINA,
-    authorName: "Karina Kumala",
-    coverAlt: "Cómo los pódcasts ayudan a las marcas a generar confianza",
+    authorAvatarSrc: TOTEM_AVATAR,
+    authorName: "Tótem Mass Media",
+    coverAlt: "Totem Auto Edit",
     coverSrc:
       "/sites/shinta-framer-media-3240cba4/blog-8caafe43/images/post-podcasts-build-trust.jpg",
-    date: "27 de enero de 2026",
-    href: "/blog/how-podcasts-help-brands-build-trust-on-social-media",
-    title: "Cómo los pódcasts ayudan a las marcas a generar confianza",
+    date: "Capacidades demostradas",
+    href: "/#projects-auto-edit",
+    title: "Totem Auto Edit: automatización audiovisual",
   },
 ];
 

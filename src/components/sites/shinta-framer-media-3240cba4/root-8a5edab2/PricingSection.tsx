@@ -16,33 +16,33 @@ type BillingCycle = "monthly" | "yearly";
 
 const plans = [
   {
-    cta: "Elegir plan Inicial",
-    description: "Ideal para marcas y campañas en etapa inicial",
+    cta: "Cuéntanos tu proyecto",
+    description: "Construir la identidad y comunicación de una marca.",
     features: [
-      "Estrategia de contenido para 1 plataforma",
-      "8–12 contenidos al mes",
-      "Copywriting + dirección visual",
-      "Análisis básico del rendimiento",
-      "1 ronda de revisiones",
+      "Estrategia de marca",
+      "Identidad visual",
+      "Dirección creativa",
+      "Conceptualización de campañas",
+      "Diseño gráfico",
     ],
-    name: "Inicial",
-    previousPrice: "$3999",
-    price: "$3199",
+    name: "Marca y contenido",
+    previousPrice: "",
+    price: "",
     theme: "light",
   },
   {
-    cta: "Elegir plan Agencia",
-    description: "Ideal para marcas y campañas medianas o grandes",
+    cta: "Cuéntanos tu proyecto",
+    description: "Construir las plataformas y sistemas que sostienen la operación.",
     features: [
-      "Estrategia de contenido para 3 plataformas",
-      "18–20 contenidos al mes",
-      "Copywriting + dirección visual",
-      "Análisis completo del rendimiento",
-      "Revisiones ilimitadas",
+      "Aplicaciones web",
+      "Plataformas empresariales",
+      "Sistemas administrativos",
+      "Integraciones entre plataformas",
+      "Automatización e inteligencia artificial",
     ],
-    name: "Agencia",
-    previousPrice: "$5999",
-    price: "$4799",
+    name: "Web, software y automatización",
+    previousPrice: "",
+    price: "",
     theme: "dark",
   },
 ] as const;
@@ -63,7 +63,7 @@ function BillingToggle({ billingCycle, setBillingCycle }: BillingToggleProps) {
 
   return (
     <div
-      aria-label="Ciclo de facturación"
+      aria-label="Áreas de trabajo"
       className="relative grid h-12 grid-cols-2 rounded-full bg-totem-surface-secondary p-1"
       role="radiogroup"
     >
@@ -85,7 +85,7 @@ function BillingToggle({ billingCycle, setBillingCycle }: BillingToggleProps) {
         role="radio"
         type="button"
       >
-        Mensual
+        Marca y contenido
       </button>
       <button
         aria-checked={billingCycle === "yearly"}
@@ -98,9 +98,9 @@ function BillingToggle({ billingCycle, setBillingCycle }: BillingToggleProps) {
         role="radio"
         type="button"
       >
-        <span>Anual</span>
+        <span>Web y tecnología</span>
         <span className="text-[11px] leading-none font-semibold tracking-[0.55px] uppercase">
-          ahorra 20 %
+          estrategia y sistemas
         </span>
       </button>
     </div>
@@ -111,11 +111,11 @@ function CustomPlanCard() {
   return (
     <Link
       className="group relative flex h-24 items-center rounded-[20px] bg-white p-2 pr-4 text-shinta-ink transition-transform duration-300 hover:-translate-y-1 focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-shinta-pink"
-      href="https://cal.com/"
+      href="/contact"
     >
       <span className="relative h-20 w-20 shrink-0 overflow-hidden rounded-[14px] bg-shinta-lavender">
         <Image
-          alt="Especialista en planificación de Shinta"
+          alt="Planificación de una solución digital"
           className="object-cover"
           fill
           sizes="80px"
@@ -129,10 +129,10 @@ function CustomPlanCard() {
       </span>
       <span className="ml-4 min-w-0">
         <span className="block text-[18px] leading-[25.2px] font-bold tracking-[-0.36px]">
-          ¿Necesitas un plan personalizado?
+          ¿Qué solución necesita tu negocio?
         </span>
         <span className="mt-0.5 block text-[18px] leading-[25.2px] text-shinta-muted">
-          Hablemos
+          Cuéntanos tu proyecto
         </span>
       </span>
       <span className="ml-auto grid size-8 shrink-0 place-items-center rounded-full bg-shinta-canvas transition-colors duration-300 group-hover:bg-totem-action">
@@ -168,22 +168,24 @@ function PlanCard({ plan }: PlanCardProps) {
           </h3>
           {isDark ? (
             <span className="rounded-full bg-shinta-pink px-3 py-1 text-[12px] leading-[16.8px] font-semibold tracking-[0.96px] text-shinta-ink uppercase">
-              popular
+              recomendado
             </span>
           ) : null}
         </div>
         <p className={cn("text-[14px] leading-[19.6px]", isDark ? "text-white/85" : "text-shinta-muted")}>
           {plan.description}
         </p>
-        <div className="mt-4 flex items-end gap-2">
-          <span className="mb-1 text-[16px] leading-none text-shinta-muted line-through">
-            {plan.previousPrice}
-          </span>
-          <span className="text-[40px] leading-10 font-bold tracking-[-1.6px]">
-            {plan.price}
-          </span>
-          <span className="mb-1 text-[14px] leading-none font-semibold uppercase">/mes</span>
-        </div>
+        {plan.price ? (
+          <div className="mt-4 flex items-end gap-2">
+            <span className="mb-1 text-[16px] leading-none text-shinta-muted line-through">
+              {plan.previousPrice}
+            </span>
+            <span className="text-[40px] leading-10 font-bold tracking-[-1.6px]">
+              {plan.price}
+            </span>
+            <span className="mb-1 text-[14px] leading-none font-semibold uppercase">/mes</span>
+          </div>
+        ) : null}
       </div>
 
       <ul className="mt-5 space-y-3 px-4 text-[16px] leading-[22.4px] tracking-[-0.32px]">
@@ -238,10 +240,10 @@ export function PricingSection() {
         <div className="flex min-w-0 flex-col">
           <div>
             <SectionEyebrow className="mb-4 inline-flex rounded-full bg-shinta-pink px-3 py-1 text-shinta-ink">
-              pricing
+              soluciones
             </SectionEyebrow>
             <h2 className="max-w-[470px] text-[64px] leading-[70.4px] font-bold tracking-[-2.56px] text-shinta-ink max-lg:text-[28px] max-lg:leading-8 max-lg:tracking-[-1.12px]">
-              Precios flexibles para cada etapa
+              No trabajamos con soluciones aisladas.
             </h2>
             <div className="mt-6 max-w-[445px]">
               <BillingToggle

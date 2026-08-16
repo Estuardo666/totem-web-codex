@@ -11,8 +11,8 @@ import { Navbar } from "@/components/sites/shinta-framer-media-3240cba4/shared/N
 
 export const metadata: Metadata = {
   description:
-    "Somos quienes pausan un Reel solo para analizar el gancho, se envían TikToks diciendo «esto es brillante» y debaten por qué un video despegó mientras otro no.",
-  title: "Sobre nosotros",
+    "Tótem Mass Media integra estrategia, creatividad y tecnología para transformar negocios.",
+  title: "Tótem Mass Media — Agencia creativa y tecnológica",
 };
 
 export default function AboutUsPage() {

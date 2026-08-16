@@ -6,28 +6,28 @@ import { motion, useReducedMotion } from "framer-motion";
 const faqs = [
   {
     answer:
-      "Ayudamos a las marcas a crecer en redes sociales. Planificamos contenido, diseñamos publicaciones, escribimos textos y gestionamos cuentas. Nuestro objetivo es ayudarte a conseguir más atención, interacción y clientes potenciales.",
-    question: "¿Qué hace su agencia de redes sociales?",
+      "Tótem Mass Media es una agencia creativa y tecnológica con sede en Loja, Ecuador. Integramos estrategia, branding, producción audiovisual, marketing, diseño, desarrollo web, software, automatización e inteligencia artificial.",
+    question: "¿Qué es Tótem Mass Media?",
   },
   {
     answer:
-      "Gestionamos Instagram, TikTok, X, LinkedIn y Facebook. Si tu audiencia está allí, te ayudamos a presentarte de la manera adecuada.",
-    question: "¿Qué plataformas de redes sociales gestionan?",
+      "Podemos trabajar desde una identidad visual o una campaña hasta una plataforma completa, una automatización o un producto de software.",
+    question: "¿Qué tipo de proyectos desarrollan?",
   },
   {
     answer:
-      "Nos encargamos de todo: estrategia, ideas, piezas visuales, textos y publicaciones. Si ya tienes contenido, también podemos optimizarlo y mejorarlo.",
-    question: "¿Crean el contenido o debemos proporcionarlo?",
+      "La producción audiovisual continúa siendo una capacidad central, pero Tótem también puede diseñar la experiencia digital, desarrollar sistemas y automatizar procesos.",
+    question: "¿Solo trabajan en producción audiovisual?",
   },
   {
     answer:
-      "La mayoría de los clientes percibe un crecimiento inicial durante los primeros tres meses. Los resultados reales provienen de la constancia, las pruebas y el aprendizaje sobre lo que le gusta a tu audiencia.",
-    question: "¿Cuánto tiempo se tarda en ver resultados?",
+      "La web se entiende como una herramienta de negocio y no únicamente como una vitrina digital.",
+    question: "¿Cómo entienden el desarrollo web?",
   },
   {
     answer:
-      "Este servicio es ideal para fundadores, startups y marcas que quieren crecer en línea, pero no tienen tiempo para gestionar sus redes sociales a diario.",
-    question: "¿Para quién es más adecuado este servicio?",
+      "La inteligencia artificial se integra cuando permite reducir trabajo manual, mejorar decisiones o acelerar procesos.",
+    question: "¿Cómo aplican la inteligencia artificial?",
   },
 ] as const;
 
@@ -53,15 +53,15 @@ export function FaqSection() {
 
   return (
     <section
-      aria-labelledby="shinta-faq-heading"
+      aria-labelledby="faq-heading"
       className="flex min-h-[833px] w-full items-center justify-center overflow-hidden bg-shinta-canvas px-5 py-20 md:min-h-[679px] md:py-[60px] lg:min-h-[830px] lg:py-[120px]"
     >
       <div className="flex h-full w-full max-w-[630px] flex-col items-center gap-9 lg:gap-[50px]">
         <h2
           className="shrink-0 text-center text-[28px] leading-[1.08] font-bold tracking-[-1.12px] text-shinta-ink lg:text-[64px] lg:leading-[70.4px] lg:tracking-[-2.56px]"
-          id="shinta-faq-heading"
+          id="faq-heading"
         >
-          PREGUNTAS FRECUENTES
+          Preguntas sobre nuestro trabajo
         </h2>
 
         <div className="w-full space-y-3">

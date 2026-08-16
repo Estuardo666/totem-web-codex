@@ -6,7 +6,7 @@ import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { SectionEyebrow } from "../shared/ShintaPrimitives";
 
 const mission =
-  "Convertimos las redes sociales en un canal de crecimiento constante y de alto rendimiento.";
+  "Estrategia, creatividad y tecnología para transformar negocios.";
 const missionWords = mission.split(" ");
 
 const groupVariants: Variants = {
@@ -52,7 +52,7 @@ export function MissionSection() {
       >
         <motion.div variants={wordVariants}>
           <SectionEyebrow className="inline-flex rounded-full bg-shinta-pink px-2.5 py-1 text-shinta-ink">
-            Nuestra misión
+            Nuestro posicionamiento
           </SectionEyebrow>
         </motion.div>
 

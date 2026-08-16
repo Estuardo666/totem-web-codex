@@ -10,34 +10,34 @@ import { shintaAsset } from "../shared/site";
 
 const articles = [
   {
-    author: "Kristanto Mahera",
+    author: "Tótem Mass Media",
     authorHeight: 1200,
-    authorImage: "images/e202cc3fcb7f8b83.png",
+    authorImage: "/brand/logo-light.png",
     authorWidth: 1200,
-    href: "/blog/why-good-copywriting-matters",
+    href: "/#projects",
     image: "images/90da175d3b991e31.jpg",
-    imageAlt: "Manos redactando textos junto a una computadora portátil",
-    title: "Por qué un buen copywriting importa tanto",
+    imageAlt: "Proyecto TransCity",
+    title: "TransCity: plataformas, integraciones y automatización",
   },
   {
-    author: "Budi Pandu",
+    author: "Tótem Mass Media",
     authorHeight: 800,
-    authorImage: "images/062febe8ad7682a7.png",
+    authorImage: "/brand/logo-light.png",
     authorWidth: 800,
-    href: "/blog/turning-social-media-ideas-into-clear-content-plans",
+    href: "/about-us",
     image: "images/d8288cb19a756a51.jpg",
-    imageAlt: "Una estratega convirtiendo ideas en un plan de contenido",
-    title: "Cómo convertir ideas para redes sociales en planes de contenido",
+    imageAlt: "Estrategia, creatividad y tecnología",
+    title: "Estrategia, creatividad y tecnología para transformar negocios",
   },
   {
-    author: "Karina Kumala",
+    author: "Tótem Mass Media",
     authorHeight: 1032,
-    authorImage: "images/187a0bff84102aca.png",
+    authorImage: "/brand/logo-light.png",
     authorWidth: 1032,
-    href: "/blog/why-great-social-media-is-never-a-one-person-job",
+    href: "/contact",
     image: "images/01c3e56a4e3063a0.jpg",
-    imageAlt: "Dos colegas trabajando juntos en redes sociales",
-    title: "Por qué las redes sociales nunca son trabajo de una sola persona",
+    imageAlt: "Experiencia digital para una organización",
+    title: "La web como herramienta de negocio",
   },
 ] as const;
 
@@ -67,13 +67,13 @@ export function BlogSection() {
         <header className="flex shrink-0 items-end justify-between gap-4">
           <div className="flex flex-col items-start gap-3 lg:gap-4">
             <SectionEyebrow className="inline-flex rounded-full bg-shinta-pink px-2.5 py-1 text-shinta-ink">
-              Blog
+              proyectos y capacidades
             </SectionEyebrow>
             <h2
               className="max-w-[190px] text-[28px] leading-[1.08] font-bold tracking-[-1.12px] text-shinta-ink sm:max-w-none lg:text-[64px] lg:leading-[70.4px] lg:tracking-[-2.56px]"
               id="shinta-blog-heading"
             >
-              Perspectivas e ideas
+              Lo que construimos demuestra la capacidad
             </h2>
           </div>
 
@@ -87,7 +87,7 @@ export function BlogSection() {
               iconStrokeWidth={2.25}
               labelClassName="inline-flex h-11 items-center justify-center rounded-full bg-totem-action px-4 text-[12px] font-semibold text-totem-action-text sm:h-12 sm:px-5 sm:text-[14px] lg:h-[52px] lg:px-6"
             >
-              Más artículos
+              Ver proyectos
             </ShiftButtonContent>
           </Link>
         </header>
@@ -118,7 +118,7 @@ export function BlogSection() {
                   className="mt-5 text-[12px] leading-[16.8px] font-semibold tracking-[0.96px] text-shinta-muted uppercase"
                   dateTime="2026-01-27"
                 >
-                  27 de enero de 2026
+                  Capacidades demostradas
                 </time>
                 <h3 className="mt-2 text-[24px] leading-[1.15] font-bold tracking-[-0.96px] text-shinta-ink md:text-[32px] md:leading-[38.4px] md:tracking-[-1.28px]">
                   {article.title}
@@ -129,7 +129,7 @@ export function BlogSection() {
                     alt=""
                     className="size-10 rounded-full object-cover"
                     height={article.authorHeight}
-                    src={shintaAsset(article.authorImage)}
+                    src={article.authorImage}
                     unoptimized
                     width={article.authorWidth}
                   />

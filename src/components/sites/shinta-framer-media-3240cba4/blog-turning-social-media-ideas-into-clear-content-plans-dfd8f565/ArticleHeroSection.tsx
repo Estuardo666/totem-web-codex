@@ -1,14 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { Fragment } from "react";
-import { motion, useReducedMotion, type Variants } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
 import { SectionEyebrow } from "../shared/ShintaPrimitives";
 import { shintaAsset } from "../shared/site";
 
-const heading = "Cómo convertir ideas para redes sociales en planes de contenido";
-const headingWords = heading.split(" ");
+const heading = "De la idea al sistema que la hace crecer";
 
 const groupVariants: Variants = {
   hidden: {},
@@ -53,72 +51,71 @@ const riseVariants: Variants = {
 };
 
 export function ArticleHeroSection() {
-  const reduceMotion = useReducedMotion();
-
   return (
     <>
       <div className="flex w-full flex-col items-center gap-4 md:gap-5 xl:gap-6">
         <div className="flex flex-col items-center justify-center gap-3 md:gap-4">
           <motion.div
             className="flex"
-            initial={reduceMotion ? false : "hidden"}
+            initial={false}
             variants={riseVariants}
             viewport={{ amount: 0.4, once: true }}
             whileInView="visible"
           >
             <SectionEyebrow className="text-shinta-muted">
-              27 de enero de 2026
+              Tótem Mass Media · Loja, Ecuador
             </SectionEyebrow>
           </motion.div>
 
           <motion.h1
-            className="text-center text-[32px] leading-9 font-bold tracking-[-1.28px] text-shinta-ink md:text-[44px] md:leading-[48px] md:tracking-[-1.76px] xl:text-[64px] xl:leading-[64px] xl:tracking-[-2.56px]"
-            initial={reduceMotion ? false : "hidden"}
+            className="w-full max-w-full break-words text-center text-[32px] leading-9 font-bold tracking-[-1.28px] text-shinta-ink md:text-[44px] md:leading-[48px] md:tracking-[-1.76px] xl:text-[64px] xl:leading-[64px] xl:tracking-[-2.56px]"
+            initial={false}
             variants={groupVariants}
             viewport={{ amount: 0.4, once: true }}
             whileInView="visible"
-          >
-            <span className="sr-only">{heading}</span>
-            <span aria-hidden="true" className="block">
-              {headingWords.map((word, index) => (
-                <Fragment key={`${word}-${index}`}>
-                  <motion.span className="inline-block" variants={wordVariants}>
-                    {word}
-                  </motion.span>
-                  {index < headingWords.length - 1 ? " " : null}
-                </Fragment>
-              ))}
-            </span>
+            >
+              <span className="sr-only">{heading}</span>
+              <span aria-hidden="true" className="block">
+                <motion.span className="block md:inline-block" variants={wordVariants}>
+                  De la idea al
+                </motion.span>{" "}
+                <motion.span className="block md:inline-block" variants={wordVariants}>
+                  sistema que la
+                </motion.span>{" "}
+                <motion.span className="block md:inline-block" variants={wordVariants}>
+                  hace crecer
+                </motion.span>
+              </span>
           </motion.h1>
         </div>
 
         <motion.div
-          className="flex h-10 items-center justify-center gap-2"
-          initial={reduceMotion ? false : "hidden"}
+          className="flex h-auto max-w-full flex-wrap items-center justify-center gap-2 text-center"
+          initial={false}
           variants={riseVariants}
           viewport={{ amount: 0.4, once: true }}
           whileInView="visible"
         >
           <span className="relative block size-10 shrink-0 overflow-hidden rounded-full">
             <Image
-              alt="Retrato de Budi Pandu"
+              alt="Tótem Mass Media"
               className="object-cover"
               fill
               sizes="40px"
-              src={shintaAsset("images/062febe8ad7682a7.png")}
+              src="/brand/favicon.png"
               unoptimized
             />
           </span>
-          <p className="text-[16px] leading-[22.4px] text-shinta-muted">Por</p>
-          <h6 className="text-[16px] leading-6 font-bold text-shinta-ink xl:text-[18px] xl:leading-[25.2px]">
-            Budi Pandu
+          <p className="text-[16px] leading-[22.4px] text-shinta-muted">Agencia creativa y tecnológica</p>
+          <h6 className="hidden text-[16px] leading-6 font-bold text-shinta-ink md:block xl:text-[18px] xl:leading-[25.2px]">
+            Tótem Mass Media
           </h6>
         </motion.div>
       </div>
 
       <motion.div
         className="relative w-full overflow-hidden rounded-[16px] aspect-[4/3] md:rounded-[20px] xl:aspect-[1.59623] xl:rounded-[24px]"
-        initial={reduceMotion ? false : "hidden"}
+        initial={false}
         variants={riseVariants}
         viewport={{ amount: 0.3, once: true }}
         whileInView="visible"

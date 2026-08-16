@@ -9,11 +9,11 @@ import { SectionEyebrow } from "../shared/ShintaPrimitives";
 const heroImageSrc =
   "/sites/shinta-framer-media-3240cba4/about-us-57424c1f/images/hero-team-portrait.jpg";
 
-const heading = "Creado por personas que no publicarían contenido que ellas mismas ignorarían";
+const heading = "Una agencia creativa y tecnológica";
 const headingWords = heading.split(" ");
 
 const paragraph =
-  "Somos quienes pausan un Reel solo para analizar el gancho, se envían TikToks diciendo «esto es brillante» y debaten por qué un video despegó mientras otro no. Esa obsesión es precisamente el punto.";
+  "Tótem Mass Media es una agencia creativa y tecnológica con sede en Loja, Ecuador. Combinamos estrategia, diseño, producción audiovisual y desarrollo de tecnología para ayudar a empresas y organizaciones a comunicar mejor y operar con más eficiencia.";
 
 const groupVariants: Variants = {
   hidden: {},
@@ -81,14 +81,14 @@ export function AboutHeroSection() {
         <div className="flex w-full flex-col items-start gap-6 md:flex-row md:items-end md:gap-6">
           <motion.div
             className="flex w-full flex-col gap-2 md:w-[58%] md:max-w-[721px]"
-            initial={reduceMotion ? false : "hidden"}
+            initial={false}
             variants={groupVariants}
             viewport={{ amount: 0.4, once: true }}
             whileInView="visible"
           >
             <motion.div variants={wordVariants}>
               <SectionEyebrow className="inline-flex rounded-full bg-shinta-pink px-2 py-1 text-shinta-ink">
-                Sobre nosotros
+          Tótem Mass Media
               </SectionEyebrow>
             </motion.div>
 
@@ -114,13 +114,13 @@ export function AboutHeroSection() {
           </motion.div>
 
           <motion.div
-            className="w-full max-w-full md:max-w-[40%]"
-            initial={reduceMotion ? { opacity: 1 } : { opacity: 0, y: 16 }}
+            className="min-w-0 w-full max-w-[350px] md:max-w-[40%]"
+            initial={false}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             viewport={{ amount: 0.4, once: true }}
             whileInView={{ opacity: 1, y: 0 }}
           >
-            <p className="text-[16px] leading-[24px] font-normal text-shinta-stone md:text-[18px] md:leading-[27px]">
+            <p className="max-w-full break-words text-[16px] leading-[24px] font-normal text-shinta-stone md:text-[18px] md:leading-[27px]">
               {paragraph}
             </p>
           </motion.div>
@@ -141,7 +141,7 @@ export function AboutHeroSection() {
             whileInView="visible"
           >
             <Image
-              alt="El equipo de Shinta reunido frente a un fondo gris de estudio"
+              alt="Equipo creativo y tecnológico"
               className="object-cover"
               fill
               sizes="(min-width: 1200px) 1242px, 100vw"
