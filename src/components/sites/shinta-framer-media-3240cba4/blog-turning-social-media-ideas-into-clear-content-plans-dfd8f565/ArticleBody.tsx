@@ -6,121 +6,121 @@ type Block =
   | { kind: "p-lines"; lines: string[] };
 
 const blocks: Block[] = [
-  { kind: "h2", text: "Every strong post starts before the design" },
-  { kind: "p", text: "Great social media content does not start in design tools." },
-  { kind: "p", text: "It starts with thinking." },
+  { kind: "h2", text: "Toda publicación sólida comienza antes del diseño" },
+  { kind: "p", text: "El gran contenido para redes sociales no comienza en las herramientas de diseño." },
+  { kind: "p", text: "Comienza pensando." },
   {
     kind: "p",
     text:
-      "Social media agencies spend a lot of time planning before anything is posted. They look at goals audience behavior and brand voice. This thinking stage is what separates random posting from intentional growth.",
+      "Las agencias de redes sociales dedican mucho tiempo a planificar antes de publicar. Analizan los objetivos, el comportamiento de la audiencia y la voz de la marca. Esta etapa de reflexión distingue las publicaciones aleatorias del crecimiento intencional.",
   },
   {
     kind: "p",
-    text: "Without strategy content feels busy. With strategy content feels calm and focused.",
+    text: "Sin estrategia, el contenido se siente caótico. Con estrategia, se siente claro y enfocado.",
   },
-  { kind: "h2", text: "Strategy gives content a clear direction" },
-  { kind: "p", text: "Social media agencies begin by defining direction." },
+  { kind: "h2", text: "La estrategia da una dirección clara al contenido" },
+  { kind: "p", text: "Las agencias de redes sociales empiezan por definir el rumbo." },
   {
     kind: "p",
     text:
-      "They decide what the brand should talk about and what it should avoid. This keeps messaging clear and prevents mixed signals.",
+      "Deciden de qué debe hablar la marca y qué debe evitar. Así mantienen un mensaje claro y evitan señales contradictorias.",
   },
   {
     kind: "p-lines",
     lines: [
-      "Strategy helps answer simple questions",
-      "What does this brand stand for",
-      "Why should people care",
-      "What action should they take",
+      "La estrategia ayuda a responder preguntas sencillas",
+      "Qué representa esta marca",
+      "Por qué debería importarle a la gente",
+      "Qué acción deberían realizar",
     ],
   },
   {
     kind: "p",
     text:
-      "When direction is clear content becomes easier to create and easier to understand.",
+      "Cuando el rumbo está claro, el contenido resulta más fácil de crear y comprender.",
   },
-  { kind: "h2", text: "Content planning reduces stress" },
-  { kind: "p", text: "Many brands struggle because they create content last minute." },
+  { kind: "h2", text: "Planificar el contenido reduce el estrés" },
+  { kind: "p", text: "Muchas marcas tienen dificultades porque crean contenido a última hora." },
   {
     kind: "p",
     text:
-      "Agencies avoid this by planning content ahead of time. They use calendars to map out posts weeks in advance.",
-  },
-  {
-    kind: "p",
-    text:
-      "This reduces stress and creates space to think creatively. When content is planned there is no panic or rushing.",
-  },
-  {
-    kind: "p",
-    text: "Planning also helps brands stay consistent even during busy periods.",
-  },
-  { kind: "h2", text: "Focus improves content quality" },
-  {
-    kind: "p",
-    text: "When agencies plan content they focus on fewer stronger ideas.",
+      "Las agencias lo evitan planificando con anticipación. Usan calendarios para organizar las publicaciones con semanas de antelación.",
   },
   {
     kind: "p",
     text:
-      "Instead of posting everything they choose what matters most. This helps content feel intentional instead of noisy.",
-  },
-  { kind: "p", text: "Focused content is easier to read and easier to remember." },
-  { kind: "p", text: "Less content with more meaning often performs better." },
-  { kind: "h2", text: "Strategy and creativity work together" },
-  { kind: "p", text: "Strategy does not limit creativity. It supports it." },
-  {
-    kind: "p",
-    text:
-      "When direction is clear creative ideas flow faster. Designers and writers know the boundaries and can experiment inside them.",
+      "Esto reduce el estrés y deja espacio para pensar con creatividad. Cuando el contenido está planificado, no hay pánico ni prisas.",
   },
   {
     kind: "p",
-    text:
-      "Social media agencies balance structure with creativity. This keeps content fresh while staying on brand.",
+    text: "La planificación también ayuda a las marcas a mantener la constancia, incluso en épocas de mucho trabajo.",
   },
-  { kind: "p", text: "Good strategy gives creativity a place to grow." },
-  { kind: "h2", text: "Workspaces shape the creative process" },
-  { kind: "p", text: "Where people work affects how they think." },
+  { kind: "h2", text: "El enfoque mejora la calidad del contenido" },
   {
     kind: "p",
-    text:
-      "Quiet focused workspaces help strategists write plan and review content deeply. This focused time improves decision making.",
+    text: "Cuando las agencias planifican contenido, se concentran en menos ideas, pero más sólidas.",
   },
   {
     kind: "p",
     text:
-      "Social media agencies protect this thinking time. It allows better ideas to surface without distraction.",
+      "En lugar de publicarlo todo, eligen lo que más importa. Así, el contenido se percibe intencional en vez de saturado.",
   },
-  { kind: "p", text: "Clear thinking leads to clear content." },
-  { kind: "h2", text: "Data guides future decisions" },
-  { kind: "p", text: "After content goes live agencies review performance." },
+  { kind: "p", text: "El contenido enfocado es más fácil de leer y recordar." },
+  { kind: "p", text: "Menos contenido con más significado suele rendir mejor." },
+  { kind: "h2", text: "La estrategia y la creatividad trabajan juntas" },
+  { kind: "p", text: "La estrategia no limita la creatividad; la impulsa." },
   {
     kind: "p",
     text:
-      "They look at what people saved shared and commented on. This data helps improve future strategy.",
-  },
-  {
-    kind: "p",
-    text:
-      "Over time content becomes sharper because decisions are based on real behavior not assumptions.",
-  },
-  { kind: "p", text: "Small improvements compound into big results." },
-  { kind: "h2", text: "Why strategy matters for your brand" },
-  {
-    kind: "p",
-    text: "If your social media feels scattered the problem is rarely effort.",
-  },
-  { kind: "p", text: "It is usually a lack of direction." },
-  {
-    kind: "p",
-    text:
-      "Social media agencies turn ideas into systems. They help brands move from random posts to meaningful content.",
+      "Cuando el rumbo está claro, las ideas creativas fluyen más rápido. Diseñadores y redactores conocen los límites y pueden experimentar dentro de ellos.",
   },
   {
     kind: "p",
     text:
-      "With the right strategy social media stops feeling overwhelming and starts driving real impact.",
+      "Las agencias de redes sociales equilibran estructura y creatividad. Así mantienen el contenido fresco y coherente con la marca.",
+  },
+  { kind: "p", text: "Una buena estrategia ofrece a la creatividad un espacio para crecer." },
+  { kind: "h2", text: "Los espacios de trabajo moldean el proceso creativo" },
+  { kind: "p", text: "El lugar de trabajo influye en la forma de pensar." },
+  {
+    kind: "p",
+    text:
+      "Los espacios tranquilos y enfocados ayudan a los estrategas a redactar, planificar y revisar el contenido a fondo. Este tiempo de concentración mejora la toma de decisiones.",
+  },
+  {
+    kind: "p",
+    text:
+      "Las agencias de redes sociales protegen este tiempo de reflexión. Así surgen mejores ideas sin distracciones.",
+  },
+  { kind: "p", text: "Pensar con claridad produce contenido claro." },
+  { kind: "h2", text: "Los datos guían las decisiones futuras" },
+  { kind: "p", text: "Después de publicar el contenido, las agencias revisan su rendimiento." },
+  {
+    kind: "p",
+    text:
+      "Analizan qué guardó, compartió y comentó la gente. Estos datos ayudan a mejorar la estrategia futura.",
+  },
+  {
+    kind: "p",
+    text:
+      "Con el tiempo, el contenido se vuelve más preciso porque las decisiones se basan en comportamientos reales, no en suposiciones.",
+  },
+  { kind: "p", text: "Las pequeñas mejoras se acumulan hasta producir grandes resultados." },
+  { kind: "h2", text: "Por qué la estrategia es importante para tu marca" },
+  {
+    kind: "p",
+    text: "Si tus redes sociales se sienten dispersas, el problema rara vez es la falta de esfuerzo.",
+  },
+  { kind: "p", text: "Por lo general, es falta de dirección." },
+  {
+    kind: "p",
+    text:
+      "Las agencias de redes sociales convierten ideas en sistemas. Ayudan a las marcas a pasar de publicaciones aleatorias a contenido con propósito.",
+  },
+  {
+    kind: "p",
+    text:
+      "Con la estrategia adecuada, las redes sociales dejan de ser abrumadoras y comienzan a generar un impacto real.",
   },
 ];
 

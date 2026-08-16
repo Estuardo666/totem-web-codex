@@ -6,28 +6,28 @@ import { motion, useReducedMotion } from "framer-motion";
 const faqs = [
   {
     answer:
-      "We help brands grow on social media. We plan content, design posts, write captions, and manage accounts. Our goal is to help you get more attention, more engagement, and more leads.",
-    question: "What does your social media agency do?",
+      "Ayudamos a las marcas a crecer en redes sociales. Planificamos contenido, diseñamos publicaciones, escribimos textos y gestionamos cuentas. Nuestro objetivo es ayudarte a conseguir más atención, interacción y clientes potenciales.",
+    question: "¿Qué hace su agencia de redes sociales?",
   },
   {
     answer:
-      "We manage Instagram, TikTok, X, LinkedIn, and Facebook. If your audience hangs out there, we can help you show up the right way.",
-    question: "Which social media platforms do you manage?",
+      "Gestionamos Instagram, TikTok, X, LinkedIn y Facebook. Si tu audiencia está allí, te ayudamos a presentarte de la manera adecuada.",
+    question: "¿Qué plataformas de redes sociales gestionan?",
   },
   {
     answer:
-      "We handle everything. Strategy, ideas, visuals, captions, and posting. If you already have content, we can also optimize and improve it.",
-    question: "Do you create the content or do we need to provide it?",
+      "Nos encargamos de todo: estrategia, ideas, piezas visuales, textos y publicaciones. Si ya tienes contenido, también podemos optimizarlo y mejorarlo.",
+    question: "¿Crean el contenido o debemos proporcionarlo?",
   },
   {
     answer:
-      "Most clients see early growth in the first one to three months. Real results come from consistency, testing, and learning what your audience loves.",
-    question: "How long does it take to see results?",
+      "La mayoría de los clientes percibe un crecimiento inicial durante los primeros tres meses. Los resultados reales provienen de la constancia, las pruebas y el aprendizaje sobre lo que le gusta a tu audiencia.",
+    question: "¿Cuánto tiempo se tarda en ver resultados?",
   },
   {
     answer:
-      "This is perfect for founders, startups, and brands that want to grow online but do not have time to manage social media daily.",
-    question: "Who is this service best for?",
+      "Este servicio es ideal para fundadores, startups y marcas que quieren crecer en línea, pero no tienen tiempo para gestionar sus redes sociales a diario.",
+    question: "¿Para quién es más adecuado este servicio?",
   },
 ] as const;
 
@@ -61,7 +61,7 @@ export function FaqSection() {
           className="shrink-0 text-center text-[28px] leading-[1.08] font-bold tracking-[-1.12px] text-shinta-ink lg:text-[64px] lg:leading-[70.4px] lg:tracking-[-2.56px]"
           id="shinta-faq-heading"
         >
-          FAQ
+          PREGUNTAS FRECUENTES
         </h2>
 
         <div className="w-full space-y-3">

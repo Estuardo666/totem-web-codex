@@ -9,32 +9,32 @@ const TEAM_MEMBERS = [
   {
     imageSrc: "79687116559292ab.jpg",
     name: "Dahlia Saraswati",
-    role: "Founder & Director",
+    role: "Fundadora y directora",
   },
   {
     imageSrc: "47f89ced261416df.jpg",
     name: "Arjuna Gombes",
-    role: "Social Media Strategist",
+    role: "Estratega de redes sociales",
   },
   {
     imageSrc: "34844c23286ab253.jpg",
     name: "Pipit Olivia",
-    role: "Content Lead",
+    role: "Líder de contenido",
   },
   {
     imageSrc: "3180f8ad3e321358.jpg",
     name: "Bhagas Diki",
-    role: "Creator Manager",
+    role: "Responsable de creadores",
   },
   {
     imageSrc: "36db82b98440ca02.jpg",
     name: "Melati Ungu",
-    role: "Data Analyst",
+    role: "Analista de datos",
   },
   {
     imageSrc: "c1c60606144d1f73.jpg",
     name: "Khrisna Bejo",
-    role: "Graphic Designer",
+    role: "Diseñador gráfico",
   },
 ] as const;
 
@@ -74,7 +74,7 @@ export function TeamGridSection() {
               whileInView="visible"
             >
               <SectionEyebrow className="inline-flex rounded-full bg-shinta-pink px-2 py-1 text-shinta-ink">
-                Team
+                Equipo
               </SectionEyebrow>
             </motion.div>
 
@@ -86,7 +86,7 @@ export function TeamGridSection() {
               viewport={{ amount: 0.4, once: true }}
               whileInView="visible"
             >
-              Small Team, Big Impact
+              Un equipo pequeño, un gran impacto
             </motion.h2>
           </div>
 
@@ -97,9 +97,9 @@ export function TeamGridSection() {
             viewport={{ amount: 0.4, once: true }}
             whileInView="visible"
           >
-            Our team comes from content creation, design, social strategy,
-            and growth. Some of us have built brands. Some have scaled
-            social accounts.
+            Nuestro equipo reúne experiencia en creación de contenido, diseño,
+            estrategia social y crecimiento. Algunos hemos creado marcas; otros
+            hemos llevado cuentas sociales al siguiente nivel.
           </motion.p>
         </div>
 

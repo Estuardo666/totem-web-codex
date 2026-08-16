@@ -87,7 +87,7 @@ export function FeaturePerformanceSection() {
               200%
             </p>
             <p className="mt-[3px] text-[16px] leading-[22.4px] font-normal tracking-[-0.32px] text-shinta-stone xl:text-[18px] xl:leading-[25.2px] xl:tracking-[-0.36px]">
-              Organic Follower Growth
+              Crecimiento orgánico de seguidores
             </p>
           </div>
         </div>
@@ -103,12 +103,12 @@ export function FeaturePerformanceSection() {
             id="performance-heading"
             className="text-[28px] leading-[31px] font-bold tracking-[-1.12px] md:text-[28px] md:leading-[31px] xl:text-[64px] xl:leading-[70.4px] xl:tracking-[-2.56px]"
           >
-            Performance-driven UGC that delivers results
+            UGC orientado al rendimiento que genera resultados
           </h2>
           <p className="mt-[30px] max-w-[530px] text-[18px] leading-[27px] font-normal tracking-[-0.36px] text-shinta-stone md:mt-[28px] xl:mt-[30px]">
-            Our UGC strategy is grounded in real performance data. We design,
-            test, and refine creative so every piece contributes to growth you
-            can actually measure.
+            Nuestra estrategia de UGC se basa en datos reales de rendimiento.
+            Diseñamos, probamos y perfeccionamos cada pieza creativa para que
+            contribuya a un crecimiento que realmente puedas medir.
           </p>
         </div>
       </div>

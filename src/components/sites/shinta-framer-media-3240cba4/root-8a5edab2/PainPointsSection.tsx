@@ -5,11 +5,11 @@ import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
 const painPoints = [
-  "Influencer collaborations that bring views but no results",
-  "Posting consistently but getting low engagement",
-  "Content looks “nice” but doesn’t perform",
-  "Campaigns feel forced and salesy",
-  "No clear content direction or strategy",
+  "Colaboraciones con influencers que generan vistas, pero no resultados",
+  "Publicar con constancia, pero lograr poca interacción",
+  "Contenido que se ve «bonito», pero no funciona",
+  "Campañas que se sienten forzadas y demasiado comerciales",
+  "Sin una dirección ni estrategia de contenido claras",
 ] as const;
 
 const cardPositions = [
@@ -112,10 +112,10 @@ export function PainPointsSection() {
             isDark ? "text-shinta-canvas" : "text-shinta-ink",
           )}
         >
-          Social media feels harder than it should be
+          Las redes sociales parecen más difíciles de lo que deberían
         </h2>
 
-        <ul className="absolute inset-0 z-20 list-none" aria-label="Common social media problems">
+        <ul className="absolute inset-0 z-20 list-none" aria-label="Problemas frecuentes en redes sociales">
           {painPoints.map((painPoint, index) => (
             <li
               className={cn(

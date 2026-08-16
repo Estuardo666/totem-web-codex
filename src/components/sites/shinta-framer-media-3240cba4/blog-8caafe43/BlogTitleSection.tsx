@@ -5,7 +5,7 @@ import { motion, useReducedMotion, type Variants } from "framer-motion";
 
 import { SectionEyebrow } from "../shared/ShintaPrimitives";
 
-const heading = "Insight & Ideas";
+const heading = "Perspectivas e ideas";
 const headingWords = heading.split(" ");
 
 const groupVariants: Variants = {
@@ -101,8 +101,8 @@ export function BlogTitleSection() {
           viewport={{ amount: 0.4, once: true }}
           whileInView="visible"
         >
-          Insights on social content, creators, and strategy, written from inside
-          the work, not theory.
+          Ideas sobre contenido social, creadores y estrategia, escritas desde la
+          experiencia, no desde la teoría.
         </motion.p>
       </div>
     </section>

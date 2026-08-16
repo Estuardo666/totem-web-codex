@@ -6,48 +6,48 @@ import { shintaAsset } from "@/components/sites/shinta-framer-media-3240cba4/sha
 const services = [
   {
     description:
-      "We produce high impact short form videos designed for how people actually consume content on social platforms. Built to grab attention.",
+      "Producimos videos breves de alto impacto, diseñados para la forma en que las personas consumen contenido en las plataformas sociales. Creados para captar la atención.",
     image: "images/b16db9e580397fdd.jpg",
-    label: "Long Form Videos Clipped",
+    label: "Videos largos recortados",
     number: "01",
     stat: "242+",
-    title: "Short-Form Production",
+    title: "Producción de formato breve",
     surface: "bg-shinta-lavender",
     tab: "left-0",
     layer: "lg:z-10",
   },
   {
     description:
-      "We turn data into direction. By analyzing performance, we refine formats, hooks, and storytelling to scale what works and cut what doesn’t.",
+      "Convertimos los datos en dirección. Al analizar el rendimiento, perfeccionamos formatos, ganchos y narrativas para escalar lo que funciona y eliminar lo que no.",
     image: "images/a1faa59a449d1277.jpg",
-    label: "Total Impressions",
+    label: "Impresiones totales",
     number: "02",
     stat: "50M+",
-    title: "Creator & UGC Campaigns",
+    title: "Campañas con creadores y UGC",
     surface: "bg-shinta-pink",
     tab: "left-1/4",
     layer: "lg:z-20",
   },
   {
     description:
-      "From content planning to publishing and optimization, we manage your social presence with consistency and intent. Relax and we handle the rest.",
+      "Desde la planificación hasta la publicación y optimización, gestionamos tu presencia social con constancia e intención. Relájate, nosotros nos encargamos del resto.",
     image: "images/8937ba903b130468.jpg",
-    label: "Total Impressions",
+    label: "Impresiones totales",
     number: "03",
     stat: "50M+",
-    title: "Social Media Management",
-    surface: "bg-[#d0ccc8]",
+    title: "Gestión de redes sociales",
+    surface: "bg-totem-surface-secondary",
     tab: "left-1/2",
     layer: "lg:z-30",
   },
   {
     description:
-      "We research, test, iterate, and scale creative based on real world data. We’re the first agency that doesn’t guess, no vibes, just what performs.",
+      "Investigamos, probamos, iteramos y escalamos la creatividad con datos del mundo real. Somos la primera agencia que no adivina: sin corazonadas, solo lo que funciona.",
     image: "images/32b02d1e1ff6490e.jpg",
-    label: "Increase in Leads",
+    label: "Aumento de clientes potenciales",
     number: "04",
     stat: "150%",
-    title: "Performance Creative Strategy",
+    title: "Estrategia creativa de rendimiento",
     surface: "bg-shinta-green",
     tab: "left-3/4",
     layer: "lg:z-40",
@@ -74,7 +74,7 @@ function ServicePanel({ service }: ServicePanelProps) {
             service.tab,
           )}
         >
-          Service / {service.number}
+          Servicio / {service.number}
         </p>
 
         <div

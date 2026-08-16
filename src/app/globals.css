@@ -26,6 +26,30 @@
   font-weight: 700;
 }
 
+@font-face {
+  font-family: "Freemius";
+  src: url("/fonts/Freemius-Regular.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Freemius";
+  src: url("/fonts/Freemius-Medium.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Freemius";
+  src: url("/fonts/Freemius-Bold.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -33,7 +57,7 @@
   --color-foreground: var(--foreground);
   --font-sans: "Open Sauce One", ui-sans-serif, system-ui, sans-serif;
   --font-mono: ui-monospace, "SFMono-Regular", Consolas, monospace;
-  --font-heading: var(--font-sans);
+  --font-heading: "Freemius", "Open Sauce One", ui-sans-serif, system-ui, sans-serif;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -63,6 +87,23 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  /* Tótem semantic utilities: bg-totem-background, text-totem-text, etc. */
+  --color-totem-background: var(--totem-background);
+  --color-totem-background-alt: var(--totem-background-alt);
+  --color-totem-surface: var(--totem-surface);
+  --color-totem-surface-secondary: var(--totem-surface-secondary);
+  --color-totem-text: var(--totem-text);
+  --color-totem-text-secondary: var(--totem-text-secondary);
+  --color-totem-border: var(--totem-border);
+  --color-totem-brand: var(--totem-brand);
+  --color-totem-tech: var(--totem-tech);
+  --color-totem-tech-soft: var(--totem-tech-soft);
+  --color-totem-creative: var(--totem-creative);
+  --color-totem-action: var(--totem-action);
+  --color-totem-action-text: var(--totem-action-text);
+  --color-totem-text-on-dark: var(--totem-text-on-dark);
+  --color-totem-text-on-dark-secondary: var(--totem-text-on-dark-secondary);
+  --color-totem-focus: var(--totem-focus);
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -73,72 +114,125 @@
 }
 
 :root {
-  --background: #f4f4f3;
-  --foreground: #1c1917;
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  /*
+   * TOTEM COLOR SYSTEM
+   * Change brand values here. Components consume the semantic roles below.
+   */
+  --totem-navy: #032143;
+  --totem-sky: #7bdded;
+  --totem-sky-soft: #e6f6fd;
+  --totem-lavender: #7e8dc7;
+  --totem-lime: #c0fc78;
+  --totem-night: #07182c;
+  --totem-night-alt: #0b2139;
+  --totem-night-card: #102c49;
+  --totem-night-card-raised: #133653;
+  --totem-off-white: #f7f8f6;
+  --totem-white: #ffffff;
+
+  /* Light theme roles */
+  --totem-background: var(--totem-off-white);
+  --totem-background-alt: var(--totem-sky-soft);
+  --totem-surface: var(--totem-white);
+  --totem-surface-secondary: var(--totem-sky-soft);
+  --totem-text: var(--totem-navy);
+  --totem-text-secondary: #526173;
+  --totem-border: #d9e4ea;
+  --totem-brand: var(--totem-navy);
+  --totem-tech: var(--totem-sky);
+  --totem-tech-soft: var(--totem-sky-soft);
+  --totem-creative: var(--totem-lavender);
+  --totem-action: var(--totem-lime);
+  --totem-action-text: var(--totem-navy);
+  --totem-text-on-dark: #f7f8f5;
+  --totem-text-on-dark-secondary: #b9c4cf;
+  --totem-focus: var(--totem-sky);
+
+  /* shadcn semantic bridge */
+  --background: var(--totem-background);
+  --foreground: var(--totem-text);
+  --card: var(--totem-surface);
+  --card-foreground: var(--totem-text);
+  --popover: var(--totem-surface);
+  --popover-foreground: var(--totem-text);
+  --primary: var(--totem-action);
+  --primary-foreground: var(--totem-action-text);
+  --secondary: var(--totem-tech-soft);
+  --secondary-foreground: var(--totem-text);
+  --muted: var(--totem-background-alt);
+  --muted-foreground: var(--totem-text-secondary);
+  --accent: var(--totem-tech);
+  --accent-foreground: var(--totem-navy);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
+  --border: var(--totem-border);
+  --input: var(--totem-border);
+  --ring: var(--totem-focus);
+  --chart-1: var(--totem-tech);
+  --chart-2: var(--totem-creative);
+  --chart-3: var(--totem-action);
+  --chart-4: var(--totem-brand);
+  --chart-5: var(--totem-text-secondary);
   --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar: var(--totem-surface);
+  --sidebar-foreground: var(--totem-text);
+  --sidebar-primary: var(--totem-action);
+  --sidebar-primary-foreground: var(--totem-action-text);
+  --sidebar-accent: var(--totem-tech-soft);
+  --sidebar-accent-foreground: var(--totem-text);
+  --sidebar-border: var(--totem-border);
+  --sidebar-ring: var(--totem-focus);
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
+  /* Dark theme roles are composed independently, not inverted. */
+  --totem-background: var(--totem-night);
+  --totem-background-alt: var(--totem-night-alt);
+  --totem-surface: var(--totem-night-card);
+  --totem-surface-secondary: var(--totem-night-card-raised);
+  --totem-text: #f7f8f5;
+  --totem-text-secondary: #b9c4cf;
+  --totem-border: #27425e;
+  --totem-brand: var(--totem-navy);
+  --totem-tech: var(--totem-sky);
+  --totem-tech-soft: var(--totem-night-alt);
+  --totem-creative: var(--totem-lavender);
+  --totem-action: var(--totem-lime);
+  --totem-action-text: var(--totem-navy);
+  --totem-text-on-dark: #f7f8f5;
+  --totem-text-on-dark-secondary: #b9c4cf;
+  --totem-focus: var(--totem-sky);
+
+  --background: var(--totem-background);
+  --foreground: var(--totem-text);
+  --card: var(--totem-surface);
+  --card-foreground: var(--totem-text);
+  --popover: var(--totem-surface);
+  --popover-foreground: var(--totem-text);
+  --primary: var(--totem-action);
+  --primary-foreground: var(--totem-action-text);
+  --secondary: var(--totem-surface-secondary);
+  --secondary-foreground: var(--totem-text);
+  --muted: var(--totem-background-alt);
+  --muted-foreground: var(--totem-text-secondary);
+  --accent: var(--totem-tech);
+  --accent-foreground: var(--totem-navy);
   --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --border: var(--totem-border);
+  --input: var(--totem-border);
+  --ring: var(--totem-focus);
+  --chart-1: var(--totem-tech);
+  --chart-2: var(--totem-creative);
+  --chart-3: var(--totem-action);
+  --chart-4: var(--totem-text);
+  --chart-5: var(--totem-text-secondary);
+  --sidebar: var(--totem-surface);
+  --sidebar-foreground: var(--totem-text);
+  --sidebar-primary: var(--totem-action);
+  --sidebar-primary-foreground: var(--totem-action-text);
+  --sidebar-accent: var(--totem-surface-secondary);
+  --sidebar-accent-foreground: var(--totem-text);
+  --sidebar-border: var(--totem-border);
+  --sidebar-ring: var(--totem-focus);
 }
 
 @layer base {
@@ -148,21 +242,109 @@
   body {
     @apply bg-background text-foreground;
   }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+  }
   html {
     @apply font-sans;
     scroll-behavior: smooth;
   }
 }
 
+/*
+ * Legacy marketing components still use the original shinta-* utility names.
+ * These overrides map structural roles to the Tótem dark palette without
+ * changing fixed brand accents such as sky, lavender and lime.
+ */
+@layer utilities {
+  .dark .bg-shinta-canvas {
+    background-color: var(--totem-background);
+  }
+
+  .dark .text-shinta-ink {
+    color: var(--totem-text);
+  }
+
+  .dark .text-shinta-stone,
+  .dark .text-shinta-muted {
+    color: var(--totem-text-secondary);
+  }
+
+  .dark .border-shinta-ink {
+    border-color: var(--totem-text);
+  }
+
+  .dark .bg-white {
+    background-color: var(--totem-surface);
+  }
+
+  .dark .bg-shinta-pink.text-shinta-ink,
+  .dark .bg-shinta-lavender.text-shinta-ink,
+  .dark .bg-shinta-green.text-shinta-ink,
+  .dark .bg-shinta-pink .text-shinta-ink,
+  .dark .bg-shinta-lavender .text-shinta-ink,
+  .dark .bg-shinta-green .text-shinta-ink,
+  .dark .bg-totem-action.text-totem-action-text {
+    color: var(--totem-navy);
+  }
+
+  .dark .bg-shinta-pink .text-shinta-stone,
+  .dark .bg-shinta-pink .text-shinta-muted,
+  .dark .bg-shinta-lavender .text-shinta-stone,
+  .dark .bg-shinta-lavender .text-shinta-muted,
+  .dark .bg-shinta-green .text-shinta-stone,
+  .dark .bg-shinta-green .text-shinta-muted {
+    color: #526173;
+  }
+}
+
+::selection {
+  background: var(--totem-tech);
+  color: var(--totem-navy);
+}
+
+/* Freemius Medium keeps display titles expressive without the heavier 700 weight. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500 !important;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+h1 {
+  line-height: 0.9;
+}
+
+h2 {
+  line-height: 0.95;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.04;
+}
+
 @theme inline {
-  --color-shinta-canvas: #f4f4f3;
-  --color-shinta-ink: #1c1917;
-  --color-shinta-stone: #44403c;
-  --color-shinta-muted: #78716c;
-  --color-shinta-pink: #ffa8f2;
-  --color-shinta-orange: #ffa952;
-  --color-shinta-lavender: #aa94ff;
-  --color-shinta-green: #9ef483;
+  /* Legacy component aliases. New work should use the totem-* utilities above. */
+  --color-shinta-canvas: var(--totem-off-white);
+  --color-shinta-ink: var(--totem-navy);
+  --color-shinta-stone: #526173;
+  --color-shinta-muted: #526173;
+  --color-shinta-pink: var(--totem-sky);
+  --color-shinta-orange: var(--totem-lavender);
+  --color-shinta-lavender: var(--totem-lavender);
+  --color-shinta-green: var(--totem-lime);
 }
 
 @keyframes shinta-marquee {
@@ -200,6 +382,93 @@
   animation: shinta-spin 18s linear infinite;
 }
 
+.shift-button {
+  --shift-button-duration: 500ms;
+  --shift-button-easing: cubic-bezier(0.23, 1, 0.32, 1);
+  isolation: isolate;
+}
+
+.shift-button__content {
+  display: grid;
+  grid-template-columns: var(--shift-button-icon-size) minmax(0, 1fr) 0;
+  align-items: center;
+  width: 100%;
+  transition: grid-template-columns var(--shift-button-duration)
+    var(--shift-button-easing);
+}
+
+.shift-button__label {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+  transform: rotate(0deg);
+  transform-origin: center;
+  transition: transform var(--shift-button-duration) var(--shift-button-easing);
+  will-change: transform;
+}
+
+.shift-button__icon {
+  display: grid;
+  width: var(--shift-button-icon-size);
+  height: var(--shift-button-icon-size);
+  flex: none;
+  place-items: center;
+  border-radius: 9999px;
+  overflow: hidden;
+  transform: scale(1);
+  transition: transform var(--shift-button-duration) var(--shift-button-easing);
+  will-change: transform;
+}
+
+.shift-button__icon--leading {
+  justify-self: start;
+}
+
+.shift-button__icon--trailing {
+  justify-self: end;
+  transform: scale(0);
+}
+
+.shift-button__icon svg {
+  transition:
+    opacity 180ms ease-out,
+    transform 400ms var(--shift-button-easing);
+}
+
+.shift-button__icon--trailing svg {
+  opacity: 0;
+  transform: translate(-12px, 12px);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .shift-button:hover .shift-button__content,
+  .shift-button:focus-visible .shift-button__content {
+    grid-template-columns: 0 minmax(0, 1fr) var(--shift-button-icon-size);
+  }
+
+  .shift-button:hover .shift-button__label,
+  .shift-button:focus-visible .shift-button__label {
+    transform: rotate(-6deg);
+  }
+
+  .shift-button:hover .shift-button__icon--leading,
+  .shift-button:focus-visible .shift-button__icon--leading {
+    transform: scale(0);
+  }
+
+  .shift-button:hover .shift-button__icon--trailing,
+  .shift-button:focus-visible .shift-button__icon--trailing {
+    transform: scale(1);
+  }
+
+  .shift-button:hover .shift-button__icon--trailing svg,
+  .shift-button:focus-visible .shift-button__icon--trailing svg {
+    opacity: 1;
+    transform: translate(0, 0);
+    transition-delay: 120ms;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -209,5 +478,32 @@
   .shinta-float,
   .shinta-spin {
     animation: none;
+  }
+
+  .shift-button__content,
+  .shift-button__label,
+  .shift-button__icon,
+  .shift-button__icon svg {
+    transition: none;
+  }
+
+  .shift-button:hover .shift-button__content,
+  .shift-button:focus-visible .shift-button__content {
+    grid-template-columns: var(--shift-button-icon-size) minmax(0, 1fr) 0;
+  }
+
+  .shift-button:hover .shift-button__label,
+  .shift-button:focus-visible .shift-button__label {
+    transform: none;
+  }
+
+  .shift-button:hover .shift-button__icon--leading,
+  .shift-button:focus-visible .shift-button__icon--leading {
+    transform: scale(1);
+  }
+
+  .shift-button:hover .shift-button__icon--trailing,
+  .shift-button:focus-visible .shift-button__icon--trailing {
+    transform: scale(0);
   }
 }

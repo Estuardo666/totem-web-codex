@@ -24,36 +24,36 @@ type ProcessStep = {
 
 const processSteps: ProcessStep[] = [
   {
-    body: "We do the research so it’s likely to go viral.",
+    body: "Investigamos para aumentar las probabilidades de viralidad.",
     color: "border-shinta-pink bg-shinta-pink",
     delay: "delay-[0ms]",
     icon: MessageSquareText,
     number: "01",
-    title: "Planing",
+    title: "Planificación",
   },
   {
-    body: "We create native content that fits the platform.",
+    body: "Creamos contenido nativo que encaja con la plataforma.",
     color: "border-shinta-lavender bg-shinta-lavender",
     delay: "delay-[110ms]",
     icon: PlaySquare,
     number: "02",
-    title: "Contents",
+    title: "Contenido",
   },
   {
-    body: "We track performance and refine what works.",
-    color: "border-[#cecac7] bg-[#cecac7]",
+    body: "Medimos el rendimiento y perfeccionamos lo que funciona.",
+    color: "border-totem-surface bg-totem-surface",
     delay: "delay-[220ms]",
     icon: BadgeCheck,
     number: "03",
-    title: "Optimization",
+    title: "Optimización",
   },
   {
-    body: "We push what performs and drop what doesn’t.",
+    body: "Impulsamos lo que rinde y descartamos lo que no.",
     color: "border-shinta-green bg-shinta-green",
     delay: "delay-[330ms]",
     icon: ChartNoAxesColumnIncreasing,
     number: "04",
-    title: "Scale",
+    title: "Escalamiento",
   },
 ];
 
@@ -95,14 +95,14 @@ export function ProcessSection() {
     >
       <div className="mx-auto max-w-[1280px]">
         <SectionEyebrow className="inline-flex rounded-full bg-shinta-pink px-[10px] py-[3px] text-[10px] leading-[13px] tracking-[0.65px]">
-          our process
+          nuestro proceso
         </SectionEyebrow>
 
         <h2
           id="process-heading"
           className="mt-[12px] max-w-[335px] text-[28px] leading-[31px] font-bold tracking-[-1.12px] md:max-w-[630px] xl:mt-[10px] xl:max-w-[850px] xl:text-[64px] xl:leading-[70.4px] xl:tracking-[-2.56px]"
         >
-          From strategy to scroll-stopping content.
+          De la estrategia al contenido que detiene el scroll.
         </h2>
 
         <ol

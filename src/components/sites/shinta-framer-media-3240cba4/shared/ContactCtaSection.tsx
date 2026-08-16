@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
 
+import { ShiftButtonContent } from "./ShintaPrimitives";
 import { shintaAsset } from "./site";
 
 export function ContactCtaSection() {
@@ -33,33 +33,32 @@ export function ContactCtaSection() {
               id="contact-heading"
               className="max-w-[330px] text-[28px] leading-[31px] font-bold tracking-[-1.12px] xl:text-[64px] xl:leading-[70.4px] xl:tracking-[-2.56px]"
             >
-              Let’s grow thorough content!
+              ¡Crezcamos con contenido de calidad!
             </h2>
-            <p className="mt-[24px] max-w-[340px] text-[18px] leading-[27px] font-normal tracking-[-0.36px] text-[#d0cac6] xl:mt-[28px]">
-              Shinta helps brands create content that earns attention, builds
-              engagement, and drives real growth.
+            <p className="mt-[24px] max-w-[340px] text-[18px] leading-[27px] font-normal tracking-[-0.36px] text-totem-text-on-dark-secondary xl:mt-[28px]">
+              Shinta ayuda a las marcas a crear contenido que capta la atención,
+              genera interacción e impulsa un crecimiento real.
             </p>
 
             <Link
-              className="group mt-[30px] flex h-[56px] w-full items-center justify-between rounded-full bg-shinta-canvas pl-[22px] text-[16px] font-semibold text-shinta-ink transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-translate-y-1 focus-visible:-translate-y-1 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-shinta-pink xl:mt-[38px] xl:h-[52px]"
+              className="shift-button group mt-[30px] flex h-[56px] w-full items-center rounded-full text-[16px] font-semibold text-shinta-ink focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-shinta-pink xl:mt-[38px] xl:h-[52px]"
               href="https://cal.com/"
             >
-              <span>Book a call</span>
-              <span className="grid size-[56px] shrink-0 place-items-center rounded-full bg-shinta-pink transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:translate-x-1 group-hover:rotate-45 group-hover:scale-110 group-focus-visible:translate-x-1 group-focus-visible:rotate-45 group-focus-visible:scale-110 xl:size-[52px]">
-                <ArrowUpRight
-                  aria-hidden="true"
-                  className="size-5"
-                  strokeWidth={2.2}
-                />
-              </span>
+              <ShiftButtonContent
+                className="[--shift-button-icon-size:56px] xl:[--shift-button-icon-size:52px]"
+                iconClassName="bg-totem-action text-totem-action-text"
+                labelClassName="flex h-[56px] items-center rounded-full bg-totem-action px-[22px] xl:h-[52px]"
+              >
+                Agenda una llamada
+              </ShiftButtonContent>
             </Link>
           </div>
         </div>
 
-        <div className="relative overflow-hidden rounded-[32px] bg-[#d9d9d6] xl:rounded-[34px]">
+        <div className="relative overflow-hidden rounded-[32px] bg-totem-surface-secondary xl:rounded-[34px]">
           <div className="shinta-float absolute -inset-[12px] motion-reduce:transform-none">
             <Image
-              alt="A child running through a field surrounded by seagulls"
+              alt="Un niño corriendo por un campo rodeado de gaviotas"
               className="object-cover"
               fill
               priority={false}

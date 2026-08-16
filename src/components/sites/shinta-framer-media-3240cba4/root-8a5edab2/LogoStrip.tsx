@@ -69,12 +69,12 @@ export function LogoStrip() {
 
   return (
     <section
-      aria-label="Brands whose content Shinta has leveled up"
+      aria-label="Marcas cuyo contenido Shinta ha llevado al siguiente nivel"
       className="flex h-[94px] w-full items-start justify-center overflow-hidden px-5 pt-8"
     >
       <div className="flex h-[62px] w-full max-w-[620px] flex-col items-center gap-[10px] overflow-hidden">
         <p className="shrink-0 text-center text-[12px] leading-[16.8px] font-semibold tracking-[0.96px] text-shinta-muted uppercase">
-          30+ Brands leveled up their content game
+          Más de 30 marcas elevaron el nivel de su contenido
         </p>
 
         <div className="w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_7%,black_93%,transparent)] [-webkit-mask-image:linear-gradient(to_right,transparent,black_7%,black_93%,transparent)]">

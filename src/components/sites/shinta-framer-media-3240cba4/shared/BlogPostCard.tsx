@@ -80,7 +80,7 @@ export function BlogPostCard({
             />
           </div>
           <p className="text-[16px] leading-[22.4px] text-shinta-muted">
-            By <span className="text-[18px] leading-[27px] text-shinta-ink">{authorName}</span>
+            Por <span className="text-[18px] leading-[27px] text-shinta-ink">{authorName}</span>
           </p>
         </div>
       </Link>

@@ -8,11 +8,11 @@ import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { shintaAsset } from "../shared/site";
 
 const comparisons = [
-  ["Ad-like, brand-heavy", "Platform-native, organic-first"],
-  ["Posting volume", "Engagement & relevance"],
-  ["Based on follower count", "Performance-based selection"],
-  ["Trend-chasing", "Strategic & brand-aligned"],
-  ["Basic metrics", "Clear insights & learnings"],
+  ["Con aspecto de anuncio y saturado de marca", "Nativo de la plataforma y orgánico ante todo"],
+  ["Volumen de publicaciones", "Interacción y relevancia"],
+  ["Basado en la cantidad de seguidores", "Selección basada en el rendimiento"],
+  ["Perseguir tendencias", "Estratégico y alineado con la marca"],
+  ["Métricas básicas", "Conclusiones y aprendizajes claros"],
 ] as const;
 
 const tableVariants: Variants = {
@@ -68,11 +68,11 @@ export function ComparisonSection() {
           viewport={{ amount: 0.7, once: true }}
           whileInView={{ opacity: 1, y: 0 }}
         >
-          Don&apos;t settle for less
+          No te conformes con menos
         </motion.h2>
 
         <motion.div
-          aria-label="Comparison between other agencies and Shinta"
+          aria-label="Comparación entre otras agencias y Shinta"
           className="relative w-full max-w-[700px] py-4"
           initial={reduceMotion ? false : "hidden"}
           role="table"
@@ -99,7 +99,7 @@ export function ComparisonSection() {
               id="other-agencies-heading"
               role="columnheader"
             >
-              Other Agencies
+              Otras agencias
             </div>
             <div
               className="-translate-y-4 px-3 pt-6 pb-4 sm:px-6"
@@ -107,7 +107,7 @@ export function ComparisonSection() {
               role="columnheader"
             >
               <Link
-                aria-label="Shinta home"
+                aria-label="Inicio de Shinta"
                 className="inline-flex focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-shinta-ink"
                 href="/"
               >

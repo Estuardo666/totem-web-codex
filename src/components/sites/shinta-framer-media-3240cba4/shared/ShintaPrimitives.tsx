@@ -58,19 +58,76 @@ type PillLinkProps = {
   href: string;
 };
 
+type ShiftButtonContentProps = {
+  children: ReactNode;
+  className?: string;
+  iconClassName?: string;
+  iconSizeClassName?: string;
+  iconStrokeWidth?: number;
+  labelClassName?: string;
+};
+
+export function ShiftButtonContent({
+  children,
+  className,
+  iconClassName,
+  iconSizeClassName = "size-5",
+  iconStrokeWidth = 2.2,
+  labelClassName,
+}: ShiftButtonContentProps) {
+  const icon = (
+    <ArrowUpRight
+      aria-hidden="true"
+      className={iconSizeClassName}
+      strokeWidth={iconStrokeWidth}
+    />
+  );
+
+  return (
+    <span className={cn("shift-button__content", className)}>
+      <span
+        aria-hidden="true"
+        className={cn(
+          "shift-button__icon shift-button__icon--leading",
+          iconClassName,
+        )}
+      >
+        {icon}
+      </span>
+      <span className={cn("shift-button__label", labelClassName)}>
+        {children}
+      </span>
+      <span
+        aria-hidden="true"
+        className={cn(
+          "shift-button__icon shift-button__icon--trailing",
+          iconClassName,
+        )}
+      >
+        {icon}
+      </span>
+    </span>
+  );
+}
+
 export function PillLink({ children, className, href }: PillLinkProps) {
   return (
     <Link
       className={cn(
-        "group inline-flex h-12 items-center gap-3 rounded-full bg-shinta-ink px-5 text-[14px] font-semibold text-white transition-transform duration-300 hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-shinta-ink",
+        "shift-button group inline-flex h-12 items-center rounded-full text-[14px] font-semibold text-totem-action-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-totem-focus",
         className,
       )}
       href={href}
     >
-      <span>{children}</span>
-      <span className="grid size-7 place-items-center rounded-full bg-white text-shinta-ink transition-transform duration-300 group-hover:rotate-45">
-        <ArrowUpRight aria-hidden="true" className="size-4" strokeWidth={2.25} />
-      </span>
+      <ShiftButtonContent
+        className="[--shift-button-icon-size:28px]"
+        iconClassName="bg-totem-action text-totem-action-text"
+        iconSizeClassName="size-4"
+        iconStrokeWidth={2.25}
+        labelClassName="flex h-12 items-center rounded-full bg-totem-action px-5"
+      >
+        {children}
+      </ShiftButtonContent>
     </Link>
   );
 }
@@ -88,7 +145,7 @@ export function FlowerMark({ className }: ClassNameProps) {
         fill="currentColor"
         transform="translate(3 -6) scale(.75)"
       />
-      <circle cx="24" cy="24" r="5" fill="#f4f4f3" />
+      <circle cx="24" cy="24" r="5" fill="var(--totem-off-white)" />
     </svg>
   );
 }

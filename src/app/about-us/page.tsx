@@ -11,8 +11,8 @@ import { Navbar } from "@/components/sites/shinta-framer-media-3240cba4/shared/N
 
 export const metadata: Metadata = {
   description:
-    "We’re the ones who pause a Reel just to analyze the hook, send TikToks to each other with “this is smart,” and debate why one video popped while another didn’t.",
-  title: "About us",
+    "Somos quienes pausan un Reel solo para analizar el gancho, se envían TikToks diciendo «esto es brillante» y debaten por qué un video despegó mientras otro no.",
+  title: "Sobre nosotros",
 };
 
 export default function AboutUsPage() {

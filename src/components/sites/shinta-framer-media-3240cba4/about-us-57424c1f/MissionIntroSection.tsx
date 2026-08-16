@@ -66,7 +66,7 @@ export function MissionIntroSection() {
             whileInView="visible"
           >
             <SectionEyebrow className="inline-flex rounded-full bg-shinta-pink px-2 py-1 text-shinta-ink">
-              Our Mission
+              Nuestra misión
             </SectionEyebrow>
           </motion.div>
 
@@ -78,7 +78,7 @@ export function MissionIntroSection() {
             viewport={{ amount: 0.4, once: true }}
             whileInView="visible"
           >
-            What We&rsquo;re Here to Do
+            Lo que venimos a hacer
           </motion.h2>
 
           <motion.p
@@ -88,10 +88,10 @@ export function MissionIntroSection() {
             viewport={{ amount: 0.4, once: true }}
             whileInView="visible"
           >
-            We create short-form, scroll-first content designed for the
-            platform, guided by real audience behavior and performance data.
-            Every idea is tested, refined, and scaled with one goal in mind:
-            content that people actually want to watch.
+            Creamos contenido breve, pensado para captar la atención al navegar y
+            diseñado para cada plataforma, guiándonos por el comportamiento real de
+            la audiencia y los datos de rendimiento. Probamos, perfeccionamos y
+            escalamos cada idea para crear contenido que la gente realmente quiera ver.
           </motion.p>
         </div>
 
@@ -110,7 +110,7 @@ export function MissionIntroSection() {
             whileInView="visible"
           >
             <Image
-              alt="A Shinta crew filming a creator on a tripod-mounted camera"
+              alt="El equipo de Shinta grabando a una creadora con una cámara sobre trípode"
               className="object-contain"
               fill
               sizes="(min-width: 1200px) 362px, (min-width: 768px) 320px, 320px"

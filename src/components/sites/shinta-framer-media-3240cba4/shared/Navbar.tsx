@@ -6,13 +6,14 @@ import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import { shintaAsset } from "@/components/sites/shinta-framer-media-3240cba4/shared/site";
+
+import { ThemeSwitch } from "./ThemeSwitch";
 
 const navigationLinks = [
-  { href: "/#projects", label: "Projects" },
-  { href: "/#about-us", label: "About Us" },
-  { href: "/#blog", label: "Blog" },
-  { href: "/#contact", label: "Contact" },
+  { href: "/#projects", label: "Proyectos" },
+  { href: "/about-us", label: "Sobre nosotros" },
+  { href: "/blog", label: "Blog" },
+  { href: "/contact", label: "Contacto" },
 ] as const;
 
 type StackedNavLabelProps = {
@@ -72,7 +73,7 @@ export function Navbar() {
 
   return (
     <nav
-      aria-label="Primary navigation"
+      aria-label="Navegación principal"
       className={cn(
         "fixed inset-x-0 top-0 z-50 flex h-[76px] justify-center px-[15px] py-[10px] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] max-md:h-[72px] max-md:px-[10px] max-md:py-2",
         isVisible ? "translate-y-0" : "-translate-y-full",
@@ -80,19 +81,19 @@ export function Navbar() {
     >
       <div className="relative flex h-14 w-full max-w-[1280px] items-center justify-between rounded-full bg-shinta-ink px-[14px] shadow-[0_1px_0_rgba(255,255,255,0.08)]">
         <Link
-          aria-label="Shinta home"
+          aria-label="Inicio de Shinta"
           className="rounded-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-shinta-pink"
           href="/"
           onClick={() => setIsMenuOpen(false)}
         >
           <Image
             alt="Shinta"
-            className="h-auto w-[99px]"
-            height={268}
+            className="h-10 w-auto max-w-[52px] object-contain"
+            height={417}
             priority
-            src={shintaAsset("images/75eebb2b07b43c9a.png")}
+            src="/brand/logo-dark.png"
             unoptimized
-            width={1000}
+            width={621}
           />
         </Link>
 
@@ -108,27 +109,31 @@ export function Navbar() {
           ))}
         </div>
 
-        <Link
-          className="group hidden h-10 items-center rounded-full bg-shinta-canvas px-5 text-[16px] font-semibold leading-4 tracking-[-0.64px] text-shinta-ink transition-colors duration-300 hover:bg-shinta-pink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-shinta-pink md:flex"
-          href="https://cal.com/"
-        >
-          Book a Call
-        </Link>
+        <div className="absolute right-[14px] flex w-[84px] shrink-0 items-center justify-end gap-2 sm:static sm:w-auto">
+          <ThemeSwitch />
 
-        <button
-          aria-controls="shinta-mobile-navigation"
-          aria-expanded={isMenuOpen}
-          aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
-          className="grid size-10 place-items-center rounded-full bg-shinta-canvas text-shinta-ink transition-colors hover:bg-shinta-pink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-shinta-pink md:hidden"
-          onClick={() => setIsMenuOpen((current) => !current)}
-          type="button"
-        >
-          {isMenuOpen ? (
-            <X aria-hidden="true" className="size-5" strokeWidth={2.2} />
-          ) : (
-            <Menu aria-hidden="true" className="size-5" strokeWidth={2.2} />
-          )}
-        </button>
+          <Link
+            className="group hidden h-10 items-center rounded-full bg-totem-action px-5 text-[16px] font-semibold leading-4 tracking-[-0.64px] text-totem-action-text transition-colors duration-300 hover:bg-totem-tech focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-totem-focus md:flex"
+            href="https://cal.com/"
+          >
+            Agenda una llamada
+          </Link>
+
+          <button
+            aria-controls="shinta-mobile-navigation"
+            aria-expanded={isMenuOpen}
+            aria-label={isMenuOpen ? "Cerrar menú de navegación" : "Abrir menú de navegación"}
+            className="grid size-10 place-items-center rounded-full bg-shinta-canvas text-shinta-ink transition-colors hover:bg-shinta-pink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-shinta-pink md:hidden"
+            onClick={() => setIsMenuOpen((current) => !current)}
+            type="button"
+          >
+            {isMenuOpen ? (
+              <X aria-hidden="true" className="size-5" strokeWidth={2.2} />
+            ) : (
+              <Menu aria-hidden="true" className="size-5" strokeWidth={2.2} />
+            )}
+          </button>
+        </div>
 
         <div
           className={cn(
@@ -151,11 +156,11 @@ export function Navbar() {
               </Link>
             ))}
             <Link
-              className="mt-4 flex h-11 items-center justify-center rounded-full bg-shinta-canvas text-[16px] font-semibold tracking-[-0.64px] text-shinta-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-shinta-pink"
+              className="mt-4 flex h-11 items-center justify-center rounded-full bg-totem-action text-[16px] font-semibold tracking-[-0.64px] text-totem-action-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-totem-focus"
               href="https://cal.com/"
               onClick={() => setIsMenuOpen(false)}
             >
-              Book a Call
+              Agenda una llamada
             </Link>
           </div>
         </div>

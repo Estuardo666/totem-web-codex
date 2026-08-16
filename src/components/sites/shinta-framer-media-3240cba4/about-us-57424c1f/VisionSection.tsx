@@ -73,7 +73,7 @@ export function VisionSection() {
             whileInView="visible"
           >
             <Image
-              alt="Two Shinta creators reviewing storyboards at a lit studio desk"
+              alt="Dos creadoras de Shinta revisando guiones gráficos en un escritorio de estudio iluminado"
               className="object-cover"
               fill
               sizes="(min-width: 1200px) 460px, (min-width: 768px) 45vw, 100vw"
@@ -91,7 +91,7 @@ export function VisionSection() {
             whileInView="visible"
           >
             <SectionEyebrow className="inline-flex rounded-full bg-shinta-pink px-2 py-1 text-shinta-ink">
-              Our Vision
+              Nuestra visión
             </SectionEyebrow>
           </motion.div>
 
@@ -103,7 +103,7 @@ export function VisionSection() {
             viewport={{ amount: 0.4, once: true }}
             whileInView="visible"
           >
-            What We Stand For
+            Lo que defendemos
           </motion.h2>
 
           <motion.p
@@ -113,10 +113,10 @@ export function VisionSection() {
             viewport={{ amount: 0.4, once: true }}
             whileInView="visible"
           >
-            Social media moves fast. Audiences are sharp. If your content
-            feels forced, they scroll past. We wanted to build a team that
-            understands platforms from the inside out, and helps brands keep
-            up without losing their voice.
+            Las redes sociales avanzan rápido y las audiencias son exigentes. Si tu
+            contenido se siente forzado, siguen de largo. Por eso formamos un equipo
+            que entiende las plataformas desde dentro y ayuda a las marcas a seguir
+            el ritmo sin perder su voz.
           </motion.p>
         </div>
       </div>

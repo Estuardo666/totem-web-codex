@@ -1,11 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 
 import { BlogPostCard } from "../shared/BlogPostCard";
-import { SectionEyebrow } from "../shared/ShintaPrimitives";
+import {
+  SectionEyebrow,
+  ShiftButtonContent,
+} from "../shared/ShintaPrimitives";
 import { shintaAsset } from "../shared/site";
 
 const STROKE_PATH_LENGTH = 2124.1;
@@ -25,30 +27,30 @@ const posts = [
   {
     authorAvatarSrc: shintaAsset("images/e202cc3fcb7f8b83.png"),
     authorName: "Kristanto Mahera",
-    coverAlt: "Why Good Copywriting Matters a Lot",
+    coverAlt: "Por qué un buen copywriting importa tanto",
     coverSrc: shintaAsset("images/90da175d3b991e31.jpg"),
-    date: "January 27, 2026",
+    date: "27 de enero de 2026",
     href: "/blog/why-good-copywriting-matters",
-    title: "Why Good Copywriting Matters a Lot",
+    title: "Por qué un buen copywriting importa tanto",
   },
   {
     authorAvatarSrc: shintaAsset("images/187a0bff84102aca.png"),
     authorName: "Karina Kumala",
-    coverAlt: "Why Social Media Is Never a One Person Job",
+    coverAlt: "Por qué las redes sociales nunca son trabajo de una sola persona",
     coverSrc: shintaAsset("images/01c3e56a4e3063a0.jpg"),
-    date: "January 27, 2026",
+    date: "27 de enero de 2026",
     href: "/blog/why-great-social-media-is-never-a-one-person-job",
-    title: "Why Social Media Is Never a One Person Job",
+    title: "Por qué las redes sociales nunca son trabajo de una sola persona",
   },
   {
     authorAvatarSrc: shintaAsset("images/e202cc3fcb7f8b83.png"),
     authorName: "Kristanto Mahera",
-    coverAlt: "How a Social Media Agency Helps Brands",
+    coverAlt: "Cómo una agencia de redes sociales ayuda a las marcas",
     coverSrc:
       "/sites/shinta-framer-media-3240cba4/blog-8caafe43/images/post-agency-helps-brands.jpg",
-    date: "January 27, 2026",
+    date: "27 de enero de 2026",
     href: "/blog/how-a-social-media-agency-helps-brands-grow-faster",
-    title: "How a Social Media Agency Helps Brands",
+    title: "Cómo una agencia de redes sociales ayuda a las marcas",
   },
 ];
 
@@ -72,7 +74,7 @@ export function RelatedPostsSection() {
               initial={{
                 strokeDashoffset: reduceMotion ? 0 : STROKE_PATH_LENGTH,
               }}
-              stroke="#e7e5e4"
+              stroke="var(--totem-border)"
               strokeDasharray={STROKE_PATH_LENGTH}
               strokeLinecap="butt"
               strokeWidth="10"
@@ -105,24 +107,21 @@ export function RelatedPostsSection() {
               </SectionEyebrow>
             </div>
             <h2 className="text-[34px] leading-[38px] font-bold tracking-[-1.36px] text-shinta-ink md:text-[44px] md:leading-[48px] md:tracking-[-1.76px] xl:text-[64px] xl:leading-[70.4px] xl:tracking-[-2.56px]">
-              Insights &amp; Ideas
+              Perspectivas e ideas
             </h2>
           </div>
 
           <Link
-            className="group flex h-[57.2px] w-full items-center transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-translate-y-1 focus-visible:-translate-y-1 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-shinta-ink md:w-[230px]"
+            className="shift-button group flex h-[57.2px] w-full items-center focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-shinta-ink md:w-[230px]"
             href="/blog"
           >
-            <span className="flex h-[57px] flex-1 items-center justify-center rounded-[44px] bg-shinta-ink px-6 py-4 text-[16px] font-bold text-white md:w-[173px] md:flex-none">
-              More Articles
-            </span>
-            <span className="grid size-[57px] shrink-0 place-items-center rounded-[50px] bg-shinta-pink transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:rotate-45 group-hover:scale-110 group-focus-visible:rotate-45 group-focus-visible:scale-110">
-              <ArrowUpRight
-                aria-hidden="true"
-                className="size-5 text-shinta-ink"
-                strokeWidth={2.2}
-              />
-            </span>
+            <ShiftButtonContent
+              className="[--shift-button-icon-size:57px]"
+              iconClassName="bg-totem-action text-totem-action-text"
+              labelClassName="flex h-[57px] items-center justify-center rounded-[44px] bg-totem-action px-6 py-4 text-[16px] font-bold text-totem-action-text"
+            >
+              Más artículos
+            </ShiftButtonContent>
           </Link>
         </motion.div>
 

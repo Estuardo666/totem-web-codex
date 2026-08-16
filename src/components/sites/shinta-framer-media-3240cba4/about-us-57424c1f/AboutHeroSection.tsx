@@ -9,11 +9,11 @@ import { SectionEyebrow } from "../shared/ShintaPrimitives";
 const heroImageSrc =
   "/sites/shinta-framer-media-3240cba4/about-us-57424c1f/images/hero-team-portrait.jpg";
 
-const heading = "Built by people who won’t ship content they’d skip";
+const heading = "Creado por personas que no publicarían contenido que ellas mismas ignorarían";
 const headingWords = heading.split(" ");
 
 const paragraph =
-  "We’re the ones who pause a Reel just to analyze the hook, send TikToks to each other with “this is smart,” and debate why one video popped while another didn’t. That obsession is kind of the point.";
+  "Somos quienes pausan un Reel solo para analizar el gancho, se envían TikToks diciendo «esto es brillante» y debaten por qué un video despegó mientras otro no. Esa obsesión es precisamente el punto.";
 
 const groupVariants: Variants = {
   hidden: {},
@@ -88,7 +88,7 @@ export function AboutHeroSection() {
           >
             <motion.div variants={wordVariants}>
               <SectionEyebrow className="inline-flex rounded-full bg-shinta-pink px-2 py-1 text-shinta-ink">
-                About us
+                Sobre nosotros
               </SectionEyebrow>
             </motion.div>
 
@@ -141,7 +141,7 @@ export function AboutHeroSection() {
             whileInView="visible"
           >
             <Image
-              alt="The Shinta team standing together against a grey studio backdrop"
+              alt="El equipo de Shinta reunido frente a un fondo gris de estudio"
               className="object-cover"
               fill
               sizes="(min-width: 1200px) 1242px, 100vw"

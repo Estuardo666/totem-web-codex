@@ -8,7 +8,7 @@ import { Navbar } from "@/components/sites/shinta-framer-media-3240cba4/shared/N
 
 export const metadata: Metadata = {
   description:
-    "Insights on social content, creators, and strategy, written from inside the work, not theory.",
+    "Ideas sobre contenido social, creadores y estrategia, escritas desde la experiencia, no desde la teoría.",
   title: "Blog",
 };
 

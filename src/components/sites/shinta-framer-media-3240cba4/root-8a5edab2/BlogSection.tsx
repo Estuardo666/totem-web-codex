@@ -2,7 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
-import { SectionEyebrow } from "../shared/ShintaPrimitives";
+import {
+  SectionEyebrow,
+  ShiftButtonContent,
+} from "../shared/ShintaPrimitives";
 import { shintaAsset } from "../shared/site";
 
 const articles = [
@@ -13,8 +16,8 @@ const articles = [
     authorWidth: 1200,
     href: "/blog/why-good-copywriting-matters",
     image: "images/90da175d3b991e31.jpg",
-    imageAlt: "Hands typing copy beside a laptop",
-    title: "Why Good Copywriting Matters a Lot",
+    imageAlt: "Manos redactando textos junto a una computadora portátil",
+    title: "Por qué un buen copywriting importa tanto",
   },
   {
     author: "Budi Pandu",
@@ -23,8 +26,8 @@ const articles = [
     authorWidth: 800,
     href: "/blog/turning-social-media-ideas-into-clear-content-plans",
     image: "images/d8288cb19a756a51.jpg",
-    imageAlt: "A strategist turning ideas into a content plan",
-    title: "Turning Social Media Ideas Into Content Plans",
+    imageAlt: "Una estratega convirtiendo ideas en un plan de contenido",
+    title: "Cómo convertir ideas para redes sociales en planes de contenido",
   },
   {
     author: "Karina Kumala",
@@ -33,8 +36,8 @@ const articles = [
     authorWidth: 1032,
     href: "/blog/why-great-social-media-is-never-a-one-person-job",
     image: "images/01c3e56a4e3063a0.jpg",
-    imageAlt: "Two colleagues working together on social media",
-    title: "Why Social Media Is Never a One Person Job",
+    imageAlt: "Dos colegas trabajando juntos en redes sociales",
+    title: "Por qué las redes sociales nunca son trabajo de una sola persona",
   },
 ] as const;
 
@@ -70,24 +73,22 @@ export function BlogSection() {
               className="max-w-[190px] text-[28px] leading-[1.08] font-bold tracking-[-1.12px] text-shinta-ink sm:max-w-none lg:text-[64px] lg:leading-[70.4px] lg:tracking-[-2.56px]"
               id="shinta-blog-heading"
             >
-              Insights &amp; Ideas
+              Perspectivas e ideas
             </h2>
           </div>
 
           <Link
-            className="group inline-flex shrink-0 items-center gap-1 rounded-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-shinta-ink"
+            className="shift-button group inline-flex w-[142px] shrink-0 items-center rounded-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-shinta-ink sm:w-[168px] lg:w-[185px]"
             href="/#blog"
           >
-            <span className="inline-flex h-11 items-center rounded-full bg-shinta-ink px-4 text-[12px] font-semibold text-white sm:h-12 sm:px-5 sm:text-[14px] lg:h-[52px] lg:px-6">
-              More Articles
-            </span>
-            <span className="grid size-11 place-items-center rounded-full bg-shinta-pink text-shinta-ink sm:size-12 lg:size-[52px]">
-              <ArrowUpRight
-                aria-hidden="true"
-                className="size-5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-focus-visible:translate-x-0.5 group-focus-visible:-translate-y-0.5"
-                strokeWidth={2.25}
-              />
-            </span>
+            <ShiftButtonContent
+              className="[--shift-button-icon-size:44px] sm:[--shift-button-icon-size:48px] lg:[--shift-button-icon-size:52px]"
+              iconClassName="bg-totem-action text-totem-action-text"
+              iconStrokeWidth={2.25}
+              labelClassName="inline-flex h-11 items-center justify-center rounded-full bg-totem-action px-4 text-[12px] font-semibold text-totem-action-text sm:h-12 sm:px-5 sm:text-[14px] lg:h-[52px] lg:px-6"
+            >
+              Más artículos
+            </ShiftButtonContent>
           </Link>
         </header>
 
@@ -117,7 +118,7 @@ export function BlogSection() {
                   className="mt-5 text-[12px] leading-[16.8px] font-semibold tracking-[0.96px] text-shinta-muted uppercase"
                   dateTime="2026-01-27"
                 >
-                  January 27, 2026
+                  27 de enero de 2026
                 </time>
                 <h3 className="mt-2 text-[24px] leading-[1.15] font-bold tracking-[-0.96px] text-shinta-ink md:text-[32px] md:leading-[38.4px] md:tracking-[-1.28px]">
                   {article.title}
@@ -133,7 +134,7 @@ export function BlogSection() {
                     width={article.authorWidth}
                   />
                   <p className="text-[16px] leading-[22px] text-shinta-stone lg:text-[18px] lg:leading-[25px]">
-                    By {article.author}
+                    Por {article.author}
                   </p>
                 </footer>
               </Link>

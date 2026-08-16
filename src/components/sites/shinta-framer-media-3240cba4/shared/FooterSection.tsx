@@ -4,21 +4,23 @@ import Image from "next/image";
 import Link from "next/link";
 import type { FormEvent, ReactNode } from "react";
 
-import { SectionEyebrow } from "@/components/sites/shinta-framer-media-3240cba4/shared/ShintaPrimitives";
-import { shintaAsset } from "@/components/sites/shinta-framer-media-3240cba4/shared/site";
+import {
+  SectionEyebrow,
+  ShiftButtonContent,
+} from "@/components/sites/shinta-framer-media-3240cba4/shared/ShintaPrimitives";
 
 const navigationLinks = [
-  { href: "/", label: "Home" },
-  { href: "/#projects", label: "Projects" },
+  { href: "/", label: "Inicio" },
+  { href: "/#projects", label: "Proyectos" },
   { href: "/#blog", label: "Blog" },
-  { href: "/#about-us", label: "About" },
-  { href: "/#contact", label: "Contact" },
+  { href: "/#about-us", label: "Nosotros" },
+  { href: "/#contact", label: "Contacto" },
   { href: "/404", label: "404" },
 ] as const;
 
 const legalLinks = [
-  { href: "/legal/privacy-policy", label: "Privacy Policy" },
-  { href: "/legal/terms-of-service", label: "Terms & Condition" },
+  { href: "/legal/privacy-policy", label: "Política de privacidad" },
+  { href: "/legal/terms-of-service", label: "Términos y condiciones" },
 ] as const;
 
 type FooterPillLinkProps = {
@@ -67,28 +69,34 @@ function NewsletterCard() {
   return (
     <section className="w-full self-end rounded-[24px] bg-shinta-canvas p-6 text-shinta-ink lg:max-w-[300px]">
       <h2 className="text-[40px] leading-12 font-bold tracking-[-1.6px] max-lg:text-[28px] max-lg:leading-8 max-lg:tracking-[-1.12px]">
-        Newsletter
+        Boletín
       </h2>
       <p className="mt-2 text-[14px] leading-[19.6px] text-shinta-muted">
-        Sign up for our newsletter to stay up to date with the latest motion design &amp;
-        studio news
+        Suscríbete a nuestro boletín para conocer las últimas novedades sobre diseño
+        en movimiento y el estudio
       </p>
       <form className="mt-4" onSubmit={handleSubmit}>
         <label className="sr-only" htmlFor="shinta-newsletter-email">
-          Email address
+          Correo electrónico
         </label>
         <input
           className="h-14 w-full rounded-[14px] bg-white px-4 text-[16px] text-shinta-ink placeholder:text-shinta-muted focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-shinta-ink"
           id="shinta-newsletter-email"
           name="email"
-          placeholder="Email address"
+          placeholder="Correo electrónico"
           type="email"
         />
         <button
-          className="mt-3 h-14 w-full rounded-full bg-shinta-ink px-5 text-left text-[18px] font-bold tracking-[-0.36px] text-shinta-canvas transition-colors hover:bg-shinta-stone focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-shinta-ink"
+          className="shift-button mt-3 flex h-14 w-full items-center rounded-full text-left text-[18px] font-bold tracking-[-0.36px] text-shinta-canvas focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-shinta-ink"
           type="submit"
         >
-          Subscribe
+          <ShiftButtonContent
+            className="[--shift-button-icon-size:56px]"
+            iconClassName="bg-shinta-ink text-shinta-canvas"
+            labelClassName="flex h-14 items-center rounded-full bg-shinta-ink px-5 transition-colors group-hover:bg-shinta-stone"
+          >
+            Suscribirme
+          </ShiftButtonContent>
         </button>
       </form>
     </section>
@@ -114,12 +122,12 @@ export function FooterSection() {
 
       <div className="relative z-10 mx-auto flex min-h-[1400px] max-w-[1280px] flex-col gap-8 md:min-h-[1414px] lg:grid lg:h-[890px] lg:min-h-0 lg:grid-cols-[1.2fr_1fr_.65fr] lg:grid-rows-[300px_220px_310px_60px] lg:gap-0">
         <h2 className="order-1 max-w-[470px] text-[28px] leading-8 font-bold tracking-[-1.12px] lg:col-start-1 lg:row-start-1 lg:text-[64px] lg:leading-[70.4px] lg:tracking-[-2.56px]">
-          UGC that grows your brand.
+          UGC que hace crecer tu marca.
         </h2>
 
         <FooterGroup
           className="order-2 lg:col-start-1 lg:row-start-2"
-          label="Contact"
+          label="Contacto"
         >
           <div className="flex flex-col items-start">
             <Link
@@ -139,9 +147,9 @@ export function FooterSection() {
 
         <FooterGroup
           className="order-3 lg:col-start-2 lg:row-start-1"
-          label="Navivgation"
+          label="Navegación"
         >
-          <nav aria-label="Footer navigation" className="flex flex-col items-start gap-1.5">
+          <nav aria-label="Navegación del pie de página" className="flex flex-col items-start gap-1.5">
             {navigationLinks.map((link) => (
               <FooterPillLink href={link.href} key={link.href} label={link.label} />
             ))}
@@ -158,11 +166,11 @@ export function FooterSection() {
 
         <FooterGroup
           className="order-5 lg:col-start-3 lg:row-start-1"
-          label="Follow Us"
+          label="Síguenos"
         >
           <div className="flex items-center gap-1.5">
             <Link
-              aria-label="Shinta on Facebook"
+              aria-label="Shinta en Facebook"
               className="grid size-12 place-items-center rounded-full bg-shinta-ink text-shinta-canvas transition-transform hover:-translate-y-1 focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-shinta-ink"
               href="https://facebook.com/"
             >
@@ -171,14 +179,14 @@ export function FooterSection() {
               </svg>
             </Link>
             <Link
-              aria-label="Shinta on X"
+              aria-label="Shinta en X"
               className="grid size-12 place-items-center rounded-full bg-shinta-ink text-[24px] font-normal text-shinta-canvas transition-transform hover:-translate-y-1 focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-shinta-ink"
               href="https://x.com/"
             >
               X
             </Link>
             <Link
-              aria-label="Shinta on Instagram"
+              aria-label="Shinta en Instagram"
               className="grid size-12 place-items-center rounded-full bg-shinta-ink text-shinta-canvas transition-transform hover:-translate-y-1 focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-shinta-ink"
               href="https://instagram.com/"
             >
@@ -198,19 +206,19 @@ export function FooterSection() {
         <div className="order-7 mt-auto lg:col-start-1 lg:col-end-3 lg:row-start-3 lg:mt-0 lg:self-end">
           <Image
             alt="Shinta"
-            className="h-auto w-full max-w-[900px]"
-            height={267}
+            className="h-auto w-full max-w-[620px] object-contain"
+            height={419}
             sizes="(min-width: 1024px) 900px, calc(100vw - 38px)"
-            src={shintaAsset("images/e7fb2951cde42e9a.png")}
+            src="/brand/logo-light.png"
             unoptimized
-            width={1000}
+            width={621}
           />
         </div>
 
         <div className="order-8 flex flex-col gap-2 pb-5 text-[12px] leading-[16.8px] font-semibold tracking-[0.96px] uppercase sm:flex-row sm:items-center sm:justify-between lg:col-start-1 lg:col-end-4 lg:row-start-4 lg:self-end">
-          <p>© 2026 Shinta. All Rights Reserved.</p>
+          <p>© 2026 Shinta. Todos los derechos reservados.</p>
           <p>
-            Made by{" "}
+            Creado por{" "}
             <Link
               className="underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-shinta-ink"
               href="https://veloxthemes.com/"

@@ -8,7 +8,7 @@ import { SectionEyebrow } from "../shared/ShintaPrimitives";
 import { shintaAsset } from "../shared/site";
 import { ContactFormCard } from "./ContactFormCard";
 
-const heading = "Let’s talk content that actually works.";
+const heading = "Hablemos de contenido que realmente funciona.";
 const headingWords = heading.split(" ");
 
 const STROKE_LENGTH = 1533.5;
@@ -78,7 +78,7 @@ export function ContactHeroSection() {
         className="pointer-events-none absolute inset-0 z-0 hidden place-items-center xl:grid"
       >
         <svg
-          className="aspect-square w-full text-[#e7e5e4]"
+          className="aspect-square w-full text-totem-border"
           fill="none"
           viewBox="0 0 1170 1170"
         >
@@ -131,8 +131,8 @@ export function ContactHeroSection() {
               viewport={{ amount: 0.4, once: true }}
               whileInView="visible"
             >
-              Share your goals and we’ll help shape content that fits how people
-              actually scroll today.
+              Cuéntanos tus objetivos y te ayudaremos a crear contenido adaptado
+              a cómo las personas navegan hoy.
             </motion.p>
           </div>
 
@@ -144,7 +144,7 @@ export function ContactHeroSection() {
             whileInView="visible"
           >
             <SectionEyebrow className="text-shinta-muted">
-              30+ Brands leveled up their content game
+              Más de 30 marcas elevaron el nivel de su contenido
             </SectionEyebrow>
 
             <div className="h-[30px] w-full overflow-hidden [mask-image:linear-gradient(270deg,transparent_0%,black_15.537%,black_85.816%,transparent_100%)] [-webkit-mask-image:linear-gradient(270deg,transparent_0%,black_15.537%,black_85.816%,transparent_100%)]">

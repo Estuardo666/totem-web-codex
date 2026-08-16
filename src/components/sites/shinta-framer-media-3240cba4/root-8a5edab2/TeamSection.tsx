@@ -2,52 +2,54 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 import { cn } from "@/lib/utils";
 
-import { SectionEyebrow } from "../shared/ShintaPrimitives";
+import {
+  SectionEyebrow,
+  ShiftButtonContent,
+} from "../shared/ShintaPrimitives";
 import { shintaAsset } from "../shared/site";
 
 const teamMembers = [
   {
-    alt: "Shinta team member wearing a pink sweatshirt",
+    alt: "Integrante del equipo de Shinta con sudadera rosa",
     delay: "delay-[0ms]",
     position:
       "top-[18px] left-[2px] rotate-[-7deg] md:top-[8px] md:left-[42px] xl:top-[28px] xl:left-[20px]",
     src: "79687116559292ab.jpg",
   },
   {
-    alt: "Shinta team member wearing a black leather jacket",
+    alt: "Integrante del equipo de Shinta con chaqueta de cuero negra",
     delay: "delay-[90ms]",
     position:
       "top-[27px] left-[105px] rotate-[5deg] md:top-[19px] md:left-[234px] xl:top-[62px] xl:left-[166px]",
     src: "47f89ced261416df.jpg",
   },
   {
-    alt: "Shinta team member wearing a gray blazer",
+    alt: "Integrante del equipo de Shinta con blazer gris",
     delay: "delay-[180ms]",
     position:
       "top-[15px] left-[208px] rotate-[-4deg] md:top-[5px] md:left-[426px] xl:top-[16px] xl:left-[312px]",
     src: "34844c23286ab253.jpg",
   },
   {
-    alt: "Shinta team member wearing a checked overshirt",
+    alt: "Integrante del equipo de Shinta con sobrecamisa a cuadros",
     delay: "delay-[270ms]",
     position:
       "top-[190px] left-[2px] rotate-[5deg] md:top-[211px] md:left-[42px] xl:top-[60px] xl:left-[458px]",
     src: "3180f8ad3e321358.jpg",
   },
   {
-    alt: "Shinta team member wearing a purple hoodie",
+    alt: "Integrante del equipo de Shinta con sudadera morada",
     delay: "delay-[360ms]",
     position:
       "top-[184px] left-[105px] rotate-[-5deg] md:top-[201px] md:left-[234px] xl:top-[14px] xl:left-[604px]",
     src: "c1c60606144d1f73.jpg",
   },
   {
-    alt: "Shinta team member wearing a charcoal sweater",
+    alt: "Integrante del equipo de Shinta con suéter gris oscuro",
     delay: "delay-[450ms]",
     position:
       "top-[194px] left-[208px] rotate-[7deg] md:top-[212px] md:left-[426px] xl:top-[58px] xl:left-[750px]",
@@ -94,13 +96,13 @@ export function TeamSection() {
     >
       <div className="mx-auto max-w-[1280px] text-center">
         <SectionEyebrow className="inline-flex rounded-full bg-shinta-pink px-[10px] py-[3px] text-[10px] leading-[13px] tracking-[0.65px]">
-          our team
+          nuestro equipo
         </SectionEyebrow>
         <h2
           id="team-heading"
           className="mt-[12px] text-[28px] leading-[31px] font-bold tracking-[-1.12px] xl:mt-[10px] xl:text-[64px] xl:leading-[70.4px] xl:tracking-[-2.56px]"
         >
-          The Content Experts
+          Los expertos en contenido
         </h2>
 
         <div
@@ -152,13 +154,16 @@ export function TeamSection() {
         </p>
 
         <Link
-          className="group mx-auto mt-[24px] flex h-[56px] w-full max-w-[335px] items-center justify-between rounded-full bg-shinta-ink pl-[23px] text-left text-[16px] font-semibold text-white transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-translate-y-1 focus-visible:-translate-y-1 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-shinta-ink md:max-w-[330px] xl:mt-[20px] xl:h-[52px] xl:max-w-[370px]"
+          className="shift-button group mx-auto mt-[24px] flex h-[56px] w-full max-w-[335px] items-center rounded-full text-left text-[16px] font-semibold text-white focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-shinta-ink md:max-w-[330px] xl:mt-[20px] xl:h-[52px] xl:max-w-[370px]"
           href="/#about-us"
         >
-          <span>More About Us</span>
-          <span className="grid size-[56px] shrink-0 place-items-center rounded-full bg-shinta-pink text-shinta-ink transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:rotate-45 group-hover:scale-110 group-focus-visible:rotate-45 group-focus-visible:scale-110 xl:size-[52px]">
-            <ArrowUpRight aria-hidden="true" className="size-5" strokeWidth={2.2} />
-          </span>
+          <ShiftButtonContent
+            className="[--shift-button-icon-size:56px] xl:[--shift-button-icon-size:52px]"
+            iconClassName="bg-totem-action text-totem-action-text"
+            labelClassName="flex h-[56px] items-center rounded-full bg-totem-action px-[23px] text-totem-action-text xl:h-[52px]"
+          >
+            Más sobre nosotros
+          </ShiftButtonContent>
         </Link>
       </div>
     </section>

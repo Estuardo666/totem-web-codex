@@ -7,7 +7,7 @@ import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { SectionEyebrow } from "../shared/ShintaPrimitives";
 import { shintaAsset } from "../shared/site";
 
-const heading = "Turning Social Media Ideas Into Content Plans";
+const heading = "Cómo convertir ideas para redes sociales en planes de contenido";
 const headingWords = heading.split(" ");
 
 const groupVariants: Variants = {
@@ -67,7 +67,7 @@ export function ArticleHeroSection() {
             whileInView="visible"
           >
             <SectionEyebrow className="text-shinta-muted">
-              January 27, 2026
+              27 de enero de 2026
             </SectionEyebrow>
           </motion.div>
 
@@ -101,7 +101,7 @@ export function ArticleHeroSection() {
         >
           <span className="relative block size-10 shrink-0 overflow-hidden rounded-full">
             <Image
-              alt="Portrait of Budi Pandu"
+              alt="Retrato de Budi Pandu"
               className="object-cover"
               fill
               sizes="40px"
@@ -109,7 +109,7 @@ export function ArticleHeroSection() {
               unoptimized
             />
           </span>
-          <p className="text-[16px] leading-[22.4px] text-shinta-muted">By</p>
+          <p className="text-[16px] leading-[22.4px] text-shinta-muted">Por</p>
           <h6 className="text-[16px] leading-6 font-bold text-shinta-ink xl:text-[18px] xl:leading-[25.2px]">
             Budi Pandu
           </h6>

@@ -36,12 +36,12 @@ export function FeatureCreatorsSection() {
             className="text-[28px] leading-[1.08] font-bold tracking-[-1.12px] text-shinta-ink lg:text-[64px] lg:leading-[70.4px] lg:tracking-[-2.56px]"
             id="shinta-creators-heading"
           >
-            Creator-led content, long-term growth.
+            Contenido liderado por creadores, crecimiento a largo plazo.
           </h2>
           <p className="mt-5 max-w-[470px] text-[16px] leading-[24px] text-shinta-stone lg:mt-6 lg:text-[18px] lg:leading-[27px]">
-            We source and test creators across niches and communities, focusing
-            on those who naturally align with your brand. The result is
-            authentic UGC that feels native and performs consistently.
+            Buscamos y evaluamos creadores de distintos nichos y comunidades,
+            centrándonos en quienes encajan de forma natural con tu marca. El
+            resultado es UGC auténtico, que se siente nativo y rinde de manera constante.
           </p>
         </motion.div>
 
@@ -54,7 +54,7 @@ export function FeatureCreatorsSection() {
         >
           <div className="aspect-[480/294] w-full overflow-hidden rounded-[24px] bg-shinta-stone">
             <video
-              aria-label="A creator producing content on a tablet"
+              aria-label="Una creadora produciendo contenido en una tableta"
               autoPlay
               className="size-full object-cover"
               loop
@@ -69,7 +69,7 @@ export function FeatureCreatorsSection() {
               4.2M
             </p>
             <p className="mt-1 text-[14px] leading-5 lg:text-[16px] lg:leading-[22px]">
-              Impressions
+              Impresiones
             </p>
           </div>
         </motion.div>

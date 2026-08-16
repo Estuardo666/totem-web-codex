@@ -6,38 +6,41 @@ import { useState } from "react";
 import { ArrowUpRight, Check } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import { SectionEyebrow } from "@/components/sites/shinta-framer-media-3240cba4/shared/ShintaPrimitives";
+import {
+  SectionEyebrow,
+  ShiftButtonContent,
+} from "@/components/sites/shinta-framer-media-3240cba4/shared/ShintaPrimitives";
 import { shintaAsset } from "@/components/sites/shinta-framer-media-3240cba4/shared/site";
 
 type BillingCycle = "monthly" | "yearly";
 
 const plans = [
   {
-    cta: "Get Starter Plan",
-    description: "Best for early-stage brands & campaigns",
+    cta: "Elegir plan Inicial",
+    description: "Ideal para marcas y campañas en etapa inicial",
     features: [
-      "Content strategy for 1 platform",
-      "8–12 contents / month",
-      "Copywriting + visual direction",
-      "Basic performance insights",
-      "1 revision round",
+      "Estrategia de contenido para 1 plataforma",
+      "8–12 contenidos al mes",
+      "Copywriting + dirección visual",
+      "Análisis básico del rendimiento",
+      "1 ronda de revisiones",
     ],
-    name: "Starter",
+    name: "Inicial",
     previousPrice: "$3999",
     price: "$3199",
     theme: "light",
   },
   {
-    cta: "Get Agency Plan",
-    description: "Best for mid to big brands & campaigns",
+    cta: "Elegir plan Agencia",
+    description: "Ideal para marcas y campañas medianas o grandes",
     features: [
-      "Content strategy for 3 platforms",
-      "18-20 contents / month",
-      "Copywriting + visual direction",
-      "Full performance insights",
-      "Unlimited revision",
+      "Estrategia de contenido para 3 plataformas",
+      "18–20 contenidos al mes",
+      "Copywriting + dirección visual",
+      "Análisis completo del rendimiento",
+      "Revisiones ilimitadas",
     ],
-    name: "Agency",
+    name: "Agencia",
     previousPrice: "$5999",
     price: "$4799",
     theme: "dark",
@@ -51,17 +54,17 @@ type BillingToggleProps = {
 
 function BillingToggle({ billingCycle, setBillingCycle }: BillingToggleProps) {
   const handleKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
-    if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
+    if (!["ArrowLeft", "ArrowRight", "Inicio", "Fin"].includes(event.key)) return;
     event.preventDefault();
     setBillingCycle(
-      event.key === "ArrowLeft" || event.key === "Home" ? "monthly" : "yearly",
+      event.key === "ArrowLeft" || event.key === "Inicio" ? "monthly" : "yearly",
     );
   };
 
   return (
     <div
-      aria-label="Billing cycle"
-      className="relative grid h-12 grid-cols-2 rounded-full bg-[#e7e5e4] p-1"
+      aria-label="Ciclo de facturación"
+      className="relative grid h-12 grid-cols-2 rounded-full bg-totem-surface-secondary p-1"
       role="radiogroup"
     >
       <span
@@ -82,7 +85,7 @@ function BillingToggle({ billingCycle, setBillingCycle }: BillingToggleProps) {
         role="radio"
         type="button"
       >
-        Monthly
+        Mensual
       </button>
       <button
         aria-checked={billingCycle === "yearly"}
@@ -95,9 +98,9 @@ function BillingToggle({ billingCycle, setBillingCycle }: BillingToggleProps) {
         role="radio"
         type="button"
       >
-        <span>Yearly</span>
+        <span>Anual</span>
         <span className="text-[11px] leading-none font-semibold tracking-[0.55px] uppercase">
-          save 20%
+          ahorra 20 %
         </span>
       </button>
     </div>
@@ -112,7 +115,7 @@ function CustomPlanCard() {
     >
       <span className="relative h-20 w-20 shrink-0 overflow-hidden rounded-[14px] bg-shinta-lavender">
         <Image
-          alt="Shinta planning specialist"
+          alt="Especialista en planificación de Shinta"
           className="object-cover"
           fill
           sizes="80px"
@@ -126,13 +129,13 @@ function CustomPlanCard() {
       </span>
       <span className="ml-4 min-w-0">
         <span className="block text-[18px] leading-[25.2px] font-bold tracking-[-0.36px]">
-          Need custom plan?
+          ¿Necesitas un plan personalizado?
         </span>
         <span className="mt-0.5 block text-[18px] leading-[25.2px] text-shinta-muted">
-          Let’s Talk
+          Hablemos
         </span>
       </span>
-      <span className="ml-auto grid size-8 shrink-0 place-items-center rounded-full bg-shinta-canvas transition-colors duration-300 group-hover:bg-shinta-pink">
+      <span className="ml-auto grid size-8 shrink-0 place-items-center rounded-full bg-shinta-canvas transition-colors duration-300 group-hover:bg-totem-action">
         <ArrowUpRight aria-hidden="true" className="size-4" strokeWidth={2} />
       </span>
     </Link>
@@ -179,7 +182,7 @@ function PlanCard({ plan }: PlanCardProps) {
           <span className="text-[40px] leading-10 font-bold tracking-[-1.6px]">
             {plan.price}
           </span>
-          <span className="mb-1 text-[14px] leading-none font-semibold uppercase">/mo</span>
+          <span className="mb-1 text-[14px] leading-none font-semibold uppercase">/mes</span>
         </div>
       </div>
 
@@ -189,7 +192,9 @@ function PlanCard({ plan }: PlanCardProps) {
             <span
               className={cn(
                 "mt-0.5 grid size-5 shrink-0 place-items-center rounded-full",
-                isDark ? "bg-shinta-lavender text-shinta-ink" : "bg-[#d6d3d1] text-white",
+                isDark
+                  ? "bg-shinta-lavender text-shinta-ink"
+                  : "bg-totem-tech text-totem-action-text",
               )}
             >
               <Check aria-hidden="true" className="size-3.5" strokeWidth={2.7} />
@@ -201,17 +206,24 @@ function PlanCard({ plan }: PlanCardProps) {
 
       <Link
         className={cn(
-          "group mt-auto flex h-14 items-center rounded-full pl-6 text-[16px] font-bold tracking-[-0.64px] focus-visible:outline-3 focus-visible:outline-offset-2",
+          "shift-button group mt-auto flex h-14 items-center rounded-full text-[16px] font-bold tracking-[-0.64px] focus-visible:outline-3 focus-visible:outline-offset-2",
           isDark
-            ? "bg-white text-shinta-ink focus-visible:outline-shinta-pink"
-            : "bg-shinta-ink text-shinta-canvas focus-visible:outline-shinta-ink",
+            ? "text-shinta-ink focus-visible:outline-shinta-pink"
+            : "text-shinta-canvas focus-visible:outline-shinta-ink",
         )}
         href="/#contact"
       >
-        <span>{plan.cta}</span>
-        <span className="ml-auto mr-1 grid size-12 place-items-center rounded-full bg-shinta-pink text-shinta-ink transition-transform duration-300 group-hover:rotate-45">
-          <ArrowUpRight aria-hidden="true" className="size-5" strokeWidth={2} />
-        </span>
+        <ShiftButtonContent
+          className="[--shift-button-icon-size:56px]"
+          iconClassName="border-4 border-transparent bg-totem-action bg-clip-padding text-totem-action-text"
+          iconStrokeWidth={2}
+          labelClassName={cn(
+            "flex h-14 items-center rounded-full px-6",
+            isDark ? "bg-white" : "bg-shinta-ink",
+          )}
+        >
+          {plan.cta}
+        </ShiftButtonContent>
       </Link>
     </article>
   );
@@ -229,7 +241,7 @@ export function PricingSection() {
               pricing
             </SectionEyebrow>
             <h2 className="max-w-[470px] text-[64px] leading-[70.4px] font-bold tracking-[-2.56px] text-shinta-ink max-lg:text-[28px] max-lg:leading-8 max-lg:tracking-[-1.12px]">
-              Flexible pricing for every stage
+              Precios flexibles para cada etapa
             </h2>
             <div className="mt-6 max-w-[445px]">
               <BillingToggle

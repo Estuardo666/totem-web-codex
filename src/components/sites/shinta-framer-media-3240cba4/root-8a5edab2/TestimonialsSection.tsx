@@ -10,32 +10,32 @@ import { shintaAsset } from "../shared/site";
 
 const testimonials = [
   {
-    body: "Shinta helped us understand what content actually works. Our engagement grew and posting finally feels intentional.",
+    body: "Shinta nos ayudó a entender qué contenido funciona realmente. Nuestra interacción creció y, por fin, cada publicación tiene una intención.",
     image: "images/fd4b5099d911c76f.jpg",
     name: "Sarah",
-    role: "VP of Nakula",
-    title: "Our engagement went up fast",
+    role: "Vicepresidenta de Nakula",
+    title: "Nuestra interacción creció rápidamente",
   },
   {
-    body: "Before Shinta we were posting randomly. Now we have clear ideas clear messaging and a plan that makes sense.",
+    body: "Antes de Shinta publicábamos al azar. Ahora tenemos ideas claras, mensajes definidos y un plan que tiene sentido.",
     image: "images/d90a19ecbfeae44f.jpg",
     name: "Jonathan",
-    role: "CTO of Sadewa",
-    title: "We finally have a clear content direction",
+    role: "Director de tecnología de Sadewa",
+    title: "Por fin tenemos una dirección clara de contenido",
   },
   {
-    body: "Shinta breaks things down in a simple way. We know what to post why we post it and how it helps our brand grow.",
+    body: "Shinta explica todo de manera sencilla. Sabemos qué publicar, por qué lo hacemos y cómo ayuda a crecer a nuestra marca.",
     image: "images/b82418baae466bc6.jpg",
     name: "Ratih",
-    role: "CMO of Bima",
-    title: "Social media feels less stressful now",
+    role: "Directora de marketing de Bima",
+    title: "Ahora las redes sociales resultan menos estresantes",
   },
   {
-    body: "Our audience grew and so did the quality of conversations. Shinta helped us focus on connection not just numbers.",
+    body: "Nuestra audiencia creció, al igual que la calidad de las conversaciones. Shinta nos ayudó a centrarnos en la conexión, no solo en los números.",
     image: "images/35b70b916d6ee028.jpg",
     name: "Bhagas",
-    role: "Marketing of Rama",
-    title: "We saw real growth not just likes",
+    role: "Marketing de Rama",
+    title: "Vimos crecimiento real, no solo «me gusta»",
   },
 ] as const;
 
@@ -60,7 +60,7 @@ const cardVariants: Variants = {
 
 function FiveStars() {
   return (
-    <div aria-label="5 out of 5 stars" className="flex gap-1">
+    <div aria-label="5 de 5 estrellas" className="flex gap-1">
       {Array.from({ length: 5 }, (_, index) => (
         <span
           aria-hidden="true"
@@ -137,15 +137,15 @@ export function TestimonialsSection() {
           whileInView={{ opacity: 1, y: 0 }}
         >
           <SectionEyebrow className="inline-flex rounded-full bg-shinta-pink px-2.5 py-1 text-shinta-ink">
-            Testimonials
+            Testimonios
           </SectionEyebrow>
           <h2
             className="text-[28px] leading-[1.08] font-bold tracking-[-1.12px] text-shinta-ink lg:text-[64px] lg:leading-[70.4px] lg:tracking-[-2.56px]"
             id="shinta-testimonials-heading"
           >
-            Trusted by 40+
+            Más de 40 empresas
             <br />
-            Companies
+            confían en nosotros
           </h2>
         </motion.header>
 
@@ -162,7 +162,7 @@ export function TestimonialsSection() {
           >
             <div className="group relative h-[210px] w-full shrink-0 overflow-hidden rounded-[14px] bg-shinta-stone md:h-full md:w-[42%]">
               <video
-                aria-label="Gatot discussing Shinta's results"
+                aria-label="Gatot comentando los resultados de Shinta"
                 className="size-full object-cover"
                 muted
                 onEnded={() => setIsPlaying(false)}
@@ -174,7 +174,7 @@ export function TestimonialsSection() {
                 src={shintaAsset("videos/cta-phone.mp4")}
               />
               <button
-                aria-label={isPlaying ? "Pause Gatot testimonial" : "Play Gatot testimonial"}
+                aria-label={isPlaying ? "Pausar testimonio de Gatot" : "Reproducir testimonio de Gatot"}
                 className="absolute inset-0 m-auto grid size-14 place-items-center rounded-full bg-shinta-ink/80 text-white transition-transform duration-300 hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
                 onClick={toggleVideo}
                 type="button"
@@ -194,19 +194,19 @@ export function TestimonialsSection() {
             <div className="flex min-h-0 flex-1 flex-col">
               <FiveStars />
               <h3 className="mt-5 text-[24px] leading-[33.6px] font-bold tracking-[-0.96px] text-shinta-ink">
-                We increased our audience by 25%!
+                ¡Aumentamos nuestra audiencia un 25 %!
               </h3>
               <p className="mt-3 text-[16px] leading-6 text-shinta-stone lg:text-[18px] lg:leading-[27px]">
-                We can bring in real-life problems and have the coaches give
-                specific examples and solutions to help guide us and remove any
-                roadblocks.&quot;
+                Podemos plantear problemas reales y recibir ejemplos y soluciones
+                concretas de los asesores para orientarnos y eliminar cualquier
+                obstáculo.
               </p>
               <footer className="mt-auto pt-5">
                 <cite className="block text-[16px] leading-[22px] font-bold not-italic text-shinta-ink lg:text-[18px] lg:leading-[25px]">
                   Gatot
                 </cite>
                 <p className="text-[14px] leading-5 text-shinta-muted lg:text-[16px] lg:leading-[22px]">
-                  CEO of Kresna
+                  Director ejecutivo de Kresna
                 </p>
               </footer>
             </div>

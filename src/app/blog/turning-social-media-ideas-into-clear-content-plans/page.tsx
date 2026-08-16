@@ -9,8 +9,8 @@ import { Navbar } from "@/components/sites/shinta-framer-media-3240cba4/shared/N
 
 export const metadata: Metadata = {
   description:
-    "Social media agencies turn ideas into systems. They help brands move from random posts to meaningful content.",
-  title: "Turning Social Media Ideas Into Content Plans",
+    "Las agencias de redes sociales convierten ideas en sistemas. Ayudan a las marcas a pasar de publicaciones aleatorias a contenido con propósito.",
+  title: "Cómo convertir ideas para redes sociales en planes de contenido",
 };
 
 export default function TurningSocialMediaIdeasIntoClearContentPlansPage() {

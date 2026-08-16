@@ -43,6 +43,18 @@ A reusable template for reverse-engineering any website into a clean, modern Nex
 - **Real content** — use actual text and assets from the target site, not placeholders
 - **Beauty-first** — every pixel matters
 
+## Project-local design skills
+
+The following skills are installed in `.agents/skills/`. Load the smallest set that owns the task and follow each loaded `SKILL.md` completely.
+
+- `frontend-design` — choose and hold a deliberate visual anchor when building a new frontend or intentionally restyling one. Do not use it to reinterpret a pixel-perfect reference during the emulation phase.
+- `design-taste-frontend` — use for anti-generic landing pages, portfolios, and redesigns. Do not use it for dashboards, data tables, or multi-step product UI.
+- `impeccable` — default full-spectrum skill for UI creation, critique, audit, accessibility, responsive behavior, polish, and design-system work. Its command playbooks should own broad or ambiguous frontend-quality requests.
+- `emil-design-eng` — use for component-level polish, interaction details, and motion judgment where subtlety and perceived quality matter.
+- `motion-framer` — use when implementing React animation with Motion/Framer Motion: gestures, springs, presence, layout, scroll, or page transitions. Confirm the package is present before introducing its APIs.
+
+When skills overlap, use `impeccable` as the coordinating workflow, `frontend-design` or `design-taste-frontend` for visual direction, `emil-design-eng` for interaction judgment, and `motion-framer` only for implementation mechanics. The pixel-perfect emulation rules above take precedence until the reference has been matched.
+
 ## Project Structure
 ```
 src/

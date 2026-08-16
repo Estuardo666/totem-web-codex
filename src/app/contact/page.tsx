@@ -7,8 +7,8 @@ import { Navbar } from "@/components/sites/shinta-framer-media-3240cba4/shared/N
 
 export const metadata: Metadata = {
   description:
-    "Share your goals and we’ll help shape content that fits how people actually scroll today.",
-  title: "Contact",
+    "Cuéntanos tus objetivos y te ayudaremos a crear contenido adaptado a cómo las personas navegan hoy.",
+  title: "Contacto",
 };
 
 export default function ContactPage() {

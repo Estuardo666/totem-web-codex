@@ -13,7 +13,7 @@ import {
 
 const IMAGE_BASE = "/sites/shinta-framer-media-3240cba4/about-us-57424c1f/images";
 
-const heading = "Building contents that matters";
+const heading = "Creamos contenido que importa";
 const headingWords = heading.split(" ");
 
 const groupVariants: Variants = {
@@ -60,7 +60,7 @@ const tiles: Tile[] = [
   {
     key: "big",
     src: `${IMAGE_BASE}/collage-large.jpg`,
-    alt: "A portrait of a woman with white hair surrounded by daisies",
+    alt: "Retrato de una mujer de cabello blanco rodeada de margaritas",
     top: 156,
     left: 295,
     width: 410,
@@ -73,7 +73,7 @@ const tiles: Tile[] = [
   {
     key: "one",
     src: `${IMAGE_BASE}/collage-tall-right.jpg`,
-    alt: "A neon-lit portrait in blue and orange light",
+    alt: "Retrato iluminado con luces de neón azules y naranjas",
     top: 183,
     left: 210,
     width: 194,
@@ -86,7 +86,7 @@ const tiles: Tile[] = [
   {
     key: "two",
     src: `${IMAGE_BASE}/collage-wide-bottom.jpg`,
-    alt: "A silhouette framed by swirling purple light trails",
+    alt: "Silueta enmarcada por estelas de luz morada",
     top: 0,
     left: 890,
     width: 302,
@@ -99,7 +99,7 @@ const tiles: Tile[] = [
   {
     key: "three",
     src: `${IMAGE_BASE}/collage-wide-top.jpg`,
-    alt: "A close-up of hands typing against an orange backdrop",
+    alt: "Primer plano de unas manos escribiendo frente a un fondo naranja",
     top: 963,
     left: 56,
     width: 252,
@@ -112,7 +112,7 @@ const tiles: Tile[] = [
   {
     key: "four",
     src: `${IMAGE_BASE}/collage-tall-left.jpg`,
-    alt: "A model in a bomber jacket posing on a yellow backdrop",
+    alt: "Modelo con chaqueta bomber posando frente a un fondo amarillo",
     top: 1016,
     left: 760,
     width: 194,

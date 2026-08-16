@@ -3,22 +3,95 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Pause, Play } from "lucide-react";
-import { useRef, useState } from "react";
+import { Fragment, useRef, useState } from "react";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
 
+import { ShiftButtonContent } from "../shared/ShintaPrimitives";
 import { shintaAsset } from "../shared/site";
 
 const ribbonCopy =
-  "SOCIAL MEDIA MANAGEMENT · SHORT FORM CONTENT · INFLUENCER MARKETING · ";
+  "GESTIÓN DE REDES SOCIALES · CONTENIDO BREVE · MARKETING DE INFLUENCERS · ";
 
 const services = [
-  "SHORT FORM CONTENT",
-  "SOCIAL MEDIA MANAGEMENT",
-  "INFLUENCER MARKETING",
+  "CONTENIDO BREVE",
+  "GESTIÓN DE REDES SOCIALES",
+  "MARKETING DE INFLUENCERS",
 ];
+
+const heading = "UGC que hace crecer tu marca.";
+const headingWords = heading.split(" ");
+
+const headingVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      delayChildren: 0.08,
+      staggerChildren: 0.055,
+    },
+  },
+};
+
+const wordVariants: Variants = {
+  hidden: { opacity: 0, y: 22 },
+  visible: {
+    opacity: 1,
+    transition: { damping: 24, stiffness: 180, type: "spring" },
+    y: 0,
+  },
+};
+
+const servicesVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      delayChildren: 0.34,
+      staggerChildren: 0.06,
+    },
+  },
+};
+
+const serviceVariants: Variants = {
+  hidden: { opacity: 0, y: 10 },
+  visible: {
+    opacity: 1,
+    transition: { duration: 0.45, ease: [0.16, 1, 0.3, 1] },
+    y: 0,
+  },
+};
+
+const mediaVariants: Variants = {
+  hidden: { opacity: 0, scale: 0.94 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { delay: 0.18, duration: 0.72, ease: [0.16, 1, 0.3, 1] },
+  },
+};
+
+const supportingVariants: Variants = {
+  hidden: { opacity: 0, y: 18 },
+  visible: {
+    opacity: 1,
+    transition: { delay: 0.48, duration: 0.58, ease: [0.16, 1, 0.3, 1] },
+    y: 0,
+  },
+};
+
+const projectVariants: Variants = {
+  hidden: { opacity: 0, scale: 0.96 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { delay: 0.62, duration: 0.58, ease: [0.16, 1, 0.3, 1] },
+  },
+};
+
+const MotionLink = motion.create(Link);
 
 export function HeroSection() {
   const frontVideoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const reduceMotion = useReducedMotion();
 
   function togglePlayback() {
     const frontVideo = frontVideoRef.current;
@@ -41,19 +114,38 @@ export function HeroSection() {
       aria-labelledby="hero-heading"
     >
       <div className="relative mx-auto h-full max-w-[1320px] px-5 xl:px-5">
-        <div className="absolute top-[88px] left-5 z-20 md:top-[89px] xl:top-[176px] xl:left-5">
-          <h1
+        <motion.div
+          animate="visible"
+          className="absolute top-[88px] left-5 z-20 md:top-[89px] xl:top-[176px] xl:left-5"
+          initial={reduceMotion ? false : "hidden"}
+        >
+          <motion.h1
             id="hero-heading"
             className="max-w-[335px] text-[32px] leading-[32px] font-bold tracking-[-1.28px] md:max-w-[680px] xl:max-w-[365px] xl:text-[64px] xl:leading-[64px] xl:tracking-[-2.56px]"
+            variants={headingVariants}
           >
-            UGC that grows your brand.
-          </h1>
+            <span className="sr-only">{heading}</span>
+            <span aria-hidden="true" className="block">
+              {headingWords.map((word, index) => (
+                <Fragment key={`${word}-${index}`}>
+                  <motion.span className="inline-block" variants={wordVariants}>
+                    {word}
+                  </motion.span>
+                  {index < headingWords.length - 1 ? " " : null}
+                </Fragment>
+              ))}
+            </span>
+          </motion.h1>
 
-          <ul className="mt-[30px] space-y-[4px] md:mt-[29px] xl:mt-[31px]">
+          <motion.ul
+            className="mt-[30px] space-y-[4px] md:mt-[29px] xl:mt-[31px]"
+            variants={servicesVariants}
+          >
             {services.map((service) => (
-              <li
+              <motion.li
                 className="flex items-center gap-[7px] text-[12px] leading-[16.8px] font-semibold tracking-[0.7px]"
                 key={service}
+                variants={serviceVariants}
               >
                 <span
                   aria-hidden="true"
@@ -62,10 +154,10 @@ export function HeroSection() {
                   ✱
                 </span>
                 {service}
-              </li>
+              </motion.li>
             ))}
-          </ul>
-        </div>
+          </motion.ul>
+        </motion.div>
 
         <svg
           aria-hidden="true"
@@ -77,12 +169,12 @@ export function HeroSection() {
             d="M-90 374 C 220 505, 520 520, 806 294 S 1228 45, 1530 151"
             fill="none"
             id="shinta-hero-ribbon-path"
-            stroke="#ffa8f2"
+            stroke="var(--totem-tech)"
             strokeLinecap="round"
             strokeWidth="45"
           />
           <text
-            fill="#1c1917"
+            fill="var(--totem-navy)"
             fontFamily="Open Sauce One, sans-serif"
             fontSize="15"
             fontWeight="600"
@@ -103,6 +195,12 @@ export function HeroSection() {
         </svg>
 
         <div className="absolute top-[271px] left-[calc(50%_-_8px)] z-10 h-[410px] w-[230px] -translate-x-1/2 md:top-[278px] md:left-[calc(50%_-_21px)] md:h-[418px] md:w-[234px] xl:top-[175px] xl:left-[500px] xl:h-[640px] xl:w-[360px] xl:translate-x-0">
+          <motion.div
+            animate="visible"
+            className="relative h-full w-full"
+            initial={reduceMotion ? false : "hidden"}
+            variants={mediaVariants}
+          >
           <video
             aria-hidden="true"
             className="absolute top-[26px] -left-[32px] h-full w-full rounded-[19px] object-cover md:-left-[35px] xl:top-[48px] xl:-left-[30px] xl:rounded-[23px]"
@@ -137,7 +235,7 @@ export function HeroSection() {
               src={shintaAsset("videos/hero-layer-front.mp4")}
             />
             <button
-              aria-label={isPlaying ? "Pause hero video" : "Play hero video"}
+              aria-label={isPlaying ? "Pausar video principal" : "Reproducir video principal"}
               className="absolute top-1/2 left-1/2 grid size-[60px] -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-shinta-ink/70 text-white backdrop-blur-[2px] transition-transform duration-300 hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-shinta-pink xl:size-[70px]"
               onClick={togglePlayback}
               type="button"
@@ -152,37 +250,47 @@ export function HeroSection() {
               )}
             </button>
           </div>
+          </motion.div>
         </div>
 
-        <div className="absolute top-[716px] right-5 left-5 z-20 md:top-[729px] xl:top-[626px] xl:right-0 xl:left-auto xl:w-[300px]">
+        <motion.div
+          animate="visible"
+          className="absolute top-[716px] right-5 left-5 z-20 md:top-[729px] xl:top-[626px] xl:right-0 xl:left-auto xl:w-[300px]"
+          initial={reduceMotion ? false : "hidden"}
+          variants={supportingVariants}
+        >
           <p className="text-[18px] leading-[25.2px] font-normal tracking-[-0.36px] text-shinta-stone">
-            Shinta helps brands create content that truly connects with their
-            audience, consistently and strategically across social media.
+            Shinta ayuda a las marcas a crear contenido que conecta de verdad con su
+            audiencia, de manera constante y estratégica en las redes sociales.
           </p>
 
           <Link
-            className="group mt-[24px] flex h-[56px] w-full items-center justify-between rounded-full bg-shinta-ink pl-[23px] text-[16px] font-semibold text-white transition-transform duration-300 hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-shinta-ink md:mt-[24px] md:h-[52px] xl:mt-[25px] xl:w-[260px]"
+            className="shift-button group mt-[24px] flex h-[56px] w-full items-center rounded-full text-[16px] font-semibold text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-shinta-ink md:mt-[24px] md:h-[52px] xl:mt-[25px] xl:w-[260px]"
             href="/#contact"
           >
-            <span>Book a call</span>
-            <span className="grid size-[56px] shrink-0 place-items-center rounded-full bg-shinta-pink text-shinta-ink md:size-[52px]">
-              <ArrowUpRight
-                aria-hidden="true"
-                className="size-5 transition-transform duration-300 group-hover:rotate-45"
-                strokeWidth={2.25}
-              />
-            </span>
+            <ShiftButtonContent
+              className="[--shift-button-icon-size:56px] md:[--shift-button-icon-size:52px]"
+              iconClassName="bg-totem-action text-totem-action-text"
+              iconStrokeWidth={2.25}
+              labelClassName="flex h-[56px] items-center rounded-full bg-totem-action px-[23px] text-totem-action-text md:h-[52px]"
+            >
+              Agenda una llamada
+            </ShiftButtonContent>
           </Link>
-        </div>
+        </motion.div>
 
-        <Link
-          aria-label="View the Rama social media project"
+        <MotionLink
+          animate="visible"
+          aria-label="Ver el proyecto de redes sociales de Rama"
           className="group absolute top-[954px] right-5 left-5 z-20 flex h-[136px] items-center gap-[11px] rounded-[22px] bg-white p-[8px] pr-[45px] transition-transform duration-300 hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-shinta-ink md:top-[858px] xl:top-[175px] xl:right-0 xl:left-auto xl:h-[140px] xl:w-[295px] xl:gap-[12px] xl:rounded-[24px] xl:pr-[38px]"
           href="/projects/rama"
+          initial={reduceMotion ? false : "hidden"}
+          variants={projectVariants}
+          whileHover={reduceMotion ? undefined : { y: -4 }}
         >
           <span className="relative h-full w-[93px] shrink-0 overflow-hidden rounded-[16px] xl:w-[96px]">
             <Image
-              alt="Rama campaign model in a black hoodie"
+              alt="Modelo de la campaña Rama con sudadera negra"
               className="object-cover"
               fill
               sizes="96px"
@@ -192,10 +300,10 @@ export function HeroSection() {
           </span>
           <span className="min-w-0">
             <span className="block text-[12px] leading-[16.8px] font-semibold tracking-[0.5px] text-shinta-lavender uppercase">
-              NEW PROJECT!
+              ¡NUEVO PROYECTO!
             </span>
             <span className="mt-[4px] block text-[18px] leading-[25.2px] font-semibold tracking-[-0.36px]">
-              Making Rama unmistakable on social
+              Haciendo que Rama sea inconfundible en redes
             </span>
           </span>
           <span className="absolute top-[9px] right-[9px] grid size-[32px] place-items-center rounded-full bg-shinta-canvas">
@@ -205,7 +313,7 @@ export function HeroSection() {
               strokeWidth={2.25}
             />
           </span>
-        </Link>
+        </MotionLink>
       </div>
     </section>
   );

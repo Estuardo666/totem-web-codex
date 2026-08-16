@@ -1,14 +1,30 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+const themeInitializationScript = `
+  (() => {
+    try {
+      const savedTheme = localStorage.getItem("totem-theme");
+      const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const theme = savedTheme === "dark" || savedTheme === "light"
+        ? savedTheme
+        : systemPrefersDark ? "dark" : "light";
+      document.documentElement.classList.toggle("dark", theme === "dark");
+      document.documentElement.style.colorScheme = theme;
+    } catch {
+      document.documentElement.style.colorScheme = "light";
+    }
+  })();
+`;
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://shinta.framer.media"),
-  title: "Shinta - Social Media Marketing Agency",
+  title: "Shinta - Agencia de marketing en redes sociales",
   description:
-    "Shinta is a social media marketing agency template built to showcase your work, attract clients and support long term brand growth.",
+    "Shinta es una plantilla para agencias de marketing en redes sociales, creada para mostrar tu trabajo, atraer clientes e impulsar el crecimiento de marca a largo plazo.",
   icons: {
-    apple:
-      "/sites/shinta-framer-media-3240cba4/root-8a5edab2/seo/apple-touch-icon.png",
+    icon: "/brand/favicon.png",
+    apple: "/brand/favicon.png",
   },
   openGraph: {
     images: [
@@ -23,7 +39,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full antialiased">
+    <html lang="es" className="h-full antialiased" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitializationScript }} />
+      </head>
       <body className="flex min-h-full flex-col">{children}</body>
     </html>
   );
