@@ -185,18 +185,18 @@ export function Navbar() {
         <div className="relative z-10 flex h-10 shrink-0 items-center justify-between px-2 md:contents">
           <Link
       aria-label="Inicio de Tótem Mass Media"
-            className="rounded-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-shinta-pink"
+            className="ml-[10px] rounded-full py-2 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-shinta-pink"
             href="/"
             onClick={() => setIsMenuOpen(false)}
           >
             <Image
               alt="Tótem Mass Media"
-              className="h-10 w-auto max-w-[116px] object-contain md:max-w-[52px]"
-              height={417}
+              className="h-auto w-[180px] max-w-[58vw] object-contain md:w-[220px] md:max-w-none"
+              height={338}
               priority
-              src="/brand/logo-dark.png"
+              src="/images/logo header 2@2x.png"
               unoptimized
-              width={621}
+              width={1397}
             />
           </Link>
 
