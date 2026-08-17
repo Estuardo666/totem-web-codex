@@ -211,6 +211,10 @@ export function Navbar() {
               <ThemeSwitch />
             </span>
 
+            <span className="md:hidden">
+              <ThemeSwitch />
+            </span>
+
             <LiquidMorphButton
               className="hidden h-10 px-5 text-[16px] font-semibold leading-4 tracking-[-0.64px] whitespace-nowrap md:inline-flex"
               href="/contact"

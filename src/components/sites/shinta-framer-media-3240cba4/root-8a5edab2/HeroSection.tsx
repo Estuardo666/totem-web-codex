@@ -211,7 +211,7 @@ export function HeroSection() {
         >
           <motion.h1
             id="hero-heading"
-            className="max-w-[335px] text-[32px] leading-[32px] font-bold tracking-[-1.28px] md:max-w-[680px] xl:max-w-[365px] xl:text-[64px] xl:leading-[64px] xl:tracking-[-2.56px]"
+            className="max-w-[335px] text-[40px] leading-[40px] font-bold tracking-[-1.6px] md:max-w-[680px] xl:max-w-[365px] xl:text-[64px] xl:leading-[64px] xl:tracking-[-2.56px]"
             variants={headingVariants}
           >
             <span className="sr-only">{heading}</span>
@@ -287,7 +287,7 @@ export function HeroSection() {
           </text>
         </svg>
 
-        <div className="absolute top-[271px] left-[calc(50%_-_8px)] z-10 h-[410px] w-[230px] -translate-x-1/2 md:top-[278px] md:left-[calc(50%_-_21px)] md:h-[418px] md:w-[234px] xl:top-[175px] xl:left-[500px] xl:h-[640px] xl:w-[360px] xl:translate-x-0">
+        <div className="absolute top-[271px] left-1/2 z-10 h-[410px] w-[230px] -translate-x-1/2 md:top-[278px] md:h-[418px] md:w-[234px] xl:top-[175px] xl:left-[500px] xl:h-[640px] xl:w-[360px] xl:translate-x-0">
           <motion.div
             animate="visible"
             className="relative h-full w-full"

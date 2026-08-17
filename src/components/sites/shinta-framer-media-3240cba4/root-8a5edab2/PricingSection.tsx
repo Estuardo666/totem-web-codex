@@ -99,9 +99,6 @@ function BillingToggle({ billingCycle, setBillingCycle }: BillingToggleProps) {
         type="button"
       >
         <span>Diseño y desarrollo web</span>
-        <span className="text-[11px] leading-none font-semibold tracking-[0.55px] uppercase">
-          ux, seo y performance
-        </span>
       </button>
     </div>
   );

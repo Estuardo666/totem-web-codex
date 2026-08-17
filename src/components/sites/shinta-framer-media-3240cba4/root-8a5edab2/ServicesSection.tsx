@@ -53,7 +53,7 @@ const services = [
     stat: "Web",
     title: "Diseño y desarrollo web",
     surface: "bg-shinta-green",
-    tab: "left-3/4",
+    tab: "right-0",
     edge: "end",
     layer: "lg:z-40",
   },
@@ -80,14 +80,14 @@ function ServicePanel({ service }: ServicePanelProps) {
   return (
     <article
       className={cn(
-        "relative h-[560px] pt-8 md:h-[438px] lg:sticky lg:top-0 lg:flex lg:h-[900px] lg:items-center lg:justify-center lg:pt-0",
+        "relative min-h-[560px] pt-8 md:h-[438px] lg:sticky lg:top-0 lg:flex lg:h-[900px] lg:items-center lg:justify-center lg:pt-0",
         service.layer,
       )}
     >
-      <div className="relative h-full w-full max-w-[1085px] pt-8 lg:h-[650px]">
+      <div className="relative min-h-[528px] w-full max-w-[1085px] pt-8 md:h-full lg:h-[650px]">
         <p
           className={cn(
-            "absolute top-0 z-10 flex h-10 w-1/4 items-center px-4 text-[12px] leading-[16.8px] font-semibold tracking-[0.96px] uppercase lg:h-9",
+            "absolute top-0 z-10 flex h-10 w-max max-w-full items-center whitespace-nowrap px-4 text-[12px] leading-[16.8px] font-semibold tracking-[0.96px] uppercase lg:h-9",
             service.edge ? tabRadius[service.edge] : "rounded-t-[18px]",
             service.surface,
             service.tab,
@@ -98,7 +98,7 @@ function ServicePanel({ service }: ServicePanelProps) {
 
         <div
           className={cn(
-            "relative flex h-[calc(100%-32px)] flex-col overflow-hidden rounded-[28px] text-shinta-ink md:grid md:grid-cols-[1.06fr_0.94fr] md:rounded-[26px] lg:grid-cols-2 lg:rounded-[30px]",
+            "relative min-h-[496px] flex flex-col overflow-hidden rounded-[28px] text-shinta-ink md:h-[calc(100%-32px)] md:min-h-0 md:grid md:grid-cols-[1.06fr_0.94fr] md:rounded-[26px] lg:grid-cols-2 lg:rounded-[30px]",
             service.edge ? cardCorner[service.edge] : null,
             service.surface,
           )}

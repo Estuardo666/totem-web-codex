@@ -69,7 +69,7 @@ export function BlogTitleSection() {
           </motion.div>
 
           <motion.h1
-            className="w-full max-w-full break-words text-[40px] leading-[42px] font-bold tracking-[-1.6px] text-shinta-ink md:text-[52px] md:leading-[54px] md:tracking-[-2.08px] xl:text-[72px] xl:leading-[72px] xl:tracking-[-2.88px]"
+            className="w-full max-w-full break-words text-[50px] leading-[52px] font-bold tracking-[-2px] text-shinta-ink md:text-[52px] md:leading-[54px] md:tracking-[-2.08px] xl:text-[72px] xl:leading-[72px] xl:tracking-[-2.88px]"
             id="blog-heading"
             initial={false}
             variants={groupVariants}

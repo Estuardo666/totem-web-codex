@@ -68,7 +68,7 @@ export function ArticleHeroSection() {
           </motion.div>
 
           <motion.h1
-            className="w-full max-w-full break-words text-center text-[32px] leading-9 font-bold tracking-[-1.28px] text-shinta-ink md:text-[44px] md:leading-[48px] md:tracking-[-1.76px] xl:text-[64px] xl:leading-[64px] xl:tracking-[-2.56px]"
+            className="w-full max-w-full break-words text-center text-[40px] leading-[45px] font-bold tracking-[-1.6px] text-shinta-ink md:text-[44px] md:leading-[48px] md:tracking-[-1.76px] xl:text-[64px] xl:leading-[64px] xl:tracking-[-2.56px]"
             initial={false}
             variants={groupVariants}
             viewport={{ amount: 0.4, once: true }}
