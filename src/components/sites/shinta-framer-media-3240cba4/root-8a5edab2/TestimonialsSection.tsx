@@ -11,32 +11,32 @@ import { ImageReveal } from "@/components/sites/shinta-framer-media-3240cba4/sha
 
 const testimonials = [
   {
-    body: "Desarrollo web, UX/UI, plataformas, integraciones y automatización.",
+    body: "Diseño UX/UI, desarrollo web, reservas, pagos en línea e integraciones.",
     image: "images/fd4b5099d911c76f.jpg",
     name: "TransCity",
-    role: "Capacidades demostradas",
-    title: "Plataformas operativas complejas",
+    role: "Trabajo realizado",
+    title: "Una web que opera el negocio",
   },
   {
-    body: "Estrategia, branding, diseño y desarrollo web.",
+    body: "Estrategia de contenido, dirección visual y desarrollo del sitio web.",
     image: "images/d90a19ecbfeae44f.jpg",
     name: "Terra Viva",
-    role: "Capacidades demostradas",
-    title: "Marca y presencia digital",
+    role: "Trabajo realizado",
+    title: "Presencia digital de cero",
   },
   {
-    body: "Fotografía, video, producción y contenido para redes.",
+    body: "Fotografía, videos promocionales y contenido mensual para redes.",
     image: "images/b82418baae466bc6.jpg",
     name: "PlayHouse",
-    role: "Capacidades demostradas",
-    title: "Producción audiovisual y contenido",
+    role: "Trabajo realizado",
+    title: "Producción audiovisual completa",
   },
   {
-    body: "IA aplicada a producción, automatización audiovisual y herramientas especializadas.",
+    body: "Arquitectura de información, SEO, mapas y contacto por WhatsApp.",
     image: "images/35b70b916d6ee028.jpg",
-    name: "Totem Auto Edit",
-    role: "Capacidades demostradas",
-    title: "Automatización audiovisual",
+    name: "Aprendiendo Juntos",
+    role: "Trabajo realizado",
+    title: "Web orientada a conversión",
   },
 ] as const;
 
@@ -61,7 +61,7 @@ const cardVariants: Variants = {
 
 function FiveStars() {
   return (
-    <div aria-label="Capacidad demostrada" className="flex gap-1">
+    <div aria-label="Trabajo destacado" className="flex gap-1">
       {Array.from({ length: 5 }, (_, index) => (
         <span
           aria-hidden="true"
@@ -144,7 +144,7 @@ export function TestimonialsSection() {
             className="text-[28px] leading-[1.08] font-bold tracking-[-1.12px] text-shinta-ink lg:text-[64px] lg:leading-[70.4px] lg:tracking-[-2.56px]"
             id="proof-heading"
           >
-            La tecnología demuestra profundidad
+Los proyectos demuestran el trabajo
           </h2>
         </motion.header>
 
@@ -161,7 +161,7 @@ export function TestimonialsSection() {
           >
             <ImageReveal className="group relative h-[210px] w-full shrink-0 overflow-hidden rounded-[14px] bg-shinta-stone md:h-full md:w-[42%]">
               <video
-                aria-label="Proyecto de automatización audiovisual"
+                aria-label="Proyecto de producción audiovisual"
                 className="size-full object-cover"
                 muted
                 onEnded={() => setIsPlaying(false)}
@@ -193,17 +193,17 @@ export function TestimonialsSection() {
             <div className="flex min-h-0 flex-1 flex-col">
               <FiveStars />
               <h3 className="mt-5 text-[24px] leading-[33.6px] font-bold tracking-[-0.96px] text-shinta-ink">
-                Automatización audiovisual especializada
+                Contenido y marketing para una marca
               </h3>
               <p className="mt-3 text-[16px] leading-6 text-shinta-stone lg:text-[18px] lg:leading-[27px]">
-                Transcripción, análisis de guiones, matching entre grabaciones y texto, subtítulos y automatización de montaje.
+                Fotografía, video, contenido comercial y desarrollo web para sostener toda la comunicación del negocio.
               </p>
               <footer className="mt-auto pt-5">
                 <cite className="block text-[16px] leading-[22px] font-bold not-italic text-shinta-ink lg:text-[18px] lg:leading-[25px]">
-                  Totem Auto Edit
+                  Alan
                 </cite>
                 <p className="text-[14px] leading-5 text-shinta-muted lg:text-[16px] lg:leading-[22px]">
-                  Capacidades demostradas
+                  Trabajo realizado
                 </p>
               </footer>
             </div>

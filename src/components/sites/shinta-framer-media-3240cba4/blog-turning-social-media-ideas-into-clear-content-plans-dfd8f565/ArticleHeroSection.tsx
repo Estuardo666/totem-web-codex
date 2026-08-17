@@ -6,7 +6,7 @@ import { motion, type Variants } from "framer-motion";
 import { SectionEyebrow } from "../shared/ShintaPrimitives";
 import { shintaAsset } from "../shared/site";
 
-const heading = "De la idea al sistema que la hace crecer";
+const heading = "De la idea al contenido que la hace crecer";
 
 const groupVariants: Variants = {
   hidden: {},
@@ -80,7 +80,7 @@ export function ArticleHeroSection() {
                   De la idea al
                 </motion.span>{" "}
                 <motion.span className="block md:inline-block" variants={wordVariants}>
-                  sistema que la
+                  contenido que la
                 </motion.span>{" "}
                 <motion.span className="block md:inline-block" variants={wordVariants}>
                   hace crecer
@@ -106,7 +106,7 @@ export function ArticleHeroSection() {
               unoptimized
             />
           </span>
-          <p className="text-[16px] leading-[22.4px] text-shinta-muted">Agencia creativa y tecnológica</p>
+          <p className="text-[16px] leading-[22.4px] text-shinta-muted">Agencia creativa y digital</p>
           <h6 className="hidden text-[16px] leading-6 font-bold text-shinta-ink md:block xl:text-[18px] xl:leading-[25.2px]">
             Tótem Mass Media
           </h6>

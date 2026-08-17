@@ -9,8 +9,8 @@ import { Navbar } from "@/components/sites/shinta-framer-media-3240cba4/shared/N
 
 export const metadata: Metadata = {
   description:
-    "Cómo Tótem conecta marca, contenido y tecnología para construir soluciones completas.",
-  title: "De la idea al sistema que la hace crecer — Tótem Mass Media",
+    "Cómo Tótem conecta estrategia, contenido audiovisual, marketing y desarrollo web en una sola solución.",
+  title: "De la idea al contenido que la hace crecer — Tótem Mass Media",
 };
 
 export default function TurningSocialMediaIdeasIntoClearContentPlansPage() {

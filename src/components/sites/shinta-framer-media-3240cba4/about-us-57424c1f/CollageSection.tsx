@@ -13,7 +13,7 @@ import {
 
 const IMAGE_BASE = "/sites/shinta-framer-media-3240cba4/about-us-57424c1f/images";
 
-const heading = "Conectamos marca, contenido y tecnología";
+const heading = "Conectamos estrategia, contenido y web";
 const headingWords = heading.split(" ");
 
 const groupVariants: Variants = {
@@ -60,7 +60,7 @@ const tiles: Tile[] = [
   {
     key: "big",
     src: `${IMAGE_BASE}/collage-large.jpg`,
-    alt: "Identidad de marca",
+    alt: "Dirección visual de una campaña",
     top: 156,
     left: 295,
     width: 410,
@@ -86,7 +86,7 @@ const tiles: Tile[] = [
   {
     key: "two",
     src: `${IMAGE_BASE}/collage-wide-bottom.jpg`,
-    alt: "Experiencia digital",
+    alt: "Diseño de una experiencia digital",
     top: 0,
     left: 890,
     width: 302,
@@ -99,7 +99,7 @@ const tiles: Tile[] = [
   {
     key: "three",
     src: `${IMAGE_BASE}/collage-wide-top.jpg`,
-    alt: "Software y sistemas",
+    alt: "Desarrollo del sitio web",
     top: 963,
     left: 56,
     width: 252,
@@ -112,7 +112,7 @@ const tiles: Tile[] = [
   {
     key: "four",
     src: `${IMAGE_BASE}/collage-tall-left.jpg`,
-    alt: "Automatización de procesos",
+    alt: "Gestión de contenido y campañas",
     top: 1016,
     left: 760,
     width: 194,
@@ -150,7 +150,7 @@ export function CollageSection() {
     <section
       ref={sectionRef}
       aria-labelledby="shinta-collage-heading"
-      className="relative flex items-center justify-center bg-shinta-canvas px-5 py-[72px] md:py-[120px] xl:py-[120px]"
+      className="relative flex items-center justify-center bg-transparent px-5 py-[72px] md:py-[120px] xl:py-[120px]"
     >
       <div className="flex w-full max-w-[1000px] flex-col items-center gap-12 md:gap-[72px] xl:gap-[100px]">
         <h2

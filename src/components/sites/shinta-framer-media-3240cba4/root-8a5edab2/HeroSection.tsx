@@ -16,12 +16,12 @@ import { ShiftButtonContent } from "../shared/ShintaPrimitives";
 import { shintaAsset } from "../shared/site";
 
 const ribbonCopy =
-  "ESTRATEGIA · CREATIVIDAD · TECNOLOGÍA · MARCA · CONTENIDO · ";
+  "PRODUCCIÓN AUDIOVISUAL · MARKETING DIGITAL · ESTRATEGIA · CONTENIDO · DISEÑO WEB · ";
 
 const services = [
-  "ESTRATEGIA Y BRANDING",
   "PRODUCCIÓN AUDIOVISUAL",
-  "SOFTWARE Y AUTOMATIZACIÓN",
+  "MARKETING DIGITAL",
+  "DISEÑO Y DESARROLLO WEB",
 ];
 
 const heroVideos = [
@@ -46,7 +46,7 @@ const cardSlots = [
 ] as const;
 
 const heading =
-  "Creamos marcas, contenido y tecnología que hacen avanzar negocios.";
+  "Contenido y web que hacen crecer tu negocio.";
 const headingWords = heading.split(" ");
 
 const headingVariants: Variants = {
@@ -130,7 +130,12 @@ export function HeroSection() {
   useEffect(() => {
     const ribbon = ribbonRef.current;
 
-    if (!ribbon || reduceMotion) {
+    if (!ribbon) {
+      return;
+    }
+
+    if (reduceMotion) {
+      ribbon.style.opacity = "1";
       return;
     }
 
@@ -249,6 +254,7 @@ export function HeroSection() {
           className="pointer-events-none absolute top-[250px] left-1/2 z-0 aspect-[1440/500] w-[190vw] -translate-x-1/2 overflow-visible md:top-[235px] xl:top-[195px] xl:w-[115vw]"
           ref={ribbonRef}
           preserveAspectRatio="xMidYMid meet"
+          style={{ opacity: 0 }}
           viewBox="0 0 1440 500"
         >
           <path
@@ -408,9 +414,9 @@ export function HeroSection() {
           variants={supportingVariants}
         >
           <p className="min-w-0 max-w-[350px] break-words text-[18px] leading-[25.2px] font-normal tracking-[-0.36px] text-shinta-stone">
-            Desde estrategia y producción audiovisual hasta sitios web,
-            plataformas, software y automatización. Diseñamos soluciones
-            alrededor de problemas y objetivos reales.
+            Desde la estrategia y el contenido hasta la producción
+            audiovisual y el sitio web que sostiene tu presencia digital.
+            Diseñamos cada solución alrededor de objetivos reales.
           </p>
 
           <Link
@@ -419,8 +425,6 @@ export function HeroSection() {
           >
             <ShiftButtonContent
               className="[--shift-button-icon-size:56px] md:[--shift-button-icon-size:52px]"
-              restIconClassName="bg-totem-brand text-totem-action"
-              hoverIconClassName="bg-totem-tech text-totem-brand"
               iconStrokeWidth={2.25}
               labelClassName="flex h-[56px] items-center rounded-full bg-totem-action px-[23px] text-totem-action-text md:h-[52px]"
             >
@@ -432,7 +436,7 @@ export function HeroSection() {
         <MotionLink
           animate="visible"
           aria-label="Ver el proyecto TransCity"
-          className="group absolute top-[954px] right-5 left-5 z-20 flex h-[136px] items-center gap-[11px] rounded-[22px] bg-white p-[8px] pr-[45px] transition-transform duration-300 hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-shinta-ink md:top-[858px] xl:top-[175px] xl:right-0 xl:left-auto xl:h-[140px] xl:w-[295px] xl:gap-[12px] xl:rounded-[24px] xl:pr-[38px]"
+          className="group absolute top-[954px] right-5 left-5 z-20 flex h-[136px] items-center gap-[11px] rounded-[22px] bg-[#ffffff9e] p-[8px] pr-[45px] text-shinta-ink backdrop-blur-[15px] transition-transform dark:bg-[#0d2740c7] duration-300 hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-shinta-ink md:top-[858px] xl:top-[175px] xl:right-0 xl:left-auto xl:h-[140px] xl:w-[320px] xl:gap-[12px] xl:rounded-[24px] xl:pr-[8px]"
           href="/#projects"
           initial={reduceMotion ? false : "hidden"}
           variants={projectVariants}
@@ -449,14 +453,14 @@ export function HeroSection() {
             />
           </span>
           <span className="min-w-0">
-            <span className="block text-[12px] leading-[16.8px] font-semibold tracking-[0.5px] text-totem-creative-ink uppercase">
+            <span className="block text-[12px] leading-[16.8px] font-semibold tracking-[0.5px] whitespace-nowrap text-totem-creative-ink uppercase">
               PROYECTO DESTACADO
             </span>
-            <span className="mt-[4px] block text-[18px] leading-[25.2px] font-semibold tracking-[-0.36px]">
-              TransCity: plataformas, integraciones y automatización
+            <span className="mt-[4px] block text-[17px] leading-[21px] font-semibold tracking-[-0.4px]">
+              TransCity: diseño y desarrollo web a medida
             </span>
           </span>
-          <span className="absolute top-[9px] right-[9px] grid size-[32px] place-items-center rounded-full bg-shinta-canvas">
+          <span className="absolute top-[9px] right-[9px] grid size-[32px] place-items-center rounded-full bg-totem-off-white text-totem-navy dark:bg-totem-tech">
             <ArrowUpRight
               aria-hidden="true"
               className="size-4 transition-transform duration-300 group-hover:rotate-45"

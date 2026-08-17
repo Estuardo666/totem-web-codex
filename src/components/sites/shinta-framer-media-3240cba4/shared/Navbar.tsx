@@ -17,8 +17,8 @@ import { ThemeSwitch } from "./ThemeSwitch";
 
 const navigationLinks = [
   { href: "/#projects", label: "Proyectos" },
-  { href: "/about-us", label: "Tótem" },
-  { href: "/blog", label: "Capacidades" },
+  { href: "/about-us", label: "Nosotros" },
+  { href: "/blog", label: "Servicios" },
   { href: "/contact", label: "Contacto" },
 ] as const;
 

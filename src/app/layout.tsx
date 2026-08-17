@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
+import "lenis/dist/lenis.css";
 import "./globals.css";
+
+import { SmoothScroll } from "@/components/sites/shinta-framer-media-3240cba4/shared/SmoothScroll";
 
 const themeInitializationScript = `
   (() => {
@@ -17,9 +20,9 @@ const themeInitializationScript = `
 `;
 
 export const metadata: Metadata = {
-  title: "Tótem Mass Media — Estrategia, creatividad y tecnología",
+  title: "Tótem Mass Media — Producción audiovisual, marketing y web",
   description:
-    "Tótem Mass Media es una agencia creativa y tecnológica de Loja, Ecuador. Desarrollamos marcas, contenido, experiencias digitales, plataformas, software y automatizaciones.",
+    "Tótem Mass Media es una agencia creativa y digital de Loja, Ecuador. Producción audiovisual, marketing digital, estrategia de contenido y diseño y desarrollo web.",
   icons: {
     icon: "/brand/favicon.png",
     apple: "/brand/favicon.png",
@@ -41,7 +44,9 @@ export default function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitializationScript }} />
       </head>
-      <body className="flex min-h-full flex-col">{children}</body>
+      <body className="flex min-h-full flex-col">
+        <SmoothScroll>{children}</SmoothScroll>
+      </body>
     </html>
   );
 }

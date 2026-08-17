@@ -17,30 +17,30 @@ type BillingCycle = "monthly" | "yearly";
 const plans = [
   {
     cta: "Cuéntanos tu proyecto",
-    description: "Construir la identidad y comunicación de una marca.",
+    description: "Producir y mover el contenido que sostiene tu presencia digital.",
     features: [
-      "Estrategia de marca",
-      "Identidad visual",
-      "Dirección creativa",
-      "Conceptualización de campañas",
-      "Diseño gráfico",
+      "Fotografía y video comercial",
+      "Reels, TikToks y contenido social",
+      "Estrategia y calendario editorial",
+      "Gestión de redes y campañas",
+      "Métricas y reportes de desempeño",
     ],
-    name: "Marca y contenido",
+    name: "Contenido y marketing",
     previousPrice: "",
     price: "",
     theme: "light",
   },
   {
     cta: "Cuéntanos tu proyecto",
-    description: "Construir las plataformas y sistemas que sostienen la operación.",
+    description: "Construir el sitio web que convierte visitas en clientes.",
     features: [
-      "Aplicaciones web",
-      "Plataformas empresariales",
-      "Sistemas administrativos",
-      "Integraciones entre plataformas",
-      "Automatización e inteligencia artificial",
+      "Sitios corporativos y landing pages",
+      "Diseño UX/UI a medida",
+      "SEO técnico y SEO local",
+      "Integraciones con WhatsApp, mapas y pagos",
+      "Mantenimiento y optimización",
     ],
-    name: "Web, software y automatización",
+    name: "Diseño y desarrollo web",
     previousPrice: "",
     price: "",
     theme: "dark",
@@ -85,7 +85,7 @@ function BillingToggle({ billingCycle, setBillingCycle }: BillingToggleProps) {
         role="radio"
         type="button"
       >
-        Marca y contenido
+        Contenido y marketing
       </button>
       <button
         aria-checked={billingCycle === "yearly"}
@@ -98,9 +98,9 @@ function BillingToggle({ billingCycle, setBillingCycle }: BillingToggleProps) {
         role="radio"
         type="button"
       >
-        <span>Web y tecnología</span>
+        <span>Diseño y desarrollo web</span>
         <span className="text-[11px] leading-none font-semibold tracking-[0.55px] uppercase">
-          estrategia y sistemas
+          ux, seo y performance
         </span>
       </button>
     </div>
@@ -115,7 +115,7 @@ function CustomPlanCard() {
     >
       <span className="relative h-20 w-20 shrink-0 overflow-hidden rounded-[14px] bg-shinta-lavender">
         <Image
-          alt="Planificación de una solución digital"
+          alt="Planificación de un proyecto digital"
           className="object-cover"
           fill
           sizes="80px"
@@ -129,7 +129,7 @@ function CustomPlanCard() {
       </span>
       <span className="ml-4 min-w-0">
         <span className="block text-[18px] leading-[25.2px] font-bold tracking-[-0.36px]">
-          ¿Qué solución necesita tu negocio?
+          ¿Qué necesita tu negocio ahora?
         </span>
         <span className="mt-0.5 block text-[18px] leading-[25.2px] text-shinta-muted">
           Cuéntanos tu proyecto
@@ -218,13 +218,9 @@ function PlanCard({ plan }: PlanCardProps) {
         <ShiftButtonContent
           className="[--shift-button-icon-size:56px]"
           iconClassName="border-4 border-transparent bg-clip-padding"
-          restIconClassName="bg-totem-brand text-totem-action"
-          hoverIconClassName="bg-totem-tech text-totem-brand"
           iconStrokeWidth={2}
-          labelClassName={cn(
-            "flex h-14 items-center rounded-full px-6",
-            isDark ? "bg-white" : "bg-shinta-ink",
-          )}
+          tone={isDark ? "onDark" : "onInk"}
+          labelClassName="flex h-14 items-center rounded-full px-6 bg-[var(--shift-label-bg)] text-[var(--shift-label-fg)]"
         >
           {plan.cta}
         </ShiftButtonContent>
@@ -242,10 +238,10 @@ export function PricingSection() {
         <div className="flex min-w-0 flex-col">
           <div>
             <SectionEyebrow className="mb-4 inline-flex rounded-full bg-shinta-pink px-3 py-1 text-shinta-ink">
-              soluciones
+              servicios
             </SectionEyebrow>
             <h2 className="max-w-[470px] text-[64px] leading-[70.4px] font-bold tracking-[-2.56px] text-shinta-ink max-lg:text-[28px] max-lg:leading-8 max-lg:tracking-[-1.12px]">
-              No trabajamos con soluciones aisladas.
+Cada negocio necesita una solución distinta.
             </h2>
             <div className="mt-6 max-w-[445px]">
               <BillingToggle

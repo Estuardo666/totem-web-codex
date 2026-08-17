@@ -12,11 +12,11 @@ const STROKE_PATH =
   "M 0 92.158 C 124.286 -3.096 331.666 20.54 280.209 56.516 C 205.354 108.848 329.739 94.962 405.624 75.751 C 481.608 56.516 524.244 43.192 543.751 22.57 C 579.343 -15.052 493.19 -1.191 472.852 31.616 C 446.193 74.621 591.28 77.333 718.317 40.674 C 1032.987 -50.129 946.116 66.255 1087.503 88.481 C 1125.422 94.441 1181 75.751 1181 75.751";
 
 const brands = [
-  "Estrategia y branding",
   "Producción audiovisual",
-  "Experiencia digital",
-  "Software y plataformas",
-  "Automatización e IA",
+  "Marketing digital",
+  "Estrategia y contenido",
+  "Diseño web",
+  "Desarrollo web",
 ] as const;
 
 const groupVariants: Variants = {
@@ -125,7 +125,7 @@ export function ContactHeroSection() {
               viewport={{ amount: 0.4, once: true }}
               whileInView="visible"
             >
-              Desde estrategia y producción audiovisual hasta sitios web, plataformas, software y automatización. Diseñamos soluciones alrededor de problemas y objetivos reales.
+Desde la estrategia y el contenido hasta la producción audiovisual y el sitio web de tu negocio. Diseñamos cada solución alrededor de objetivos reales.
             </motion.p>
           </div>
 
@@ -137,7 +137,7 @@ export function ContactHeroSection() {
             whileInView="visible"
           >
             <SectionEyebrow className="text-shinta-muted">
-              Estrategia, creatividad y tecnología
+              Lo que podemos hacer por tu negocio
             </SectionEyebrow>
 
             <div className="h-[30px] w-full overflow-hidden [mask-image:linear-gradient(270deg,transparent_0%,black_15.537%,black_85.816%,transparent_100%)] [-webkit-mask-image:linear-gradient(270deg,transparent_0%,black_15.537%,black_85.816%,transparent_100%)]">

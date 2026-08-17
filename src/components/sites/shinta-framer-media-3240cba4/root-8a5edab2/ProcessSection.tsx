@@ -25,7 +25,7 @@ type ProcessStep = {
 
 const processSteps: ProcessStep[] = [
   {
-    body: "Entender el negocio, la marca, el público y el objetivo.",
+    body: "Entender el negocio, el público y el objetivo antes de producir nada.",
     color: "border-shinta-pink bg-shinta-pink",
     delay: "delay-[0ms]",
     icon: MessageSquareText,
@@ -33,23 +33,23 @@ const processSteps: ProcessStep[] = [
     title: "Estrategia",
   },
   {
-    body: "Convertir la estrategia en identidad, diseño, fotografía, video y contenido.",
+    body: "Convertir la estrategia en guiones, calendarios y conceptos de contenido.",
     color: "border-shinta-lavender bg-shinta-lavender",
     delay: "delay-[110ms]",
     icon: PlaySquare,
     number: "02",
-    title: "Creatividad",
+    title: "Contenido",
   },
   {
-    body: "Construir sitios, plataformas, sistemas y automatizaciones.",
+    body: "Grabar, editar y construir el sitio web donde todo converge.",
     color: "border-totem-surface bg-totem-surface",
     delay: "delay-[220ms]",
     icon: BadgeCheck,
     number: "03",
-    title: "Tecnología",
+    title: "Producción",
   },
   {
-    body: "Construimos el ecosistema que una marca necesita para crecer.",
+    body: "Publicar, medir y optimizar hasta que los números mejoren.",
     color: "border-shinta-green bg-shinta-green",
     delay: "delay-[330ms]",
     icon: ChartNoAxesColumnIncreasing,
@@ -175,7 +175,7 @@ export function ProcessSection() {
           id="process-heading"
           className="mt-[12px] max-w-[335px] text-[28px] leading-[31px] font-bold tracking-[-1.12px] md:max-w-[630px] xl:mt-[10px] xl:max-w-[850px] xl:text-[64px] xl:leading-[70.4px] xl:tracking-[-2.56px]"
         >
-          Estrategia, creatividad y tecnología para transformar negocios.
+          Estrategia, contenido y tecnología para hacer crecer negocios.
         </h2>
 
         <ol

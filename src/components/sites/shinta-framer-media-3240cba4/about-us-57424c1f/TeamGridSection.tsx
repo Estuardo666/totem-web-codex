@@ -9,12 +9,12 @@ const TEAM_MEMBERS = [
   {
     imageSrc: "79687116559292ab.jpg",
     name: "TransCity",
-    role: "Plataformas e integraciones",
+    role: "Diseño y desarrollo web",
   },
   {
     imageSrc: "47f89ced261416df.jpg",
     name: "Terra Viva",
-    role: "Branding y desarrollo web",
+    role: "Desarrollo web y contenido",
   },
   {
     imageSrc: "34844c23286ab253.jpg",
@@ -23,18 +23,18 @@ const TEAM_MEMBERS = [
   },
   {
     imageSrc: "3180f8ad3e321358.jpg",
-    name: "FocusGuard",
-    role: "Software de escritorio",
+    name: "Alan",
+    role: "Contenido y marketing digital",
   },
   {
     imageSrc: "36db82b98440ca02.jpg",
-    name: "Totem OS",
-    role: "Plataforma empresarial y analítica",
+    name: "Aprendiendo Juntos",
+    role: "UX/UI, web y SEO",
   },
   {
     imageSrc: "c1c60606144d1f73.jpg",
-    name: "Totem Auto Edit",
-    role: "Automatización audiovisual",
+    name: "Contenido mensual",
+    role: "Fotografía, video y redes",
   },
 ] as const;
 
@@ -62,7 +62,7 @@ export function TeamGridSection() {
   return (
     <section
       aria-labelledby="shinta-team-grid-heading"
-      className="relative flex items-center justify-center overflow-clip bg-shinta-canvas px-5 py-[72px] md:py-24 xl:py-[120px]"
+      className="relative flex items-center justify-center overflow-clip bg-transparent px-5 py-[72px] md:py-24 xl:py-[120px]"
     >
       <div className="flex w-full max-w-[1280px] flex-col gap-10 md:gap-12 xl:gap-16">
         <div className="flex w-full flex-col items-start gap-4 md:flex-row md:items-end md:gap-6 xl:flex-row xl:items-end xl:gap-6">
@@ -86,7 +86,7 @@ export function TeamGridSection() {
               viewport={{ amount: 0.4, once: true }}
               whileInView="visible"
             >
-              Proyectos que demuestran capacidades
+              Proyectos que demuestran el trabajo
             </motion.h2>
           </div>
 
@@ -97,7 +97,7 @@ export function TeamGridSection() {
             viewport={{ amount: 0.4, once: true }}
             whileInView="visible"
           >
-            Los proyectos aportan la evidencia: estrategia, branding, producción audiovisual, web, software, automatización e inteligencia artificial aplicada.
+Los proyectos aportan la evidencia: producción audiovisual, marketing digital, estrategia de contenido y desarrollo web.
           </motion.p>
         </div>
 

@@ -445,6 +445,55 @@ h6 {
   isolation: isolate;
 }
 
+/* CTA arrow-circle colour system.
+   The rest circle sits outside the label pill, so it has to read against the
+   SURFACE behind the button, not against the pill. Three tones:
+   default   - light surface, coloured pill (navy circle, lime arrow)
+   on-dark   - dark navy surface (sky circle, navy arrow)
+   on-ink    - the pill itself is navy/ink (lime circle, navy arrow)
+   Dark theme promotes "default" to the on-dark tokens. */
+.shift-button__content {
+  --shift-label-bg: transparent;
+  --shift-label-fg: inherit;
+  --shift-icon-rest-bg: var(--totem-navy);
+  --shift-icon-rest-fg: var(--totem-lime);
+  --shift-icon-hover-bg: var(--totem-sky);
+  --shift-icon-hover-fg: var(--totem-navy);
+}
+
+/* Dark surface: both the pill and the rest circle have to lift off a navy
+   background, so the pill goes white and the circle goes sky. */
+.shift-button__content--on-dark,
+.dark .shift-button__content {
+  --shift-label-bg: var(--totem-white);
+  --shift-label-fg: var(--totem-navy);
+  --shift-icon-rest-bg: var(--totem-sky);
+  --shift-icon-rest-fg: var(--totem-navy);
+  --shift-icon-hover-bg: var(--totem-white);
+  --shift-icon-hover-fg: var(--totem-navy);
+}
+
+/* Ink pill on a light surface: navy pill, lime circle. */
+.shift-button__content--on-ink {
+  --shift-label-bg: var(--totem-navy);
+  --shift-label-fg: var(--totem-off-white);
+  --shift-icon-rest-bg: var(--totem-lime);
+  --shift-icon-rest-fg: var(--totem-navy);
+  --shift-icon-hover-bg: var(--totem-sky);
+  --shift-icon-hover-fg: var(--totem-navy);
+}
+
+/* In dark theme an ink pill would disappear into the card, so it flips to the
+   lime action fill and the circle moves to sky to stay distinct from it. */
+.dark .shift-button__content--on-ink {
+  --shift-label-bg: var(--totem-lime);
+  --shift-label-fg: var(--totem-navy);
+  --shift-icon-rest-bg: var(--totem-sky);
+  --shift-icon-rest-fg: var(--totem-navy);
+  --shift-icon-hover-bg: var(--totem-white);
+  --shift-icon-hover-fg: var(--totem-navy);
+}
+
 .shift-button__content {
   display: grid;
   grid-template-columns: 0 minmax(0, 1fr) var(--shift-button-icon-size);
@@ -486,6 +535,19 @@ h6 {
 
 .shift-button__icon--trailing {
   justify-self: end;
+}
+
+/* The pill keeps its own utility background (bg-totem-action and friends).
+   Only buttons whose pill has to flip between themes read --shift-label-*,
+   via bg-[var(--shift-label-bg)] at the call site. */
+:where(.shift-button__icon--leading) {
+  background-color: var(--shift-icon-hover-bg);
+  color: var(--shift-icon-hover-fg);
+}
+
+:where(.shift-button__icon--trailing) {
+  background-color: var(--shift-icon-rest-bg);
+  color: var(--shift-icon-rest-fg);
 }
 
 .shift-button__icon svg {

@@ -6,7 +6,7 @@ import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { SectionEyebrow } from "../shared/ShintaPrimitives";
 
 const mission =
-  "Estrategia, creatividad y tecnología para transformar negocios.";
+  "Estrategia, contenido y tecnología para hacer crecer negocios.";
 const missionWords = mission.split(" ");
 
 const groupVariants: Variants = {
@@ -41,10 +41,10 @@ export function MissionSection() {
   return (
     <section
       aria-labelledby="shinta-mission-heading"
-      className="flex h-[292px] w-full items-center justify-center bg-shinta-canvas px-5 md:h-[230px] lg:h-[720px]"
+      className="relative flex h-[292px] w-full items-center justify-center bg-transparent px-5 md:h-[230px] lg:h-[720px]"
     >
       <motion.div
-        className="flex w-full max-w-[850px] flex-col items-center gap-4 text-center lg:gap-5"
+        className="relative z-20 flex w-full max-w-[850px] flex-col items-center gap-4 text-center lg:gap-5"
         initial={reduceMotion ? false : "hidden"}
         variants={groupVariants}
         viewport={{ amount: 0.45, once: true }}

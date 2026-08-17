@@ -66,21 +66,34 @@ type ShiftButtonContentProps = {
   iconSizeClassName?: string;
   iconStrokeWidth?: number;
   labelClassName?: string;
-  /** Arrow circle shown on hover, on the left. */
+  /** Arrow circle shown on hover, on the left. Overrides the tone tokens. */
   hoverIconClassName?: string;
-  /** Arrow circle shown at rest, on the right. */
+  /** Arrow circle shown at rest, on the right. Overrides the tone tokens. */
   restIconClassName?: string;
+  /**
+   * Which surface the button sits on. Drives the arrow-circle colours so the
+   * circle always contrasts with the surface behind the button.
+   * "default" light surface, "onDark" navy surface, "onInk" navy label pill.
+   */
+  tone?: "default" | "onDark" | "onInk";
 };
+
+const toneClassName = {
+  default: "",
+  onDark: "shift-button__content--on-dark",
+  onInk: "shift-button__content--on-ink",
+} as const;
 
 export function ShiftButtonContent({
   children,
   className,
-  hoverIconClassName = "bg-totem-tech text-totem-brand",
+  hoverIconClassName,
   iconClassName,
   iconSizeClassName = "size-5",
   iconStrokeWidth = 2.2,
   labelClassName,
-  restIconClassName = "bg-totem-brand text-totem-action",
+  restIconClassName,
+  tone = "default",
 }: ShiftButtonContentProps) {
   const icon = (
     <ArrowUpRight
@@ -91,7 +104,7 @@ export function ShiftButtonContent({
   );
 
   return (
-    <span className={cn("shift-button__content", className)}>
+    <span className={cn("shift-button__content", toneClassName[tone], className)}>
       <span
         aria-hidden="true"
         className={cn(

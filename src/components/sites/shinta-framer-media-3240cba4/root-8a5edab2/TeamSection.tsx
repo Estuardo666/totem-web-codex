@@ -14,7 +14,7 @@ import { shintaAsset } from "../shared/site";
 
 const teamMembers = [
   {
-    alt: "Estrategia de marca",
+    alt: "Estrategia de contenido",
     delay: "delay-[0ms]",
     position:
       "top-[18px] left-[2px] rotate-[-7deg] md:top-[8px] md:left-[42px] xl:top-[28px] xl:left-[20px]",
@@ -28,28 +28,28 @@ const teamMembers = [
     src: "47f89ced261416df.jpg",
   },
   {
-    alt: "Experiencia digital",
+    alt: "Diseño web",
     delay: "delay-[180ms]",
     position:
       "top-[15px] left-[208px] rotate-[-4deg] md:top-[5px] md:left-[426px] xl:top-[16px] xl:left-[312px]",
     src: "34844c23286ab253.jpg",
   },
   {
-    alt: "Software y plataformas",
+    alt: "Desarrollo web",
     delay: "delay-[270ms]",
     position:
       "top-[190px] left-[2px] rotate-[5deg] md:top-[211px] md:left-[42px] xl:top-[60px] xl:left-[458px]",
     src: "3180f8ad3e321358.jpg",
   },
   {
-    alt: "Automatización de procesos",
+    alt: "Marketing digital",
     delay: "delay-[360ms]",
     position:
       "top-[184px] left-[105px] rotate-[-5deg] md:top-[201px] md:left-[234px] xl:top-[14px] xl:left-[604px]",
     src: "c1c60606144d1f73.jpg",
   },
   {
-    alt: "Inteligencia artificial aplicada",
+    alt: "Fotografía y video",
     delay: "delay-[450ms]",
     position:
       "top-[194px] left-[208px] rotate-[7deg] md:top-[212px] md:left-[426px] xl:top-[58px] xl:left-[750px]",
@@ -96,13 +96,13 @@ export function TeamSection() {
     >
       <div className="mx-auto max-w-[1280px] text-center">
         <SectionEyebrow className="inline-flex rounded-full bg-shinta-pink px-[10px] py-[3px] text-[10px] leading-[13px] tracking-[0.65px]">
-          nuestros mundos
+          lo que hacemos
         </SectionEyebrow>
         <h2
           id="team-heading"
           className="mt-[12px] text-[28px] leading-[31px] font-bold tracking-[-1.12px] xl:mt-[10px] xl:text-[64px] xl:leading-[70.4px] xl:tracking-[-2.56px]"
         >
-          Estrategia, creatividad y tecnología
+          Contenido, marketing y web
         </h2>
 
         <div
@@ -149,17 +149,15 @@ export function TeamSection() {
         </div>
 
         <p className="mx-auto mt-[35px] max-w-[335px] text-[18px] leading-[25.2px] font-normal tracking-[-0.36px] text-shinta-stone md:mt-[22px] md:max-w-[450px] xl:mt-[18px] xl:max-w-[440px] xl:text-[16px] xl:leading-[22.4px] xl:tracking-[-0.32px]">
-          La combinación de los tres produce el verdadero posicionamiento de Tótem.
+Producimos el contenido, movemos los canales y construimos la web. Todo apuntando al mismo objetivo.
         </p>
 
         <Link
-          className="shift-button group mx-auto mt-[24px] flex h-[56px] w-full max-w-[335px] items-center rounded-full text-left text-[16px] font-semibold text-white focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-shinta-ink md:max-w-[330px] xl:mt-[20px] xl:h-[52px] xl:max-w-[370px]"
+          className="shift-button group mx-auto mt-[24px] flex h-[56px] w-fit items-center rounded-full text-left text-[16px] font-semibold text-white focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-shinta-ink xl:mt-[20px] xl:h-[52px]"
           href="/#about-us"
         >
           <ShiftButtonContent
             className="[--shift-button-icon-size:56px] xl:[--shift-button-icon-size:52px]"
-            restIconClassName="bg-totem-brand text-totem-action"
-              hoverIconClassName="bg-totem-tech text-totem-brand"
             labelClassName="flex h-[56px] items-center rounded-full bg-totem-action px-[23px] text-totem-action-text xl:h-[52px]"
           >
             Conoce Tótem

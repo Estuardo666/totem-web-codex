@@ -9,11 +9,11 @@ import { SectionEyebrow } from "../shared/ShintaPrimitives";
 const heroImageSrc =
   "/sites/shinta-framer-media-3240cba4/about-us-57424c1f/images/hero-team-portrait.jpg";
 
-const heading = "Una agencia creativa y tecnológica";
+const heading = "Una agencia creativa y digital";
 const headingWords = heading.split(" ");
 
 const paragraph =
-  "Tótem Mass Media es una agencia creativa y tecnológica con sede en Loja, Ecuador. Combinamos estrategia, diseño, producción audiovisual y desarrollo de tecnología para ayudar a empresas y organizaciones a comunicar mejor y operar con más eficiencia.";
+  "Tótem Mass Media es una agencia creativa y digital con sede en Loja, Ecuador. Combinamos producción audiovisual, marketing digital, estrategia de contenido y desarrollo web para ayudar a empresas y organizaciones a comunicar mejor y vender más.";
 
 const groupVariants: Variants = {
   hidden: {},
@@ -75,7 +75,7 @@ export function AboutHeroSection() {
   return (
     <section
       aria-labelledby="about-hero-heading"
-      className="relative flex items-center justify-center overflow-clip bg-shinta-canvas px-5 pb-[120px]"
+      className="relative flex items-center justify-center overflow-clip bg-transparent px-5 pb-[120px]"
     >
       <div className="flex w-full max-w-[1280px] flex-col items-start gap-10 md:gap-14 xl:gap-20">
         <div className="flex w-full flex-col items-start gap-6 md:flex-row md:items-end md:gap-6">
@@ -141,7 +141,7 @@ export function AboutHeroSection() {
             whileInView="visible"
           >
             <Image
-              alt="Equipo creativo y tecnológico"
+              alt="Equipo creativo de Tótem Mass Media"
               className="object-cover"
               fill
               sizes="(min-width: 1200px) 1242px, 100vw"

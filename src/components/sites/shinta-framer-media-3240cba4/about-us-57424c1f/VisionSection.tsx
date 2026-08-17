@@ -4,7 +4,6 @@ import Image from "next/image";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 
 import { SectionEyebrow } from "../shared/ShintaPrimitives";
-import { ScribbleStroke } from "./ScribbleStroke";
 
 const VISION_IMAGE_SRC =
   "/sites/shinta-framer-media-3240cba4/about-us-57424c1f/images/vision-desk.jpg";
@@ -50,14 +49,9 @@ export function VisionSection() {
   return (
     <section
       aria-labelledby="shinta-vision-heading"
-      className="relative flex items-center justify-center bg-shinta-canvas px-5 py-[72px] md:py-24 xl:py-[120px]"
+      className="relative flex items-center justify-center bg-transparent px-5 py-[72px] md:py-24 xl:py-[120px]"
     >
       <div className="relative flex w-full max-w-[1000px] flex-col items-center gap-8 md:flex-row md:gap-12 xl:gap-[130px]">
-        <ScribbleStroke
-          className="hidden -top-[231px] -left-[572px] -z-10 h-[824px] w-[1070px] xl:block"
-          variant="pink"
-        />
-
         <motion.div
           className="aspect-[460/281] w-full shrink-0 overflow-hidden rounded-[24px] md:w-[45%] xl:aspect-[460/280.79] xl:w-[460px]"
           initial={reduceMotion ? undefined : "hidden"}
@@ -73,7 +67,7 @@ export function VisionSection() {
             whileInView="visible"
           >
             <Image
-          alt="Equipo creativo revisando una solución digital"
+          alt="Equipo revisando el diseño de un sitio web"
               className="object-cover"
               fill
               sizes="(min-width: 1200px) 460px, (min-width: 768px) 45vw, 100vw"
@@ -91,7 +85,7 @@ export function VisionSection() {
             whileInView="visible"
           >
             <SectionEyebrow className="inline-flex rounded-full bg-shinta-pink px-2 py-1 text-shinta-ink">
-              Tecnología
+              Desarrollo web
             </SectionEyebrow>
           </motion.div>
 
@@ -103,7 +97,7 @@ export function VisionSection() {
             viewport={{ amount: 0.4, once: true }}
             whileInView="visible"
           >
-            Construir para ejecutar y escalar.
+            Una web que trabaja para el negocio.
           </motion.h2>
 
           <motion.p
@@ -113,7 +107,7 @@ export function VisionSection() {
             viewport={{ amount: 0.4, once: true }}
             whileInView="visible"
           >
-            Construir los sitios, plataformas, sistemas y automatizaciones que permiten ejecutar y escalar. La web es una herramienta de negocio, no únicamente una vitrina digital.
+Diseñamos y desarrollamos sitios corporativos, landing pages y plataformas de servicios con UX/UI, SEO e integraciones. La web es una herramienta de negocio, no únicamente una vitrina digital.
           </motion.p>
         </div>
       </div>

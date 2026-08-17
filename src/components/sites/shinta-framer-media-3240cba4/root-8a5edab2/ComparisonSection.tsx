@@ -7,19 +7,19 @@ import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 const isolatedPoints = [
-  "Soluciones aisladas",
-  "Solo comunicación",
-  "Herramientas genéricas",
-  "Una sola capacidad",
+  "Piezas sueltas sin estrategia",
+  "Publicar por publicar",
+  "Plantillas genéricas",
+  "Contenido o web, nunca ambos",
   "Promesas sin evidencia",
 ] as const;
 
 const totemPoints = [
-  "Creatividad y tecnología integradas",
-  "Comunicación, diseño y operación",
-  "Sistemas específicos para cada proceso",
-  "Marca, contenido y tecnología",
-  "Proyectos que demuestran capacidades",
+  "Estrategia antes de producir",
+  "Contenido con objetivo y medición",
+  "Sitios web hechos a medida",
+  "Producción, marketing y web integrados",
+  "Proyectos reales que lo demuestran",
 ] as const;
 
 // shinta.framer.media sits the two cards side by side with a gap and lifts
@@ -106,7 +106,7 @@ export function ComparisonSection() {
                 id="comparison-isolated-heading"
                 variants={rowVariants}
               >
-                Soluciones aisladas
+                Trabajo suelto
               </motion.h3>
               <ul className="mt-5 space-y-3.5">
                 {isolatedPoints.map((point) => (

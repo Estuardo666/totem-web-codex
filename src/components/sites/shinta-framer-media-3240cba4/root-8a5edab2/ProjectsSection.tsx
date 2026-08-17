@@ -12,7 +12,7 @@ import { shintaAsset } from "@/components/sites/shinta-framer-media-3240cba4/sha
 const projects = [
   {
     image: "images/d929f58f46477773.jpg",
-    label: "Plataformas e integraciones",
+    label: "Diseño y desarrollo web",
     metric: "01",
     name: "TransCity",
     href: "/#projects",
@@ -20,7 +20,7 @@ const projects = [
   },
   {
     image: "images/f8f2222b4c112435.jpg",
-    label: "Branding y desarrollo web",
+    label: "Desarrollo web y contenido",
     metric: "02",
     name: "Terra Viva",
     href: "/#projects",
@@ -36,17 +36,17 @@ const projects = [
   },
   {
     image: "images/25d6efcc673140d3.jpg",
-    label: "Software de productividad",
+    label: "Contenido y marketing digital",
     metric: "04",
-    name: "FocusGuard",
+    name: "Alan",
     href: "/#projects",
     layout: "order-3",
   },
   {
     image: "images/f9924a626b8f6cfa.jpg",
-    label: "Bots y automatización",
+    label: "UX/UI, web y SEO",
     metric: "05",
-    name: "Bot Tótem",
+    name: "Aprendiendo Juntos",
     href: "/#projects",
     layout: "order-5",
   },

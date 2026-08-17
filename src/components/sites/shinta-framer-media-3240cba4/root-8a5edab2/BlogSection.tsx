@@ -18,7 +18,7 @@ const articles = [
     href: "/#projects",
     image: "images/90da175d3b991e31.jpg",
     imageAlt: "Proyecto TransCity",
-    title: "TransCity: plataformas, integraciones y automatización",
+    title: "TransCity: diseño y desarrollo web a medida",
   },
   {
     author: "Tótem Mass Media",
@@ -27,8 +27,8 @@ const articles = [
     authorWidth: 800,
     href: "/about-us",
     image: "images/d8288cb19a756a51.jpg",
-    imageAlt: "Estrategia, creatividad y tecnología",
-    title: "Estrategia, creatividad y tecnología para transformar negocios",
+    imageAlt: "Estrategia y contenido",
+    title: "Estrategia y contenido antes de producir",
   },
   {
     author: "Tótem Mass Media",
@@ -37,7 +37,7 @@ const articles = [
     authorWidth: 1032,
     href: "/contact",
     image: "images/01c3e56a4e3063a0.jpg",
-    imageAlt: "Experiencia digital para una organización",
+    imageAlt: "Sitio web para una organización",
     title: "La web como herramienta de negocio",
   },
 ] as const;
@@ -68,13 +68,13 @@ export function BlogSection() {
         <header className="flex shrink-0 items-end justify-between gap-4">
           <div className="flex flex-col items-start gap-3 lg:gap-4">
             <SectionEyebrow className="inline-flex rounded-full bg-shinta-pink px-2.5 py-1 text-shinta-ink">
-              proyectos y capacidades
+              proyectos y trabajo
             </SectionEyebrow>
             <h2
               className="max-w-[190px] text-[28px] leading-[1.08] font-bold tracking-[-1.12px] text-shinta-ink sm:max-w-none lg:text-[64px] lg:leading-[70.4px] lg:tracking-[-2.56px]"
               id="shinta-blog-heading"
             >
-              Lo que construimos demuestra la capacidad
+Lo que hacemos habla por nosotros
             </h2>
           </div>
 
@@ -84,8 +84,6 @@ export function BlogSection() {
           >
             <ShiftButtonContent
               className="[--shift-button-icon-size:44px] sm:[--shift-button-icon-size:48px] lg:[--shift-button-icon-size:52px]"
-              restIconClassName="bg-totem-brand text-totem-action"
-              hoverIconClassName="bg-totem-tech text-totem-brand"
               iconStrokeWidth={2.25}
               labelClassName="inline-flex h-11 items-center justify-center rounded-full bg-totem-action px-4 text-[12px] font-semibold text-totem-action-text sm:h-12 sm:px-5 sm:text-[14px] lg:h-[52px] lg:px-6"
             >
@@ -96,7 +94,7 @@ export function BlogSection() {
 
         <div className="grid min-h-0 flex-1 grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-6">
           {articles.map((article, index) => (
-            <article className="min-h-0" key={article.href}>
+            <article className="min-h-0" key={article.title}>
               <Link
                 className="group flex h-full flex-col rounded-[24px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-shinta-ink"
                 href={article.href}
@@ -120,7 +118,7 @@ export function BlogSection() {
                   className="mt-5 text-[12px] leading-[16.8px] font-semibold tracking-[0.96px] text-shinta-muted uppercase"
                   dateTime="2026-01-27"
                 >
-                  Capacidades demostradas
+                  Trabajo realizado
                 </time>
                 <h3 className="mt-2 text-[24px] leading-[1.15] font-bold tracking-[-0.96px] text-shinta-ink md:text-[32px] md:leading-[38.4px] md:tracking-[-1.28px]">
                   {article.title}

@@ -4,7 +4,6 @@ import Image from "next/image";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 
 import { SectionEyebrow } from "../shared/ShintaPrimitives";
-import { ScribbleStroke } from "./ScribbleStroke";
 
 const MISSION_IMAGE_SRC =
   "/sites/shinta-framer-media-3240cba4/about-us-57424c1f/images/mission-phone-mockup.png";
@@ -50,14 +49,9 @@ export function MissionIntroSection() {
   return (
     <section
       aria-labelledby="shinta-mission-intro-heading"
-      className="relative flex items-center justify-center bg-shinta-canvas px-5 py-20 md:py-[110px] xl:py-[150px]"
+      className="relative flex items-center justify-center bg-transparent px-5 py-20 md:py-[110px] xl:py-[150px]"
     >
       <div className="relative flex w-full max-w-[1000px] flex-col items-center gap-10 md:flex-row md:gap-12 xl:gap-[130px]">
-        <ScribbleStroke
-          className="hidden -top-[365px] left-[281px] -z-10 h-[1202px] w-[1560px] xl:block"
-          variant="lavender"
-        />
-
         <div className="flex w-full max-w-full flex-col gap-8 md:max-w-none md:flex-1 xl:w-[410px] xl:max-w-[410px] xl:flex-none">
           <motion.div
             initial={reduceMotion ? undefined : "hidden"}
@@ -78,7 +72,7 @@ export function MissionIntroSection() {
             viewport={{ amount: 0.4, once: true }}
             whileInView="visible"
           >
-            Entender el negocio antes de construir.
+            Entender el negocio antes de producir.
           </motion.h2>
 
           <motion.p
@@ -88,7 +82,7 @@ export function MissionIntroSection() {
             viewport={{ amount: 0.4, once: true }}
             whileInView="visible"
           >
-            Entender el negocio, la marca, el público y el objetivo es la base para construir una identidad coherente, contenido útil y soluciones digitales alrededor de objetivos reales.
+Entender el negocio, el público y el objetivo es la base para planificar contenido útil, campañas con sentido y un sitio web construido alrededor de objetivos reales.
           </motion.p>
         </div>
 

@@ -6,28 +6,28 @@ import { motion, useReducedMotion } from "framer-motion";
 const faqs = [
   {
     answer:
-      "Tótem Mass Media es una agencia creativa y tecnológica con sede en Loja, Ecuador. Integramos estrategia, branding, producción audiovisual, marketing, diseño, desarrollo web, software, automatización e inteligencia artificial.",
+      "Tótem Mass Media es una agencia creativa y digital con sede en Loja, Ecuador. Trabajamos producción audiovisual, marketing digital, estrategia y contenido, y diseño y desarrollo web.",
     question: "¿Qué es Tótem Mass Media?",
   },
   {
     answer:
-      "Podemos trabajar desde una identidad visual o una campaña hasta una plataforma completa, una automatización o un producto de software.",
+      "Desde una sesión de fotografía o un video publicitario hasta el contenido mensual de tus redes, una campaña completa o el sitio web de tu negocio.",
     question: "¿Qué tipo de proyectos desarrollan?",
   },
   {
     answer:
-      "La producción audiovisual continúa siendo una capacidad central, pero Tótem también puede diseñar la experiencia digital, desarrollar sistemas y automatizar procesos.",
+      "La producción audiovisual es nuestra capacidad central, pero también gestionamos marketing digital, definimos la estrategia de contenido y desarrollamos sitios web.",
     question: "¿Solo trabajan en producción audiovisual?",
   },
   {
     answer:
-      "La web se entiende como una herramienta de negocio y no únicamente como una vitrina digital.",
+      "La web es una herramienta de negocio, no únicamente una vitrina digital. Diseñamos UX/UI, cuidamos el SEO y el rendimiento, e integramos WhatsApp, mapas y pagos.",
     question: "¿Cómo entienden el desarrollo web?",
   },
   {
     answer:
-      "La inteligencia artificial se integra cuando permite reducir trabajo manual, mejorar decisiones o acelerar procesos.",
-    question: "¿Cómo aplican la inteligencia artificial?",
+      "Con métricas y reportes de desempeño. Planificamos, publicamos, medimos y optimizamos: el objetivo es construir un sistema de contenido, no publicaciones sueltas.",
+    question: "¿Cómo miden los resultados?",
   },
 ] as const;
 

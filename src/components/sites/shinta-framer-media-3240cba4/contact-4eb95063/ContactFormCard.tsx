@@ -73,14 +73,14 @@ export function ContactFormCard() {
             <textarea
               className={`${inputClassName} block h-[100px] resize-y rounded-[16px] p-4 align-top focus-visible:ring-2 focus-visible:ring-shinta-ink/40`}
               name="message"
-              placeholder="Cuéntanos qué necesitas construir"
+              placeholder="Cuéntanos qué necesitas: contenido, campañas o web"
             />
           </div>
         </label>
 
         <div className="flex flex-col items-stretch gap-4 md:flex-row md:items-center md:justify-between md:gap-0">
           <p className="text-[14px] leading-[20px] text-shinta-muted md:text-[16px] md:leading-[22.4px]">
-            Cuéntanos qué quieres construir y te ayudamos a definir una solución.
+Cuéntanos qué necesitas y te ayudamos a definir la solución.
           </p>
 
           <button
@@ -88,10 +88,9 @@ export function ContactFormCard() {
             type="submit"
           >
             <ShiftButtonContent
+              tone="onInk"
               className="[--shift-button-icon-size:57px]"
-              restIconClassName="bg-totem-brand text-totem-action"
-              hoverIconClassName="bg-totem-tech text-totem-brand"
-              labelClassName="flex h-[57.2px] items-center justify-center rounded-[44px] bg-shinta-ink px-6 py-4 text-[16px] font-bold text-white"
+              labelClassName="flex h-[57.2px] items-center justify-center rounded-[44px] px-6 py-4 text-[16px] font-bold bg-[var(--shift-label-bg)] text-[var(--shift-label-fg)]"
             >
               Enviar
             </ShiftButtonContent>

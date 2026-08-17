@@ -34,10 +34,10 @@ export function ContactCtaSection() {
               id="contact-heading"
               className="max-w-[330px] text-[28px] leading-[31px] font-bold tracking-[-1.12px] xl:text-[64px] xl:leading-[70.4px] xl:tracking-[-2.56px]"
             >
-              Construimos marcas que crecen.
+              Construimos presencia digital que crece.
             </h2>
             <p className="mt-[24px] max-w-[340px] text-[18px] leading-[27px] font-normal tracking-[-0.36px] text-totem-text-on-dark-secondary xl:mt-[28px]">
-              Integramos estrategia, creatividad y tecnología para resolver necesidades reales de comunicación, presencia digital y operación empresarial.
+Producción audiovisual, marketing digital, estrategia de contenido y desarrollo web para resolver necesidades reales de comunicación y crecimiento.
             </p>
 
             <Link
@@ -45,9 +45,8 @@ export function ContactCtaSection() {
               href="/contact"
             >
               <ShiftButtonContent
+              tone="onDark"
                 className="[--shift-button-icon-size:56px] xl:[--shift-button-icon-size:52px]"
-                restIconClassName="bg-totem-brand text-totem-action"
-              hoverIconClassName="bg-totem-tech text-totem-brand"
                 labelClassName="flex h-[56px] items-center rounded-full bg-totem-action px-[22px] xl:h-[52px]"
               >
                 Cuéntanos tu proyecto
@@ -59,7 +58,7 @@ export function ContactCtaSection() {
         <ImageReveal className="relative overflow-hidden rounded-[32px] bg-totem-surface-secondary xl:rounded-[34px]">
           <div className="shinta-float absolute -inset-[12px] motion-reduce:transform-none">
             <Image
-              alt="Contenido audiovisual para una marca"
+              alt="Contenido audiovisual para un negocio"
               className="object-cover"
               fill
               priority={false}

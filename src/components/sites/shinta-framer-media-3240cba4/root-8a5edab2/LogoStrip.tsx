@@ -2,7 +2,13 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 
-const projects = ["TransCity", "Terra Viva", "PlayHouse", "FocusGuard", "Totem OS"] as const;
+const projects = [
+  "TransCity",
+  "Terra Viva",
+  "PlayHouse",
+  "Alan",
+  "Aprendiendo Juntos",
+] as const;
 
 type BrandSequenceProps = {
   duplicate?: boolean;
@@ -37,7 +43,7 @@ export function LogoStrip() {
     >
       <div className="flex h-[62px] w-full max-w-[620px] flex-col items-center gap-[10px] overflow-hidden">
         <p className="shrink-0 text-center text-[12px] leading-[16.8px] font-semibold tracking-[0.96px] text-shinta-muted uppercase">
-        Proyectos reales que demuestran nuestras capacidades
+        Proyectos reales que demuestran nuestro trabajo
         </p>
 
         <div className="w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_7%,black_93%,transparent)] [-webkit-mask-image:linear-gradient(to_right,transparent,black_7%,black_93%,transparent)]">

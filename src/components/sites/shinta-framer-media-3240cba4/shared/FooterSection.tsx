@@ -12,14 +12,14 @@ import {
 const navigationLinks = [
   { href: "/", label: "Inicio" },
   { href: "/#projects", label: "Proyectos" },
-  { href: "/#blog", label: "Capacidades" },
-  { href: "/about-us", label: "Tótem" },
+  { href: "/#blog", label: "Servicios" },
+  { href: "/about-us", label: "Nosotros" },
   { href: "/#contact", label: "Contacto" },
   { href: "/contact", label: "Cuéntanos tu proyecto" },
 ] as const;
 
 const approachLinks = [
-  { href: "/about-us", label: "Estrategia" },
+  { href: "/about-us", label: "Cómo trabajamos" },
   { href: "/#projects", label: "Proyectos" },
 ] as const;
 
@@ -72,7 +72,7 @@ function NewsletterCard() {
         Crecimiento
       </h2>
       <p className="mt-2 text-[14px] leading-[19.6px] text-shinta-muted">
-        Construimos el ecosistema que una marca necesita para crecer.
+        Producción, marketing y web trabajando sobre el mismo objetivo.
       </p>
       <form className="mt-4" onSubmit={handleSubmit}>
         <label className="sr-only" htmlFor="shinta-newsletter-email">
@@ -90,10 +90,9 @@ function NewsletterCard() {
           type="submit"
         >
           <ShiftButtonContent
+              tone="onInk"
             className="[--shift-button-icon-size:48px]"
-            restIconClassName="bg-totem-action text-totem-action-text"
-            hoverIconClassName="bg-totem-tech text-totem-brand"
-            labelClassName="flex h-14 items-center rounded-full bg-shinta-ink px-4 transition-colors group-hover:bg-shinta-stone"
+            labelClassName="flex h-14 items-center rounded-full px-4 bg-[var(--shift-label-bg)] text-[var(--shift-label-fg)]"
           >
             Cuéntanos tu proyecto
           </ShiftButtonContent>
@@ -106,23 +105,9 @@ function NewsletterCard() {
 export function FooterSection() {
   return (
     <footer className="relative min-h-[1464px] overflow-hidden bg-shinta-pink px-[19px] pt-16 text-shinta-ink md:min-h-[1494px] md:px-5 lg:min-h-[970px] lg:pt-20">
-      <svg
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-[340px] top-[90px] h-[980px] w-[900px] text-shinta-lavender max-lg:-right-[440px] max-lg:top-[700px]"
-        fill="none"
-        viewBox="0 0 900 980"
-      >
-        <path
-          d="M880 38C606 7 502 137 543 309c45 188 257 128 243-36-17-203-289-139-407 72-139 248-32 457-334 624"
-          stroke="currentColor"
-          strokeLinecap="round"
-          strokeWidth="24"
-        />
-      </svg>
-
       <div className="relative z-10 mx-auto flex min-h-[1400px] max-w-[1280px] flex-col gap-8 md:min-h-[1414px] lg:grid lg:h-[890px] lg:min-h-0 lg:grid-cols-[1.2fr_1fr_.65fr] lg:grid-rows-[300px_220px_310px_60px] lg:gap-0">
         <h2 className="order-1 max-w-[470px] text-[28px] leading-8 font-bold tracking-[-1.12px] lg:col-start-1 lg:row-start-1 lg:text-[64px] lg:leading-[70.4px] lg:tracking-[-2.56px]">
-          De la idea al sistema que la hace crecer.
+          De la idea al contenido que la hace crecer.
         </h2>
 
         <FooterGroup

@@ -11,57 +11,57 @@ const BLOG_POSTS: Omit<BlogPostCardProps, "delay">[] = [
     authorName: "Tótem Mass Media",
     coverAlt: "Proyecto TransCity",
     coverSrc: shintaAsset("images/90da175d3b991e31.jpg"),
-    date: "Capacidades demostradas",
+    date: "Diseño y desarrollo web",
     href: "/#projects",
-    title: "TransCity: plataformas e integraciones",
+    title: "TransCity: una web que opera el negocio",
   },
   {
     authorAvatarSrc: TOTEM_AVATAR,
     authorName: "Tótem Mass Media",
     coverAlt: "Proyecto Terra Viva",
     coverSrc: shintaAsset("images/d8288cb19a756a51.jpg"),
-    date: "Capacidades demostradas",
+    date: "Desarrollo web y contenido",
     href: "/about-us",
-    title: "Terra Viva: branding y desarrollo web",
+    title: "Terra Viva: presencia digital de cero",
   },
   {
     authorAvatarSrc: TOTEM_AVATAR,
     authorName: "Tótem Mass Media",
     coverAlt: "Proyecto PlayHouse",
     coverSrc: shintaAsset("images/01c3e56a4e3063a0.jpg"),
-    date: "Capacidades demostradas",
+    date: "Producción audiovisual",
     href: "/contact",
-    title: "PlayHouse: producción audiovisual",
+    title: "PlayHouse: fotografía, video y redes",
   },
   {
     authorAvatarSrc: TOTEM_AVATAR,
     authorName: "Tótem Mass Media",
-    coverAlt: "Producto FocusGuard",
+    coverAlt: "Proyecto Alan",
     coverSrc:
       "/sites/shinta-framer-media-3240cba4/blog-8caafe43/images/post-agency-helps-brands.jpg",
-    date: "Capacidades demostradas",
-    href: "/#projects-focusguard",
-    title: "FocusGuard: software de productividad",
+    date: "Contenido y marketing digital",
+    href: "/#projects",
+    title: "Alan: contenido comercial y campañas",
   },
   {
     authorAvatarSrc: TOTEM_AVATAR,
     authorName: "Tótem Mass Media",
-    coverAlt: "Totem OS y TotemHub",
+    coverAlt: "Proyecto Aprendiendo Juntos",
     coverSrc:
       "/sites/shinta-framer-media-3240cba4/blog-8caafe43/images/post-improve-content-quality.jpg",
-    date: "Capacidades demostradas",
-    href: "/#projects-totem-os",
-    title: "Totem OS y TotemHub: sistemas internos",
+    date: "UX/UI, web y SEO",
+    href: "/#projects",
+    title: "Aprendiendo Juntos: web orientada a conversión",
   },
   {
     authorAvatarSrc: TOTEM_AVATAR,
     authorName: "Tótem Mass Media",
-    coverAlt: "Totem Auto Edit",
+    coverAlt: "Contenido mensual para redes sociales",
     coverSrc:
       "/sites/shinta-framer-media-3240cba4/blog-8caafe43/images/post-podcasts-build-trust.jpg",
-    date: "Capacidades demostradas",
-    href: "/#projects-auto-edit",
-    title: "Totem Auto Edit: automatización audiovisual",
+    date: "Estrategia y contenido",
+    href: "/contact",
+    title: "Contenido mensual para redes sociales",
   },
 ];
 
@@ -71,7 +71,7 @@ export function BlogGridSection() {
       <div className="flex w-full max-w-[1280px] flex-col gap-6 xl:gap-8">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-x-5 md:gap-y-14 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-[72px]">
           {BLOG_POSTS.map((post, index) => (
-            <BlogPostCard key={post.href} {...post} delay={index * 0.09} />
+            <BlogPostCard key={post.title} {...post} delay={index * 0.09} />
           ))}
         </div>
       </div>

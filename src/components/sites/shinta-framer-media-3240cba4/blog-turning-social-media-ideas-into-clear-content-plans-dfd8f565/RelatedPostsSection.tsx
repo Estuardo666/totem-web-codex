@@ -29,28 +29,28 @@ const posts = [
     authorName: "Tótem Mass Media",
     coverAlt: "Proyecto Terra Viva",
     coverSrc: shintaAsset("images/90da175d3b991e31.jpg"),
-    date: "Capacidades demostradas",
+    date: "Desarrollo web y contenido",
     href: "/about-us",
-    title: "Terra Viva: branding y desarrollo web",
+    title: "Terra Viva: presencia digital de cero",
   },
   {
     authorAvatarSrc: "/brand/logo-light.png",
     authorName: "Tótem Mass Media",
     coverAlt: "Proyecto PlayHouse",
     coverSrc: shintaAsset("images/01c3e56a4e3063a0.jpg"),
-    date: "Capacidades demostradas",
+    date: "Producción audiovisual",
     href: "/contact",
-    title: "PlayHouse: producción audiovisual",
+    title: "PlayHouse: fotografía, video y redes",
   },
   {
     authorAvatarSrc: "/brand/logo-light.png",
     authorName: "Tótem Mass Media",
-    coverAlt: "Totem Auto Edit",
+    coverAlt: "Proyecto Aprendiendo Juntos",
     coverSrc:
       "/sites/shinta-framer-media-3240cba4/blog-8caafe43/images/post-agency-helps-brands.jpg",
-    date: "Capacidades demostradas",
-    href: "/#projects-auto-edit",
-    title: "Totem Auto Edit: automatización audiovisual",
+    date: "UX/UI, web y SEO",
+    href: "/#projects",
+    title: "Aprendiendo Juntos: web orientada a conversión",
   },
 ];
 
@@ -107,7 +107,7 @@ export function RelatedPostsSection() {
               </SectionEyebrow>
             </div>
             <h2 className="text-[34px] leading-[38px] font-bold tracking-[-1.36px] text-shinta-ink md:text-[44px] md:leading-[48px] md:tracking-[-1.76px] xl:text-[64px] xl:leading-[70.4px] xl:tracking-[-2.56px]">
-              Proyectos que demuestran capacidades
+              Proyectos que demuestran el trabajo
             </h2>
           </div>
 
@@ -117,8 +117,6 @@ export function RelatedPostsSection() {
           >
             <ShiftButtonContent
               className="[--shift-button-icon-size:57px]"
-              restIconClassName="bg-totem-brand text-totem-action"
-              hoverIconClassName="bg-totem-tech text-totem-brand"
               labelClassName="flex h-[57px] items-center justify-center rounded-[44px] bg-totem-action px-6 py-4 text-[16px] font-bold text-totem-action-text"
             >
               Ver proyectos
@@ -129,7 +127,7 @@ export function RelatedPostsSection() {
         <div className="relative z-10 grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-6 xl:grid-cols-3 xl:gap-6">
           {posts.map((post, index) => (
             <BlogPostCard
-              key={post.href}
+              key={post.title}
               authorAvatarSrc={post.authorAvatarSrc}
               authorName={post.authorName}
               coverAlt={post.coverAlt}

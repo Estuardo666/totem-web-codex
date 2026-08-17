@@ -4,7 +4,7 @@ import { motion, type Variants } from "framer-motion";
 
 import { SectionEyebrow } from "../shared/ShintaPrimitives";
 
-const heading = "Proyectos y capacidades";
+const heading = "Servicios y proyectos";
 
 const groupVariants: Variants = {
   hidden: {},
@@ -79,10 +79,10 @@ export function BlogTitleSection() {
               <span className="sr-only">{heading}</span>
               <span aria-hidden="true" className="block">
                 <motion.span className="block md:inline-block" variants={wordVariants}>
-                  Proyectos y
+                  Servicios y
                 </motion.span>{" "}
                 <motion.span className="block md:inline-block" variants={wordVariants}>
-                  capacidades
+                  proyectos
                 </motion.span>
               </span>
           </motion.h1>
@@ -95,8 +95,8 @@ export function BlogTitleSection() {
           viewport={{ amount: 0.4, once: true }}
           whileInView="visible"
         >
-          Proyectos y capacidades que conectan estrategia, creatividad y tecnología
-          para transformar negocios.
+          Producción audiovisual, marketing digital, estrategia de contenido y
+          desarrollo web. Y los proyectos donde lo hemos aplicado.
         </motion.p>
       </div>
     </section>

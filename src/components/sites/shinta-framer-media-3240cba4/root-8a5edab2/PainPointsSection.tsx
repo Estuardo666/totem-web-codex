@@ -11,11 +11,11 @@ import {
 } from "framer-motion";
 
 const painPoints = [
-  "No trabajamos con soluciones aisladas",
+  "Publicar sin estrategia no genera resultados",
+  "El contenido suelto no construye presencia",
+  "Una web lenta pierde clientes cada día",
   "La web no es únicamente una vitrina digital",
-  "Las herramientas genéricas no resuelven cada proceso",
-  "La tecnología debe generar una mejora real",
-  "Una marca necesita un ecosistema para crecer",
+  "Sin medición no hay forma de mejorar",
 ] as const;
 
 const cardPositions = [

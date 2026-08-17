@@ -18,14 +18,9 @@ export function FeatureCreatorsSection() {
   return (
     <section
       aria-labelledby="shinta-creators-heading"
-      className="relative flex h-[740px] w-full items-center justify-center overflow-hidden bg-shinta-canvas px-5 md:h-[859px] lg:h-[591px] lg:py-[120px]"
+      className="relative flex h-[740px] w-full items-center justify-center overflow-hidden bg-transparent px-5 md:h-[859px] lg:h-[591px] lg:py-[120px]"
     >
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -top-[40px] -right-[195px] size-[420px] rounded-full border-[5px] border-shinta-lavender md:-top-[125px] md:-right-[160px] md:size-[590px] lg:-top-[260px] lg:-right-[150px] lg:size-[680px] lg:border-[7px]"
-      />
-
-      <div className="relative z-10 flex w-full max-w-[1000px] flex-col items-center justify-between gap-12 md:gap-16 lg:h-[351px] lg:flex-row lg:gap-10">
+      <div className="relative z-20 flex w-full max-w-[1000px] flex-col items-center justify-between gap-12 md:gap-16 lg:h-[351px] lg:flex-row lg:gap-10">
         <motion.div
           className="w-full max-w-[480px] text-left"
           initial={revealFrom}
@@ -37,10 +32,10 @@ export function FeatureCreatorsSection() {
             className="text-[28px] leading-[1.08] font-bold tracking-[-1.12px] text-shinta-ink lg:text-[64px] lg:leading-[70.4px] lg:tracking-[-2.56px]"
             id="shinta-creators-heading"
           >
-            De la idea al sistema que la hace crecer.
+            De la idea al contenido que la hace crecer.
           </h2>
           <p className="mt-5 max-w-[470px] text-[16px] leading-[24px] text-shinta-stone lg:mt-6 lg:text-[18px] lg:leading-[27px]">
-            Tótem conecta marca, contenido y tecnología para construir soluciones completas.
+            Conectamos estrategia, producción audiovisual y desarrollo web para construir una presencia digital completa.
           </p>
         </motion.div>
 

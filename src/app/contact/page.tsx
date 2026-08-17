@@ -8,7 +8,7 @@ import { Reveal } from "@/components/sites/shinta-framer-media-3240cba4/shared/R
 
 export const metadata: Metadata = {
   description:
-    "Cuéntanos tu proyecto y construyamos la solución que tu negocio necesita para crecer.",
+    "Cuéntanos tu proyecto: contenido audiovisual, campañas digitales o el sitio web que tu negocio necesita.",
   title: "Cuéntanos tu proyecto — Tótem Mass Media",
 };
 

@@ -9,8 +9,8 @@ import { Reveal } from "@/components/sites/shinta-framer-media-3240cba4/shared/R
 
 export const metadata: Metadata = {
   description:
-    "Proyectos, capacidades e ideas de Tótem sobre estrategia, creatividad y tecnología.",
-  title: "Proyectos y capacidades — Tótem Mass Media",
+    "Servicios y proyectos de Tótem: producción audiovisual, marketing digital, estrategia de contenido y desarrollo web.",
+  title: "Servicios y proyectos — Tótem Mass Media",
 };
 
 export default function BlogPage() {
