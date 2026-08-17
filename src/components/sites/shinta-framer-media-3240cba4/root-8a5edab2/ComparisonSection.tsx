@@ -1,36 +1,45 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { Check, X } from "lucide-react";
+import { Check } from "lucide-react";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 
-import { shintaAsset } from "../shared/site";
+import { cn } from "@/lib/utils";
 
-const comparisons = [
-  ["Soluciones aisladas", "Creatividad y tecnología integradas"],
-  ["Solo comunicación", "Comunicación, diseño y operación"],
-  ["Herramientas genéricas", "Sistemas específicos para cada proceso"],
-  ["Una sola capacidad", "Marca, contenido y tecnología"],
-  ["Promesas sin evidencia", "Proyectos que demuestran capacidades"],
+const isolatedPoints = [
+  "Soluciones aisladas",
+  "Solo comunicación",
+  "Herramientas genéricas",
+  "Una sola capacidad",
+  "Promesas sin evidencia",
 ] as const;
 
-const tableVariants: Variants = {
+const totemPoints = [
+  "Creatividad y tecnología integradas",
+  "Comunicación, diseño y operación",
+  "Sistemas específicos para cada proceso",
+  "Marca, contenido y tecnología",
+  "Proyectos que demuestran capacidades",
+] as const;
+
+// shinta.framer.media sits the two cards side by side with a gap and lifts
+// whichever one is hovered.
+const cardVariants: Variants = {
+  hover: { transform: "translateY(-8px)" },
+  rest: { transform: "translateY(0px)" },
+};
+
+const listVariants: Variants = {
   hidden: {},
-  visible: {
-    transition: {
-      delayChildren: 0.08,
-      staggerChildren: 0.075,
-    },
-  },
+  visible: { transition: { delayChildren: 0.08, staggerChildren: 0.07 } },
 };
 
 const rowVariants: Variants = {
-  hidden: { opacity: 0, y: 18 },
+  hidden: { opacity: 0, transform: "translateY(14px)" },
   visible: {
     opacity: 1,
-    transition: { damping: 24, stiffness: 180, type: "spring" },
-    y: 0,
+    transform: "translateY(0px)",
+    transition: { damping: 24, stiffness: 190, type: "spring" },
   },
 };
 
@@ -39,14 +48,16 @@ type ComparisonMarkProps = {
 };
 
 function ComparisonMark({ positive = false }: ComparisonMarkProps) {
-  const Icon = positive ? Check : X;
-
   return (
     <span
       aria-hidden="true"
-      className={`mt-[3px] grid size-[18px] shrink-0 place-items-center rounded-full text-white ${positive ? "bg-shinta-ink" : "bg-stone-300"}`}
+      className={cn(
+        "mt-[3px] grid size-[20px] shrink-0 place-items-center rounded-full",
+        positive ? "bg-shinta-ink" : "bg-totem-text-secondary/45",
+      )}
+      style={{ color: "var(--totem-off-white)" }}
     >
-      <Icon className="size-[11px]" strokeWidth={3} />
+      <Check className="size-[12px]" strokeWidth={3.25} />
     </span>
   );
 }
@@ -57,99 +68,105 @@ export function ComparisonSection() {
   return (
     <section
       aria-labelledby="shinta-comparison-heading"
-      className="flex h-[842px] w-full items-center justify-center overflow-hidden bg-shinta-canvas px-5 md:h-[815px] lg:h-[752px] lg:py-[150px]"
+      className="flex w-full items-center justify-center bg-shinta-canvas px-5 py-20 lg:py-[150px]"
     >
-      <div className="flex w-full max-w-[850px] flex-col items-center gap-12 lg:h-[452px] lg:gap-[54px]">
+      <div className="flex w-full max-w-[850px] flex-col items-center gap-12 lg:gap-[54px]">
         <motion.h2
           className="text-center text-[28px] leading-[1.08] font-bold tracking-[-1.12px] text-shinta-ink lg:text-[64px] lg:leading-[70.4px] lg:tracking-[-2.56px]"
           id="shinta-comparison-heading"
-          initial={reduceMotion ? false : { opacity: 0, y: 20 }}
+          initial={reduceMotion ? false : { opacity: 0, transform: "translateY(20px)" }}
           transition={{ damping: 24, stiffness: 170, type: "spring" }}
           viewport={{ amount: 0.7, once: true }}
-          whileInView={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, transform: "translateY(0px)" }}
         >
           Una solución completa para tu negocio
         </motion.h2>
 
-        <motion.div
-          aria-label="Comparación entre soluciones aisladas y Tótem Mass Media"
-          className="relative w-full max-w-[700px] py-4"
-          initial={reduceMotion ? false : "hidden"}
-          role="table"
-          variants={tableVariants}
-          viewport={{ amount: 0.35, once: true }}
-          whileInView="visible"
-        >
-          <div
-            aria-hidden="true"
-            className="absolute top-4 bottom-0 left-0 w-[56%] rounded-[20px] bg-white"
-          />
-          <div
-            aria-hidden="true"
-            className="absolute top-0 right-0 bottom-4 w-[56%] rounded-[20px] bg-shinta-pink"
-          />
-
-          <motion.div
-            className="relative z-10 grid grid-cols-2"
-            role="row"
-            variants={rowVariants}
+        <div className="grid w-full max-w-[760px] gap-5 sm:grid-cols-2">
+          <motion.article
+            aria-labelledby="comparison-isolated-heading"
+            className="rounded-[20px] bg-totem-surface px-7 py-8"
+            initial="rest"
+            transition={
+              reduceMotion
+                ? { duration: 0 }
+                : { duration: 0.32, ease: [0.23, 1, 0.32, 1] }
+            }
+            variants={reduceMotion ? undefined : cardVariants}
+            whileHover="hover"
           >
-            <div
-              className="px-3 pt-6 pb-4 text-[18px] leading-[25.2px] font-bold text-shinta-ink sm:px-6 lg:text-[24px] lg:leading-[33.6px]"
-              id="other-agencies-heading"
-              role="columnheader"
-            >
-              Soluciones aisladas
-            </div>
-            <div
-              className="-translate-y-4 px-3 pt-6 pb-4 sm:px-6"
-              id="shinta-column-heading"
-              role="columnheader"
-            >
-              <Link
-                aria-label="Inicio de Tótem Mass Media"
-                className="inline-flex focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-shinta-ink"
-                href="/"
-              >
-                <Image
-                  alt="Tótem Mass Media"
-                  className="h-auto w-[80px] object-contain lg:w-[94px]"
-                  height={267}
-                  priority
-                  src={shintaAsset("images/e7fb2951cde42e9a.png")}
-                  unoptimized
-                  width={1000}
-                />
-              </Link>
-            </div>
-          </motion.div>
-
-          {comparisons.map(([otherAgency, shinta], index) => (
             <motion.div
-              className="relative z-10 grid grid-cols-2"
-              key={otherAgency}
-              role="row"
-              variants={rowVariants}
+              initial={reduceMotion ? false : "hidden"}
+              variants={listVariants}
+              viewport={{ amount: 0.35, once: true }}
+              whileInView="visible"
             >
-              <div
-                aria-labelledby="other-agencies-heading"
-                className={`flex gap-2 px-3 py-3 text-[14px] leading-5 text-stone-400 sm:px-6 lg:text-[18px] lg:leading-[27px] ${index > 0 ? "border-t border-stone-200/80" : ""}`}
-                role="cell"
+              <motion.h3
+                className="text-[18px] leading-[25.2px] font-bold text-shinta-ink lg:text-[24px] lg:leading-[33.6px]"
+                id="comparison-isolated-heading"
+                variants={rowVariants}
               >
-                <ComparisonMark />
-                <span>{otherAgency}</span>
-              </div>
-              <div
-                aria-labelledby="shinta-column-heading"
-                className={`flex -translate-y-4 gap-2 px-3 py-3 text-[14px] leading-5 text-shinta-ink sm:px-6 lg:text-[18px] lg:leading-[27px] ${index > 0 ? "border-t border-shinta-ink/10" : ""}`}
-                role="cell"
-              >
-                <ComparisonMark positive />
-                <span>{shinta}</span>
-              </div>
+                Soluciones aisladas
+              </motion.h3>
+              <ul className="mt-5 space-y-3.5">
+                {isolatedPoints.map((point) => (
+                  <motion.li
+                    className="flex gap-2 text-[14px] leading-5 text-totem-text-secondary lg:text-[18px] lg:leading-[27px]"
+                    key={point}
+                    variants={rowVariants}
+                  >
+                    <ComparisonMark />
+                    <span>{point}</span>
+                  </motion.li>
+                ))}
+              </ul>
             </motion.div>
-          ))}
-        </motion.div>
+          </motion.article>
+
+          <motion.article
+            aria-labelledby="comparison-totem-heading"
+            className="rounded-[20px] bg-shinta-pink px-7 py-8"
+            initial="rest"
+            transition={
+              reduceMotion
+                ? { duration: 0 }
+                : { duration: 0.32, ease: [0.23, 1, 0.32, 1] }
+            }
+            variants={reduceMotion ? undefined : cardVariants}
+            whileHover="hover"
+          >
+            <motion.div
+              initial={reduceMotion ? false : "hidden"}
+              variants={listVariants}
+              viewport={{ amount: 0.35, once: true }}
+              whileInView="visible"
+            >
+              <motion.h3 id="comparison-totem-heading" variants={rowVariants}>
+                <span className="sr-only">Tótem Mass Media</span>
+                <Image
+                  alt=""
+                  className="h-auto w-[92px] object-contain lg:w-[110px]"
+                  height={419}
+                  src="/brand/logo-light.png"
+                  unoptimized
+                  width={621}
+                />
+              </motion.h3>
+              <ul className="mt-5 space-y-3.5">
+                {totemPoints.map((point) => (
+                  <motion.li
+                    className="flex gap-2 text-[14px] leading-5 text-shinta-ink lg:text-[18px] lg:leading-[27px]"
+                    key={point}
+                    variants={rowVariants}
+                  >
+                    <ComparisonMark positive />
+                    <span>{point}</span>
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+          </motion.article>
+        </div>
       </div>
     </section>
   );

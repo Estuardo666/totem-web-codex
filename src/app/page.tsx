@@ -17,6 +17,7 @@ import { ProjectsSection } from "@/components/sites/shinta-framer-media-3240cba4
 import { ServicesSection } from "@/components/sites/shinta-framer-media-3240cba4/root-8a5edab2/ServicesSection";
 import { TeamSection } from "@/components/sites/shinta-framer-media-3240cba4/root-8a5edab2/TeamSection";
 import { TestimonialsSection } from "@/components/sites/shinta-framer-media-3240cba4/root-8a5edab2/TestimonialsSection";
+import { Reveal } from "@/components/sites/shinta-framer-media-3240cba4/shared/Reveal";
 
 export default function Home() {
   return (
@@ -24,22 +25,54 @@ export default function Home() {
       <Navbar />
       <main>
         <HeroSection />
-        <LogoStrip />
-        <PainPointsSection />
-        <MissionSection />
-        <FeaturePerformanceSection />
-        <FeatureCreatorsSection />
-        <ProjectsSection />
-        <MoreWorksSection />
-        <ServicesSection />
-        <ComparisonSection />
-        <ProcessSection />
-        <TestimonialsSection />
-        <TeamSection />
-        <PricingSection />
-        <BlogSection />
-        <FaqSection />
-        <ContactCtaSection />
+        <Reveal>
+          <LogoStrip />
+        </Reveal>
+        <Reveal fadeOnly>
+          <PainPointsSection />
+        </Reveal>
+        <Reveal>
+          <MissionSection />
+        </Reveal>
+        <Reveal fadeOnly>
+          <FeaturePerformanceSection />
+        </Reveal>
+        <Reveal fadeOnly>
+          <FeatureCreatorsSection />
+        </Reveal>
+        <Reveal>
+          <ProjectsSection />
+        </Reveal>
+        <Reveal>
+          <MoreWorksSection />
+        </Reveal>
+        <Reveal fadeOnly>
+          <ServicesSection />
+        </Reveal>
+        <Reveal>
+          <ComparisonSection />
+        </Reveal>
+        <Reveal>
+          <ProcessSection />
+        </Reveal>
+        <Reveal fadeOnly>
+          <TestimonialsSection />
+        </Reveal>
+        <Reveal>
+          <TeamSection />
+        </Reveal>
+        <Reveal>
+          <PricingSection />
+        </Reveal>
+        <Reveal fadeOnly>
+          <BlogSection />
+        </Reveal>
+        <Reveal>
+          <FaqSection />
+        </Reveal>
+        <Reveal fadeOnly>
+          <ContactCtaSection />
+        </Reveal>
       </main>
       <FooterSection />
     </div>

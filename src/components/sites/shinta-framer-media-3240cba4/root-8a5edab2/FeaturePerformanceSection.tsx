@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
 import { shintaAsset } from "../shared/site";
+import { ImageReveal } from "@/components/sites/shinta-framer-media-3240cba4/shared/ImageReveal";
 
 export function FeaturePerformanceSection() {
   const copyRef = useRef<HTMLDivElement>(null);
@@ -71,7 +72,7 @@ export function FeaturePerformanceSection() {
       </svg>
 
       <div className="relative mx-auto h-full max-w-[1000px] xl:flex xl:h-[640px] xl:items-start xl:gap-[90px]">
-        <div className="relative mx-auto h-[520px] w-full max-w-[335px] md:h-[570px] md:max-w-[360px] xl:mx-0 xl:h-[640px] xl:w-[360px] xl:shrink-0">
+        <ImageReveal className="relative mx-auto h-[520px] w-full max-w-[335px] md:h-[570px] md:max-w-[360px] xl:mx-0 xl:h-[640px] xl:w-[360px] xl:shrink-0">
           <video
             autoPlay
             className="h-full w-full rounded-[22px] object-cover xl:rounded-[24px]"
@@ -86,11 +87,11 @@ export function FeaturePerformanceSection() {
             <p className="text-[40px] leading-[44px] font-bold tracking-[-1.6px] xl:text-[48px] xl:leading-[52px] xl:tracking-[-1.92px]">
               Marca
             </p>
-            <p className="mt-[3px] text-[16px] leading-[22.4px] font-normal tracking-[-0.32px] text-shinta-stone xl:text-[18px] xl:leading-[25.2px] xl:tracking-[-0.36px]">
+            <p className="mt-[3px] text-[16px] leading-[22.4px] font-normal tracking-[-0.32px] text-shinta-ink/75 xl:text-[18px] xl:leading-[25.2px] xl:tracking-[-0.36px]">
               Identidad y comunicación
             </p>
           </div>
-        </div>
+        </ImageReveal>
 
         <div
           className={cn(

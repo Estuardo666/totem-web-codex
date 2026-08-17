@@ -7,6 +7,7 @@ import { motion, useReducedMotion, type Variants } from "framer-motion";
 
 import { SectionEyebrow } from "../shared/ShintaPrimitives";
 import { shintaAsset } from "../shared/site";
+import { ImageReveal } from "@/components/sites/shinta-framer-media-3240cba4/shared/ImageReveal";
 
 const testimonials = [
   {
@@ -158,7 +159,7 @@ export function TestimonialsSection() {
             className="flex min-h-0 flex-col gap-5 rounded-[24px] bg-white p-4 md:flex-row md:p-6 lg:col-span-2"
             variants={cardVariants}
           >
-            <div className="group relative h-[210px] w-full shrink-0 overflow-hidden rounded-[14px] bg-shinta-stone md:h-full md:w-[42%]">
+            <ImageReveal className="group relative h-[210px] w-full shrink-0 overflow-hidden rounded-[14px] bg-shinta-stone md:h-full md:w-[42%]">
               <video
                 aria-label="Proyecto de automatización audiovisual"
                 className="size-full object-cover"
@@ -187,7 +188,7 @@ export function TestimonialsSection() {
                   />
                 )}
               </button>
-            </div>
+            </ImageReveal>
 
             <div className="flex min-h-0 flex-1 flex-col">
               <FiveStars />

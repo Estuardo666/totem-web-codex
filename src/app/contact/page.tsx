@@ -4,6 +4,7 @@ import { ContactHeroSection } from "@/components/sites/shinta-framer-media-3240c
 import { FaqSection } from "@/components/sites/shinta-framer-media-3240cba4/root-8a5edab2/FaqSection";
 import { FooterSection } from "@/components/sites/shinta-framer-media-3240cba4/shared/FooterSection";
 import { Navbar } from "@/components/sites/shinta-framer-media-3240cba4/shared/Navbar";
+import { Reveal } from "@/components/sites/shinta-framer-media-3240cba4/shared/Reveal";
 
 export const metadata: Metadata = {
   description:
@@ -16,8 +17,12 @@ export default function ContactPage() {
     <div className="min-h-screen overflow-x-clip bg-shinta-canvas text-shinta-ink">
       <Navbar />
       <main className="flex flex-col pt-[120px]">
-        <ContactHeroSection />
-        <FaqSection />
+        <Reveal>
+          <ContactHeroSection />
+        </Reveal>
+        <Reveal>
+          <FaqSection />
+        </Reveal>
       </main>
       <FooterSection />
     </div>

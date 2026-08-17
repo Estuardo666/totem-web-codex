@@ -7,6 +7,7 @@ import {
   ShiftButtonContent,
 } from "../shared/ShintaPrimitives";
 import { shintaAsset } from "../shared/site";
+import { ImageReveal } from "@/components/sites/shinta-framer-media-3240cba4/shared/ImageReveal";
 
 const articles = [
   {
@@ -83,7 +84,8 @@ export function BlogSection() {
           >
             <ShiftButtonContent
               className="[--shift-button-icon-size:44px] sm:[--shift-button-icon-size:48px] lg:[--shift-button-icon-size:52px]"
-              iconClassName="bg-totem-action text-totem-action-text"
+              restIconClassName="bg-totem-brand text-totem-action"
+              hoverIconClassName="bg-totem-tech text-totem-brand"
               iconStrokeWidth={2.25}
               labelClassName="inline-flex h-11 items-center justify-center rounded-full bg-totem-action px-4 text-[12px] font-semibold text-totem-action-text sm:h-12 sm:px-5 sm:text-[14px] lg:h-[52px] lg:px-6"
             >
@@ -99,7 +101,7 @@ export function BlogSection() {
                 className="group flex h-full flex-col rounded-[24px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-shinta-ink"
                 href={article.href}
               >
-                <div className="relative aspect-[822/616] w-full shrink-0 overflow-hidden rounded-[24px] bg-stone-200">
+                <ImageReveal className="relative aspect-[822/616] w-full shrink-0 overflow-hidden rounded-[24px] bg-stone-200">
                   <Image
                     alt={article.imageAlt}
                     className="size-full object-cover transition-transform duration-500 ease-out group-hover:-translate-y-1 group-hover:scale-[1.04] group-focus-visible:-translate-y-1 group-focus-visible:scale-[1.04]"
@@ -112,7 +114,7 @@ export function BlogSection() {
                   <span className="absolute top-4 right-4 grid size-10 translate-y-2 place-items-center rounded-full bg-white text-shinta-ink opacity-0 shadow-sm transition-[opacity,transform] duration-300 group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100">
                     <ArrowUpRight aria-hidden="true" className="size-5" />
                   </span>
-                </div>
+                </ImageReveal>
 
                 <time
                   className="mt-5 text-[12px] leading-[16.8px] font-semibold tracking-[0.96px] text-shinta-muted uppercase"

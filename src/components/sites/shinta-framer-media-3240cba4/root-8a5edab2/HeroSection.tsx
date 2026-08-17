@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Pause, Play } from "lucide-react";
-import { Fragment, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import {
   motion,
   useReducedMotion,
@@ -11,6 +11,7 @@ import {
   type Variants,
 } from "framer-motion";
 
+import { GradientDepthBlur } from "../shared/GradientDepthBlur";
 import { ShiftButtonContent } from "../shared/ShintaPrimitives";
 import { shintaAsset } from "../shared/site";
 
@@ -44,7 +45,8 @@ const cardSlots = [
   "-translate-x-[32px] translate-y-[26px] -rotate-[4deg] xl:-translate-x-[30px] xl:translate-y-[48px]",
 ] as const;
 
-const heading = "Creamos marcas, contenido y tecnología que hacen avanzar negocios.";
+const heading =
+  "Creamos marcas, contenido y tecnología que hacen avanzar negocios.";
 const headingWords = heading.split(" ");
 
 const headingVariants: Variants = {
@@ -86,11 +88,11 @@ const serviceVariants: Variants = {
 };
 
 const mediaVariants: Variants = {
-  hidden: { opacity: 0, scale: 0.94 },
+  hidden: { opacity: 0, scale: 0.9 },
   visible: {
     opacity: 1,
     scale: 1,
-    transition: { delay: 0.18, duration: 0.72, ease: [0.16, 1, 0.3, 1] },
+    transition: { delay: 0.18, duration: 0.7, ease: [0.16, 1, 0.3, 1] },
   },
 };
 
@@ -115,12 +117,32 @@ const projectVariants: Variants = {
 const MotionLink = motion.create(Link);
 
 export function HeroSection() {
+  const ribbonRef = useRef<SVGSVGElement>(null);
   const videoRefs = useRef<Array<HTMLVideoElement | null>>([]);
   const [cardOrder, setCardOrder] = useState([0, 1, 2]);
   const [isPlaying, setIsPlaying] = useState(false);
   const reduceMotion = useReducedMotion();
 
   const activeVideoIndex = cardOrder[0];
+
+  // The ribbon is the last thing to arrive, once the heading, the services
+  // list, the cards and the project card have all landed.
+  useEffect(() => {
+    const ribbon = ribbonRef.current;
+
+    if (!ribbon || reduceMotion) {
+      return;
+    }
+
+    const animation = ribbon.animate([{ opacity: 0 }, { opacity: 1 }], {
+      delay: 1150,
+      duration: 700,
+      easing: "cubic-bezier(0.16, 1, 0.3, 1)",
+      fill: "both",
+    });
+
+    return () => animation.cancel();
+  }, [reduceMotion]);
 
   function moveCard(direction: "left" | "right") {
     videoRefs.current.forEach((video) => video?.pause());
@@ -133,7 +155,8 @@ export function HeroSection() {
   }
 
   function handleDragEnd(_: PointerEvent, info: PanInfo) {
-    const isSwipe = Math.abs(info.offset.x) > 72 || Math.abs(info.velocity.x) > 500;
+    const isSwipe =
+      Math.abs(info.offset.x) > 72 || Math.abs(info.velocity.x) > 500;
 
     if (isSwipe) {
       moveCard(info.offset.x < 0 ? "left" : "right");
@@ -160,6 +183,21 @@ export function HeroSection() {
       className="relative h-[1099px] overflow-hidden bg-shinta-canvas text-shinta-ink md:h-[1013px] xl:h-[900px]"
       aria-labelledby="hero-heading"
     >
+      <GradientDepthBlur
+        blurMax={20}
+        className="pointer-events-none absolute inset-y-0 left-0 z-[1] w-[16vw] min-w-[90px]"
+        direction="rightToLeft"
+        maxBlurAt={95}
+        saturation={100}
+      />
+      <GradientDepthBlur
+        blurMax={20}
+        className="pointer-events-none absolute inset-y-0 right-0 z-[1] w-[16vw] min-w-[90px]"
+        direction="leftToRight"
+        maxBlurAt={95}
+        saturation={100}
+      />
+
       <div className="relative mx-auto h-full max-w-[1320px] px-5 xl:px-5">
         <motion.div
           animate="visible"
@@ -196,7 +234,7 @@ export function HeroSection() {
               >
                 <span
                   aria-hidden="true"
-                  className="text-[19px] leading-none text-shinta-pink"
+                  className="text-[19px] leading-none text-totem-tech-ink"
                 >
                   ✱
                 </span>
@@ -208,8 +246,9 @@ export function HeroSection() {
 
         <svg
           aria-hidden="true"
-          className="pointer-events-none absolute top-[328px] left-1/2 z-0 h-[360px] w-[150vw] -translate-x-1/2 overflow-visible md:top-[323px] md:h-[370px] xl:top-[302px] xl:h-[500px] xl:w-[100vw]"
-          preserveAspectRatio="none"
+          className="pointer-events-none absolute top-[250px] left-1/2 z-0 aspect-[1440/500] w-[190vw] -translate-x-1/2 overflow-visible md:top-[235px] xl:top-[195px] xl:w-[115vw]"
+          ref={ribbonRef}
+          preserveAspectRatio="xMidYMid meet"
           viewBox="0 0 1440 500"
         >
           <path
@@ -218,17 +257,18 @@ export function HeroSection() {
             id="shinta-hero-ribbon-path"
             stroke="var(--totem-tech)"
             strokeLinecap="round"
-            strokeWidth="45"
+            strokeWidth="30"
           />
           <text
+            dominantBaseline="central"
             fill="var(--totem-navy)"
             fontFamily="Open Sauce One, sans-serif"
-            fontSize="15"
+            fontSize="11.5"
             fontWeight="600"
-            letterSpacing="1.2"
+            letterSpacing="0.92"
           >
             <textPath href="#shinta-hero-ribbon-path" startOffset="-12%">
-              {ribbonCopy.repeat(4)}
+              {ribbonCopy.repeat(12)}
               <animate
                 attributeName="startOffset"
                 className="motion-reduce:hidden"
@@ -261,8 +301,10 @@ export function HeroSection() {
                   style={{ zIndex: heroVideos.length - slot }}
                 >
                   <motion.div
-                    className={`relative h-full w-full overflow-hidden rounded-[19px] bg-shinta-stone xl:rounded-[23px] ${
-                      isActive ? "cursor-grab active:cursor-grabbing" : "pointer-events-none"
+                    className={`group/card relative h-full w-full overflow-hidden rounded-[19px] bg-shinta-stone xl:rounded-[23px] ${
+                      isActive
+                        ? "cursor-grab active:cursor-grabbing"
+                        : "pointer-events-none"
                     }`}
                     drag={isActive && !reduceMotion ? "x" : false}
                     dragConstraints={{ left: 0, right: 0 }}
@@ -273,25 +315,40 @@ export function HeroSection() {
                     style={{ touchAction: "pan-y" }}
                     whileDrag={{ scale: 0.985 }}
                   >
-                    <video
-                      aria-hidden={!isActive}
-                      className="h-full w-full object-cover"
-                      loop
-                      muted
-                      onPause={isActive ? () => setIsPlaying(false) : undefined}
-                      onPlay={isActive ? () => setIsPlaying(true) : undefined}
-                      playsInline
-                      poster={shintaAsset(video.poster)}
-                      preload="auto"
-                      ref={(element) => {
-                        videoRefs.current[videoIndex] = element;
+                    <motion.div
+                      animate={{ transform: "scale(1)" }}
+                      className="h-full w-full"
+                      initial={
+                        reduceMotion ? false : { transform: "scale(1.2)" }
+                      }
+                      transition={{
+                        delay: 0.18,
+                        duration: 0.7,
+                        ease: [0.16, 1, 0.3, 1],
                       }}
-                      src={shintaAsset(video.src)}
-                    />
+                    >
+                      <video
+                        aria-hidden={!isActive}
+                        className="h-full w-full object-cover"
+                        loop
+                        muted
+                        onPause={
+                          isActive ? () => setIsPlaying(false) : undefined
+                        }
+                        onPlay={isActive ? () => setIsPlaying(true) : undefined}
+                        playsInline
+                        poster={shintaAsset(video.poster)}
+                        preload="auto"
+                        ref={(element) => {
+                          videoRefs.current[videoIndex] = element;
+                        }}
+                        src={shintaAsset(video.src)}
+                      />
+                    </motion.div>
 
                     {isActive ? (
                       <>
-                        <div className="absolute top-[27%] left-1/2 flex -translate-x-1/2 items-center rounded-full bg-shinta-ink/95 px-2 py-1.5 text-white shadow-sm backdrop-blur-[2px] xl:top-[29%] xl:px-2.5 xl:py-2">
+                        <div className="absolute top-[27%] left-1/2 flex -translate-x-1/2 items-center rounded-full bg-shinta-ink/95 px-2 py-1.5 text-white opacity-100 shadow-sm backdrop-blur-[2px] transition-[opacity,transform] duration-200 ease-out group-focus-within/card:opacity-100 xl:top-[29%] xl:px-2.5 xl:py-2 [@media(hover:hover)]:opacity-0 [@media(hover:hover)]:group-hover/card:opacity-100">
                           <button
                             aria-label="Mostrar el video anterior"
                             className="grid size-7 place-items-center rounded-full transition-transform duration-150 active:scale-95 focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-white"
@@ -314,13 +371,20 @@ export function HeroSection() {
                         </div>
 
                         <button
-                          aria-label={isPlaying ? "Pausar video principal" : "Reproducir video principal"}
+                          aria-label={
+                            isPlaying
+                              ? "Pausar video principal"
+                              : "Reproducir video principal"
+                          }
                           className="absolute top-1/2 left-1/2 grid size-[60px] -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-shinta-ink/70 text-white backdrop-blur-[2px] transition-transform duration-150 active:scale-95 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-shinta-pink xl:size-[70px]"
                           onClick={togglePlayback}
                           type="button"
                         >
                           {isPlaying ? (
-                            <Pause aria-hidden="true" className="size-6 fill-current" />
+                            <Pause
+                              aria-hidden="true"
+                              className="size-6 fill-current"
+                            />
                           ) : (
                             <Play
                               aria-hidden="true"
@@ -344,16 +408,19 @@ export function HeroSection() {
           variants={supportingVariants}
         >
           <p className="min-w-0 max-w-[350px] break-words text-[18px] leading-[25.2px] font-normal tracking-[-0.36px] text-shinta-stone">
-            Desde estrategia y producción audiovisual hasta sitios web, plataformas, software y automatización. Diseñamos soluciones alrededor de problemas y objetivos reales.
+            Desde estrategia y producción audiovisual hasta sitios web,
+            plataformas, software y automatización. Diseñamos soluciones
+            alrededor de problemas y objetivos reales.
           </p>
 
           <Link
-            className="shift-button group mt-[24px] flex h-[56px] w-full items-center rounded-full text-[16px] font-semibold text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-shinta-ink md:mt-[24px] md:h-[52px] xl:mt-[25px] xl:w-[260px]"
+            className="shift-button group mt-[24px] flex h-[56px] w-full items-center rounded-full text-[16px] font-semibold text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-shinta-ink md:mt-[24px] md:h-[52px] xl:mt-[25px] xl:w-max"
             href="/#contact"
           >
             <ShiftButtonContent
               className="[--shift-button-icon-size:56px] md:[--shift-button-icon-size:52px]"
-              iconClassName="bg-totem-action text-totem-action-text"
+              restIconClassName="bg-totem-brand text-totem-action"
+              hoverIconClassName="bg-totem-tech text-totem-brand"
               iconStrokeWidth={2.25}
               labelClassName="flex h-[56px] items-center rounded-full bg-totem-action px-[23px] text-totem-action-text md:h-[52px]"
             >
@@ -382,7 +449,7 @@ export function HeroSection() {
             />
           </span>
           <span className="min-w-0">
-            <span className="block text-[12px] leading-[16.8px] font-semibold tracking-[0.5px] text-shinta-lavender uppercase">
+            <span className="block text-[12px] leading-[16.8px] font-semibold tracking-[0.5px] text-totem-creative-ink uppercase">
               PROYECTO DESTACADO
             </span>
             <span className="mt-[4px] block text-[18px] leading-[25.2px] font-semibold tracking-[-0.36px]">

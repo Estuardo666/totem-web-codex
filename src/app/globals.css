@@ -97,6 +97,8 @@
   --color-totem-border: var(--totem-border);
   --color-totem-brand: var(--totem-brand);
   --color-totem-tech: var(--totem-tech);
+  --color-totem-tech-ink: var(--totem-tech-ink);
+  --color-totem-creative-ink: var(--totem-creative-ink);
   --color-totem-tech-soft: var(--totem-tech-soft);
   --color-totem-creative: var(--totem-creative);
   --color-totem-action: var(--totem-action);
@@ -104,6 +106,13 @@
   --color-totem-text-on-dark: var(--totem-text-on-dark);
   --color-totem-text-on-dark-secondary: var(--totem-text-on-dark-secondary);
   --color-totem-focus: var(--totem-focus);
+  /* Raw brand values, for the few places that need a fixed colour. */
+  --color-totem-navy: var(--totem-navy);
+  --color-totem-sky: var(--totem-sky);
+  --color-totem-lavender: var(--totem-lavender);
+  --color-totem-lime: var(--totem-lime);
+  --color-totem-off-white: var(--totem-off-white);
+  --color-totem-white: var(--totem-white);
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -123,6 +132,9 @@
   --totem-sky-soft: #e6f6fd;
   --totem-lavender: #7e8dc7;
   --totem-lime: #c0fc78;
+  /* Darkened accents, for accent-coloured TEXT on light surfaces. */
+  --totem-tech-ink: #05647a;
+  --totem-creative-ink: #46519a;
   --totem-night: #07182c;
   --totem-night-alt: #0b2139;
   --totem-night-card: #102c49;
@@ -195,6 +207,8 @@
   --totem-brand: var(--totem-navy);
   --totem-tech: var(--totem-sky);
   --totem-tech-soft: var(--totem-night-alt);
+  --totem-tech-ink: var(--totem-sky);
+  --totem-creative-ink: #a8b3e0;
   --totem-creative: var(--totem-lavender);
   --totem-action: var(--totem-lime);
   --totem-action-text: var(--totem-navy);
@@ -283,12 +297,26 @@
     background-color: var(--totem-surface);
   }
 
+  /*
+   * Sky, lavender and lime are fixed brand accents: they do not darken with
+   * the theme, so anything sitting on them keeps navy text in both themes —
+   * including text that only inherits its colour from an ancestor.
+   */
+  .dark .bg-shinta-pink,
+  .dark .bg-shinta-lavender,
+  .dark .bg-shinta-green,
+  .dark .bg-totem-action,
+  .dark .bg-totem-tech,
+  .dark .bg-totem-creative,
   .dark .bg-shinta-pink.text-shinta-ink,
   .dark .bg-shinta-lavender.text-shinta-ink,
   .dark .bg-shinta-green.text-shinta-ink,
   .dark .bg-shinta-pink .text-shinta-ink,
   .dark .bg-shinta-lavender .text-shinta-ink,
   .dark .bg-shinta-green .text-shinta-ink,
+  .dark .bg-totem-action .text-shinta-ink,
+  .dark .bg-totem-tech .text-shinta-ink,
+  .dark .bg-totem-creative .text-shinta-ink,
   .dark .bg-totem-action.text-totem-action-text {
     color: var(--totem-navy);
   }
@@ -298,8 +326,37 @@
   .dark .bg-shinta-lavender .text-shinta-stone,
   .dark .bg-shinta-lavender .text-shinta-muted,
   .dark .bg-shinta-green .text-shinta-stone,
-  .dark .bg-shinta-green .text-shinta-muted {
-    color: #526173;
+  .dark .bg-shinta-green .text-shinta-muted,
+  .dark .bg-totem-tech .text-shinta-stone,
+  .dark .bg-totem-creative .text-shinta-stone,
+  .dark .bg-totem-action .text-shinta-stone {
+    color: color-mix(in srgb, var(--totem-navy) 88%, transparent);
+  }
+
+  /*
+   * ...and back again: a themed surface nested inside one of those accents
+   * (a white card on the sky footer, the canvas header strip on a process
+   * card) darkens with the theme, so it takes the theme text colour back.
+   */
+  .dark .bg-shinta-canvas,
+  .dark .bg-shinta-canvas.text-shinta-ink,
+  .dark .bg-white.text-shinta-ink,
+  .dark .bg-totem-surface.text-shinta-ink,
+  .dark .bg-white,
+  .dark .bg-totem-surface,
+  .dark .bg-totem-surface-secondary,
+  .dark .bg-totem-background,
+  .dark .bg-shinta-ink {
+    color: var(--totem-text);
+  }
+
+  .dark .bg-shinta-canvas .text-shinta-stone,
+  .dark .bg-shinta-canvas .text-shinta-muted,
+  .dark .bg-white .text-shinta-stone,
+  .dark .bg-white .text-shinta-muted,
+  .dark .bg-totem-surface .text-shinta-stone,
+  .dark .bg-totem-surface .text-shinta-muted {
+    color: var(--totem-text-secondary);
   }
 }
 
@@ -390,7 +447,7 @@ h6 {
 
 .shift-button__content {
   display: grid;
-  grid-template-columns: var(--shift-button-icon-size) minmax(0, 1fr) 0;
+  grid-template-columns: 0 minmax(0, 1fr) var(--shift-button-icon-size);
   align-items: center;
   width: 100%;
   transition: grid-template-columns var(--shift-button-duration)
@@ -401,6 +458,7 @@ h6 {
   position: relative;
   z-index: 1;
   min-width: 0;
+  white-space: nowrap;
   transform: rotate(0deg);
   transform-origin: center;
   transition: transform var(--shift-button-duration) var(--shift-button-easing);
@@ -420,13 +478,14 @@ h6 {
   will-change: transform;
 }
 
+/* At rest the arrow sits on the right; on hover it crosses to the left. */
 .shift-button__icon--leading {
   justify-self: start;
+  transform: scale(0);
 }
 
 .shift-button__icon--trailing {
   justify-self: end;
-  transform: scale(0);
 }
 
 .shift-button__icon svg {
@@ -435,15 +494,15 @@ h6 {
     transform 400ms var(--shift-button-easing);
 }
 
-.shift-button__icon--trailing svg {
+.shift-button__icon--leading svg {
   opacity: 0;
-  transform: translate(-12px, 12px);
+  transform: translate(12px, 12px);
 }
 
 @media (hover: hover) and (pointer: fine) {
   .shift-button:hover .shift-button__content,
   .shift-button:focus-visible .shift-button__content {
-    grid-template-columns: 0 minmax(0, 1fr) var(--shift-button-icon-size);
+    grid-template-columns: var(--shift-button-icon-size) minmax(0, 1fr) 0;
   }
 
   .shift-button:hover .shift-button__label,
@@ -451,18 +510,18 @@ h6 {
     transform: rotate(-6deg);
   }
 
-  .shift-button:hover .shift-button__icon--leading,
-  .shift-button:focus-visible .shift-button__icon--leading {
+  .shift-button:hover .shift-button__icon--trailing,
+  .shift-button:focus-visible .shift-button__icon--trailing {
     transform: scale(0);
   }
 
-  .shift-button:hover .shift-button__icon--trailing,
-  .shift-button:focus-visible .shift-button__icon--trailing {
+  .shift-button:hover .shift-button__icon--leading,
+  .shift-button:focus-visible .shift-button__icon--leading {
     transform: scale(1);
   }
 
-  .shift-button:hover .shift-button__icon--trailing svg,
-  .shift-button:focus-visible .shift-button__icon--trailing svg {
+  .shift-button:hover .shift-button__icon--leading svg,
+  .shift-button:focus-visible .shift-button__icon--leading svg {
     opacity: 1;
     transform: translate(0, 0);
     transition-delay: 120ms;
@@ -489,7 +548,7 @@ h6 {
 
   .shift-button:hover .shift-button__content,
   .shift-button:focus-visible .shift-button__content {
-    grid-template-columns: var(--shift-button-icon-size) minmax(0, 1fr) 0;
+    grid-template-columns: 0 minmax(0, 1fr) var(--shift-button-icon-size);
   }
 
   .shift-button:hover .shift-button__label,
@@ -497,13 +556,13 @@ h6 {
     transform: none;
   }
 
-  .shift-button:hover .shift-button__icon--leading,
-  .shift-button:focus-visible .shift-button__icon--leading {
+  .shift-button:hover .shift-button__icon--trailing,
+  .shift-button:focus-visible .shift-button__icon--trailing {
     transform: scale(1);
   }
 
-  .shift-button:hover .shift-button__icon--trailing,
-  .shift-button:focus-visible .shift-button__icon--trailing {
+  .shift-button:hover .shift-button__icon--leading,
+  .shift-button:focus-visible .shift-button__icon--leading {
     transform: scale(0);
   }
 }

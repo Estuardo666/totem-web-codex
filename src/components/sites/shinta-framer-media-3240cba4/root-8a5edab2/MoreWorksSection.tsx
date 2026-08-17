@@ -74,12 +74,13 @@ export function MoreWorksSection() {
         />
 
         <Link
-          className="shift-button group absolute top-[263px] left-1/2 z-20 inline-flex w-[282px] -translate-x-1/2 items-center rounded-full focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-shinta-ink xl:top-[393px] xl:w-[584px]"
+          className="shift-button group absolute top-[263px] left-1/2 z-20 inline-flex w-max max-w-[calc(100vw-40px)] -translate-x-1/2 items-center gap-3 rounded-full focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-shinta-ink xl:top-[393px]"
           href="/#projects"
         >
           <ShiftButtonContent
             className="[--shift-button-icon-size:56px] xl:[--shift-button-icon-size:58px]"
-            iconClassName="bg-totem-action text-totem-action-text"
+            restIconClassName="bg-totem-brand text-totem-action"
+              hoverIconClassName="bg-totem-tech text-totem-brand"
             iconSizeClassName="size-[20px] xl:size-[22px]"
             labelClassName="flex items-center justify-center whitespace-nowrap text-[28px] leading-[31px] font-bold tracking-[-1.12px] xl:text-[64px] xl:leading-[70.4px] xl:tracking-[-2.56px]"
           >

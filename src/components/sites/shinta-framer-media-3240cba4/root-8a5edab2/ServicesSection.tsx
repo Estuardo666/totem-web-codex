@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import { cn } from "@/lib/utils";
 import { shintaAsset } from "@/components/sites/shinta-framer-media-3240cba4/shared/site";
+import { ImageReveal } from "@/components/sites/shinta-framer-media-3240cba4/shared/ImageReveal";
 
 const services = [
   {
@@ -14,6 +15,7 @@ const services = [
     title: "Estrategia y branding",
     surface: "bg-shinta-lavender",
     tab: "left-0",
+    edge: "start",
     layer: "lg:z-10",
   },
   {
@@ -26,6 +28,7 @@ const services = [
     title: "Producción audiovisual",
     surface: "bg-shinta-pink",
     tab: "left-1/4",
+    edge: null,
     layer: "lg:z-20",
   },
   {
@@ -38,6 +41,7 @@ const services = [
     title: "Diseño y desarrollo web",
     surface: "bg-totem-surface-secondary",
     tab: "left-1/2",
+    edge: null,
     layer: "lg:z-30",
   },
   {
@@ -50,9 +54,23 @@ const services = [
     title: "Software y automatización",
     surface: "bg-shinta-green",
     tab: "left-3/4",
+    edge: "end",
     layer: "lg:z-40",
   },
 ] as const;
+
+// The tab sits flush against the card. On the first and last card the tab
+// shares an outer edge with the card, so the card's rounded corner would leave
+// a notch under it: move that corner radius onto the tab instead.
+const tabRadius = {
+  end: "rounded-tl-[18px] rounded-tr-[28px] md:rounded-tr-[26px] lg:rounded-tr-[30px]",
+  start: "rounded-tr-[18px] rounded-tl-[28px] md:rounded-tl-[26px] lg:rounded-tl-[30px]",
+} as const;
+
+const cardCorner = {
+  end: "rounded-tr-none md:rounded-tr-none lg:rounded-tr-none",
+  start: "rounded-tl-none md:rounded-tl-none lg:rounded-tl-none",
+} as const;
 
 type ServicePanelProps = {
   service: (typeof services)[number];
@@ -69,7 +87,8 @@ function ServicePanel({ service }: ServicePanelProps) {
       <div className="relative h-full w-full max-w-[1085px] pt-8 lg:h-[650px]">
         <p
           className={cn(
-            "absolute top-0 z-10 flex h-10 w-1/4 items-center rounded-t-[18px] px-4 text-[12px] leading-[16.8px] font-semibold tracking-[0.96px] uppercase lg:h-9",
+            "absolute top-0 z-10 flex h-10 w-1/4 items-center px-4 text-[12px] leading-[16.8px] font-semibold tracking-[0.96px] uppercase lg:h-9",
+            service.edge ? tabRadius[service.edge] : "rounded-t-[18px]",
             service.surface,
             service.tab,
           )}
@@ -80,6 +99,7 @@ function ServicePanel({ service }: ServicePanelProps) {
         <div
           className={cn(
             "relative flex h-[calc(100%-32px)] flex-col overflow-hidden rounded-[28px] text-shinta-ink md:grid md:grid-cols-[1.06fr_0.94fr] md:rounded-[26px] lg:grid-cols-2 lg:rounded-[30px]",
+            service.edge ? cardCorner[service.edge] : null,
             service.surface,
           )}
         >
@@ -91,7 +111,7 @@ function ServicePanel({ service }: ServicePanelProps) {
               {service.description}
             </p>
             <div className="mt-auto pt-4">
-              <p className="text-[28px] leading-8 font-bold tracking-[-1.12px] lg:text-[64px] lg:leading-[70.4px] lg:tracking-[-2.56px]">
+              <p className="text-[28px] leading-8 font-medium tracking-[-1.12px] lg:text-[64px] lg:leading-[70.4px] lg:tracking-[-2.56px]">
                 {service.stat}
               </p>
               <p className="text-[18px] leading-[25.2px] tracking-[-0.36px] md:text-[16px] md:leading-[22.4px] lg:text-[18px] lg:leading-[25.2px]">
@@ -100,7 +120,7 @@ function ServicePanel({ service }: ServicePanelProps) {
             </div>
           </div>
 
-          <div className="relative mx-6 mb-6 h-[215px] shrink-0 overflow-hidden rounded-[24px] md:m-5 md:ml-0 md:h-auto lg:m-6 lg:ml-0 lg:rounded-[26px]">
+          <ImageReveal className="relative mx-6 mb-6 h-[215px] shrink-0 overflow-hidden rounded-[24px] md:m-5 md:ml-0 md:h-auto lg:m-6 lg:ml-0 lg:rounded-[26px]">
             <Image
               alt={`${service.title} service`}
               className="object-cover"
@@ -109,7 +129,7 @@ function ServicePanel({ service }: ServicePanelProps) {
               src={shintaAsset(service.image)}
               unoptimized
             />
-          </div>
+          </ImageReveal>
         </div>
       </div>
     </article>

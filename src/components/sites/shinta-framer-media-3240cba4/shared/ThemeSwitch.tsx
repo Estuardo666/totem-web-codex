@@ -1,11 +1,10 @@
 "use client";
 
-import { Moon, Sun } from "lucide-react";
-import { motion, useReducedMotion } from "framer-motion";
 import { useSyncExternalStore } from "react";
 
 const THEME_STORAGE_KEY = "totem-theme";
 const THEME_CHANGE_EVENT = "totem-theme-change";
+const ANIMATION_DURATION = 300;
 
 type Theme = "dark" | "light";
 
@@ -46,8 +45,13 @@ function subscribeToTheme(onStoreChange: () => void) {
   };
 }
 
+const ICON_SIZE = 20;
+
+/**
+ * Port of the Framer "Light / Dark Theme Switch": a single round icon button
+ * where the sun and moon swap with a scale + rise crossfade. Not a track switch.
+ */
 export function ThemeSwitch() {
-  const reduceMotion = useReducedMotion();
   const theme = useSyncExternalStore(
     subscribeToTheme,
     getThemeSnapshot,
@@ -55,44 +59,60 @@ export function ThemeSwitch() {
   );
 
   const isDark = theme === "dark";
-
-  const toggleTheme = () => {
-    const nextTheme = isDark ? "light" : "dark";
-    applyTheme(nextTheme);
-  };
+  const transition = `transform ${ANIMATION_DURATION}ms cubic-bezier(0.34, 1.56, 0.64, 1), opacity ${ANIMATION_DURATION}ms cubic-bezier(0.34, 1.56, 0.64, 1)`;
 
   return (
-    <motion.button
+    <button
       aria-label={isDark ? "Activar modo claro" : "Activar modo oscuro"}
       aria-pressed={isDark}
-      className="relative grid size-9 shrink-0 grid-cols-1 items-center rounded-full border border-white/15 bg-totem-night-alt p-1 text-totem-text-on-dark shadow-[0_3px_12px_rgb(3_33_67_/_0.24)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-totem-focus sm:h-9 sm:w-[68px] sm:grid-cols-2"
-      onClick={toggleTheme}
-      transition={{ duration: 0.14, ease: [0.23, 1, 0.32, 1] }}
+      className="relative grid size-9 shrink-0 place-items-center overflow-hidden rounded-full text-totem-text-on-dark opacity-100 transition-[opacity,transform] duration-150 ease-out hover:opacity-80 active:scale-[0.94] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-totem-focus"
+      onClick={() => applyTheme(isDark ? "light" : "dark")}
       type="button"
-      whileTap={reduceMotion ? undefined : { scale: 0.96 }}
     >
-      <motion.span
+      <svg
         aria-hidden="true"
-        animate={{ transform: isDark ? "translateX(var(--theme-switch-travel))" : "translateX(0px)" }}
-        className="absolute top-[3px] left-[3px] size-7 rounded-full bg-totem-action shadow-[0_3px_10px_rgb(3_33_67_/_0.24)] [--theme-switch-travel:0px] sm:[--theme-switch-travel:32px]"
-        initial={false}
-        transition={
-          reduceMotion
-            ? { duration: 0 }
-            : { bounce: 0.08, duration: 0.32, type: "spring" }
-        }
-      />
+        className="absolute"
+        fill="none"
+        height={ICON_SIZE}
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        style={{
+          opacity: isDark ? 0 : 1,
+          transform: isDark
+            ? "scale(0.5) translateY(20px)"
+            : "scale(1) translateY(0px)",
+          transition,
+        }}
+        viewBox="0 0 24 24"
+        width={ICON_SIZE}
+      >
+        <circle cx="12" cy="12" r="5" />
+        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+      </svg>
 
-      <Sun
+      <svg
         aria-hidden="true"
-        className={isDark ? "relative z-10 hidden size-4 text-totem-text-on-dark-secondary sm:block" : "relative z-10 size-4 text-totem-action-text"}
-        strokeWidth={2}
-      />
-      <Moon
-        aria-hidden="true"
-        className={isDark ? "relative z-10 size-4 text-totem-action-text" : "relative z-10 hidden size-4 text-totem-text-on-dark-secondary sm:block"}
-        strokeWidth={2}
-      />
-    </motion.button>
+        className="absolute"
+        fill="none"
+        height={ICON_SIZE}
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        style={{
+          opacity: isDark ? 1 : 0,
+          transform: isDark
+            ? "scale(1) translateY(0px)"
+            : "scale(0.5) translateY(20px)",
+          transition,
+        }}
+        viewBox="0 0 24 24"
+        width={ICON_SIZE}
+      >
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+      </svg>
+    </button>
   );
 }

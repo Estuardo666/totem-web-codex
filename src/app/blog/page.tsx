@@ -5,6 +5,7 @@ import { BlogTitleSection } from "@/components/sites/shinta-framer-media-3240cba
 import { ContactCtaSection } from "@/components/sites/shinta-framer-media-3240cba4/shared/ContactCtaSection";
 import { FooterSection } from "@/components/sites/shinta-framer-media-3240cba4/shared/FooterSection";
 import { Navbar } from "@/components/sites/shinta-framer-media-3240cba4/shared/Navbar";
+import { Reveal } from "@/components/sites/shinta-framer-media-3240cba4/shared/Reveal";
 
 export const metadata: Metadata = {
   description:
@@ -17,9 +18,15 @@ export default function BlogPage() {
     <div className="min-h-screen overflow-x-clip bg-shinta-canvas text-shinta-ink">
       <Navbar />
       <main className="flex flex-col pt-[120px]">
-        <BlogTitleSection />
-        <BlogGridSection />
-        <ContactCtaSection />
+        <Reveal>
+          <BlogTitleSection />
+        </Reveal>
+        <Reveal>
+          <BlogGridSection />
+        </Reveal>
+        <Reveal>
+          <ContactCtaSection />
+        </Reveal>
       </main>
       <FooterSection />
     </div>

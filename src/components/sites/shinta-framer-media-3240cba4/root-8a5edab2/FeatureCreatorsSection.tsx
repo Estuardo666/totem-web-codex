@@ -3,6 +3,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 
 import { shintaAsset } from "../shared/site";
+import { ImageReveal } from "@/components/sites/shinta-framer-media-3240cba4/shared/ImageReveal";
 
 const revealTransition = {
   damping: 24,
@@ -43,14 +44,8 @@ export function FeatureCreatorsSection() {
           </p>
         </motion.div>
 
-        <motion.div
-          className="relative w-full max-w-[480px] pb-5"
-          initial={revealFrom}
-          transition={{ ...revealTransition, delay: reduceMotion ? 0 : 0.12 }}
-          viewport={{ amount: 0.4, once: true }}
-          whileInView={{ opacity: 1, y: 0 }}
-        >
-          <div className="aspect-[480/294] w-full overflow-hidden rounded-[24px] bg-shinta-stone">
+        <div className="relative w-full max-w-[480px] pb-5">
+          <ImageReveal className="aspect-[480/294] w-full overflow-hidden rounded-[24px] bg-shinta-stone">
             <video
               aria-label="Producción audiovisual para una marca"
               autoPlay
@@ -60,7 +55,7 @@ export function FeatureCreatorsSection() {
               playsInline
               src={shintaAsset("videos/feature-creators.mp4")}
             />
-          </div>
+          </ImageReveal>
 
           <div className="absolute right-3 bottom-0 rounded-[12px] bg-shinta-lavender px-4 py-3 text-shinta-ink md:right-5 lg:px-[18px] lg:py-[14px]">
             <p className="text-[32px] leading-none font-bold tracking-[-1.28px] lg:text-[40px] lg:leading-[48px] lg:tracking-[-1.6px]">
@@ -70,7 +65,7 @@ export function FeatureCreatorsSection() {
               Producción audiovisual
             </p>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

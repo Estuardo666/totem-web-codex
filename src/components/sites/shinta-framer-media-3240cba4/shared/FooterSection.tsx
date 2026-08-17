@@ -31,13 +31,13 @@ type FooterPillLinkProps = {
 function FooterPillLink({ href, label }: FooterPillLinkProps) {
   return (
     <Link
-      className="group inline-flex w-fit rounded-full border border-shinta-ink px-3 text-[24px] leading-[30px] font-bold tracking-[-0.96px] text-shinta-ink focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-shinta-ink lg:text-[32px] lg:leading-[38.4px] lg:tracking-[-1.28px]"
+      className="group inline-flex w-fit rounded-full border border-shinta-ink px-3 text-[24px] leading-[30px] font-bold tracking-[-0.96px] text-shinta-ink transition-colors duration-300 ease-out hover:border-totem-brand hover:bg-totem-brand focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-shinta-ink lg:text-[32px] lg:leading-[38.4px] lg:tracking-[-1.28px]"
       href={href}
     >
       <span className="block h-[30px] overflow-hidden lg:h-[38.4px]">
         <span className="flex flex-col transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-1/2 group-focus-visible:-translate-y-1/2">
           <span>{label}</span>
-          <span aria-hidden="true" className="text-shinta-stone">
+          <span aria-hidden="true" className="text-totem-action">
             {label}
           </span>
         </span>
@@ -55,7 +55,7 @@ type FooterGroupProps = {
 function FooterGroup({ children, className, label }: FooterGroupProps) {
   return (
     <div className={className}>
-      <SectionEyebrow className="mb-3 text-shinta-stone">{label}</SectionEyebrow>
+      <SectionEyebrow className="mb-3 text-shinta-ink/70">{label}</SectionEyebrow>
       {children}
     </div>
   );
@@ -67,7 +67,7 @@ function NewsletterCard() {
   };
 
   return (
-    <section className="w-full self-end rounded-[24px] bg-shinta-canvas p-6 text-shinta-ink lg:max-w-[300px]">
+    <section className="w-full self-end rounded-[24px] bg-shinta-canvas p-6 text-shinta-ink lg:max-w-[320px]">
       <h2 className="text-[40px] leading-12 font-bold tracking-[-1.6px] max-lg:text-[28px] max-lg:leading-8 max-lg:tracking-[-1.12px]">
         Crecimiento
       </h2>
@@ -86,13 +86,14 @@ function NewsletterCard() {
           type="email"
         />
         <button
-          className="shift-button mt-3 flex h-14 w-full items-center rounded-full text-left text-[18px] font-bold tracking-[-0.36px] text-shinta-canvas focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-shinta-ink"
+          className="shift-button mt-3 flex h-14 w-full items-center rounded-full text-left text-[16px] font-bold tracking-[-0.4px] text-shinta-canvas focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-shinta-ink"
           type="submit"
         >
           <ShiftButtonContent
-            className="[--shift-button-icon-size:56px]"
-            iconClassName="bg-shinta-ink text-shinta-canvas"
-            labelClassName="flex h-14 items-center rounded-full bg-shinta-ink px-5 transition-colors group-hover:bg-shinta-stone"
+            className="[--shift-button-icon-size:48px]"
+            restIconClassName="bg-totem-action text-totem-action-text"
+            hoverIconClassName="bg-totem-tech text-totem-brand"
+            labelClassName="flex h-14 items-center rounded-full bg-shinta-ink px-4 transition-colors group-hover:bg-shinta-stone"
           >
             Cuéntanos tu proyecto
           </ShiftButtonContent>
@@ -199,9 +200,9 @@ export function FooterSection() {
         <div className="order-7 mt-auto lg:col-start-1 lg:col-end-3 lg:row-start-3 lg:mt-0 lg:self-end">
           <Image
             alt="Tótem Mass Media"
-            className="h-auto w-full max-w-[620px] object-contain"
+            className="h-auto w-full max-w-[260px] object-contain lg:max-w-[320px]"
             height={419}
-            sizes="(min-width: 1024px) 900px, calc(100vw - 38px)"
+            sizes="(min-width: 1024px) 320px, 260px"
             src="/brand/logo-light.png"
             unoptimized
             width={621}

@@ -8,6 +8,7 @@ import { VisionSection } from "@/components/sites/shinta-framer-media-3240cba4/a
 import { ContactCtaSection } from "@/components/sites/shinta-framer-media-3240cba4/shared/ContactCtaSection";
 import { FooterSection } from "@/components/sites/shinta-framer-media-3240cba4/shared/FooterSection";
 import { Navbar } from "@/components/sites/shinta-framer-media-3240cba4/shared/Navbar";
+import { Reveal } from "@/components/sites/shinta-framer-media-3240cba4/shared/Reveal";
 
 export const metadata: Metadata = {
   description:
@@ -20,12 +21,24 @@ export default function AboutUsPage() {
     <div className="min-h-screen overflow-x-clip bg-shinta-canvas text-shinta-ink">
       <Navbar />
       <main className="flex flex-col pt-[120px]">
-        <AboutHeroSection />
-        <VisionSection />
-        <MissionIntroSection />
-        <CollageSection />
-        <TeamGridSection />
-        <ContactCtaSection />
+        <Reveal fadeOnly>
+          <AboutHeroSection />
+        </Reveal>
+        <Reveal>
+          <VisionSection />
+        </Reveal>
+        <Reveal>
+          <MissionIntroSection />
+        </Reveal>
+        <Reveal fadeOnly>
+          <CollageSection />
+        </Reveal>
+        <Reveal>
+          <TeamGridSection />
+        </Reveal>
+        <Reveal fadeOnly>
+          <ContactCtaSection />
+        </Reveal>
       </main>
       <FooterSection />
     </div>

@@ -172,7 +172,7 @@ function PlanCard({ plan }: PlanCardProps) {
             </span>
           ) : null}
         </div>
-        <p className={cn("text-[14px] leading-[19.6px]", isDark ? "text-white/85" : "text-shinta-muted")}>
+        <p className={cn("text-[14px] leading-[19.6px]", isDark ? "text-white" : "text-shinta-muted")}>
           {plan.description}
         </p>
         {plan.price ? (
@@ -217,7 +217,9 @@ function PlanCard({ plan }: PlanCardProps) {
       >
         <ShiftButtonContent
           className="[--shift-button-icon-size:56px]"
-          iconClassName="border-4 border-transparent bg-totem-action bg-clip-padding text-totem-action-text"
+          iconClassName="border-4 border-transparent bg-clip-padding"
+          restIconClassName="bg-totem-brand text-totem-action"
+          hoverIconClassName="bg-totem-tech text-totem-brand"
           iconStrokeWidth={2}
           labelClassName={cn(
             "flex h-14 items-center rounded-full px-6",

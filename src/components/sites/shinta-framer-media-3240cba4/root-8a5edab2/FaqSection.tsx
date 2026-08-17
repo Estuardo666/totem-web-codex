@@ -76,7 +76,7 @@ export function FaqSection() {
                   <button
                     aria-controls={panelId}
                     aria-expanded={isOpen}
-                    className="flex min-h-16 w-full items-center justify-between gap-4 rounded-[14px] px-4 py-3 text-left text-[16px] leading-[22px] font-bold text-shinta-ink focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-shinta-lavender sm:px-5 lg:text-[18px] lg:leading-[25.2px]"
+                    className="flex min-h-16 w-full items-center justify-between gap-4 rounded-[14px] px-4 py-4 text-left text-[19px] leading-[26px] font-medium tracking-[-0.4px] text-shinta-ink focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-shinta-lavender sm:px-5 lg:text-[22px] lg:leading-[29px] lg:tracking-[-0.6px]"
                     id={buttonId}
                     onClick={() => setOpenIndex(index)}
                     type="button"
@@ -113,7 +113,7 @@ export function FaqSection() {
                         }
                   }
                 >
-                  <p className="px-4 pb-5 text-[16px] leading-6 text-shinta-stone sm:px-5 lg:text-[18px] lg:leading-[27px]">
+                  <p className="max-w-[560px] px-4 pb-5 text-[15px] leading-[23px] font-normal text-shinta-stone sm:px-5 lg:text-[16px] lg:leading-[25px]">
                     {faq.answer}
                   </p>
                 </motion.div>

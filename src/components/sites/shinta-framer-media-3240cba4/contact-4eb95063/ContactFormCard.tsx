@@ -89,7 +89,8 @@ export function ContactFormCard() {
           >
             <ShiftButtonContent
               className="[--shift-button-icon-size:57px]"
-              iconClassName="bg-totem-action text-totem-action-text"
+              restIconClassName="bg-totem-brand text-totem-action"
+              hoverIconClassName="bg-totem-tech text-totem-brand"
               labelClassName="flex h-[57.2px] items-center justify-center rounded-[44px] bg-shinta-ink px-6 py-4 text-[16px] font-bold text-white"
             >
               Enviar

@@ -158,7 +158,8 @@ export function TeamSection() {
         >
           <ShiftButtonContent
             className="[--shift-button-icon-size:56px] xl:[--shift-button-icon-size:52px]"
-            iconClassName="bg-totem-action text-totem-action-text"
+            restIconClassName="bg-totem-brand text-totem-action"
+              hoverIconClassName="bg-totem-tech text-totem-brand"
             labelClassName="flex h-[56px] items-center rounded-full bg-totem-action px-[23px] text-totem-action-text xl:h-[52px]"
           >
             Conoce Tótem

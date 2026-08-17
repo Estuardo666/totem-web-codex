@@ -61,19 +61,26 @@ type PillLinkProps = {
 type ShiftButtonContentProps = {
   children: ReactNode;
   className?: string;
+  /** Shared on both arrow circles. */
   iconClassName?: string;
   iconSizeClassName?: string;
   iconStrokeWidth?: number;
   labelClassName?: string;
+  /** Arrow circle shown on hover, on the left. */
+  hoverIconClassName?: string;
+  /** Arrow circle shown at rest, on the right. */
+  restIconClassName?: string;
 };
 
 export function ShiftButtonContent({
   children,
   className,
+  hoverIconClassName = "bg-totem-tech text-totem-brand",
   iconClassName,
   iconSizeClassName = "size-5",
   iconStrokeWidth = 2.2,
   labelClassName,
+  restIconClassName = "bg-totem-brand text-totem-action",
 }: ShiftButtonContentProps) {
   const icon = (
     <ArrowUpRight
@@ -90,11 +97,12 @@ export function ShiftButtonContent({
         className={cn(
           "shift-button__icon shift-button__icon--leading",
           iconClassName,
+          hoverIconClassName,
         )}
       >
         {icon}
       </span>
-      <span className={cn("shift-button__label", labelClassName)}>
+      <span className={cn("shift-button__label whitespace-nowrap", labelClassName)}>
         {children}
       </span>
       <span
@@ -102,6 +110,7 @@ export function ShiftButtonContent({
         className={cn(
           "shift-button__icon shift-button__icon--trailing",
           iconClassName,
+          restIconClassName,
         )}
       >
         {icon}
@@ -121,7 +130,6 @@ export function PillLink({ children, className, href }: PillLinkProps) {
     >
       <ShiftButtonContent
         className="[--shift-button-icon-size:28px]"
-        iconClassName="bg-totem-action text-totem-action-text"
         iconSizeClassName="size-4"
         iconStrokeWidth={2.25}
         labelClassName="flex h-12 items-center rounded-full bg-totem-action px-5"

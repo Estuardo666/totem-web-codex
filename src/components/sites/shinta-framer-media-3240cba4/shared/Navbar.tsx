@@ -4,10 +4,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import {
+  AnimatePresence,
+  motion,
+  useReducedMotion,
+} from "framer-motion";
 
 import { cn } from "@/lib/utils";
 
+import { LiquidMorphButton } from "./LiquidMorphButton";
 import { ThemeSwitch } from "./ThemeSwitch";
 
 const navigationLinks = [
@@ -17,19 +22,80 @@ const navigationLinks = [
   { href: "/contact", label: "Contacto" },
 ] as const;
 
-type StackedNavLabelProps = {
+type NavLinkProps = {
+  href: string;
   label: string;
 };
 
-function StackedNavLabel({ label }: StackedNavLabelProps) {
+// Mirrors shinta.framer.media: a blurred pill scales in from scale(0.3)
+// rotate(-35deg) while the resting label drops away and a second copy rises
+// into place from rotate(-15deg) scale(0.9).
+//
+// Driven by React state and inline styles rather than Tailwind classes or
+// Framer variants: the colours resolve from CSS variables that exist in every
+// build, and plain CSS transitions do not depend on the animation frame loop.
+const NAV_EASE = "cubic-bezier(0.23, 1, 0.32, 1)";
+
+function NavLink({ href, label }: NavLinkProps) {
+  const shouldReduceMotion = useReducedMotion();
+  const [isActive, setIsActive] = useState(false);
+  const duration = shouldReduceMotion ? "0ms" : "320ms";
+
   return (
-    <span className="relative block h-4 overflow-hidden">
-      <span className="flex flex-col transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-4 group-focus-visible:-translate-y-4">
-        <span className="h-4 leading-4 text-shinta-canvas">{label}</span>
-        <span aria-hidden="true" className="h-4 leading-4 text-shinta-pink">
-          {label}
+    <span
+      className="relative inline-flex"
+      onBlur={() => setIsActive(false)}
+      onFocus={() => setIsActive(true)}
+      onPointerEnter={() => setIsActive(true)}
+      onPointerLeave={() => setIsActive(false)}
+    >
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute -inset-x-1 inset-y-0 rounded-full"
+        style={{
+          backgroundColor: "var(--totem-off-white)",
+          filter: isActive ? "blur(0px)" : "blur(5px)",
+          opacity: isActive ? 1 : 0,
+          transform: isActive
+            ? "scale(1) rotate(0deg)"
+            : "scale(0.3) rotate(-35deg)",
+          transition: `opacity ${duration} ${NAV_EASE}, transform ${duration} ${NAV_EASE}, filter ${duration} ${NAV_EASE}`,
+        }}
+      />
+      <Link
+        className="relative rounded-full px-2 py-1 text-[16px] font-semibold tracking-[-0.64px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-totem-focus"
+        href={href}
+      >
+        <span className="relative block">
+          <span
+            className="block"
+            style={{
+              color: "var(--totem-text-on-dark)",
+              opacity: isActive ? 0 : 1,
+              transform: isActive
+                ? "translateY(14px) rotate(12deg) scale(0.9)"
+                : "translateY(0px) rotate(0deg) scale(1)",
+              transition: `opacity ${duration} ${NAV_EASE}, transform ${duration} ${NAV_EASE}`,
+            }}
+          >
+            {label}
+          </span>
+          <span
+            aria-hidden="true"
+            className="absolute inset-0 block"
+            style={{
+              color: "var(--totem-navy)",
+              opacity: isActive ? 1 : 0,
+              transform: isActive
+                ? "translateY(0px) rotate(0deg) scale(1)"
+                : "translateY(14px) rotate(-15deg) scale(0.9)",
+              transition: `opacity ${duration} ${NAV_EASE}, transform ${duration} ${NAV_EASE}`,
+            }}
+          >
+            {label}
+          </span>
         </span>
-      </span>
+      </Link>
     </span>
   );
 }
@@ -136,13 +202,7 @@ export function Navbar() {
 
           <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-[43px] md:flex">
             {navigationLinks.map((link) => (
-              <Link
-                className="group rounded-sm text-[16px] font-semibold tracking-[-0.64px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-shinta-pink"
-                href={link.href}
-                key={link.href}
-              >
-                <StackedNavLabel label={link.label} />
-              </Link>
+              <NavLink href={link.href} key={link.href} label={link.label} />
             ))}
           </div>
 
@@ -151,12 +211,11 @@ export function Navbar() {
               <ThemeSwitch />
             </span>
 
-            <Link
-              className="group hidden h-10 items-center rounded-full bg-totem-action px-5 text-[16px] font-semibold leading-4 tracking-[-0.64px] text-totem-action-text transition-colors duration-300 hover:bg-totem-tech focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-totem-focus md:flex"
+            <LiquidMorphButton
+              className="hidden h-10 px-5 text-[16px] font-semibold leading-4 tracking-[-0.64px] whitespace-nowrap md:inline-flex"
               href="/contact"
-            >
-              Cuéntanos tu proyecto
-            </Link>
+              label="Cuéntanos tu proyecto"
+            />
 
             <button
               aria-controls="shinta-mobile-navigation"

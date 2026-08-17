@@ -8,6 +8,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
 
 import { cn } from "@/lib/utils";
 
@@ -57,9 +58,81 @@ const processSteps: ProcessStep[] = [
   },
 ];
 
+const cardVariants: Variants = {
+  hover: { transform: "translateY(-10px)" },
+  rest: { transform: "translateY(0px)" },
+};
+
+// Wipe the inverted copy of the content up from the bottom edge. Duplicating
+// the text and clipping it gives a crisp colour swap that no colour transition
+// can match.
+const washVariants: Variants = {
+  hover: { clipPath: "inset(0% 0% 0% 0%)" },
+  rest: { clipPath: "inset(100% 0% 0% 0%)" },
+};
+
+const iconVariants: Variants = {
+  hover: { transform: "translateX(2px) translateY(-2px) scale(1.12)" },
+  rest: { transform: "translateX(0px) translateY(0px) scale(1)" },
+};
+
+const titleVariants: Variants = {
+  hover: { transform: "translateY(-6px)" },
+  rest: { transform: "translateY(0px)" },
+};
+
+const bodyVariants: Variants = {
+  hover: { opacity: 1, transform: "translateY(-6px)" },
+  rest: { opacity: 0.72, transform: "translateY(0px)" },
+};
+
+type ProcessCardBodyProps = {
+  inverted?: boolean;
+  reduceMotion: boolean;
+  step: ProcessStep;
+};
+
+function ProcessCardBody({ inverted, reduceMotion, step }: ProcessCardBodyProps) {
+  return (
+    <div
+      className={cn(
+        "flex h-[310px] flex-col justify-end px-[14px] py-[18px] xl:h-[318px] xl:px-[14px] xl:py-[18px]",
+        inverted && "text-shinta-canvas",
+      )}
+    >
+      <motion.h3
+        className="text-[32px] leading-[36px] font-bold tracking-[-1.28px] xl:text-[32px] xl:leading-[38.4px]"
+        transition={
+          reduceMotion
+            ? { duration: 0 }
+            : { bounce: 0.2, duration: 0.5, type: "spring" }
+        }
+        variants={reduceMotion ? undefined : titleVariants}
+      >
+        {step.title}
+      </motion.h3>
+      <motion.p
+        className={cn(
+          "mt-[10px] max-w-[250px] text-[18px] leading-[25.2px] font-normal tracking-[-0.36px] xl:text-[16px] xl:leading-[22.4px] xl:tracking-[-0.32px]",
+          inverted ? "text-totem-off-white" : "text-shinta-ink",
+        )}
+        transition={
+          reduceMotion
+            ? { duration: 0 }
+            : { duration: 0.28, ease: [0.23, 1, 0.32, 1] }
+        }
+        variants={reduceMotion ? undefined : bodyVariants}
+      >
+        {step.body}
+      </motion.p>
+    </div>
+  );
+}
+
 export function ProcessSection() {
   const listRef = useRef<HTMLOListElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const reduceMotion = useReducedMotion() ?? false;
 
   useEffect(() => {
     const list = listRef.current;
@@ -115,8 +188,7 @@ export function ProcessSection() {
             return (
               <li
                 className={cn(
-                  "h-[380px] overflow-hidden rounded-[24px] border-[4px] transition-[opacity,transform] duration-700 ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none md:h-[380px] xl:h-[394px] xl:rounded-[26px]",
-                  step.color,
+                  "transition-[opacity,transform] duration-700 ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none",
                   step.delay,
                   isVisible
                     ? "translate-y-0 opacity-100"
@@ -124,21 +196,58 @@ export function ProcessSection() {
                 )}
                 key={step.number}
               >
-                <div className="flex h-[66px] items-center justify-between border-b-[4px] border-inherit bg-shinta-canvas px-[12px] xl:h-[68px] xl:px-[14px]">
-                  <span className="text-[24px] leading-none font-bold tracking-[-0.72px] xl:text-[26px]">
-                    {step.number}
-                  </span>
-                  <Icon aria-hidden="true" className="size-[28px]" strokeWidth={2} />
-                </div>
+                <motion.div
+                  className={cn(
+                    "relative h-[380px] overflow-hidden rounded-[24px] border-[4px] md:h-[380px] xl:h-[394px] xl:rounded-[26px]",
+                    step.color,
+                  )}
+                  initial="rest"
+                  transition={
+                    reduceMotion
+                      ? { duration: 0 }
+                      : { bounce: 0.18, duration: 0.5, type: "spring" }
+                  }
+                  variants={reduceMotion ? undefined : cardVariants}
+                  whileFocus="hover"
+                  whileHover="hover"
+                >
+                  <div className="flex h-[66px] items-center justify-between border-b-[4px] border-inherit bg-shinta-canvas px-[12px] xl:h-[68px] xl:px-[14px]">
+                    <span className="text-[24px] leading-none font-bold tracking-[-0.72px] xl:text-[26px]">
+                      {step.number}
+                    </span>
+                    <motion.span
+                      className="inline-flex"
+                      transition={
+                        reduceMotion
+                          ? { duration: 0 }
+                          : { bounce: 0.3, duration: 0.45, type: "spring" }
+                      }
+                      variants={reduceMotion ? undefined : iconVariants}
+                    >
+                      <Icon aria-hidden="true" className="size-[28px]" strokeWidth={2} />
+                    </motion.span>
+                  </div>
 
-                <div className="flex h-[310px] flex-col justify-end px-[14px] py-[18px] xl:h-[318px] xl:px-[14px] xl:py-[18px]">
-                  <h3 className="text-[32px] leading-[36px] font-bold tracking-[-1.28px] xl:text-[32px] xl:leading-[38.4px]">
-                    {step.title}
-                  </h3>
-                  <p className="mt-[10px] max-w-[250px] text-[18px] leading-[25.2px] font-normal tracking-[-0.36px] text-shinta-stone xl:text-[16px] xl:leading-[22.4px] xl:tracking-[-0.32px]">
-                    {step.body}
-                  </p>
-                </div>
+                  <div className="relative">
+                    <ProcessCardBody reduceMotion={reduceMotion} step={step} />
+
+                    {reduceMotion ? null : (
+                      <motion.div
+                        aria-hidden="true"
+                        className="absolute inset-0 bg-shinta-ink"
+                        style={{ clipPath: "inset(100% 0% 0% 0%)" }}
+                        transition={{ duration: 0.44, ease: [0.23, 1, 0.32, 1] }}
+                        variants={washVariants}
+                      >
+                        <ProcessCardBody
+                          inverted
+                          reduceMotion={reduceMotion}
+                          step={step}
+                        />
+                      </motion.div>
+                    )}
+                  </div>
+                </motion.div>
               </li>
             );
           })}
