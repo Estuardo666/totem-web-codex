@@ -6,6 +6,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { SmoothScroll } from "@/components/sites/shinta-framer-media-3240cba4/shared/SmoothScroll";
 import {
   absoluteUrl,
+  BUSINESS,
   OG_IMAGE,
   SITE_LOCALE,
   SITE_NAME,
@@ -85,6 +86,46 @@ const organizationSchema = {
   url: SITE_URL,
 };
 
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@id": `${SITE_URL}/#localbusiness`,
+  "@type": ["LocalBusiness", "ProfessionalService"],
+  address: {
+    "@type": "PostalAddress",
+    addressCountry: BUSINESS.addressCountry,
+    addressLocality: BUSINESS.addressLocality,
+    addressRegion: BUSINESS.addressRegion,
+    streetAddress: BUSINESS.streetAddress,
+  },
+  areaServed: [
+    { "@type": "City", name: "Loja" },
+    { "@type": "AdministrativeArea", name: "Provincia de Loja" },
+    { "@type": "Country", name: "Ecuador" },
+  ],
+  description,
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: BUSINESS.geo.latitude,
+    longitude: BUSINESS.geo.longitude,
+  },
+  hasMap: `https://www.google.com/maps/search/?api=1&query=${BUSINESS.geo.latitude},${BUSINESS.geo.longitude}`,
+  image: absoluteUrl(OG_IMAGE.url),
+  knowsLanguage: "es",
+  name: SITE_NAME,
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      closes: BUSINESS.closes,
+      dayOfWeek: [...BUSINESS.days],
+      opens: BUSINESS.opens,
+    },
+  ],
+  parentOrganization: { "@id": `${SITE_URL}/#organization` },
+  sameAs: [...SOCIAL_PROFILES],
+  telephone: BUSINESS.telephone,
+  url: SITE_URL,
+};
+
 const websiteSchema = {
   "@context": "https://schema.org",
   "@id": `${SITE_URL}/#website`,
@@ -104,7 +145,7 @@ export default function RootLayout({
     <html lang="es" className="h-full antialiased" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitializationScript }} />
-        <JsonLd data={[organizationSchema, websiteSchema]} />
+        <JsonLd data={[organizationSchema, localBusinessSchema, websiteSchema]} />
       </head>
       <body className="flex min-h-full flex-col">
         <SmoothScroll>{children}</SmoothScroll>

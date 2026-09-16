@@ -59,3 +59,21 @@ export const buildPageMetadata = ({
     title,
   },
 });
+
+export const BUSINESS = {
+  /** Loja, Ecuador. Used for the `geo` property no local competitor publishes. */
+  geo: {
+    latitude: -3.9809834653396536,
+    longitude: -79.20593553292579,
+  },
+  addressLocality: "Loja",
+  addressRegion: "Loja",
+  addressCountry: "EC",
+  streetAddress: "Jorge H. Rengel y Fco. Montero",
+  telephone: "+593998813559",
+  /** Displayed as typed by the business for local callers. */
+  telephoneLocal: "0998813559",
+  opens: "09:00",
+  closes: "19:00",
+  days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+} as const;
