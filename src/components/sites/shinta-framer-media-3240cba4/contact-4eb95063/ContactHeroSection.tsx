@@ -3,7 +3,7 @@
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 
 import { SectionEyebrow } from "../shared/ShintaPrimitives";
-import { ContactFormCard } from "./ContactFormCard";
+import { ContactChannelsCard } from "./ContactChannelsCard";
 
 const heading = "Cuéntanos tu proyecto";
 
@@ -157,7 +157,7 @@ Desde la estrategia y el contenido hasta la producción audiovisual y el sitio w
           </motion.div>
         </div>
 
-        <ContactFormCard />
+        <ContactChannelsCard />
       </div>
     </section>
   );

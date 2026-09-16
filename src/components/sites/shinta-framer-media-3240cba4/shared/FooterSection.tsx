@@ -2,12 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import type { FormEvent, ReactNode } from "react";
+import type { ReactNode } from "react";
 
-import {
-  SectionEyebrow,
-  ShiftButtonContent,
-} from "@/components/sites/shinta-framer-media-3240cba4/shared/ShintaPrimitives";
+import { SectionEyebrow } from "@/components/sites/shinta-framer-media-3240cba4/shared/ShintaPrimitives";
 import { CONTACT_EMAIL, mailtoUrl, whatsappUrl } from "@/lib/contact";
 import { SERVICE_LANDINGS } from "@/lib/navigation";
 import { SOCIAL_PROFILES } from "@/lib/seo";
@@ -63,51 +60,10 @@ function FooterGroup({ children, className, label }: FooterGroupProps) {
   );
 }
 
-function NewsletterCard() {
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-  };
-
-  return (
-    <section className="w-full self-end rounded-[24px] bg-shinta-canvas p-6 text-shinta-ink lg:max-w-[320px]">
-      <h2 className="text-[40px] leading-12 font-bold tracking-[-1.6px] max-lg:text-[28px] max-lg:leading-8 max-lg:tracking-[-1.12px]">
-        Crecimiento
-      </h2>
-      <p className="mt-2 text-[14px] leading-[19.6px] text-shinta-muted">
-        Producción, marketing y web trabajando sobre el mismo objetivo.
-      </p>
-      <form className="mt-4" onSubmit={handleSubmit}>
-        <label className="sr-only" htmlFor="shinta-newsletter-email">
-          Correo electrónico
-        </label>
-        <input
-          className="h-14 w-full rounded-[14px] bg-white px-4 text-[16px] text-shinta-ink placeholder:text-shinta-muted focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-shinta-ink"
-          id="shinta-newsletter-email"
-          name="email"
-          placeholder="Tu correo electrónico"
-          type="email"
-        />
-        <button
-          className="shift-button mt-3 flex h-14 w-full items-center rounded-full text-left text-[16px] font-bold tracking-[-0.4px] text-shinta-canvas focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-shinta-ink"
-          type="submit"
-        >
-          <ShiftButtonContent
-              tone="onInk"
-            className="[--shift-button-icon-size:48px]"
-            labelClassName="flex h-14 items-center rounded-full px-4 bg-[var(--shift-label-bg)] text-[var(--shift-label-fg)]"
-          >
-            Cuéntanos tu proyecto
-          </ShiftButtonContent>
-        </button>
-      </form>
-    </section>
-  );
-}
-
 export function FooterSection() {
   return (
-    <footer className="relative min-h-[1464px] overflow-hidden bg-shinta-pink px-[19px] pt-16 text-shinta-ink md:min-h-[1494px] md:px-5 lg:min-h-[970px] lg:pt-20">
-      <div className="relative z-10 mx-auto flex min-h-[1400px] max-w-[1280px] flex-col gap-8 md:min-h-[1414px] lg:grid lg:h-[1010px] lg:min-h-0 lg:grid-cols-[1.2fr_1fr_.65fr] lg:grid-rows-[300px_220px_430px_60px] lg:gap-0">
+    <footer className="relative min-h-[1180px] overflow-hidden bg-shinta-pink px-[19px] pt-16 text-shinta-ink md:min-h-[1210px] md:px-5 lg:min-h-[770px] lg:pt-20">
+      <div className="relative z-10 mx-auto flex min-h-[1120px] max-w-[1280px] flex-col gap-8 md:min-h-[1140px] lg:grid lg:h-[810px] lg:min-h-0 lg:grid-cols-[1.2fr_1fr_.65fr] lg:grid-rows-[260px_230px_260px_60px] lg:gap-0">
         <h2 className="order-1 max-w-[470px] text-[28px] leading-8 font-bold tracking-[-1.12px] lg:col-start-1 lg:row-start-1 lg:text-[64px] lg:leading-[70.4px] lg:tracking-[-2.56px]">
           De la idea al contenido que la hace crecer.
         </h2>
@@ -154,7 +110,7 @@ export function FooterSection() {
         </FooterGroup>
 
         <FooterGroup
-          className="order-4 lg:col-start-1 lg:row-start-3 lg:self-start"
+          className="order-4 lg:col-start-3 lg:row-start-2 lg:self-start"
           label="Servicios por ciudad"
         >
           <nav
@@ -204,10 +160,6 @@ export function FooterSection() {
             </Link>
           </div>
         </FooterGroup>
-
-        <div className="order-6 lg:col-start-3 lg:row-start-2 lg:row-end-4 lg:self-end">
-          <NewsletterCard />
-        </div>
 
         <div className="order-7 mt-auto lg:col-start-1 lg:col-end-3 lg:row-start-3 lg:mt-0 lg:self-end">
           <Image
