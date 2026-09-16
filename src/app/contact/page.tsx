@@ -5,12 +5,17 @@ import { FaqSection } from "@/components/sites/shinta-framer-media-3240cba4/root
 import { FooterSection } from "@/components/sites/shinta-framer-media-3240cba4/shared/FooterSection";
 import { Navbar } from "@/components/sites/shinta-framer-media-3240cba4/shared/Navbar";
 import { Reveal } from "@/components/sites/shinta-framer-media-3240cba4/shared/Reveal";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  description:
-    "Cuéntanos tu proyecto: contenido audiovisual, campañas digitales o el sitio web que tu negocio necesita.",
-  title: "Cuéntanos tu proyecto — Tótem Mass Media",
-};
+const title = "Cuéntanos tu proyecto";
+const description =
+  "Cuéntanos tu proyecto: contenido audiovisual, campañas digitales o el sitio web que tu negocio necesita.";
+
+export const metadata: Metadata = buildPageMetadata({
+  description,
+  path: "/contact",
+  title,
+});
 
 export default function ContactPage() {
   return (

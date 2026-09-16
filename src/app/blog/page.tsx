@@ -6,12 +6,17 @@ import { ContactCtaSection } from "@/components/sites/shinta-framer-media-3240cb
 import { FooterSection } from "@/components/sites/shinta-framer-media-3240cba4/shared/FooterSection";
 import { Navbar } from "@/components/sites/shinta-framer-media-3240cba4/shared/Navbar";
 import { Reveal } from "@/components/sites/shinta-framer-media-3240cba4/shared/Reveal";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  description:
-    "Servicios y proyectos de Tótem: producción audiovisual, marketing digital, estrategia de contenido y desarrollo web.",
-  title: "Servicios y proyectos — Tótem Mass Media",
-};
+const title = "Servicios y proyectos";
+const description =
+  "Servicios y proyectos de Tótem: producción audiovisual, marketing digital, estrategia de contenido y desarrollo web.";
+
+export const metadata: Metadata = buildPageMetadata({
+  description,
+  path: "/blog",
+  title,
+});
 
 export default function BlogPage() {
   return (

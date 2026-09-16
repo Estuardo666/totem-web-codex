@@ -10,12 +10,17 @@ import { FooterSection } from "@/components/sites/shinta-framer-media-3240cba4/s
 import { Navbar } from "@/components/sites/shinta-framer-media-3240cba4/shared/Navbar";
 import { Reveal } from "@/components/sites/shinta-framer-media-3240cba4/shared/Reveal";
 import { ScrollDrawCurve } from "@/components/sites/shinta-framer-media-3240cba4/shared/ScrollDrawCurve";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  description:
-    "Tótem Mass Media integra producción audiovisual, marketing digital, estrategia de contenido y desarrollo web para hacer crecer negocios.",
-  title: "Tótem Mass Media — Agencia creativa y digital",
-};
+const title = "Agencia creativa y digital";
+const description =
+  "Tótem Mass Media integra producción audiovisual, marketing digital, estrategia de contenido y desarrollo web para hacer crecer negocios.";
+
+export const metadata: Metadata = buildPageMetadata({
+  description,
+  path: "/about-us",
+  title,
+});
 
 export default function AboutUsPage() {
   return (

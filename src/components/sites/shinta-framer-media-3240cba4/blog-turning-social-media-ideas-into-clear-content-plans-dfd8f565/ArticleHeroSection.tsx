@@ -107,9 +107,9 @@ export function ArticleHeroSection() {
             />
           </span>
           <p className="text-[16px] leading-[22.4px] text-shinta-muted">Agencia creativa y digital</p>
-          <h6 className="hidden text-[16px] leading-6 font-bold text-shinta-ink md:block xl:text-[18px] xl:leading-[25.2px]">
+          <h2 className="hidden text-[16px] leading-6 font-bold text-shinta-ink md:block xl:text-[18px] xl:leading-[25.2px]">
             Tótem Mass Media
-          </h6>
+          </h2>
         </motion.div>
       </div>
 

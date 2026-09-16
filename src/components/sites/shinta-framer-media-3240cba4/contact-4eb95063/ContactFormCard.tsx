@@ -30,9 +30,9 @@ export function ContactFormCard() {
       transition={{ duration: 0.6, ease: [0.34, 1.56, 0.64, 1] }}
     >
       <div className="flex w-full items-center justify-center gap-[10px] px-4 py-2">
-        <h4 className="w-full text-left text-[24px] leading-[29px] font-bold tracking-[-0.96px] text-shinta-ink md:text-[32px] md:leading-[38.4px] md:tracking-[-1.28px]">
+        <h2 className="w-full text-left text-[24px] leading-[29px] font-bold tracking-[-0.96px] text-shinta-ink md:text-[32px] md:leading-[38.4px] md:tracking-[-1.28px]">
         Cuéntanos tu proyecto
-        </h4>
+        </h2>
       </div>
 
       <form
