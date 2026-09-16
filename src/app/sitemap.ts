@@ -40,5 +40,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
       url: absoluteUrl("/contact"),
     },
+    {
+      changeFrequency: "monthly",
+      lastModified: ARTICLE_LAST_MODIFIED,
+      priority: 0.9,
+      url: absoluteUrl("/produccion-audiovisual-loja"),
+    },
+    {
+      changeFrequency: "monthly",
+      lastModified: ARTICLE_LAST_MODIFIED,
+      priority: 0.9,
+      url: absoluteUrl("/diseno-web-loja"),
+    },
   ];
 }

@@ -83,3 +83,55 @@ export const BUSINESS = {
   closes: "19:00",
   days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
 } as const;
+
+type LandingSchemaInput = {
+  breadcrumb: string;
+  faq: ReadonlyArray<{ answer: string; question: string }>;
+  path: string;
+  serviceDescription: string;
+  serviceName: string;
+  /** City the page targets, used for the Service's areaServed. */
+  serviceArea: string;
+};
+
+/**
+ * Service + FAQPage + BreadcrumbList for a service-and-city landing. The
+ * Service points at the shared LocalBusiness node rather than redeclaring the
+ * business, so every page keeps describing one entity.
+ */
+export const buildLandingSchema = ({
+  breadcrumb,
+  faq,
+  path,
+  serviceArea,
+  serviceDescription,
+  serviceName,
+}: LandingSchemaInput) => [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    areaServed: { "@type": "City", name: serviceArea },
+    description: serviceDescription,
+    name: serviceName,
+    provider: { "@id": `${SITE_URL}/#localbusiness` },
+    serviceType: serviceName,
+    url: absoluteUrl(path),
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faq.map((item) => ({
+      "@type": "Question",
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+      name: item.question,
+    })),
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", item: SITE_URL, name: "Inicio", position: 1 },
+      { "@type": "ListItem", name: breadcrumb, position: 2 },
+    ],
+  },
+];
