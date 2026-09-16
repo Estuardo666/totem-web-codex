@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { ShiftButtonContent } from "./ShintaPrimitives";
+import { whatsappUrl } from "@/lib/contact";
 import { shintaAsset } from "./site";
 import { ImageReveal } from "@/components/sites/shinta-framer-media-3240cba4/shared/ImageReveal";
 
@@ -42,7 +43,9 @@ Producción audiovisual, marketing digital, estrategia de contenido y desarrollo
 
             <Link
               className="shift-button group mt-[30px] flex h-[56px] w-full items-center rounded-full text-[16px] font-semibold text-shinta-ink focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-shinta-pink xl:mt-[38px] xl:h-[52px]"
-              href="/contact"
+              href={whatsappUrl()}
+              rel="noopener noreferrer"
+              target="_blank"
             >
               <ShiftButtonContent
               tone="onDark"

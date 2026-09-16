@@ -3,6 +3,7 @@ import "lenis/dist/lenis.css";
 import "./globals.css";
 
 import { JsonLd } from "@/components/seo/JsonLd";
+import { CONTACT_EMAIL } from "@/lib/contact";
 import { SmoothScroll } from "@/components/sites/shinta-framer-media-3240cba4/shared/SmoothScroll";
 import {
   absoluteUrl,
@@ -80,6 +81,7 @@ const organizationSchema = {
   "@id": `${SITE_URL}/#organization`,
   "@type": "Organization",
   description,
+  email: CONTACT_EMAIL,
   logo: absoluteUrl("/brand/logo-light.png"),
   name: SITE_NAME,
   sameAs: [...SOCIAL_PROFILES],
@@ -102,6 +104,7 @@ const localBusinessSchema = {
     { "@type": "Country", name: "Ecuador" },
   ],
   description,
+  email: CONTACT_EMAIL,
   geo: {
     "@type": "GeoCoordinates",
     latitude: BUSINESS.geo.latitude,

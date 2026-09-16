@@ -12,6 +12,7 @@ import {
 } from "framer-motion";
 
 import { GradientDepthBlur } from "../shared/GradientDepthBlur";
+import { whatsappUrl } from "@/lib/contact";
 import { ShiftButtonContent } from "../shared/ShintaPrimitives";
 import { shintaAsset } from "../shared/site";
 
@@ -421,7 +422,9 @@ export function HeroSection() {
 
           <Link
             className="shift-button group mt-[24px] flex h-[56px] w-full items-center rounded-full text-[16px] font-semibold text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-shinta-ink md:mt-[24px] md:h-[52px] xl:mt-[25px] xl:w-max"
-            href="/#contact"
+            href={whatsappUrl()}
+            rel="noopener noreferrer"
+            target="_blank"
           >
             <ShiftButtonContent
               className="[--shift-button-icon-size:56px] md:[--shift-button-icon-size:52px]"

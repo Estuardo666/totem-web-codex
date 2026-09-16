@@ -97,6 +97,8 @@ export function LiquidMorphButton({
         className,
       )}
       href={href}
+      rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+      target={href.startsWith("http") ? "_blank" : undefined}
     >
       <style>{css}</style>
       <svg

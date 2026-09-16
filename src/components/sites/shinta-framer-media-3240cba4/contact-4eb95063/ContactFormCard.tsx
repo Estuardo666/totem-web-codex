@@ -6,6 +6,7 @@ import {
   SectionEyebrow,
   ShiftButtonContent,
 } from "../shared/ShintaPrimitives";
+import { CONTACT_EMAIL, mailtoUrl, whatsappUrl } from "@/lib/contact";
 
 const inputClassName =
   "w-full bg-transparent text-[18px] leading-[21.6px] text-shinta-ink placeholder:text-shinta-muted focus:outline-none";
@@ -13,8 +14,26 @@ const inputClassName =
 export function ContactFormCard() {
   const shouldReduceMotion = useReducedMotion();
 
+  /**
+   * The site is a static export, so there is no endpoint to post to. The form
+   * hands the message to WhatsApp instead, which is where enquiries are
+   * answered anyway.
+   */
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    const data = new FormData(event.currentTarget);
+    const name = String(data.get("name") ?? "").trim();
+    const email = String(data.get("email") ?? "").trim();
+    const message = String(data.get("message") ?? "").trim();
+
+    const lines = [
+      `Hola Tótem, soy ${name}.`,
+      message,
+      email ? `Mi correo: ${email}` : "",
+    ].filter(Boolean);
+
+    window.open(whatsappUrl(lines.join("\n\n")), "_blank", "noopener");
   }
 
   return (
@@ -80,7 +99,15 @@ export function ContactFormCard() {
 
         <div className="flex flex-col items-stretch gap-4 md:flex-row md:items-center md:justify-between md:gap-0">
           <p className="text-[14px] leading-[20px] text-shinta-muted md:text-[16px] md:leading-[22.4px]">
-Cuéntanos qué necesitas y te ayudamos a definir la solución.
+            Al enviar se abre WhatsApp con tu mensaje listo. También puedes
+            escribirnos a{" "}
+            <a
+              className="font-semibold text-shinta-ink underline underline-offset-4"
+              href={mailtoUrl()}
+            >
+              {CONTACT_EMAIL}
+            </a>
+            .
           </p>
 
           <button
@@ -92,7 +119,7 @@ Cuéntanos qué necesitas y te ayudamos a definir la solución.
               className="[--shift-button-icon-size:57px]"
               labelClassName="flex h-[57.2px] items-center justify-center rounded-[44px] px-6 py-4 text-[16px] font-bold bg-[var(--shift-label-bg)] text-[var(--shift-label-fg)]"
             >
-              Enviar
+              Enviar por WhatsApp
             </ShiftButtonContent>
           </button>
         </div>

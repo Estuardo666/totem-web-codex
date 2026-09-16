@@ -106,6 +106,7 @@ export default function VideoInstitucionalZamoraPage() {
             eyebrow="Comunicación institucional"
             heading="Video institucional y comunicación corporativa en Zamora Chinchipe."
             lead="Documentación audiovisual de operaciones, contenido para programas de responsabilidad social y material informativo para empresas e instituciones de la provincia. Equipo de producción propio, a una hora de la ciudad de Zamora."
+            whatsappMessage="Hola Tótem, necesito comunicación institucional en Zamora Chinchipe."
           />
         </Reveal>
 

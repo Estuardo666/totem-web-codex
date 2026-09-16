@@ -6,6 +6,7 @@ import {
   SectionEyebrow,
 } from "@/components/sites/shinta-framer-media-3240cba4/shared/ShintaPrimitives";
 import { shintaAsset } from "@/components/sites/shinta-framer-media-3240cba4/shared/site";
+import { whatsappUrl } from "@/lib/contact";
 import { cn } from "@/lib/utils";
 
 const SHELL = "mx-auto w-full max-w-[1280px] px-5";
@@ -14,9 +15,16 @@ type HeroProps = {
   eyebrow: string;
   heading: string;
   lead: string;
+  /** Prefilled WhatsApp text, so the enquiry arrives already in context. */
+  whatsappMessage: string;
 };
 
-export function LandingHero({ eyebrow, heading, lead }: HeroProps) {
+export function LandingHero({
+  eyebrow,
+  heading,
+  lead,
+  whatsappMessage,
+}: HeroProps) {
   return (
     <section
       aria-labelledby="landing-heading"
@@ -38,8 +46,8 @@ export function LandingHero({ eyebrow, heading, lead }: HeroProps) {
           {lead}
         </p>
 
-        <PillLink className="w-max" href="/contact">
-          Cuéntanos tu proyecto
+        <PillLink className="w-max" href={whatsappUrl(whatsappMessage)}>
+          Escríbenos por WhatsApp
         </PillLink>
       </div>
     </section>

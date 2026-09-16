@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { ArrowUpRight, Check } from "lucide-react";
 
+import { whatsappUrl } from "@/lib/contact";
 import { cn } from "@/lib/utils";
 import {
   SectionEyebrow,
@@ -108,7 +109,11 @@ function CustomPlanCard() {
   return (
     <Link
       className="group relative flex h-24 items-center rounded-[20px] bg-white p-2 pr-4 text-shinta-ink transition-transform duration-300 hover:-translate-y-1 focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-shinta-pink"
-      href="/contact"
+      href={whatsappUrl(
+        "Hola Tótem, necesito una solución a medida y quiero conversarlo.",
+      )}
+      rel="noopener noreferrer"
+      target="_blank"
     >
       <span className="relative h-20 w-20 shrink-0 overflow-hidden rounded-[14px] bg-shinta-lavender">
         <Image
@@ -210,7 +215,11 @@ function PlanCard({ plan }: PlanCardProps) {
             ? "text-shinta-ink focus-visible:outline-shinta-pink"
             : "text-shinta-canvas focus-visible:outline-shinta-ink",
         )}
-        href="/#contact"
+        href={whatsappUrl(
+          `Hola Tótem, me interesa el servicio de ${plan.name}.`,
+        )}
+        rel="noopener noreferrer"
+        target="_blank"
       >
         <ShiftButtonContent
           className="[--shift-button-icon-size:56px]"

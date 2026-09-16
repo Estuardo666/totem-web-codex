@@ -10,6 +10,7 @@ import {
   useReducedMotion,
 } from "framer-motion";
 
+import { whatsappUrl } from "@/lib/contact";
 import { SERVICE_LANDINGS } from "@/lib/navigation";
 import { cn } from "@/lib/utils";
 
@@ -310,7 +311,7 @@ export function Navbar() {
 
             <LiquidMorphButton
               className="hidden h-10 px-5 text-[16px] font-semibold leading-4 tracking-[-0.64px] whitespace-nowrap md:inline-flex"
-              href="/contact"
+              href={whatsappUrl()}
               label="Cuéntanos tu proyecto"
             />
 
@@ -401,8 +402,10 @@ export function Navbar() {
 
               <Link
                 className="group flex h-[57px] shrink-0 items-center gap-0 rounded-full text-[18px] font-semibold tracking-[-0.54px] text-shinta-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-shinta-pink"
-                href="/contact"
+                href={whatsappUrl()}
                 onClick={() => setIsMenuOpen(false)}
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 <span className="flex h-full min-w-0 flex-1 items-center rounded-full bg-shinta-canvas px-6">
                   Cuéntanos tu proyecto

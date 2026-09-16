@@ -133,6 +133,9 @@ export function ShiftButtonContent({
 }
 
 export function PillLink({ children, className, href }: PillLinkProps) {
+  // WhatsApp and other off-site destinations should not replace the tab.
+  const isExternal = href.startsWith("http");
+
   return (
     <Link
       className={cn(
@@ -140,6 +143,8 @@ export function PillLink({ children, className, href }: PillLinkProps) {
         className,
       )}
       href={href}
+      rel={isExternal ? "noopener noreferrer" : undefined}
+      target={isExternal ? "_blank" : undefined}
     >
       <ShiftButtonContent
         className="[--shift-button-icon-size:28px]"

@@ -100,6 +100,7 @@ export default function MarketingDigitalZamoraPage() {
             eyebrow="Marketing digital"
             heading="Marketing digital en Zamora para negocios que quieren que la provincia los reconozca."
             lead="Gestión de redes, producción de contenido y campañas para comercios de Zamora, Yantzaza y Cumbaratza. Producimos en la provincia desde Loja, a una hora de distancia."
+            whatsappMessage="Hola Tótem, tengo un negocio en Zamora y quiero trabajar mis redes."
           />
         </Reveal>
 

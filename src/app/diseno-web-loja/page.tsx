@@ -122,6 +122,7 @@ export default function DisenoWebLojaPage() {
             eyebrow="Diseño y desarrollo web"
             heading="Diseño y desarrollo web en Loja para sitios que trabajan, no que solo se ven."
             lead="Sitios corporativos, landing pages y plataformas de servicios con UX/UI a medida, SEO técnico e integraciones. La web como herramienta de negocio, construida desde Loja."
+            whatsappMessage="Hola Tótem, necesito un sitio web para mi negocio en Loja."
           />
         </Reveal>
 

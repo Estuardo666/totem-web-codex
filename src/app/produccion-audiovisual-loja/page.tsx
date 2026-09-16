@@ -116,6 +116,7 @@ export default function ProduccionAudiovisualLojaPage() {
             eyebrow="Producción audiovisual"
             heading="Producción audiovisual en Loja para negocios que necesitan vender, no solo verse bien."
             lead="Fotografía, video y motion pensados para entornos digitales. Definimos qué tiene que comunicar cada pieza, la producimos en Loja y la conectamos con los canales donde tu negocio realmente compite."
+            whatsappMessage="Hola Tótem, necesito producción audiovisual en Loja."
           />
         </Reveal>
 
