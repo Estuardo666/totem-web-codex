@@ -210,3 +210,33 @@ export function LandingFaq({ heading, items }: FaqProps) {
     </section>
   );
 }
+
+type CredentialProps = {
+  body: string;
+  eyebrow: string;
+  name: string;
+};
+
+/**
+ * A single named client stated in words. Used where the work is real but no
+ * image asset has been cleared for publication yet.
+ */
+export function LandingCredential({ body, eyebrow, name }: CredentialProps) {
+  return (
+    <section className="bg-shinta-canvas py-14 md:py-20">
+      <div className={SHELL}>
+        <div className="flex flex-col gap-4 rounded-[28px] bg-totem-surface-secondary px-6 py-8 md:px-10 md:py-12">
+          <SectionEyebrow className="text-totem-creative-ink">
+            {eyebrow}
+          </SectionEyebrow>
+          <h2 className="text-[28px] leading-[32px] font-bold tracking-[-1.1px] text-shinta-ink md:text-[36px] md:leading-[40px] md:tracking-[-1.44px]">
+            {name}
+          </h2>
+          <p className="max-w-[720px] text-[16px] leading-[25px] text-shinta-stone xl:text-[17px] xl:leading-[27px]">
+            {body}
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}

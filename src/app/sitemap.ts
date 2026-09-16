@@ -52,5 +52,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
       url: absoluteUrl("/diseno-web-loja"),
     },
+    {
+      changeFrequency: "monthly",
+      lastModified: ARTICLE_LAST_MODIFIED,
+      priority: 0.9,
+      url: absoluteUrl("/marketing-digital-zamora"),
+    },
+    {
+      changeFrequency: "monthly",
+      lastModified: ARTICLE_LAST_MODIFIED,
+      priority: 0.9,
+      url: absoluteUrl("/video-institucional-zamora"),
+    },
   ];
 }
