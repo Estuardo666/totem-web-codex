@@ -8,6 +8,8 @@ import {
   SectionEyebrow,
   ShiftButtonContent,
 } from "@/components/sites/shinta-framer-media-3240cba4/shared/ShintaPrimitives";
+import { SERVICE_LANDINGS } from "@/lib/navigation";
+import { SOCIAL_PROFILES } from "@/lib/seo";
 
 const navigationLinks = [
   { href: "/", label: "Inicio" },
@@ -105,7 +107,7 @@ function NewsletterCard() {
 export function FooterSection() {
   return (
     <footer className="relative min-h-[1464px] overflow-hidden bg-shinta-pink px-[19px] pt-16 text-shinta-ink md:min-h-[1494px] md:px-5 lg:min-h-[970px] lg:pt-20">
-      <div className="relative z-10 mx-auto flex min-h-[1400px] max-w-[1280px] flex-col gap-8 md:min-h-[1414px] lg:grid lg:h-[890px] lg:min-h-0 lg:grid-cols-[1.2fr_1fr_.65fr] lg:grid-rows-[300px_220px_310px_60px] lg:gap-0">
+      <div className="relative z-10 mx-auto flex min-h-[1400px] max-w-[1280px] flex-col gap-8 md:min-h-[1414px] lg:grid lg:h-[1010px] lg:min-h-0 lg:grid-cols-[1.2fr_1fr_.65fr] lg:grid-rows-[300px_220px_430px_60px] lg:gap-0">
         <h2 className="order-1 max-w-[470px] text-[28px] leading-8 font-bold tracking-[-1.12px] lg:col-start-1 lg:row-start-1 lg:text-[64px] lg:leading-[70.4px] lg:tracking-[-2.56px]">
           De la idea al contenido que la hace crecer.
         </h2>
@@ -144,6 +146,26 @@ export function FooterSection() {
         </FooterGroup>
 
         <FooterGroup
+          className="order-4 lg:col-start-1 lg:row-start-3 lg:self-start"
+          label="Servicios por ciudad"
+        >
+          <nav
+            aria-label="Servicios por ciudad"
+            className="flex flex-col items-start gap-1.5"
+          >
+            {SERVICE_LANDINGS.map((landing) => (
+              <Link
+                className="text-[16px] leading-[22px] font-semibold tracking-[-0.3px] text-shinta-ink underline-offset-4 transition-opacity duration-200 hover:underline hover:opacity-80 focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-shinta-ink"
+                href={landing.href}
+                key={landing.href}
+              >
+                {landing.label}
+              </Link>
+            ))}
+          </nav>
+        </FooterGroup>
+
+        <FooterGroup
           className="order-5 lg:col-start-3 lg:row-start-1"
           label="Síguenos"
         >
@@ -151,7 +173,7 @@ export function FooterSection() {
             <Link
               aria-label="Tótem Mass Media en Facebook"
               className="grid size-12 place-items-center rounded-full bg-shinta-ink text-shinta-canvas transition-transform hover:-translate-y-1 focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-shinta-ink"
-              href="https://facebook.com/"
+              href={SOCIAL_PROFILES[1]}
             >
               <svg aria-hidden="true" className="size-6" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M13.7 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5H17V3.9c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.1V10H8v3h2.6v8h3.1Z" />
@@ -167,7 +189,7 @@ export function FooterSection() {
             <Link
               aria-label="Tótem Mass Media en Instagram"
               className="grid size-12 place-items-center rounded-full bg-shinta-ink text-shinta-canvas transition-transform hover:-translate-y-1 focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-shinta-ink"
-              href="https://instagram.com/"
+              href={SOCIAL_PROFILES[0]}
             >
               <svg aria-hidden="true" className="size-6" fill="none" viewBox="0 0 24 24">
                 <rect height="17" rx="5" stroke="currentColor" strokeWidth="2" width="17" x="3.5" y="3.5" />

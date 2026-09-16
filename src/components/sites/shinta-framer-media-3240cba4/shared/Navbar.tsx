@@ -10,6 +10,7 @@ import {
   useReducedMotion,
 } from "framer-motion";
 
+import { SERVICE_LANDINGS } from "@/lib/navigation";
 import { cn } from "@/lib/utils";
 
 import { LiquidMorphButton } from "./LiquidMorphButton";
@@ -18,11 +19,101 @@ import { ThemeSwitch } from "./ThemeSwitch";
 const navigationLinks = [
   { href: "/#projects", label: "Proyectos" },
   { href: "/about-us", label: "Nosotros" },
-  { href: "/blog", label: "Servicios" },
   { href: "/contact", label: "Contacto" },
 ] as const;
 
+/**
+ * "Servicios" opens the service-and-city landings instead of going straight to
+ * the overview. It opens on hover and on focus, so it works for pointer and
+ * keyboard alike, and the trigger stays a link to the overview page.
+ */
+function ServicesMenu() {
+  const shouldReduceMotion = useReducedMotion();
+  const [isOpen, setIsOpen] = useState(false);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const open = () => {
+    if (closeTimer.current) {
+      clearTimeout(closeTimer.current);
+      closeTimer.current = null;
+    }
+    setIsOpen(true);
+  };
+
+  // A short delay keeps the panel alive while the pointer crosses the gap
+  // between the trigger and the panel.
+  const close = () => {
+    closeTimer.current = setTimeout(() => setIsOpen(false), 120);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (closeTimer.current) {
+        clearTimeout(closeTimer.current);
+      }
+    };
+  }, []);
+
+  return (
+    <div
+      className="relative"
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+          setIsOpen(false);
+        }
+      }}
+      onFocus={open}
+      onKeyDown={(event) => {
+        if (event.key === "Escape") {
+          setIsOpen(false);
+        }
+      }}
+      onPointerEnter={open}
+      onPointerLeave={close}
+    >
+      <NavLink aria-expanded={isOpen} href="/blog" label="Servicios" />
+
+      <AnimatePresence initial={false}>
+        {isOpen ? (
+          <motion.div
+            animate={{ opacity: 1, transform: "translateY(0px)" }}
+            className="absolute top-full left-1/2 z-50 w-[292px] -translate-x-1/2 pt-3"
+            exit={{ opacity: 0, transform: "translateY(-4px)" }}
+            initial={{ opacity: 0, transform: "translateY(-6px)" }}
+            transition={
+              shouldReduceMotion
+                ? { duration: 0 }
+                : { duration: 0.18, ease: [0.23, 1, 0.32, 1] }
+            }
+          >
+            <div className="flex flex-col gap-0.5 rounded-[18px] bg-shinta-canvas p-2 text-shinta-ink shadow-[0_18px_40px_rgba(0,0,0,0.16)]">
+              {SERVICE_LANDINGS.map((landing) => (
+                <Link
+                  className="rounded-[12px] px-3 py-2 text-[15px] leading-5 font-semibold tracking-[-0.3px] transition-colors duration-200 hover:bg-totem-surface-secondary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-totem-focus"
+                  href={landing.href}
+                  key={landing.href}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {landing.label}
+                </Link>
+              ))}
+              <Link
+                className="mt-1 rounded-[12px] px-3 py-2 text-[14px] leading-5 font-semibold tracking-[-0.3px] text-totem-creative-ink transition-colors duration-200 hover:bg-totem-surface-secondary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-totem-focus"
+                href="/blog"
+                onClick={() => setIsOpen(false)}
+              >
+                Ver todos los servicios
+              </Link>
+            </div>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
+    </div>
+  );
+}
+
 type NavLinkProps = {
+  "aria-expanded"?: boolean;
   href: string;
   label: string;
 };
@@ -36,7 +127,7 @@ type NavLinkProps = {
 // build, and plain CSS transitions do not depend on the animation frame loop.
 const NAV_EASE = "cubic-bezier(0.23, 1, 0.32, 1)";
 
-function NavLink({ href, label }: NavLinkProps) {
+function NavLink({ "aria-expanded": ariaExpanded, href, label }: NavLinkProps) {
   const shouldReduceMotion = useReducedMotion();
   const [isActive, setIsActive] = useState(false);
   const duration = shouldReduceMotion ? "0ms" : "320ms";
@@ -63,6 +154,7 @@ function NavLink({ href, label }: NavLinkProps) {
         }}
       />
       <Link
+        aria-expanded={ariaExpanded}
         className="relative rounded-full px-2 py-1 text-[16px] font-semibold tracking-[-0.64px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-totem-focus"
         href={href}
       >
@@ -201,9 +293,10 @@ export function Navbar() {
           </Link>
 
           <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-[43px] md:flex">
-            {navigationLinks.map((link) => (
-              <NavLink href={link.href} key={link.href} label={link.label} />
-            ))}
+            <NavLink href="/#projects" label="Proyectos" />
+            <NavLink href="/about-us" label="Nosotros" />
+            <ServicesMenu />
+            <NavLink href="/contact" label="Contacto" />
           </div>
 
           <div className="flex shrink-0 items-center justify-end gap-2 md:static md:w-auto">
@@ -269,7 +362,7 @@ export function Navbar() {
                   : { duration: 0.2, ease: [0.23, 1, 0.32, 1] }
               }
             >
-              <div className="flex flex-1 flex-col justify-between rounded-[24px] bg-shinta-canvas px-6 py-8 text-shinta-ink">
+              <div className="flex flex-1 flex-col gap-4 overflow-y-auto rounded-[24px] bg-shinta-canvas px-6 py-8 text-shinta-ink">
                 {navigationLinks.map((link) => (
                   <Link
                     className="overflow-hidden rounded-sm text-[24px] font-semibold leading-[1.2] tracking-[-0.72px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-shinta-pink"
@@ -280,6 +373,30 @@ export function Navbar() {
                     {link.label}
                   </Link>
                 ))}
+
+                <div className="flex flex-col gap-3">
+                  <Link
+                    className="overflow-hidden rounded-sm text-[24px] font-semibold leading-[1.2] tracking-[-0.72px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-shinta-pink"
+                    href="/blog"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Servicios
+                  </Link>
+
+                  <ul className="flex flex-col gap-2 border-l border-shinta-ink/15 pl-4">
+                    {SERVICE_LANDINGS.map((landing) => (
+                      <li key={landing.href}>
+                        <Link
+                          className="block rounded-sm text-[16px] leading-[1.3] font-semibold tracking-[-0.3px] text-shinta-stone focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-shinta-pink"
+                          href={landing.href}
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          {landing.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
 
               <Link
