@@ -60,6 +60,13 @@ export const buildPageMetadata = ({
   },
 });
 
+/**
+ * Tótem runs as a service-area business: clients are served on site or
+ * remotely, never at the office. Google requires the street address to stay
+ * hidden in that model, so it is deliberately absent here — publishing it
+ * would contradict the Business Profile and break NAP consistency. The
+ * coordinates stay, since they are what places us in the Loja local pack.
+ */
 export const BUSINESS = {
   /** Loja, Ecuador. Used for the `geo` property no local competitor publishes. */
   geo: {
@@ -69,7 +76,6 @@ export const BUSINESS = {
   addressLocality: "Loja",
   addressRegion: "Loja",
   addressCountry: "EC",
-  streetAddress: "Jorge H. Rengel y Fco. Montero",
   telephone: "+593998813559",
   /** Displayed as typed by the business for local callers. */
   telephoneLocal: "0998813559",

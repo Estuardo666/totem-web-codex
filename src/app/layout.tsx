@@ -95,7 +95,6 @@ const localBusinessSchema = {
     addressCountry: BUSINESS.addressCountry,
     addressLocality: BUSINESS.addressLocality,
     addressRegion: BUSINESS.addressRegion,
-    streetAddress: BUSINESS.streetAddress,
   },
   areaServed: [
     { "@type": "City", name: "Loja" },
