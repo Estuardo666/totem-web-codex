@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const SITE_URL = "https://totemmassmedia.com";
+export const SITE_URL = "https://www.totemmassmedia.com";
 
 export const SITE_NAME = "Tótem Mass Media";
 

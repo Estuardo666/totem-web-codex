@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "lenis/dist/lenis.css";
 import "./globals.css";
 
@@ -150,6 +151,16 @@ export default function RootLayout({
         <JsonLd data={[organizationSchema, localBusinessSchema, websiteSchema]} />
       </head>
       <body className="flex min-h-full flex-col">
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-VJMJC4F76Q"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-VJMJC4F76Q');`}
+        </Script>
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>
