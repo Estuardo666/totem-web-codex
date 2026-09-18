@@ -65,6 +65,9 @@ export const metadata: Metadata = {
     },
     index: true,
   },
+  verification: {
+    google: "HNqYryuAqzMMpNmb8i_SmUkAq6elsIOVL40Zvnh4b_s",
+  },
   title: {
     default: title,
     template: `%s — ${SITE_NAME}`,
