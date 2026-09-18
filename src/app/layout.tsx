@@ -3,6 +3,7 @@ import "lenis/dist/lenis.css";
 import "./globals.css";
 
 import { JsonLd } from "@/components/seo/JsonLd";
+import { GoogleAnalytics } from "@/components/seo/GoogleAnalytics";
 import { CONTACT_EMAIL } from "@/lib/contact";
 import { SmoothScroll } from "@/components/sites/shinta-framer-media-3240cba4/shared/SmoothScroll";
 import {
@@ -150,21 +151,10 @@ export default function RootLayout({
     <html lang="es" className="h-full antialiased" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitializationScript }} />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-VJMJC4F76Q');`,
-          }}
-        />
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-VJMJC4F76Q"
-        />
         <JsonLd data={[organizationSchema, localBusinessSchema, websiteSchema]} />
       </head>
       <body className="flex min-h-full flex-col">
+        <GoogleAnalytics />
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>
