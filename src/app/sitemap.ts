@@ -64,5 +64,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
       url: absoluteUrl("/video-institucional-zamora"),
     },
+    {
+      changeFrequency: "monthly",
+      lastModified: new Date("2026-09-18T14:30:00-05:00"),
+      priority: 0.8,
+      url: absoluteUrl("/totemhub"),
+    },
+    {
+      changeFrequency: "yearly",
+      lastModified: new Date("2026-09-18T14:30:00-05:00"),
+      priority: 0.5,
+      url: absoluteUrl("/totemhub/privacidad"),
+    },
   ];
 }

@@ -20,6 +20,7 @@ const navigationLinks = [
 const approachLinks = [
   { href: "/about-us", label: "Cómo trabajamos" },
   { href: "/#projects", label: "Proyectos" },
+  { href: "/totemhub", label: "TotemHub" },
 ] as const;
 
 type FooterPillLinkProps = {
@@ -175,7 +176,15 @@ export function FooterSection() {
 
         <div className="order-8 flex flex-col gap-2 pb-5 text-[12px] leading-[16.8px] font-semibold tracking-[0.96px] uppercase sm:flex-row sm:items-center sm:justify-between lg:col-start-1 lg:col-end-4 lg:row-start-4 lg:self-end">
           <p>© 2026 Tótem Mass Media. Todos los derechos reservados.</p>
-          <p>Loja, Ecuador</p>
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+            <Link
+              className="underline-offset-4 hover:underline focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-shinta-ink"
+              href="/totemhub/privacidad"
+            >
+              Privacidad de TotemHub
+            </Link>
+            <p>Loja, Ecuador</p>
+          </div>
         </div>
       </div>
     </footer>
