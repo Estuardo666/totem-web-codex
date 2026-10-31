@@ -1,7 +1,7 @@
 "use client";
 
 import { BlogPostCard, type BlogPostCardProps } from "../shared/BlogPostCard";
-import { shintaAsset } from "../shared/site";
+import { socialClients, webProjects } from "@/lib/portfolio";
 
 const TOTEM_AVATAR = "/brand/logo-light.png";
 
@@ -9,59 +9,56 @@ const BLOG_POSTS: Omit<BlogPostCardProps, "delay">[] = [
   {
     authorAvatarSrc: TOTEM_AVATAR,
     authorName: "Tótem Mass Media",
-    coverAlt: "Proyecto TransCity",
-    coverSrc: shintaAsset("images/90da175d3b991e31.jpg"),
-    date: "Diseño y desarrollo web",
-    href: "/#projects",
-    title: "TransCity: una web que opera el negocio",
+    coverAlt: `Proyecto ${webProjects.transcity.name}`,
+    coverSrc: webProjects.transcity.image,
+    date: webProjects.transcity.category,
+    href: webProjects.transcity.url,
+    title: "TransCity Norwalk: reservas de transporte en línea",
   },
   {
     authorAvatarSrc: TOTEM_AVATAR,
     authorName: "Tótem Mass Media",
-    coverAlt: "Proyecto Terra Viva",
-    coverSrc: shintaAsset("images/d8288cb19a756a51.jpg"),
-    date: "Desarrollo web y contenido",
-    href: "/about-us",
-    title: "Terra Viva: presencia digital de cero",
+    coverAlt: `Proyecto ${webProjects.aprendiendoJuntos.name}`,
+    coverSrc: webProjects.aprendiendoJuntos.image,
+    date: webProjects.aprendiendoJuntos.category,
+    href: webProjects.aprendiendoJuntos.url,
+    title: "Aprendiendo Juntos: un centro neuropsicopedagógico en Loja",
   },
   {
     authorAvatarSrc: TOTEM_AVATAR,
     authorName: "Tótem Mass Media",
-    coverAlt: "Proyecto PlayHouse",
-    coverSrc: shintaAsset("images/01c3e56a4e3063a0.jpg"),
-    date: "Producción audiovisual",
-    href: "/contact",
-    title: "PlayHouse: fotografía, video y redes",
+    coverAlt: `Proyecto ${socialClients.opticaLoja.name}`,
+    coverSrc: socialClients.opticaLoja.image,
+    date: socialClients.opticaLoja.category,
+    href: socialClients.opticaLoja.url,
+    title: "Óptica Loja: reels sobre salud visual",
   },
   {
     authorAvatarSrc: TOTEM_AVATAR,
     authorName: "Tótem Mass Media",
-    coverAlt: "Proyecto Alan",
-    coverSrc:
-      "/sites/shinta-framer-media-3240cba4/blog-8caafe43/images/post-agency-helps-brands.jpg",
-    date: "Contenido y marketing digital",
-    href: "/#projects",
-    title: "Alan: contenido comercial y campañas",
+    coverAlt: `Proyecto ${webProjects.dermatologika.name}`,
+    coverSrc: webProjects.dermatologika.image,
+    date: webProjects.dermatologika.category,
+    href: webProjects.dermatologika.url,
+    title: "Fundación Dermatológika: salud y acción social en el sur del Ecuador",
   },
   {
     authorAvatarSrc: TOTEM_AVATAR,
     authorName: "Tótem Mass Media",
-    coverAlt: "Proyecto Aprendiendo Juntos",
-    coverSrc:
-      "/sites/shinta-framer-media-3240cba4/blog-8caafe43/images/post-improve-content-quality.jpg",
-    date: "UX/UI, web y SEO",
-    href: "/#projects",
-    title: "Aprendiendo Juntos: web orientada a conversión",
+    coverAlt: `Proyecto ${socialClients.draClaudiaMunoz.name}`,
+    coverSrc: socialClients.draClaudiaMunoz.image,
+    date: socialClients.draClaudiaMunoz.category,
+    href: socialClients.draClaudiaMunoz.url,
+    title: "Dra. Claudia Muñoz: contenido educativo en Instagram",
   },
   {
     authorAvatarSrc: TOTEM_AVATAR,
     authorName: "Tótem Mass Media",
-    coverAlt: "Contenido mensual para redes sociales",
-    coverSrc:
-      "/sites/shinta-framer-media-3240cba4/blog-8caafe43/images/post-podcasts-build-trust.jpg",
-    date: "Estrategia y contenido",
-    href: "/contact",
-    title: "Contenido mensual para redes sociales",
+    coverAlt: `Proyecto ${webProjects.mujeresInquebrantables.name}`,
+    coverSrc: webProjects.mujeresInquebrantables.image,
+    date: webProjects.mujeresInquebrantables.category,
+    href: webProjects.mujeresInquebrantables.url,
+    title: "Mujeres Inquebrantables: una fundación para emprendedoras",
   },
 ];
 

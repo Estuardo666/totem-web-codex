@@ -1,19 +1,10 @@
 "use client";
 
 import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 
 import { cn } from "@/lib/utils";
-
-import { shintaAsset } from "../shared/site";
-
-function XIcon({ className }: { className?: string }) {
-  return (
-    <svg aria-hidden="true" className={className} fill="currentColor" viewBox="0 0 24 24">
-      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-    </svg>
-  );
-}
 
 function InstagramIcon({ className }: { className?: string }) {
   return (
@@ -28,7 +19,9 @@ function InstagramIcon({ className }: { className?: string }) {
 type TeamMemberCardProps = {
   className?: string;
   delay?: number;
+  href: string;
   imageSrc: string;
+  kind: "instagram" | "web";
   name: string;
   role: string;
 };
@@ -45,7 +38,9 @@ const cardVariants: Variants = {
 export function TeamMemberCard({
   className,
   delay = 0,
+  href,
   imageSrc,
+  kind,
   name,
   role,
 }: TeamMemberCardProps) {
@@ -65,34 +60,31 @@ export function TeamMemberCard({
     >
       <div className="relative aspect-[382/453] w-full overflow-hidden rounded-[16px]">
         <Image
-        alt={`${name}: ${role}`}
-          className="object-cover"
+          alt={`${name}: ${role}`}
+          className="object-cover object-top"
           fill
           sizes="(min-width: 1200px) 33vw, (min-width: 768px) 50vw, 100vw"
-          src={shintaAsset(`images/${imageSrc}`)}
+          src={imageSrc}
           unoptimized
         />
 
-        <div className="absolute top-3 right-3 flex h-10 w-[84px] items-center justify-center gap-1 md:top-4 md:right-4 md:h-12 md:w-[100px]">
-          <a
-            aria-label={`${name} on X`}
-            className="grid size-10 shrink-0 place-items-center rounded-full bg-shinta-ink text-white transition-transform duration-300 hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-shinta-ink md:size-12"
-            href="https://x.com"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <XIcon className="size-4" />
-          </a>
-          <a
-            aria-label={`${name} on Instagram`}
-            className="grid size-10 shrink-0 place-items-center rounded-full bg-shinta-ink text-white transition-transform duration-300 hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-shinta-ink md:size-12"
-            href="https://instagram.com"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
+        <a
+          aria-label={
+            kind === "instagram"
+              ? `${name} en Instagram`
+              : `Visitar el sitio web de ${name}`
+          }
+          className="absolute top-3 right-3 grid size-10 place-items-center rounded-full bg-shinta-ink text-white transition-transform duration-300 hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-shinta-ink md:top-4 md:right-4 md:size-12"
+          href={href}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          {kind === "instagram" ? (
             <InstagramIcon className="size-4" />
-          </a>
-        </div>
+          ) : (
+            <ArrowUpRight aria-hidden="true" className="size-5" />
+          )}
+        </a>
       </div>
 
       <div className="flex flex-col p-2">

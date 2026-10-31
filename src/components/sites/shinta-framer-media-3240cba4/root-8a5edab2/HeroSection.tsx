@@ -13,8 +13,8 @@ import {
 
 import { GradientDepthBlur } from "../shared/GradientDepthBlur";
 import { whatsappUrl } from "@/lib/contact";
+import { heroReels, webProjects } from "@/lib/portfolio";
 import { ShiftButtonContent } from "../shared/ShintaPrimitives";
-import { shintaAsset } from "../shared/site";
 
 const ribbonCopy =
   "PRODUCCIÓN AUDIOVISUAL · MARKETING DIGITAL · ESTRATEGIA · CONTENIDO · DISEÑO WEB · ";
@@ -25,20 +25,8 @@ const services = [
   "DISEÑO Y DESARROLLO WEB",
 ];
 
-const heroVideos = [
-  {
-    poster: "images/418ef3c59bda7b87.jpeg",
-    src: "videos/hero-layer-front.mp4",
-  },
-  {
-    poster: "images/6ea501bbff9ed14a.jpeg",
-    src: "videos/hero-layer-middle.mp4",
-  },
-  {
-    poster: "images/a46468b6396ae69e.jpeg",
-    src: "videos/hero-layer-back.mp4",
-  },
-] as const;
+const heroVideos = heroReels;
+const featuredProject = webProjects.transcity;
 
 const cardSlots = [
   "translate-x-0 translate-y-0 rotate-0",
@@ -336,6 +324,7 @@ export function HeroSection() {
                     >
                       <video
                         aria-hidden={!isActive}
+                        aria-label={`Reel para ${video.client.name}`}
                         className="h-full w-full object-cover"
                         loop
                         muted
@@ -344,12 +333,12 @@ export function HeroSection() {
                         }
                         onPlay={isActive ? () => setIsPlaying(true) : undefined}
                         playsInline
-                        poster={shintaAsset(video.poster)}
-                        preload="auto"
+                        poster={video.poster}
+                        preload={isActive ? "auto" : "metadata"}
                         ref={(element) => {
                           videoRefs.current[videoIndex] = element;
                         }}
-                        src={shintaAsset(video.src)}
+                        src={video.src}
                       />
                     </motion.div>
 
@@ -438,20 +427,22 @@ export function HeroSection() {
 
         <MotionLink
           animate="visible"
-          aria-label="Ver el proyecto TransCity"
+          aria-label={`Ver el sitio de ${featuredProject.name}`}
           className="group absolute top-[954px] right-5 left-5 z-20 flex h-[136px] items-center gap-[11px] rounded-[22px] bg-[#ffffff9e] p-[8px] pr-[45px] text-shinta-ink backdrop-blur-[15px] transition-transform dark:bg-[#0d2740c7] duration-300 hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-shinta-ink md:top-[858px] xl:top-[175px] xl:right-0 xl:left-auto xl:h-[140px] xl:w-[320px] xl:gap-[12px] xl:rounded-[24px] xl:pr-[8px]"
-          href="/#projects"
+          href={featuredProject.url}
           initial={reduceMotion ? false : "hidden"}
+          rel="noopener noreferrer"
+          target="_blank"
           variants={projectVariants}
           whileHover={reduceMotion ? undefined : { y: -4 }}
         >
           <span className="relative h-full w-[93px] shrink-0 overflow-hidden rounded-[16px] xl:w-[96px]">
             <Image
-              alt="Proyecto TransCity"
-              className="object-cover"
+              alt={`Sitio web de ${featuredProject.name}`}
+              className="object-cover object-left-top"
               fill
               sizes="96px"
-              src={shintaAsset("images/d929f58f46477773.jpg")}
+              src={featuredProject.image}
               unoptimized
             />
           </span>
@@ -460,7 +451,7 @@ export function HeroSection() {
               PROYECTO DESTACADO
             </span>
             <span className="mt-[4px] block text-[17px] leading-[21px] font-semibold tracking-[-0.4px]">
-              TransCity: diseño y desarrollo web a medida
+              {featuredProject.name}: plataforma de reservas a medida
             </span>
           </span>
           <span className="absolute top-[9px] right-[9px] grid size-[32px] place-items-center rounded-full bg-totem-off-white text-totem-navy dark:bg-totem-tech">

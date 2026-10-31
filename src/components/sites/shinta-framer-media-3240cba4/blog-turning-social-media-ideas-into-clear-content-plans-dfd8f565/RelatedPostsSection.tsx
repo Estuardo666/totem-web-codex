@@ -8,7 +8,9 @@ import {
   SectionEyebrow,
   ShiftButtonContent,
 } from "../shared/ShintaPrimitives";
-import { shintaAsset } from "../shared/site";
+import { socialClients, webProjects } from "@/lib/portfolio";
+
+const TOTEM_AVATAR = "/brand/logo-light.png";
 
 const STROKE_PATH_LENGTH = 2124.1;
 const STROKE_PATH_D =
@@ -25,32 +27,31 @@ const headerVariants: Variants = {
 
 const posts = [
   {
-    authorAvatarSrc: "/brand/logo-light.png",
+    authorAvatarSrc: TOTEM_AVATAR,
     authorName: "Tótem Mass Media",
-    coverAlt: "Proyecto Terra Viva",
-    coverSrc: shintaAsset("images/90da175d3b991e31.jpg"),
-    date: "Desarrollo web y contenido",
-    href: "/about-us",
-    title: "Terra Viva: presencia digital de cero",
+    coverAlt: `Proyecto ${webProjects.lomasVision.name}`,
+    coverSrc: webProjects.lomasVision.image,
+    date: webProjects.lomasVision.category,
+    href: webProjects.lomasVision.url,
+    title: "Lomas Visión: oftalmología en Loja en una sola página",
   },
   {
-    authorAvatarSrc: "/brand/logo-light.png",
+    authorAvatarSrc: TOTEM_AVATAR,
     authorName: "Tótem Mass Media",
-    coverAlt: "Proyecto PlayHouse",
-    coverSrc: shintaAsset("images/01c3e56a4e3063a0.jpg"),
-    date: "Producción audiovisual",
-    href: "/contact",
-    title: "PlayHouse: fotografía, video y redes",
+    coverAlt: `Proyecto ${socialClients.draDianaAuquilla.name}`,
+    coverSrc: socialClients.draDianaAuquilla.image,
+    date: socialClients.draDianaAuquilla.category,
+    href: socialClients.draDianaAuquilla.url,
+    title: "Dra. Diana Auquilla: pediatría explicada en reels",
   },
   {
-    authorAvatarSrc: "/brand/logo-light.png",
+    authorAvatarSrc: TOTEM_AVATAR,
     authorName: "Tótem Mass Media",
-    coverAlt: "Proyecto Aprendiendo Juntos",
-    coverSrc:
-      "/sites/shinta-framer-media-3240cba4/blog-8caafe43/images/post-agency-helps-brands.jpg",
-    date: "UX/UI, web y SEO",
-    href: "/#projects",
-    title: "Aprendiendo Juntos: web orientada a conversión",
+    coverAlt: `Proyecto ${webProjects.rumicucho.name}`,
+    coverSrc: webProjects.rumicucho.image,
+    date: webProjects.rumicucho.category,
+    href: webProjects.rumicucho.url,
+    title: "Rumicucho Craft Brews: una cervecería contada en una página",
   },
 ];
 

@@ -14,6 +14,7 @@ import { ContactCtaSection } from "@/components/sites/shinta-framer-media-3240cb
 import { FooterSection } from "@/components/sites/shinta-framer-media-3240cba4/shared/FooterSection";
 import { Navbar } from "@/components/sites/shinta-framer-media-3240cba4/shared/Navbar";
 import { Reveal } from "@/components/sites/shinta-framer-media-3240cba4/shared/Reveal";
+import { socialClients } from "@/lib/portfolio";
 import { buildLandingSchema, buildPageMetadata } from "@/lib/seo";
 
 const PATH = "/produccion-audiovisual-loja";
@@ -59,19 +60,16 @@ const includes = [
 ] as const;
 
 const projects: readonly LandingProject[] = [
-  {
-    image: "images/f6ccd8159b64601e.jpg",
-    label: "Producción audiovisual",
-    name: "PlayHouse",
-    note: "Producción audiovisual completa: fotografía, videos promocionales y contenido mensual para redes.",
-  },
-  {
-    image: "images/25d6efcc673140d3.jpg",
-    label: "Contenido y marketing digital",
-    name: "Alan",
-    note: "Fotografía, video y contenido comercial sosteniendo toda la comunicación del negocio.",
-  },
-] as const;
+  socialClients.opticaLoja,
+  socialClients.draDianaAuquilla,
+  socialClients.silvermax,
+].map((client) => ({
+  href: client.url,
+  image: client.image,
+  label: client.category,
+  name: client.name,
+  note: `Reels y contenido para Instagram. ${client.summary}`,
+}));
 
 const faq: readonly LandingFaqItem[] = [
   {

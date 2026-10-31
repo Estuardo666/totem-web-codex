@@ -5,7 +5,6 @@ import {
   PillLink,
   SectionEyebrow,
 } from "@/components/sites/shinta-framer-media-3240cba4/shared/ShintaPrimitives";
-import { shintaAsset } from "@/components/sites/shinta-framer-media-3240cba4/shared/site";
 import { whatsappUrl } from "@/lib/contact";
 import { cn } from "@/lib/utils";
 
@@ -130,6 +129,7 @@ export function LandingIncludes({ heading, items }: IncludesProps) {
 }
 
 export type LandingProject = {
+  href: string;
   image: string;
   label: string;
   name: string;
@@ -155,15 +155,22 @@ export function LandingProjects({ heading, projects }: ProjectsProps) {
               <div className="relative aspect-[4/3] overflow-hidden rounded-[24px] bg-totem-surface-secondary">
                 <Image
                   alt={`Proyecto ${project.name}: ${project.label}`}
-                  className="object-cover"
+                  className="object-cover object-top"
                   fill
                   sizes="(min-width: 1280px) 400px, (min-width: 768px) 50vw, calc(100vw - 40px)"
-                  src={shintaAsset(project.image)}
+                  src={project.image}
                   unoptimized
                 />
               </div>
               <h3 className="text-[18px] leading-[24px] font-semibold tracking-[-0.4px] text-shinta-ink">
-                {project.name}
+                <a
+                  className="underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-totem-focus"
+                  href={project.href}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  {project.name}
+                </a>
               </h3>
               <p className="text-[15px] leading-[23px] text-shinta-stone">
                 {project.note}

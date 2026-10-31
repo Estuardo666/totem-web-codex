@@ -7,49 +7,14 @@ import { ArrowUpRight } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { SectionEyebrow } from "@/components/sites/shinta-framer-media-3240cba4/shared/ShintaPrimitives";
-import { shintaAsset } from "@/components/sites/shinta-framer-media-3240cba4/shared/site";
+import { webProjects } from "@/lib/portfolio";
 
 const projects = [
-  {
-    image: "images/d929f58f46477773.jpg",
-    label: "Diseño y desarrollo web",
-    metric: "01",
-    name: "TransCity",
-    href: "/#projects",
-    layout: "order-1 lg:col-span-2",
-  },
-  {
-    image: "images/f8f2222b4c112435.jpg",
-    label: "Desarrollo web y contenido",
-    metric: "02",
-    name: "Terra Viva",
-    href: "/#projects",
-    layout: "order-2",
-  },
-  {
-    image: "images/f6ccd8159b64601e.jpg",
-    label: "Producción audiovisual",
-    metric: "03",
-    name: "PlayHouse",
-    href: "/#projects",
-    layout: "order-4",
-  },
-  {
-    image: "images/25d6efcc673140d3.jpg",
-    label: "Contenido y marketing digital",
-    metric: "04",
-    name: "Alan",
-    href: "/#projects",
-    layout: "order-3",
-  },
-  {
-    image: "images/f9924a626b8f6cfa.jpg",
-    label: "UX/UI, web y SEO",
-    metric: "05",
-    name: "Aprendiendo Juntos",
-    href: "/#projects",
-    layout: "order-5",
-  },
+  { ...webProjects.transcity, metric: "01", layout: "order-1 lg:col-span-2" },
+  { ...webProjects.aprendiendoJuntos, metric: "02", layout: "order-2" },
+  { ...webProjects.lomasVision, metric: "03", layout: "order-4" },
+  { ...webProjects.dermatologika, metric: "04", layout: "order-3" },
+  { ...webProjects.drLoyola, metric: "05", layout: "order-5" },
 ] as const;
 
 const revealDelays = [
@@ -71,25 +36,27 @@ function ProjectCard({ index, project, revealed }: ProjectCardProps) {
 
   return (
     <Link
-      aria-label={`Ver el proyecto ${project.name}: ${project.label}`}
+      aria-label={`Ver el sitio de ${project.name}: ${project.category}`}
       className={cn(
         "group relative block aspect-[0.93/1] overflow-hidden rounded-[30px] bg-totem-surface-secondary transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-totem-focus motion-reduce:translate-y-0 motion-reduce:transition-none md:aspect-[0.96/1] lg:aspect-[0.94/1] lg:rounded-[28px]",
         project.layout,
         revealDelays[index],
         revealed ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0",
       )}
-      href={project.href}
+      href={project.url}
+      rel="noopener noreferrer"
+      target="_blank"
     >
       <Image
-        alt={`Proyecto ${project.name}: ${project.label}`}
-        className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.025] motion-reduce:transition-none"
+        alt={`Sitio web de ${project.name}: ${project.summary}`}
+        className="object-cover object-top transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.025] motion-reduce:transition-none"
         fill
         sizes={
           isLead
             ? "(min-width: 1024px) 860px, (min-width: 768px) calc(100vw - 40px), calc(100vw - 38px)"
             : "(min-width: 1024px) 422px, (min-width: 768px) calc(100vw - 40px), calc(100vw - 38px)"
         }
-        src={shintaAsset(project.image)}
+        src={project.image}
         unoptimized
       />
 
@@ -103,7 +70,7 @@ function ProjectCard({ index, project, revealed }: ProjectCardProps) {
             <span className="hidden sm:inline" aria-hidden="true">
               /
             </span>
-            <span>{project.label}</span>
+            <span>{project.category}</span>
           </span>
         </span>
         <span className="grid size-14 shrink-0 place-items-center rounded-full bg-shinta-canvas text-shinta-ink transition-transform duration-300 group-hover:rotate-45 group-hover:bg-totem-action lg:size-8">

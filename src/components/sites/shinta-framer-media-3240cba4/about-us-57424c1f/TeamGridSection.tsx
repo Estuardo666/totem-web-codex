@@ -4,39 +4,32 @@ import { motion, useReducedMotion, type Variants } from "framer-motion";
 
 import { SectionEyebrow } from "../shared/ShintaPrimitives";
 import { TeamMemberCard } from "./TeamMemberCard";
+import { socialClients, webProjects } from "@/lib/portfolio";
 
 const TEAM_MEMBERS = [
-  {
-    imageSrc: "79687116559292ab.jpg",
-    name: "TransCity",
-    role: "Diseño y desarrollo web",
-  },
-  {
-    imageSrc: "47f89ced261416df.jpg",
-    name: "Terra Viva",
-    role: "Desarrollo web y contenido",
-  },
-  {
-    imageSrc: "34844c23286ab253.jpg",
-    name: "PlayHouse",
-    role: "Producción audiovisual",
-  },
-  {
-    imageSrc: "3180f8ad3e321358.jpg",
-    name: "Alan",
-    role: "Contenido y marketing digital",
-  },
-  {
-    imageSrc: "36db82b98440ca02.jpg",
-    name: "Aprendiendo Juntos",
-    role: "UX/UI, web y SEO",
-  },
-  {
-    imageSrc: "c1c60606144d1f73.jpg",
-    name: "Contenido mensual",
-    role: "Fotografía, video y redes",
-  },
-] as const;
+  ...[
+    webProjects.alivinatu,
+    webProjects.acunar,
+    webProjects.dumbo,
+  ].map((project) => ({
+    href: project.url,
+    imageSrc: project.image,
+    kind: "web" as const,
+    name: project.name,
+    role: `${project.category} · ${project.location}`,
+  })),
+  ...[
+    socialClients.opticaLoja,
+    socialClients.draDianaAuquilla,
+    socialClients.silvermax,
+  ].map((client) => ({
+    href: client.url,
+    imageSrc: client.image,
+    kind: "instagram" as const,
+    name: client.name,
+    role: `Gestión de redes · ${client.category}`,
+  })),
+];
 
 const eyebrowVariants: Variants = {
   hidden: { opacity: 0, scale: 0.8 },
@@ -97,7 +90,7 @@ export function TeamGridSection() {
             viewport={{ amount: 0.4, once: true }}
             whileInView="visible"
           >
-Los proyectos aportan la evidencia: producción audiovisual, marketing digital, estrategia de contenido y desarrollo web.
+Sitios web que construimos y marcas cuyas redes gestionamos, en Loja, el resto del Ecuador y fuera del país.
           </motion.p>
         </div>
 
@@ -105,7 +98,9 @@ Los proyectos aportan la evidencia: producción audiovisual, marketing digital, 
           {TEAM_MEMBERS.map((member, index) => (
             <TeamMemberCard
               delay={reduceMotion ? 0 : index * 0.09}
+              href={member.href}
               imageSrc={member.imageSrc}
+              kind={member.kind}
               key={member.name}
               name={member.name}
               role={member.role}

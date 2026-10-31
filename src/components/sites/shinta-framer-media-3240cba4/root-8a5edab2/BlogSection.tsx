@@ -7,6 +7,7 @@ import {
   ShiftButtonContent,
 } from "../shared/ShintaPrimitives";
 import { shintaAsset } from "../shared/site";
+import { webProjects } from "@/lib/portfolio";
 import { ImageReveal } from "@/components/sites/shinta-framer-media-3240cba4/shared/ImageReveal";
 
 const articles = [
@@ -16,9 +17,9 @@ const articles = [
     authorImage: "/brand/logo-light.png",
     authorWidth: 1200,
     href: "/#projects",
-    image: "images/90da175d3b991e31.jpg",
-    imageAlt: "Proyecto TransCity",
-    title: "TransCity: diseño y desarrollo web a medida",
+    image: webProjects.transcity.image,
+    imageAlt: `Sitio web de ${webProjects.transcity.name}`,
+    title: "TransCity Norwalk: plataforma de reservas a medida",
   },
   {
     author: "Tótem Mass Media",
@@ -26,7 +27,7 @@ const articles = [
     authorImage: "/brand/logo-light.png",
     authorWidth: 800,
     href: "/about-us",
-    image: "images/d8288cb19a756a51.jpg",
+    image: shintaAsset("images/d8288cb19a756a51.jpg"),
     imageAlt: "Estrategia y contenido",
     title: "Estrategia y contenido antes de producir",
   },
@@ -36,7 +37,7 @@ const articles = [
     authorImage: "/brand/logo-light.png",
     authorWidth: 1032,
     href: "/contact",
-    image: "images/01c3e56a4e3063a0.jpg",
+    image: shintaAsset("images/01c3e56a4e3063a0.jpg"),
     imageAlt: "Sitio web para una organización",
     title: "La web como herramienta de negocio",
   },
@@ -105,7 +106,7 @@ Lo que hacemos habla por nosotros
                     className="size-full object-cover transition-transform duration-500 ease-out group-hover:-translate-y-1 group-hover:scale-[1.04] group-focus-visible:-translate-y-1 group-focus-visible:scale-[1.04]"
                     height={616}
                     priority={index === 0}
-                    src={shintaAsset(article.image)}
+                    src={article.image}
                     unoptimized
                     width={822}
                   />
