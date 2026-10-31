@@ -2,13 +2,9 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 
-const projects = [
-  "TransCity",
-  "Terra Viva",
-  "PlayHouse",
-  "Alan",
-  "Aprendiendo Juntos",
-] as const;
+import { allClientNames } from "@/lib/portfolio";
+
+const projects = allClientNames;
 
 type BrandSequenceProps = {
   duplicate?: boolean;
@@ -54,7 +50,7 @@ export function LogoStrip() {
               reduceMotion
                 ? undefined
                 : {
-                    duration: 22,
+                    duration: 110,
                     ease: "linear",
                     repeat: Number.POSITIVE_INFINITY,
                   }

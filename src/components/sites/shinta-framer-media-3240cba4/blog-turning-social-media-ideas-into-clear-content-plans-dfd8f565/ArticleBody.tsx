@@ -39,11 +39,11 @@ const blocks: Block[] = [
   { kind: "h2", text: "Proyectos que lo demuestran" },
   {
     kind: "p",
-    text: "TransCity muestra el diseño y desarrollo de una web que sostiene la operación: reservas, tarifas, pagos e integraciones. Terra Viva, la construcción de una presencia digital desde cero. PlayHouse, la producción audiovisual: fotografía, videos promocionales y contenido para redes.",
+    text: "TransCity Norwalk y Dumbo Travel Luxury muestran webs que sostienen la operación: reservas de transporte en línea en Estados Unidos. Aprendiendo Juntos y Lomas Visión son sitios para servicios de educación y salud en Loja, pensados para que el visitante agende.",
   },
   {
     kind: "p",
-    text: "Alan reúne contenido comercial, fotografía, video y desarrollo web. Aprendiendo Juntos es una web orientada a conversión: arquitectura de información, SEO, mapas y contacto por WhatsApp.",
+    text: "En redes trabajamos con marcas como Óptica Loja, Silvermax, EUROpeek y Audisens, y con especialistas como la Dra. Claudia Muñoz y la Dra. Diana Auquilla, produciendo reels y contenido para Instagram.",
   },
   { kind: "h2", text: "La propuesta" },
   {

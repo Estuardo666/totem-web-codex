@@ -14,6 +14,7 @@ import { ContactCtaSection } from "@/components/sites/shinta-framer-media-3240cb
 import { FooterSection } from "@/components/sites/shinta-framer-media-3240cba4/shared/FooterSection";
 import { Navbar } from "@/components/sites/shinta-framer-media-3240cba4/shared/Navbar";
 import { Reveal } from "@/components/sites/shinta-framer-media-3240cba4/shared/Reveal";
+import { webProjects } from "@/lib/portfolio";
 import { buildLandingSchema, buildPageMetadata } from "@/lib/seo";
 
 const PATH = "/diseno-web-loja";
@@ -59,25 +60,16 @@ const includes = [
 ] as const;
 
 const projects: readonly LandingProject[] = [
-  {
-    image: "images/d929f58f46477773.jpg",
-    label: "Diseño y desarrollo web",
-    name: "TransCity",
-    note: "Una web que opera el negocio: diseño UX/UI, reservas, tarifas, pagos en línea e integraciones.",
-  },
-  {
-    image: "images/f8f2222b4c112435.jpg",
-    label: "Desarrollo web y contenido",
-    name: "Terra Viva",
-    note: "Presencia digital construida de cero: estrategia de contenido, dirección visual y desarrollo del sitio.",
-  },
-  {
-    image: "images/f9924a626b8f6cfa.jpg",
-    label: "UX/UI, web y SEO",
-    name: "Aprendiendo Juntos",
-    note: "Web orientada a conversión: arquitectura de información, SEO, mapas y contacto por WhatsApp.",
-  },
-] as const;
+  webProjects.transcity,
+  webProjects.aprendiendoJuntos,
+  webProjects.lomasVision,
+].map((project) => ({
+  href: project.url,
+  image: project.image,
+  label: project.category,
+  name: project.name,
+  note: `${project.category}, ${project.location}. ${project.summary}`,
+}));
 
 const faq: readonly LandingFaqItem[] = [
   {

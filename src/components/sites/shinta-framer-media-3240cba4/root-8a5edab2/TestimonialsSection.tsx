@@ -2,43 +2,21 @@
 
 import Image from "next/image";
 import { useRef, useState } from "react";
-import { Pause, Play, Star } from "lucide-react";
+import { Pause, Play } from "lucide-react";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 
 import { SectionEyebrow } from "../shared/ShintaPrimitives";
-import { shintaAsset } from "../shared/site";
 import { ImageReveal } from "@/components/sites/shinta-framer-media-3240cba4/shared/ImageReveal";
+import { socialClients, type SocialClient } from "@/lib/portfolio";
 
-const testimonials = [
-  {
-    body: "Diseño UX/UI, desarrollo web, reservas, pagos en línea e integraciones.",
-    image: "images/fd4b5099d911c76f.jpg",
-    name: "TransCity",
-    role: "Trabajo realizado",
-    title: "Una web que opera el negocio",
-  },
-  {
-    body: "Estrategia de contenido, dirección visual y desarrollo del sitio web.",
-    image: "images/d90a19ecbfeae44f.jpg",
-    name: "Terra Viva",
-    role: "Trabajo realizado",
-    title: "Presencia digital de cero",
-  },
-  {
-    body: "Fotografía, videos promocionales y contenido mensual para redes.",
-    image: "images/b82418baae466bc6.jpg",
-    name: "PlayHouse",
-    role: "Trabajo realizado",
-    title: "Producción audiovisual completa",
-  },
-  {
-    body: "Arquitectura de información, SEO, mapas y contacto por WhatsApp.",
-    image: "images/35b70b916d6ee028.jpg",
-    name: "Aprendiendo Juntos",
-    role: "Trabajo realizado",
-    title: "Web orientada a conversión",
-  },
-] as const;
+const featuredClient = socialClients.draClaudiaMunoz;
+
+const clients: readonly SocialClient[] = [
+  socialClients.draGabrielaSanchez,
+  socialClients.draKatherineMontalvan,
+  socialClients.audisens,
+  socialClients.europeek,
+];
 
 const collageVariants: Variants = {
   hidden: {},
@@ -59,46 +37,37 @@ const cardVariants: Variants = {
   },
 };
 
-function FiveStars() {
+function CategoryPill({ children }: { children: string }) {
   return (
-    <div aria-label="Trabajo destacado" className="flex gap-1">
-      {Array.from({ length: 5 }, (_, index) => (
-        <span
-          aria-hidden="true"
-          className="grid size-5 place-items-center rounded-[3px] bg-shinta-orange text-white"
-          key={index}
-        >
-          <Star className="size-[13px]" fill="currentColor" strokeWidth={1.5} />
-        </span>
-      ))}
-    </div>
+    <span className="inline-flex w-max rounded-full bg-shinta-orange px-3 py-1 text-[12px] leading-[16px] font-semibold tracking-[0.6px] text-white uppercase">
+      {children}
+    </span>
   );
 }
 
-type AuthorProps = {
-  image: string;
-  name: string;
-  role: string;
-};
-
-function Author({ image, name, role }: AuthorProps) {
+function ClientHandle({ client }: { client: SocialClient }) {
   return (
     <footer className="flex items-center gap-3">
       <Image
-        alt={`${name}, ${role}`}
+        alt={`Foto de perfil de ${client.name}`}
         className="size-12 shrink-0 rounded-full object-cover"
-        height={900}
-        src={shintaAsset(image)}
+        height={160}
+        src={client.avatar}
         unoptimized
-        width={672}
+        width={160}
       />
-      <div>
-        <cite className="block text-[16px] leading-[22px] font-bold not-italic text-shinta-ink lg:text-[18px] lg:leading-[25px]">
-          {name}
-        </cite>
-        <p className="text-[14px] leading-5 text-shinta-muted lg:text-[16px] lg:leading-[22px]">
-          {role}
+      <div className="min-w-0">
+        <p className="block text-[16px] leading-[22px] font-bold text-shinta-ink lg:text-[18px] lg:leading-[25px]">
+          {client.name}
         </p>
+        <a
+          className="block truncate text-[14px] leading-5 text-shinta-muted underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-shinta-ink lg:text-[16px] lg:leading-[22px]"
+          href={client.url}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          @{client.handle}
+        </a>
       </div>
     </footer>
   );
@@ -138,13 +107,13 @@ export function TestimonialsSection() {
           whileInView={{ opacity: 1, y: 0 }}
         >
           <SectionEyebrow className="inline-flex rounded-full bg-shinta-pink px-2.5 py-1 text-shinta-ink">
-            proyectos que lo demuestran
+            gestión de redes
           </SectionEyebrow>
           <h2
             className="text-[28px] leading-[1.08] font-bold tracking-[-1.12px] text-shinta-ink lg:text-[64px] lg:leading-[70.4px] lg:tracking-[-2.56px]"
             id="proof-heading"
           >
-Los proyectos demuestran el trabajo
+            Marcas que confían sus redes en Tótem
           </h2>
         </motion.header>
 
@@ -155,25 +124,26 @@ Los proyectos demuestran el trabajo
           viewport={{ amount: 0.08, once: true }}
           whileInView="visible"
         >
-          <motion.blockquote
+          <motion.article
             className="flex min-h-0 flex-col gap-5 rounded-[24px] bg-white p-4 md:flex-row md:p-6 lg:col-span-2"
             variants={cardVariants}
           >
             <ImageReveal className="group relative h-[210px] w-full shrink-0 overflow-hidden rounded-[14px] bg-shinta-stone md:h-full md:w-[42%]">
               <video
-                aria-label="Proyecto de producción audiovisual"
+                aria-label={`Reel para ${featuredClient.name}`}
                 className="size-full object-cover"
                 muted
                 onEnded={() => setIsPlaying(false)}
                 onPause={() => setIsPlaying(false)}
                 onPlay={() => setIsPlaying(true)}
                 playsInline
+                poster="/images/hero/reel-dra-claudia-munoz.jpg"
                 preload="metadata"
                 ref={videoRef}
-                src={shintaAsset("videos/cta-phone.mp4")}
+                src="/videos/reel-dra-claudia-munoz.mp4"
               />
               <button
-                aria-label={isPlaying ? "Pausar video del proyecto" : "Reproducir video del proyecto"}
+                aria-label={isPlaying ? "Pausar el reel" : "Reproducir el reel"}
                 className="absolute inset-0 m-auto grid size-14 place-items-center rounded-full bg-shinta-ink/80 text-white transition-transform duration-300 hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
                 onClick={toggleVideo}
                 type="button"
@@ -191,45 +161,45 @@ Los proyectos demuestran el trabajo
             </ImageReveal>
 
             <div className="flex min-h-0 flex-1 flex-col">
-              <FiveStars />
+              <CategoryPill>{featuredClient.category}</CategoryPill>
               <h3 className="mt-5 text-[24px] leading-[33.6px] font-bold tracking-[-0.96px] text-shinta-ink">
-                Contenido y marketing para una marca
+                Reels educativos para una comunidad de más de 12 mil personas
               </h3>
               <p className="mt-3 text-[16px] leading-6 text-shinta-stone lg:text-[18px] lg:leading-[27px]">
-                Fotografía, video, contenido comercial y desarrollo web para sostener toda la comunicación del negocio.
+                {featuredClient.summary} Contenido pensado para explicar
+                temas médicos con claridad y llevar la conversación a
+                consulta.
               </p>
-              <footer className="mt-auto pt-5">
-                <cite className="block text-[16px] leading-[22px] font-bold not-italic text-shinta-ink lg:text-[18px] lg:leading-[25px]">
-                  Alan
-                </cite>
-                <p className="text-[14px] leading-5 text-shinta-muted lg:text-[16px] lg:leading-[22px]">
-                  Trabajo realizado
-                </p>
-              </footer>
+              <div className="mt-auto pt-5">
+                <ClientHandle client={featuredClient} />
+              </div>
             </div>
-          </motion.blockquote>
+          </motion.article>
 
-          {testimonials.map((testimonial) => (
-            <motion.blockquote
+          {clients.map((client) => (
+            <motion.article
               className="flex min-h-0 flex-col rounded-[24px] bg-white p-5 md:p-6"
-              key={testimonial.name}
+              key={client.slug}
               variants={cardVariants}
             >
-              <FiveStars />
-              <h3 className="mt-9 text-[24px] leading-[33.6px] font-bold tracking-[-0.96px] text-shinta-ink">
-                {testimonial.title}
-              </h3>
-              <p className="mt-4 text-[16px] leading-6 text-shinta-stone lg:text-[18px] lg:leading-[27px]">
-                {testimonial.body}
-              </p>
-              <div className="mt-auto pt-6">
-                <Author
-                  image={testimonial.image}
-                  name={testimonial.name}
-                  role={testimonial.role}
+              <CategoryPill>{client.category}</CategoryPill>
+              <div className="relative mt-6 aspect-[4/5] max-h-[220px] w-full overflow-hidden rounded-[14px] bg-shinta-stone lg:max-h-[210px]">
+                <Image
+                  alt={`Publicación para ${client.name}`}
+                  className="object-cover"
+                  fill
+                  sizes="(min-width: 1024px) 280px, calc(100vw - 80px)"
+                  src={client.image}
+                  unoptimized
                 />
               </div>
-            </motion.blockquote>
+              <p className="mt-4 text-[16px] leading-6 text-shinta-stone lg:text-[18px] lg:leading-[27px]">
+                {client.summary}
+              </p>
+              <div className="mt-auto pt-6">
+                <ClientHandle client={client} />
+              </div>
+            </motion.article>
           ))}
         </motion.div>
       </div>
